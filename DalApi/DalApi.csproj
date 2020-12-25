@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="namespace DalApi\Configuration.cs" />
     <Compile Include="namespace DalApi\DalConfig.cs" />
     <Compile Include="namespace DalApi\Factory.cs" />
     <Compile Include="namespace DalApi\IDal.cs" />

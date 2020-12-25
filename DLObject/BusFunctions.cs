@@ -7,66 +7,74 @@ using DalApi;
 using DS;
 using DO;
 
+
+
+
+
+
 namespace DL
 {
     public partial class DLObject : IDal
     {
         public void CreateBus(Bus bus)
         {
+            bus.Valid = true;
+            bus.LicenseNumber = Configuration.BusCounter;
             DataSource.BusesList.Add(bus);
         }
 
-        public Bus RequestBus(long id)
+        public Bus RequestBus(Predicate<Bus> pr = null)
         {
-            Bus tem = DataSource.BusesList.Find(b => b.LicenseNumber == id);
-            if (tem != null)
-                return tem; //.Clone();
+            Bus ret = DataSource.BusesList.Find(pr);
+            if (ret != null)
+                return ret.GetPropertiesFrom<Bus,Bus>();
             else
-                throw new DO.Exceptions.DOBadBusIdException(id);
-
-
+                throw new DO.Exceptions.DOBadBusIdException(0);
         }
 
-        public void UpdateBus(Bus bus)
+        public void UpdateBusLicenseDate(DateTime licenseDate,Bus busInput)
         {
-            int indBus;
-            if (bus.LicenseNumber != null)
-            {
-                indBus = DataSource.BusesList.FindIndex(b => bus.LicenseNumber == b.LicenseNumber);
-                if (indBus == -1)
-                {
-                    throw new DO.Exceptions.DOBadBusIdException((long)bus.LicenseNumber);  // ההמרה רק כדי לבטל את הסימן שאלה
-                }
-                DataSource.BusesList[indBus] = bus;
-            }
-            //else
-            //    throw new Exception("bus doesn't exist!!");  
+            var t = from bus in DataSource.BusesList
+                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
+                    select bus;
+            t.ToList().First().LicenseDate = licenseDate;
+        }
+        public void UpdateBusKM(float kM, Bus busInput)
+        {
+            var t = from bus in DataSource.BusesList
+                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
+                    select bus;
+            t.ToList().First().KM = kM ;
+        }
+        public void UpdateBusFuel(float fuel, Bus busInput)
+        {
+            var t = from bus in DataSource.BusesList
+                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
+                    select bus;
+            t.ToList().First().Fuel = fuel;
+        }
+        public void UpdateBusStatus(status status, Bus busInput)
+        {
+            var t = from bus in DataSource.BusesList
+                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
+                    select bus;
+            t.ToList().First().Status = status;
         }
 
-        public void DeleteBus(Bus bus)
+        public void DeleteBus(Bus busInput)
         {
-            bool flage;
-
-            if (bus.LicenseNumber != null)
-            {
-                flage = DataSource.BusesList.Remove(bus);
-            }
-            else
-                throw new ArgumentNullException();
-            if (!flage)
-            {
-                throw new DO.Exceptions.DOBadBusIdException((long)bus.LicenseNumber);
-            }
+            var t = from bus in DataSource.BusesList
+                    where (bus == busInput && bus.Valid == true)
+                    select bus;
+            t.ToList().First().Valid = false;
         }
 
-        public IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null)
+        public IEnumerable<Bus> GetAllBusses()
         {
-            if (pr == null)
-                return DataSource.BusesList;
-            else
-                return from b in DataSource.BusesList
-                   where (pr(b))
-                   select b;
+            var cloneList = new List<Bus>();
+            foreach (Bus bus in DataSource.BusesList)
+                cloneList.Add(bus.GetPropertiesFrom<Bus,Bus>());
+            return cloneList;
         }
     }
 }

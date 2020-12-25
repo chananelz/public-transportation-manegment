@@ -22,16 +22,16 @@ namespace BLImp
         }
         public Bus RequestBus(long id)
         {
-            DO.Bus busDO = new DO.Bus();
-            busDO = dal.RequestBus(id);
-            BO.Bus busBO = busDO.GetPropertiesFrom<BO.Bus, DO.Bus>();
-            return busBO;
+            //DO.Bus busDO = new DO.Bus();
+            //busDO = dal.RequestBus(id);
+            //BO.Bus busBO = busDO.GetPropertiesFrom<BO.Bus, DO.Bus>();
+            return null;
         }
         public void UpdateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput)
         {
             Bus busBO = new Bus(licenseNumber, dateTime, kM, Fuel, statusInput);
             DO.Bus busDO = busBO.GetPropertiesFrom<DO.Bus, BO.Bus>();
-            dal.UpdateBus(busDO);
+            //dal.UpdateBusFuel(busDO.f);
         }
         public void DeleteBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput)
         {

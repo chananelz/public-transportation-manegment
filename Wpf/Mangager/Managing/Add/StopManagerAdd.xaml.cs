@@ -222,14 +222,15 @@ namespace Wpf.Mangager.Managing.Add
             {
                 input0 = true;
                 amount++;
-                if (amount != 3)
-                {
+               
+            }
+            if (amount != 3)
+            {
 
-                    TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-                    stopName = textRange.Text;
-                    MessageBox.Show("input submited" + textRange.Text);
-                    MyTextBox0.Document.Blocks.Clear();
-                }
+                TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
+                stopName = textRange.Text;
+                MessageBox.Show("input submited" + textRange.Text);
+                MyTextBox0.Document.Blocks.Clear();
             }
 
             else
@@ -248,14 +249,15 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     input1 = true;
                     amount++;
-                    if (amount != 3)
-                    {
-                        longitude = result;
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox2.Document.Blocks.Clear();
-                    }
+                    
                 }
-               
+                if (amount != 3)
+                {
+                    longitude = result;
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox2.Document.Blocks.Clear();
+                }
+
             }
             else
             {
@@ -272,14 +274,15 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     input2 = true;
                     amount++;
-                    if (amount != 3)
-                    {
-                        latitude = result; 
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox2.Document.Blocks.Clear();
-                    }
+                   
                 }
-                
+                if (amount != 3)
+                {
+                    latitude = result;
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox2.Document.Blocks.Clear();
+                }
+
             }
             else
             {

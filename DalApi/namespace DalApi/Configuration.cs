@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 //netanel 2
 
-namespace DS
+namespace DalApi
 {
-    static class Configuration
+    public static class Configuration
     {
 
         static int busCounter = 1000000;

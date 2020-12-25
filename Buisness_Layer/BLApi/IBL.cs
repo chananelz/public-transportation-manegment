@@ -99,7 +99,7 @@ namespace BLApi
         void UpdateUser(string userName, string password, int permission);
         void DeleteUser(string userName, string password, int permission);
         IEnumerable<User> GetAllUsers(Predicate<User> pr = null);
-        User Authinticate(string username, string password);
+        User Authinticate(string username, string password,authority au);
         //IEnumerable<User> GetAllValidUsers();
         //IEnumerable<User> GetAllUnValidUsers();
         //IEnumerable<User> GetAllUnValidManager();

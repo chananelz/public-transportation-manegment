@@ -47,14 +47,17 @@ namespace BLImp
             //var tempList = new List<DO.User>();
             //tempList = dal.GetAllUsers().ToList();
             var tempList = dal.GetAllUsers();
-            IEnumerable<User> thirdTempList = tempList.Select(user => user.GetPropertiesFrom<BO.User, DO.User>());
+            IEnumerable<User> thirdTempList = tempList.Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).ToList();
+          
             List<User> secondTempList = thirdTempList.Where(b => pr(b)).ToList();
+            if (secondTempList.Count ==0)
+                return null;
             return secondTempList.ToList();
         }
 
-        public User Authinticate(string username, string password)
+        public User Authinticate(string username, string password,authority au)
         {
-            IEnumerable<User> temp = GetAllUsers(user => user.UserName == username && user.Password == password);
+            IEnumerable<User> temp = GetAllUsers(user => user.UserName == username && user.Password == password && au == user.Permission);
             if (temp == null)
                 throw new Exception("no such user!");
             else return temp.First();

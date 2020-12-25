@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="BusFunctions.cs" />
     <Compile Include="BusTravelFunctions.cs" />
-    <Compile Include="Cloning.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="Ctor.cs" />
     <Compile Include="LineDepartureFunctions.cs" />
     <Compile Include="LineFunctions.cs" />

@@ -238,12 +238,13 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     input0 = true;
                     amount++;
-                    if (amount != 4)
-                    {
-                        number = result;
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox0.Document.Blocks.Clear();
-                    }
+                    
+                }
+                if (amount != 4)
+                {
+                    number = result;
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox0.Document.Blocks.Clear();
                 }
             }
             else
@@ -258,12 +259,13 @@ namespace Wpf.Mangager.Managing.Add
             {
                 input1 = true;
                 amount++;
-                if (amount != 4)
-                {
-                    area = textRange.Text;
-                    MessageBox.Show("input submited" + textRange.Text);
-                    MyTextBox1.Document.Blocks.Clear();
-                }
+                
+            }
+            if (amount != 4)
+            {
+                area = textRange.Text;
+                MessageBox.Show("input submited" + textRange.Text);
+                MyTextBox1.Document.Blocks.Clear();
             }
             else
             {
@@ -281,12 +283,13 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     input2 = true;
                     amount++;
-                    if (amount != 4)
-                    {
-                        firstStop = result;
-                        MessageBox.Show("input submited" + textRange);
-                        MyTextBox2.Document.Blocks.Clear();
-                    }
+                   
+                }
+                if (amount != 4)
+                {
+                    firstStop = result;
+                    MessageBox.Show("input submited" + textRange);
+                    MyTextBox2.Document.Blocks.Clear();
                 }
             }
             else
@@ -305,12 +308,13 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     input3 = true;
                     amount++;
-                    if (amount != 4)
-                    {
-                        lastStop = result;
-                        MessageBox.Show("input submited" + textRange);
-                        MyTextBox2.Document.Blocks.Clear();
-                    }
+                   
+                }
+                if (amount != 4)
+                {
+                    lastStop = result;
+                    MessageBox.Show("input submited" + textRange);
+                    MyTextBox3.Document.Blocks.Clear();
                 }
             }
             else

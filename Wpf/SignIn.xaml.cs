@@ -68,9 +68,15 @@ namespace Wpf
         {
             string password = PasswordContent.Password;
             string userName = userNameTxtBox.Text;
+            authority au;
+            if (Status == "USER")
+                au = authority.USER;
+            else
+                au = authority.CEO;
             try
             {
-                User user = bl.Authinticate(userName, password);
+
+                User user = bl.Authinticate(userName, password, au);
                 new Options().Show();
                 this.Close();
             }

@@ -123,7 +123,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
 
-            worker.RunWorkerAsync(12);
+            worker.RunWorkerAsync(5);
             return;
         }
 
@@ -226,6 +226,22 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 }
             }
         }
+        private void MyTextBox_TextChanged_4(object sender, TextChangedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            {
+                try
+                {
+                    Status_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+        }
 
         private void LicenseNumber_Click(object sender, RoutedEventArgs e)
         {
@@ -237,12 +253,13 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input0 = true;
                     amount++;
-                    if (amount != 5)
-                    {
-                        licenseNumber = result;
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox0.Document.Blocks.Clear();
-                    }
+                   
+                }
+                if (amount != 5)
+                {
+                    licenseNumber = result;
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox0.Document.Blocks.Clear();
                 }
             }
             else
@@ -270,11 +287,6 @@ namespace Wpf.Mangager.Managing.Add.myImages
             stInput = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd).Text;
             string[] inputValues = stInput.Split('/');
 
-            if (inputValues.Length != 5)
-            {
-                MessageBox.Show("wrong input!!!!");
-                MyTextBox1.Document.Blocks.Clear();
-            }
 
             stDay = inputValues[0];
             stMonth = inputValues[1];
@@ -286,13 +298,14 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input1 = true;
                     amount++;
-                    if (amount != 4)
-                    {
-                        DateTime temp = new DateTime(year, month, day);
-                        licenseDate = temp;
-                        MessageBox.Show("input submited" + stInput);
-                        MyTextBox1.Document.Blocks.Clear();
-                    }
+                   
+                }
+                if (amount != 5)
+                {
+                    DateTime temp = new DateTime(year, month, day);
+                    licenseDate = temp;
+                    MessageBox.Show("input submited" + stInput);
+                    MyTextBox1.Document.Blocks.Clear();
                 }
             }
             else
@@ -312,12 +325,13 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input2 = true;
                     amount++;
-                    if (amount != 5)
-                    {
-                        MessageBox.Show("input submited" + result);
-                        kM = result;
-                        MyTextBox2.Document.Blocks.Clear();
-                    }
+                    
+                }
+                if (amount != 5)
+                {
+                    MessageBox.Show("input submited" + result);
+                    kM = result;
+                    MyTextBox2.Document.Blocks.Clear();
                 }
             }
             else
@@ -337,12 +351,13 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input3 = true;
                     amount++;
-                    if (amount != 5)
-                    {
-                        fuel = result;
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox3.Document.Blocks.Clear();
-                    }
+                    
+                }
+                if (amount != 5)
+                {
+                    fuel = result;
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox3.Document.Blocks.Clear();
                 }
             }
             else
@@ -361,12 +376,13 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input4 = true;
                     amount++;
-                    if (amount != 5)
-                    {
-                        statusInput = result;
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox3.Document.Blocks.Clear();
-                    }
+                    
+                }
+                if (amount != 5)
+                {
+                    statusInput = result;
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox3.Document.Blocks.Clear();
                 }
             }
             else

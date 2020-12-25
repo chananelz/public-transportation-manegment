@@ -10,10 +10,13 @@ namespace DalApi
     public interface IDal
     {
         void CreateBus(Bus bus);
-        Bus RequestBus(long Id);  //check this...
-        void UpdateBus(Bus bus);
-        void DeleteBus(Bus bus);
-        IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
+        Bus RequestBus(Predicate<Bus> pr = null);
+        void UpdateBusLicenseDate(DateTime licenseDate, Bus busInput);
+        void UpdateBusKM(float kM, Bus busInput);
+        void UpdateBusFuel(float fuel, Bus busInput);
+        void UpdateBusStatus(status status, Bus busInput);
+        void DeleteBus(Bus busInput);
+        IEnumerable<Bus> GetAllBusses();
 
 
         void CreateBusTravel(BusTravel bus_Travel);
