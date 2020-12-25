@@ -17,7 +17,12 @@ namespace BLApi
         IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
         //IEnumerable<Bus> GetAllValidBuses();
         //IEnumerable<Bus> GetAllUnValidBuses();
-
+        //IEnumerable<Bus> GetAllTravelingBuses();
+        //IEnumerable<Bus> GetAllReadyForDriveBuses();
+        //IEnumerable<Bus> GetAllTreatingBuses();
+        //IEnumerable<Bus> GetAllRefulingBuses();
+        //int GetTotalTravel();
+        
 
 
 
@@ -28,9 +33,10 @@ namespace BLApi
         //IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         //IEnumerable<BusTravel> GetAllValidBusTravels();
         //IEnumerable<BusTravel> GetAllUnValidBusTravels();
-
-
-
+        //TimeSpan GetAvregeLate();
+        //TimeSpan GetTimeUntilEnd(int id);
+        //TimeSpan GetTimeUntilNextStop(int id);
+        //TimeSpan GetTimeUntilSpecificStop(int id);
 
         void CreateLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
         LineDeparture RequestLineDeparture(long id);
@@ -40,6 +46,9 @@ namespace BLApi
         //IEnumerable<LineDeparture> GetAllValidLineDeparture();
         //IEnumerable<LineDeparture> GetAllUnValidLineDeparture();
 
+
+
+
         void CreateLine(long number, string area, int firstStop, int lastStop);
         Line RequestLine(long id);
         void UpdateLine(long number, string area, int firstStop, int lastStop);
@@ -47,7 +56,11 @@ namespace BLApi
         IEnumerable<Line> GetAllLines(Predicate<Line> pr = null);
         //IEnumerable<Line> GetAllValidLines();
         //IEnumerable<Line> GetAllUnValidLines();
-
+        //IEnumerable<stop> GetAllStopInSpecificLine();
+        //IEnumerable<stop> GetAllLineThatEndInSpecificStop();
+        //IEnumerable<stop> GetAllLineThatBeginInSpecificStop();
+        //IEnumerable<Line> GetAlLineSortByStope();
+        //IEnumerable<Line> GetAlLineSortByDistance();
 
 
 
@@ -56,16 +69,18 @@ namespace BLApi
         void UpdateLineStation(long code, long number);
         void DeleteLineStation(long code, long number);
         //IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
-        //IEnumerable<LineStation> GetAllBusTravels();
-        //IEnumerable<LineStation> GetAllBusTravels();
+        //IEnumerable<LineStation> GetAllValidLineStations();
+        //IEnumerable<LineStation> GetAllUnValidLineStation();
+        //int GetAllUnValidLineStation();
+
 
         void CreateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
         SequentialStopInfo RequestSequentialStopInfo(long fid, long sid);
         void UpdateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
         void DeleteSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
         //IEnumerable<SequentialStopInfo> GetAll_StopsInfo(Predicate<SequentialStopInfo> pr = null);
-        //IEnumerable<Bus> GetAllBusTravels();
-        //IEnumerable<Bus> GetAllBusTravels();
+        //IEnumerable<SequentialStopInfo> GetAllValidSequentialStopInfo();
+        //IEnumerable<SequentialStopInfo> GetAllUnValidSequentialStopInfo();
 
 
 
@@ -74,9 +89,10 @@ namespace BLApi
         void UpdateStop(double latitude, double longitude, string stopName);
         void DeleteStop(double latitude, double longitude, string stopName);
         IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
-        //IEnumerable<Bus> GetAllBusTravels();
-        //IEnumerable<Bus> GetAllBusTravels();
-
+        //IEnumerable<Stop> GetAllValidStop();
+        //IEnumerable<Stop> GetAllUnValidStop();
+        //IEnumerable<Stop> GetAllUnValidStop();
+        //IEnumerable<Stop> GetAllStopeInSpecificArea();
 
         void CreateUser(string userName, string password, int permission);
         User RequestUser(string id);
@@ -84,8 +100,10 @@ namespace BLApi
         void DeleteUser(string userName, string password, int permission);
         IEnumerable<User> GetAllUsers(Predicate<User> pr = null);
         User Authinticate(string username, string password);
-        //IEnumerable<Bus> GetAllBusTravels();
-        //IEnumerable<Bus> GetAllBusTravels();
+        //IEnumerable<User> GetAllValidUsers();
+        //IEnumerable<User> GetAllUnValidUsers();
+        //IEnumerable<User> GetAllUnValidManager();
+        //IEnumerable<User> GetAllUnValidUser()
 
 
         void CreateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
@@ -93,7 +111,8 @@ namespace BLApi
         void UpdateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
         void DeleteUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
         //IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
-        //IEnumerable<Bus> GetAllBusTravels();
-        //IEnumerable<Bus> GetAllBusTravels();
+        //IEnumerable<UserTravel> GetAllUnValidUserTravels();
+        //IEnumerable<UserTravel> GetAllValidUserTravels();
+        //TimeSpan GeTimeUntilArrival();
     }
 }
