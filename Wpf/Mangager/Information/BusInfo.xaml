@@ -1,0 +1,69 @@
+﻿<Window x:Class="Wpf.Mangager.Information.BusInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf.Mangager.Information"
+        mc:Ignorable="d"
+        Title="BusInfo" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="FirstPage">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Content ="License number:" Name ="licenseNumber"  Grid.Column="0" Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+        <Label Content ="License date:"   Name="licenseDate"     Grid.Column="0" Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="Km:"             Name="km"              Grid.Column="0" Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="Fuel:"           Name="fuel"            Grid.Column="0" Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="Status:"         Name="status"          Grid.Column="0" Grid.Row="5"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+
+        <Grid x:Name="busInfo"  Grid.Row ="1" Grid.Column="1" Grid.RowSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content ="{Binding LicenseNumber}" Name ="licenseNumber1"  Grid.Row="0"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+            <Label Content ="{Binding LicenseDate}"   Name="licenseDate1"     Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding KM}"            Name="km1"              Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding Fuel}"          Name="fuel1"            Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding Status}"        Name="status1"          Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        </Grid>
+
+        <Button Grid.Row="6" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/home.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button Grid.Row="6" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/goBack.png"/>
+            </Button.Background>
+        </Button>
+
+
+        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="7" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
+        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="7" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+
+
+        <Grid.Background>
+            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+        </Grid.Background>
+    </Grid>
+</Window>

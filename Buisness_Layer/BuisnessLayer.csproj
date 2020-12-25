@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92103FE0-C775-44B1-ADD6-98973B2E610C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Buisness_Layer</RootNamespace>
+    <AssemblyName>Buisness_Layer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLApi\Factory.cs" />
+    <Compile Include="BLApi\IBL.cs" />
+    <Compile Include="BLImp\Classes\BL.cs" />
+    <Compile Include="BLImp\Classes\BusImp.cs" />
+    <Compile Include="BLImp\Classes\BusTravelImp.cs" />
+    <Compile Include="BLImp\Classes\LineDepartureImp.cs" />
+    <Compile Include="BLImp\Classes\LineImp.cs" />
+    <Compile Include="BLImp\Classes\LineStationImp.cs" />
+    <Compile Include="BLImp\Classes\SequentialStopInfoImp.cs" />
+    <Compile Include="BLImp\Classes\StopImp.cs" />
+    <Compile Include="BLImp\Classes\UserImp.cs" />
+    <Compile Include="BLImp\Classes\UserTravel.cs" />
+    <Compile Include="BLImp\Threads\MovingBus.cs" />
+    <Compile Include="BO\Bus.cs" />
+    <Compile Include="BO\BusTravel.cs" />
+    <Compile Include="BO\Exceptions.cs" />
+    <Compile Include="BO\Limited\LimitedBus.cs" />
+    <Compile Include="BO\Limited\LimitedStop.cs" />
+    <Compile Include="BO\Line.cs" />
+    <Compile Include="BO\LineDeparture.cs" />
+    <Compile Include="BO\LineStation.cs" />
+    <Compile Include="BO\SequentialStopInfo.cs" />
+    <Compile Include="BO\Stop.cs" />
+    <Compile Include="BO\User.cs" />
+    <Compile Include="BO\UserTravel.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DalApi\DalApi.csproj">
+      <Project>{d46f36de-f9fb-4058-b98b-7564c3846778}</Project>
+      <Name>DalApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

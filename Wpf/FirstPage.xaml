@@ -1,0 +1,45 @@
+﻿<Window x:Class="Wpf.FirstPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf"
+        mc:Ignorable="d"
+        Title="FirstPage" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="FirstPage1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Welcome to Netanel and Chananel " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Content="Bus system:"               HorizontalAlignment="Center" VerticalAlignment="top"    Grid.Row="1" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Name="user" Grid.Row="0" Content="press here if you are a user"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
+                <Button.Background>
+                    <ImageBrush ImageSource="myImages/Button.png"/>
+                </Button.Background>
+            </Button>
+            <Button Name="manager" Grid.Row="1"  Content="press here if you are a manager"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="manager_Click" Foreground="Red">
+                <Button.Background>
+                    <ImageBrush ImageSource="myImages/Button.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+
+        <Image x:Name="movingBus"   Grid.Row="3" Width="50" Source="myImages/Bus.png"                        Margin="740,0,0,0"/>
+        <Image x:Name="stopSign"    Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+
+        <Grid.Background>
+            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+        </Grid.Background>
+    </Grid>
+</Window>

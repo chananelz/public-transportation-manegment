@@ -1,0 +1,49 @@
+﻿<Window x:Class="dotNet5781_03_B_6077_5711.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dotNet5781_03_B_6077_5711"
+        mc:Ignorable="d"
+        Title="Assignment_3_B" Height="450" Width="1000">
+    <Grid Name="Assignment_3_B">
+        <!-- row and colum definition  -->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Frame  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4"  Name="Main">
+
+        </Frame>
+        <!-- textbox button and image Definitions -->
+
+        <TextBox Foreground="#FFACACAC" x:Name="project_Name" HorizontalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Text="N.C. Busses" VerticalAlignment="Center"  TextChanged="TextBox_TextChanged" FontSize="35" Opacity="100" FontFamily="Showcard Gothic" FontWeight="Bold" BorderThickness="0" Grid.Column="1"  Grid.ColumnSpan="2" />
+        <TextBox Foreground="Red" x:Name="Menu" HorizontalAlignment="Center" Background="Transparent" TextWrapping="Wrap" Text="MENU:" VerticalAlignment="Center"  TextChanged="TextBox_TextChanged" FontSize="35" Opacity="100" FontFamily="Showcard Gothic" FontWeight="Bold" BorderThickness="0" />
+
+        <Image x:Name="movingBus" HorizontalAlignment="Stretch"  Grid.Column="3" Grid.Row="3"  Source="myImages/Bus.png" Margin="159.667,0,0,0" />
+        <Image x:Name="stopSign"  Grid.Column="0" HorizontalAlignment="Left"  Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" Margin="0,0.333,0,-0.333"/>
+       
+        
+        
+        <Button Content="VALID BUSES"  Background="Transparent" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" FontSize="30" Opacity="100" FontFamily="Showcard Gothic" FontWeight="Bold" BorderThickness="0" Click="Button_Click"/>
+        <Button Content="ADD A NEW BUS"  Background="Transparent" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" FontSize="30" Opacity="100" FontFamily="Showcard Gothic" FontWeight="Bold" BorderThickness="0" Click="Add_New_Bus_Button"/>
+
+
+
+
+
+        <Grid.Background>
+            <ImageBrush Opacity ="1" ImageSource="myImages/BusBackground.png"/>
+        </Grid.Background>
+    </Grid>
+</Window>

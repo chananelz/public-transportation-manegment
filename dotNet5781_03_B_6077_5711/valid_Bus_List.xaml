@@ -1,0 +1,43 @@
+﻿<Page x:Class="dotNet5781_03_B_6077_5711.valid_Bus_List"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:dotNet5781_03_B_6077_5711"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="valid_Bus_List">
+    <!-- row and colum definition  -->
+    <Grid Name="m_valid_Bus_List" MouseMove="initialization" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="50*"/>
+            <RowDefinition  Height="200*"/>
+            <RowDefinition  Height="50*"/>
+            <RowDefinition  Height="50*"/>
+        </Grid.RowDefinitions>
+
+        <!-- textbox button and image Definitions -->
+        <ListBox BorderThickness="0" ItemsSource="{Binding}" Background="transparent" x:Name="lbBusLineStations" HorizontalAlignment="Stretch" SelectionChanged="ListBox_SelectionChanged"  Foreground="#FF0E22F6" FontSize="12" FontFamily="Goudy Stout"  FontStyle="Italic" FontWeight="ExtraBlack"  Grid.ColumnSpan="2" Margin="1,64,1,1.6" Grid.RowSpan="2"/>
+        <ComboBox BorderThickness="0" Background="Brown" x:Name="busList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" MaxWidth="200" HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15" MouseDoubleClick="dClick" MouseMove="refresh"/>
+        <TextBox BorderThickness="0"   x:Name="BusLineNumbers"  Background="Transparent"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Text="Bus Line Numbers:" TextChanged="TextBox_TextChanged_1" FontSize="24" FontFamily="Impact" FontStretch="ExtraExpanded" Foreground="#FFFF0017"/>
+        <TextBox BorderThickness="0"  Grid.Column="2" HorizontalAlignment="Stretch" Background="Transparent"  Grid.Row="0" TextWrapping="Wrap" Text="Area:" VerticalAlignment="Center" Width="120" FontSize="24" FontFamily="Impact" FontStretch="ExtraExpanded" Foreground="Red"/>
+        <TextBox BorderThickness="0"   x:Name="areaTextChange" Foreground="Red" FontFamily="Impact" Grid.Column="3" Background="Transparent" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextChanged="TextBox_TextChanged_2" FontSize="24" />
+
+        <Button Background="Transparent" Content="GET BUS INFORMATION" HorizontalAlignment="Stretch"  Grid.Row="2" VerticalAlignment="Stretch"  FontSize="24" FontFamily="Impact" FontStretch="ExtraExpanded" Foreground="Red" Click="Get_Info" Grid.ColumnSpan="2" />
+        <Button Background="Transparent" Content="START TRAVEL" HorizontalAlignment="Stretch"  Grid.Row="3" VerticalAlignment="Stretch"  FontSize="24" FontFamily="Impact" FontStretch="ExtraExpanded" Foreground="Red" Click="Start_Info" Grid.ColumnSpan="2" />
+        <Button Background="Transparent" Content="Refuling" Grid.Column="2" HorizontalAlignment="Stretch"  Grid.Row="2" VerticalAlignment="Stretch"  FontSize="24" FontFamily="Impact" FontStretch="ExtraExpanded" Foreground="Red" Click="Refuling_Button" Grid.ColumnSpan="4" />
+        <Button Background="Transparent" Content="Treatment" Grid.Column="2" HorizontalAlignment="Stretch"  Grid.Row="3" VerticalAlignment="Stretch"  FontSize="24" FontFamily="Impact" FontStretch="ExtraExpanded" Foreground="Red" Click="Treatment_Button" Grid.ColumnSpan="4" />
+        <ListBox x:Name="NoValideBus" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Stretch" FontStretch="ExtraExpanded" Grid.Row="1" VerticalAlignment="Stretch"  Background="Transparent" Margin="0,67.2,0,63.6" Grid.RowSpan="2" Foreground="Red" FontFamily="Impact" FontSize="24"/>
+        <Label Content="not valid Buses:" Grid.Column="2" HorizontalAlignment="Left" Margin="18,5,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="207" Height="51" Foreground="Red" FontFamily="Impact" FontSize="24"/>
+
+        <Grid.Background>
+            <ImageBrush Opacity ="0.5" ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
+    </Grid>
+</Page>
