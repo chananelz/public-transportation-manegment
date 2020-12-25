@@ -53,7 +53,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             if (worker.IsBusy != true)
-                worker.RunWorkerAsync(12);
+                worker.RunWorkerAsync(4);
         }
 
 
@@ -73,10 +73,10 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 int length = (int)e.Argument;
 
-                while (amount != 7)
+                while (amount != 4)
                 {
                     System.Threading.Thread.Sleep(500);
-                    worker.ReportProgress(amount * 200 / (length + 1));
+                    worker.ReportProgress(amount * 100 / (length));
                 }
             }
         }

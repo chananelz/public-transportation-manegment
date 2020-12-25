@@ -42,8 +42,82 @@ namespace Wpf.Mangager.Managing.Add
         {
             InitializeComponent();
             busFunc();
+            ProgressBar();
 
         }
+
+
+        public void ProgressBar()
+        {
+            worker = new BackgroundWorker();
+            worker.DoWork += Worker_DoWor;
+            worker.ProgressChanged += Worker_ProgressChanged;
+            worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+            worker.WorkerReportsProgress = true;
+            worker.WorkerSupportsCancellation = true;
+            if (worker.IsBusy != true)
+                worker.RunWorkerAsync(3);
+        }
+
+
+
+
+
+
+        private void Worker_DoWor(object sender, DoWorkEventArgs e)
+        {
+
+            if (worker.CancellationPending)
+            {
+                e.Cancel = true;
+                worker.ReportProgress(0);
+            }
+            else
+            {
+                int length = (int)e.Argument;
+
+                while (amount != 3)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    worker.ReportProgress(amount * 100 / (length));
+                }
+            }
+        }
+
+
+        private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+            int progress = e.ProgressPercentage;
+
+            resultLabel.Content = (progress + "%");
+            resultProgressBar.Value = progress;
+        }
+
+
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                MessageBox.Show("work cancelled");
+            }
+
+            input0 = false;
+            input1 = false;
+            input2 = false;
+            MyTextBox0.Document.Blocks.Clear();
+            MyTextBox1.Document.Blocks.Clear();
+            MyTextBox2.Document.Blocks.Clear();
+
+            resultProgressBar.Value = 0;
+            resultLabel.Content = (0 + "%");
+            amount = 0;
+
+            worker.RunWorkerAsync(12);
+            return;
+        }
+
 
         private void busFunc()
         {
