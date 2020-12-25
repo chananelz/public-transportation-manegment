@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using System.ComponentModel;
+using BLApi;
 
 namespace Wpf.Mangager.Managing.Add
 {
@@ -28,15 +29,16 @@ namespace Wpf.Mangager.Managing.Add
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
-        bool input3 = false;
-        bool input4 = false;
-        bool input5 = false;
-        bool input6 = false;
+
 
         int amount = 0;
         BackgroundWorker worker;
 
 
+        double latitude;
+        double longitude;
+        string stopName;
+        BLApi.IBL bl;
 
 
 
@@ -45,6 +47,8 @@ namespace Wpf.Mangager.Managing.Add
         {
             InitializeComponent();
             busFunc();
+            bl = BLApi.Factory.GetBL("1");
+
             ProgressBar();
 
         }
@@ -59,7 +63,7 @@ namespace Wpf.Mangager.Managing.Add
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             if (worker.IsBusy != true)
-                worker.RunWorkerAsync(4);
+                worker.RunWorkerAsync(3);
 
         }
 
@@ -118,6 +122,8 @@ namespace Wpf.Mangager.Managing.Add
             resultLabel.Content = (0 + "%");
             amount = 0;
 
+            bl.CreateStop(latitude, longitude, stopName);
+
             worker.RunWorkerAsync(12);
             return;
         }
@@ -172,26 +178,11 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
+       
+
         private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-            {
-                try
-                {
-                    Code_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-            }
-        }
-
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -205,10 +196,9 @@ namespace Wpf.Mangager.Managing.Add
                 }
             }
         }
-
-        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -222,6 +212,8 @@ namespace Wpf.Mangager.Managing.Add
                 }
             }
         }
+
+
         private void Name_Click(object sender, RoutedEventArgs e)
         {
 
@@ -234,6 +226,7 @@ namespace Wpf.Mangager.Managing.Add
                 {
 
                     TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
+                    stopName = textRange.Text;
                     MessageBox.Show("input submited" + textRange.Text);
                     MyTextBox0.Document.Blocks.Clear();
                 }
@@ -244,45 +237,20 @@ namespace Wpf.Mangager.Managing.Add
                 MessageBox.Show("wrong input!!!!");
             }
         }
-        private void Code_Click(object sender, RoutedEventArgs e)
+     
+        private void Longitude_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
             int result = 0;
             if (int.TryParse(textRange.Text, out result))
             {
-
-                if (!input0)
+                if (!input1)
                 {
                     input1 = true;
                     amount++;
                     if (amount != 3)
                     {
-
-                        MessageBox.Show("input submited" + result);
-                        MyTextBox1.Document.Blocks.Clear();
-                    }
-                }
-                MessageBox.Show("input submited" + result);
-                MyTextBox1.Document.Blocks.Clear();
-            }
-            else
-            {
-                MessageBox.Show("wrong input!!!!");
-            }
-        }
-        private void Longitude_Click(object sender, RoutedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
-            {
-                if (!input2)
-                {
-                    input1 = true;
-                    amount++;
-                    if (amount != 3)
-                    {
-
+                        longitude = result;
                         MessageBox.Show("input submited" + result);
                         MyTextBox2.Document.Blocks.Clear();
                     }
@@ -296,19 +264,19 @@ namespace Wpf.Mangager.Managing.Add
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             int result = 0;
             if (int.TryParse(textRange.Text, out result))
             {
                 if (!input2)
                 {
-                    input1 = true;
+                    input2 = true;
                     amount++;
                     if (amount != 3)
                     {
-
+                        latitude = result; 
                         MessageBox.Show("input submited" + result);
-                        MyTextBox3.Document.Blocks.Clear();
+                        MyTextBox2.Document.Blocks.Clear();
                     }
                 }
                 

@@ -102,7 +102,23 @@ namespace Wpf.Mangager.Managing
             {
                 try
                 {
-                    Stops_Click(sender, e);
+                    FirstStop_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+        }
+        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            {
+                try
+                {
+                    LastStop_Click(sender, e); 
                 }
                 catch (Exception ex)
                 {
@@ -133,11 +149,17 @@ namespace Wpf.Mangager.Managing
             MessageBox.Show("input submited" + textRange.Text);
             MyTextBox1.Document.Blocks.Clear();
         }
-        private void Stops_Click(object sender, RoutedEventArgs e)
+        private void FirstStop_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             MessageBox.Show("input submited" + textRange);
             MyTextBox2.Document.Blocks.Clear();
+        }
+        private void LastStop_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            MessageBox.Show("input submited" + textRange);
+            MyTextBox3.Document.Blocks.Clear();
         }
     }
 }

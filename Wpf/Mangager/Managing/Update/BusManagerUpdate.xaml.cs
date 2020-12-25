@@ -20,10 +20,16 @@ namespace Wpf.Mangager.Managing
     /// Interaction logic for BusManager.xaml
     /// </summary>
     public partial class BusManager : Window
-    { 
+    {
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
         public BO.Bus managingBus;
+
+        long licenseNumber;
+        DateTime licenseDate;
+        float kM;
+        float fuel;
+        int statusInput;
 
         public BusManager(BO.Bus bus)
         {
@@ -139,7 +145,7 @@ namespace Wpf.Mangager.Managing
             int result = 0;
             if (int.TryParse(textRange.Text, out result))
             {
-
+                licenseNumber = result;
                 MessageBox.Show("input submited" + result);
                 MyTextBox0.Document.Blocks.Clear();
             }
@@ -179,6 +185,7 @@ namespace Wpf.Mangager.Managing
             if (int.TryParse(stDay, out day) && int.TryParse(stMonth, out month) && int.TryParse(stYear, out year))
             {
                 DateTime temp = new DateTime(year, month, day);
+                licenseDate = temp;
                 MessageBox.Show("input submited" + stInput);
                 MyTextBox1.Document.Blocks.Clear();
             }
@@ -194,7 +201,7 @@ namespace Wpf.Mangager.Managing
             float result = 0;
             if (float.TryParse(textRange.Text, out result) && result > 0)
             {
-
+                kM = result;
                 MessageBox.Show("input submited" + result);
                 MyTextBox2.Document.Blocks.Clear();
             }
@@ -210,13 +217,30 @@ namespace Wpf.Mangager.Managing
             float result = 0;
             if (float.TryParse(textRange.Text, out result) && result > 0)
             {
-
+                fuel = result;
                 MessageBox.Show("input submited" + result);
                 MyTextBox3.Document.Blocks.Clear();
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
+            }
+        }
+        private void Status_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
+            int result = 0;
+            if (int.TryParse(textRange.Text, out result) && result > 0)
+            {
+                statusInput = result;
+                MessageBox.Show("input submited" + result);
+                MyTextBox3.Document.Blocks.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("wrong input!!!!");
+                MyTextBox3.Document.Blocks.Clear();
             }
         }
     }

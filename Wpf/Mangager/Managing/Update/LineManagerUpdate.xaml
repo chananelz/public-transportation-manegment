@@ -23,6 +23,8 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
 
         </Grid.ColumnDefinitions>
 
@@ -31,31 +33,35 @@
         <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed" />
         <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Name="MyTextBox1"  TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
         <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Name="MyTextBox3" TextChanged="MyTextBox_TextChanged_3" FontSize="18" FontFamily="Bernard MT Condensed"/>
+
 
         <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
         <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Area" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
         <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Text="Stops" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Text="Last Stop" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
 
 
 
         <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Number_Click" />
         <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Area_Click"/>
-        <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Stops_Click" />
+        <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="FirstStop_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="LastStop_Click" />
 
 
 
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/home.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
             </Button.Background>
         </Button>
-        <Image x:Name="movingBus"   Grid.Column="5"  Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="83,0,0,0" />
+        <Image x:Name="movingBus"   Grid.Column="6"  Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="60,0,0,0"  />
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
 

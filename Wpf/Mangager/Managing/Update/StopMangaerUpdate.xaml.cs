@@ -79,26 +79,12 @@ namespace Wpf.Mangager.Managing
             }
         }
 
+       
+       
+
         private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-            {
-                try
-                {
-                    Code_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-            }
-        }
-
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -113,9 +99,9 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -135,21 +121,7 @@ namespace Wpf.Mangager.Managing
             MessageBox.Show("input submited" + textRange.Text);
             MyTextBox0.Document.Blocks.Clear();
         }
-        private void Code_Click(object sender, RoutedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
-            {
-
-                MessageBox.Show("input submited" + result);
-                MyTextBox1.Document.Blocks.Clear();
-            }
-            else
-            {
-                MessageBox.Show("wrong input!!!!");
-            }
-        }
+       
         private void Longitude_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
@@ -167,13 +139,13 @@ namespace Wpf.Mangager.Managing
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             int result = 0;
             if (int.TryParse(textRange.Text, out result))
             {
 
                 MessageBox.Show("input submited" + result);
-                MyTextBox3.Document.Blocks.Clear();
+                MyTextBox2.Document.Blocks.Clear();
             }
             else
             {

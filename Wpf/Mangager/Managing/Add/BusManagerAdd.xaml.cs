@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using System.ComponentModel;
+using BLApi;
 
 
 namespace Wpf.Mangager.Managing.Add.myImages
@@ -29,18 +30,25 @@ namespace Wpf.Mangager.Managing.Add.myImages
         bool input1 = false;
         bool input2 = false;
         bool input3 = false;
+        bool input4 = false;
+
+        long licenseNumber;
+        DateTime licenseDate;
+        float kM;
+        float fuel;
+        int statusInput;
 
         int amount = 0;
         BackgroundWorker worker;
 
-
+        BLApi.IBL bl;
 
         public BusManagerAdd()
         {
             InitializeComponent();
             busFunc();
             ProgressBar();
-
+            bl = BLApi.Factory.GetBL("1");
 
         }
 
@@ -53,7 +61,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             if (worker.IsBusy != true)
-                worker.RunWorkerAsync(4);
+                worker.RunWorkerAsync(5);
         }
 
 
@@ -73,7 +81,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 int length = (int)e.Argument;
 
-                while (amount != 4)
+                while (amount != 5)
                 {
                     System.Threading.Thread.Sleep(500);
                     worker.ReportProgress(amount * 100 / (length));
@@ -112,6 +120,8 @@ namespace Wpf.Mangager.Managing.Add.myImages
             resultProgressBar.Value = 0;
             resultLabel.Content = (0 + "%");
             amount = 0;
+
+            bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
 
             worker.RunWorkerAsync(12);
             return;
@@ -220,15 +230,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
         private void LicenseNumber_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            long result = 0;
+            if (long.TryParse(textRange.Text, out result))
             {
                 if (!input0)
                 {
                     input0 = true;
                     amount++;
-                    if (amount != 4)
+                    if (amount != 5)
                     {
+                        licenseNumber = result;
                         MessageBox.Show("input submited" + result);
                         MyTextBox0.Document.Blocks.Clear();
                     }
@@ -259,7 +270,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             stInput = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd).Text;
             string[] inputValues = stInput.Split('/');
 
-            if (inputValues.Length != 3)
+            if (inputValues.Length != 5)
             {
                 MessageBox.Show("wrong input!!!!");
                 MyTextBox1.Document.Blocks.Clear();
@@ -278,6 +289,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     if (amount != 4)
                     {
                         DateTime temp = new DateTime(year, month, day);
+                        licenseDate = temp;
                         MessageBox.Show("input submited" + stInput);
                         MyTextBox1.Document.Blocks.Clear();
                     }
@@ -300,9 +312,10 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input2 = true;
                     amount++;
-                    if (amount != 4)
+                    if (amount != 5)
                     {
                         MessageBox.Show("input submited" + result);
+                        kM = result;
                         MyTextBox2.Document.Blocks.Clear();
                     }
                 }
@@ -324,8 +337,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     input3 = true;
                     amount++;
-                    if (amount != 4)
+                    if (amount != 5)
                     {
+                        fuel = result;
                         MessageBox.Show("input submited" + result);
                         MyTextBox3.Document.Blocks.Clear();
                     }
@@ -336,6 +350,30 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 MessageBox.Show("wrong input!!!!");
                 MyTextBox3.Document.Blocks.Clear();
             }
-}
+        }
+        private void Status_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
+            int result = 0;
+            if (int.TryParse(textRange.Text, out result) && result > 0)
+            {
+                if (!input4)
+                {
+                    input4 = true;
+                    amount++;
+                    if (amount != 5)
+                    {
+                        statusInput = result;
+                        MessageBox.Show("input submited" + result);
+                        MyTextBox3.Document.Blocks.Clear();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("wrong input!!!!");
+                MyTextBox3.Document.Blocks.Clear();
+            }
+        }
     }
 }

@@ -31,9 +31,17 @@ namespace Wpf.Mangager.Managing.Add
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
+        bool input3 = false;
+
+        long number;
+        string area;
+        int firstStop;
+        int lastStop;
 
         int amount = 0;
         BackgroundWorker worker;
+        
+        BLApi.IBL bl;
 
 
 
@@ -42,6 +50,7 @@ namespace Wpf.Mangager.Managing.Add
         {
             InitializeComponent();
             busFunc();
+            bl = BLApi.Factory.GetBL("1");
             ProgressBar();
 
         }
@@ -56,7 +65,7 @@ namespace Wpf.Mangager.Managing.Add
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             if (worker.IsBusy != true)
-                worker.RunWorkerAsync(3);
+                worker.RunWorkerAsync(4);
         }
 
 
@@ -114,7 +123,10 @@ namespace Wpf.Mangager.Managing.Add
             resultLabel.Content = (0 + "%");
             amount = 0;
 
-            worker.RunWorkerAsync(12);
+            bl.CreateLine(number, area, firstStop, lastStop);
+
+
+            worker.RunWorkerAsync(3);
             return;
         }
 
@@ -190,7 +202,23 @@ namespace Wpf.Mangager.Managing.Add
             {
                 try
                 {
-                    Stops_Click(sender, e);
+                    FirstStop_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+        }
+        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            {
+                try
+                {
+                    LastStop_Click(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -210,9 +238,9 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     input0 = true;
                     amount++;
-                    if (amount != 3)
+                    if (amount != 4)
                     {
-
+                        number = result;
                         MessageBox.Show("input submited" + result);
                         MyTextBox0.Document.Blocks.Clear();
                     }
@@ -230,40 +258,65 @@ namespace Wpf.Mangager.Managing.Add
             {
                 input1 = true;
                 amount++;
-                if (amount != 3)
+                if (amount != 4)
                 {
-
+                    area = textRange.Text;
                     MessageBox.Show("input submited" + textRange.Text);
                     MyTextBox1.Document.Blocks.Clear();
                 }
             }
-
             else
             {
                 MessageBox.Show("wrong input!!!!");
             }
-            
+
         }
-        private void Stops_Click(object sender, RoutedEventArgs e)
+        private void FirstStop_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (!input2)
+            int result = 0;
+            if (int.TryParse(textRange.Text, out result))
             {
-                input2 = true;
-                amount++;
-                if (amount != 3)
+                if (!input2)
                 {
-                    MessageBox.Show("input submited" + textRange);
-                    MyTextBox2.Document.Blocks.Clear();
+                    input2 = true;
+                    amount++;
+                    if (amount != 4)
+                    {
+                        firstStop = result;
+                        MessageBox.Show("input submited" + textRange);
+                        MyTextBox2.Document.Blocks.Clear();
+                    }
                 }
             }
-
             else
             {
                 MessageBox.Show("wrong input!!!!");
             }
+        }
 
-            
+        private void LastStop_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            int result = 0;
+            if (int.TryParse(textRange.Text, out result))
+            {
+                if (!input3)
+                {
+                    input3 = true;
+                    amount++;
+                    if (amount != 4)
+                    {
+                        lastStop = result;
+                        MessageBox.Show("input submited" + textRange);
+                        MyTextBox2.Document.Blocks.Clear();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("wrong input!!!!");
+            }
         }
     }
 }
