@@ -11,12 +11,14 @@ namespace DalApi
     {
         void CreateBus(Bus bus);
         Bus RequestBus(Predicate<Bus> pr = null);
-        void UpdateBusLicenseDate(DateTime licenseDate, Bus busInput);
-        void UpdateBusKM(float kM, Bus busInput);
-        void UpdateBusFuel(float fuel, Bus busInput);
-        void UpdateBusStatus(status status, Bus busInput);
-        void DeleteBus(Bus busInput);
+        void UpdateBusKM(float kM, long licenseNumber);
+
+        void UpdateBusFuel(float fuel, long licenseNumber);
+        void UpdateBusStatus(int status, long licenseNumber);
+        Bus GetBus(long licenseNumber);
+        void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses();
+
 
 
         void CreateBusTravel(BusTravel bus_Travel);

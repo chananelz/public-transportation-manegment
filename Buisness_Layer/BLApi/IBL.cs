@@ -11,9 +11,11 @@ namespace BLApi
     public interface IBL
     {
         void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput);
-        Bus RequestBus(long id);
-        void UpdateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput);
-        void DeleteBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput);
+        Bus RequestBus(Predicate<Bus> pr);
+        void UpdateBusKM(float kM, long licenseNumber);
+        void UpdateBusFuel(float fuel, long licenseNumber);
+        void UpdateBusStatus(int status, long licenseNumber); 
+        void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
         //IEnumerable<Bus> GetAllValidBuses();
         //IEnumerable<Bus> GetAllUnValidBuses();
@@ -22,7 +24,9 @@ namespace BLApi
         //IEnumerable<Bus> GetAllTreatingBuses();
         //IEnumerable<Bus> GetAllRefulingBuses();
         //int GetTotalTravel();
-        
+
+     
+
 
 
 

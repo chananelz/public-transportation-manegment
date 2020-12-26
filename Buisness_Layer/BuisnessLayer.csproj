@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BLApi\Factory.cs" />
     <Compile Include="BLApi\IBL.cs" />
+    <Compile Include="BLImp\Classes\Authintacate.cs" />
     <Compile Include="BLImp\Classes\BL.cs" />
     <Compile Include="BLImp\Classes\BusImp.cs" />
     <Compile Include="BLImp\Classes\BusTravelImp.cs" />

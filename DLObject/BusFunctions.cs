@@ -11,7 +11,6 @@ using DO;
 
 
 
-
 namespace DL
 {
     public partial class DLObject : IDal
@@ -25,48 +24,47 @@ namespace DL
 
         public Bus RequestBus(Predicate<Bus> pr = null)
         {
-            Bus ret = DataSource.BusesList.Find(pr);
-            if (ret != null)
-                return ret.GetPropertiesFrom<Bus,Bus>();
-            else
-                throw new DO.Exceptions.DOBadBusIdException(0);
+            Bus ret = DataSource.BusesList.Find(bus => pr(bus));
+            if (ret == null)
+                throw new Exception("no bus that meets these conditions!");
+            ret = DataSource.BusesList.Find(bus => bus.Valid == true);
+            if (ret == null)
+                throw new Exception("bus that meets these conditions is not valid");
+            return ret.GetPropertiesFrom<Bus,Bus>();
         }
 
-        public void UpdateBusLicenseDate(DateTime licenseDate,Bus busInput)
+      
+        public void UpdateBusKM(float kM, long licenseNumber)
         {
-            var t = from bus in DataSource.BusesList
-                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
-                    select bus;
-            t.ToList().First().LicenseDate = licenseDate;
-        }
-        public void UpdateBusKM(float kM, Bus busInput)
-        {
-            var t = from bus in DataSource.BusesList
-                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
-                    select bus;
-            t.ToList().First().KM = kM ;
-        }
-        public void UpdateBusFuel(float fuel, Bus busInput)
-        {
-            var t = from bus in DataSource.BusesList
-                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
-                    select bus;
-            t.ToList().First().Fuel = fuel;
-        }
-        public void UpdateBusStatus(status status, Bus busInput)
-        {
-            var t = from bus in DataSource.BusesList
-                    where (bus.LicenseNumber == busInput.LicenseNumber && bus.Valid == true)
-                    select bus;
-            t.ToList().First().Status = status;
+            GetBus(licenseNumber).KM = kM ;
         }
 
-        public void DeleteBus(Bus busInput)
+        public void UpdateBusFuel(float fuel, long licenseNumber)
+        {
+            GetBus(licenseNumber).Fuel = fuel;
+        }
+
+        public void UpdateBusStatus(int status, long licenseNumber)
+        {
+            //***************************CONVERT INT TO STATUS!!!!!!!!!!!!!************
+            GetBus(licenseNumber).Status = 0;
+        }
+
+        public Bus GetBus(long licenseNumber)
         {
             var t = from bus in DataSource.BusesList
-                    where (bus == busInput && bus.Valid == true)
+                    where (bus.LicenseNumber == licenseNumber)
                     select bus;
-            t.ToList().First().Valid = false;
+            if (t.ToList().Count == 0)
+                throw new Exception("no bus with such license number!!");
+            if (!t.First().Valid)
+                throw new Exception("bus is not valid!!");
+            return t.ToList().First();
+        }
+
+        public void DeleteBus(long licenseNumber)
+        {
+            GetBus(licenseNumber).Valid = false;
         }
 
         public IEnumerable<Bus> GetAllBusses()

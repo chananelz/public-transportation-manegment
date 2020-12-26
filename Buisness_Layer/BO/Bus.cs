@@ -21,13 +21,13 @@ namespace BO
         public DateTime LicenseDate { get; set; }
         public float KM { get; set; }
         public float Fuel { get; set; }
-        public status Status { get; set; }//should this be static?
+        public status Status { get; set; }
 
         public Bus()//not implemented
         {
 
         }
-        public Bus(long licenseNumber, DateTime dateTime, float kM, float fuel, int statusInput)//not implemented
+        public Bus(long licenseNumber, DateTime dateTime, float kM, float fuel, int statusInput)
         {
             LicenseNumber = licenseNumber;
             LicenseDate = dateTime;
