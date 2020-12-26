@@ -6,8 +6,18 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Managing.Add"
         mc:Ignorable="d"
         Title="StopManagerAdd" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        
                 WindowStartupLocation="CenterScreen">
     <Grid Name="StopManagerAddPage">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="65*"/>

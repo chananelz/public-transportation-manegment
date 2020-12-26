@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Information"
         mc:Ignorable="d"
         Title="LineInfo" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="10*"/>
@@ -64,6 +73,11 @@
         <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
 
         <Grid.Background>
             <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>

@@ -6,8 +6,19 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Managing.Add.myImages"
         mc:Ignorable="d"
         Title="BusManagerAdd" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        
                 WindowStartupLocation="CenterScreen">
     <Grid Name="BusManagerAddPage">
+        
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="50*"/>

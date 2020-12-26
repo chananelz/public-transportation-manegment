@@ -99,5 +99,9 @@ namespace Wpf.Mangager.Presentation
             new LineManagerAdd().Show();
             this.Close();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

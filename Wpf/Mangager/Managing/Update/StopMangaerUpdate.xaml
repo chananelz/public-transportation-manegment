@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Managing"
         mc:Ignorable="d"
         Title="StopMangaer" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="StopManagerUpdatePage">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="40*"/>
@@ -74,6 +83,13 @@
         <Image x:Name="movingBus"   Grid.Column="11"  Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="16.333,0,0,0" />
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
+
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="11" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
+        
         <Grid.Background>
             <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
         </Grid.Background>

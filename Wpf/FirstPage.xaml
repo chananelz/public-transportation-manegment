@@ -6,15 +6,24 @@
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
         Title="FirstPage" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage1">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Label Content="Welcome to Netanel and Chananel " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Content="Welcome to Netanel and Chananel's " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
         <Label Content="Bus system:"               HorizontalAlignment="Center" VerticalAlignment="top"    Grid.Row="1" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
@@ -22,12 +31,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="user" Grid.Row="0" Content="press here if you are a user"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
+            <Button Name="user" Grid.Row="0" Content="User"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="manager" Grid.Row="1"  Content="press here if you are a manager"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="manager_Click" Foreground="Red">
+            <Button Name="manager" Grid.Row="1"  Content="Manager"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="manager_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
@@ -37,6 +46,11 @@
 
         <Image x:Name="movingBus"   Grid.Row="3" Width="50" Source="myImages/Bus.png"                        Margin="740,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.RowSpan="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
 
         <Grid.Background>
             <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>

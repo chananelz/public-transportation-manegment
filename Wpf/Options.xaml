@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
         Title="Options" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="50*"/>
@@ -36,6 +45,7 @@
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
+            
             <Button Name="stops"       Grid.Row="2"  Content="press here for stop page"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="stop_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
@@ -44,8 +54,12 @@
         </Grid>
 
 
-        
 
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="1" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
 
         <Button Grid.Row="2" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>

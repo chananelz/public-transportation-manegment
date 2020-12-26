@@ -166,5 +166,9 @@ namespace Wpf.Mangager.Managing
                 MyTextBox3.Document.Blocks.Clear();
             }
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

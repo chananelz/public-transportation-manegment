@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
         Title="SignIn" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="20*"/>
@@ -62,6 +71,12 @@
         <Button Name="stops"  HorizontalAlignment="Center" Width="200" Grid.Row="2" Grid.ColumnSpan="2" Content="submit"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="submit_Click" Foreground="Red">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/Button.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="1" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
 

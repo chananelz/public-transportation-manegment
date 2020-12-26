@@ -152,5 +152,9 @@ namespace Wpf.Mangager.Managing
                 MessageBox.Show("wrong input!!!!");
             }
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

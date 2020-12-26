@@ -113,5 +113,9 @@ namespace Wpf
             passwordTxtBox.Visibility = Visibility.Collapsed;
             PasswordContent.Visibility = Visibility.Visible;
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

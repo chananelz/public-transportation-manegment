@@ -97,5 +97,9 @@ namespace Wpf.Mangager.Presentation
             new StopManagerAdd().Show();
             this.Close();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

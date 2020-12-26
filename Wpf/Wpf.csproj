@@ -367,5 +367,23 @@
   <ItemGroup>
     <Resource Include="Mangager\Managing\Add\myImages\stop_sign-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="myImages\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Managing\Add\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Managing\Update\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Information\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Presentation\myImages\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
