@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BLApi;
+using BLImp;
 
 namespace BO
 {
@@ -16,15 +17,19 @@ namespace BO
         public int FirstStop { get; set; }
         public int LastStop { get; set; }
 
-        private List<Stop> stops;
+        public List<Stop> stops;
         //public List<LineStation> Stops
         //{
-        //    get { return BLApi.Factory.GetBL("1").GetAllStopsByLineNumber(Number).ToList(); }
-        //}
+            //get { return BLApi.Factory.GetBL("1").GetAllStopsByLineNumber(Number).ToList(); }
+            // get { return BL. }
+         //   return;
+       // }
+            
+            
         public Bus CurrentBus { get; set; }
         public Line()//not implemented
         {
-
+            
         }
         public Line(long number, string area, int firstStop, int lastStop )
         {

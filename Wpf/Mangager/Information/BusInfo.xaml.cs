@@ -63,10 +63,5 @@ namespace Wpf.Mangager.Information
         {
             this.Close();
         }
-
-        private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
     }
 }
