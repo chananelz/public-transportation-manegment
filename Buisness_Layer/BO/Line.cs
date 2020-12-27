@@ -9,6 +9,7 @@ namespace BO
 {
     public class Line
     {
+        public bool Valid { get; set; }
         public  long Number { get; set; }
         public string Area { get; set; }
         public int FirstStop { get; set; }
@@ -23,8 +24,9 @@ namespace BO
         {
 
         }
-        public Line(long number, string area, int firstStop, int lastStop)
+        public Line(long number, string area, int firstStop, int lastStop )
         {
+            Valid = true;
             Number = number;
             Area = area;
             FirstStop = firstStop;
@@ -32,7 +34,7 @@ namespace BO
         }
         public override string ToString()
         {
-            return "number: " + Number + "area: " + Area + "first stop: " + FirstStop + "last stop: " + LastStop;
+            return "number: " + Number + "area: " + Area + "first stop: " + FirstStop + "last stop:" + LastStop + "valid" + Valid;
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented
         public static bool[,] ConvertFromSring(string matrix) { return new bool[1, 1]; }//not implemented

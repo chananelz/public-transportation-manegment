@@ -28,6 +28,7 @@ namespace BO
         }
         public Bus(long licenseNumber, DateTime dateTime, float kM, float fuel, int statusInput)
         {
+            Valid = true;
             LicenseNumber = licenseNumber;
             LicenseDate = dateTime;
             KM = kM;
@@ -54,7 +55,7 @@ namespace BO
         public override string ToString()
         {
             return "license number: " + LicenseNumber + "licensing date: " + LicenseDate + "kilometer: " + KM +
-                "fuel: " + Fuel + "status: " + Status;
+                "fuel: " + Fuel + "status: " + Status + "valid" + Valid;
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented
         public static bool[,] ConvertFromSring(string matrix) { return new bool[1, 1]; }//not implemented

@@ -8,6 +8,7 @@ namespace BO
 {
     public class UserTravel
     {
+        public bool Valid { get; set; }
         public string UserName { get; set; }
         public int LineNumber { get; set; }
         public DateTime OnStopTime { get; set; }
@@ -20,6 +21,7 @@ namespace BO
         }
         public UserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime)
         {
+            Valid = true;
             UserName = userName;
             LineNumber = lineNumber;
             OnStopTime = onStopTime;
@@ -27,7 +29,7 @@ namespace BO
         }
         public override string ToString()
         {
-            return ("userName:" + UserName  + "onStopTime:" + OnStopTime + "offStopTime:" + OffStopTime);
+            return ("userName:" + UserName  + "onStopTime:" + OnStopTime + "offStopTime:" + OffStopTime + "valid" + Valid);
         }
     }
 }

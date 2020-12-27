@@ -14,6 +14,7 @@ namespace BO
     }
     public class User
     {
+        public bool Valid { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public authority Permission { get; set; }
@@ -21,6 +22,7 @@ namespace BO
 
         public User(string userName, string password, int permission) 
         {
+            Valid = true;
             UserName = userName;
             Password = password;
             switch(permission)
@@ -38,7 +40,7 @@ namespace BO
 
         public override string ToString()
         {
-            return (/*"Valid:" + Valid +*/ "userName:" + UserName + "password:" + Password + "permission" + Permission);
+            return (/*"Valid:" + Valid +*/ "userName:" + UserName + "password:" + Password + "permission" + Permission + "valid" + Valid);
         }
 
     }

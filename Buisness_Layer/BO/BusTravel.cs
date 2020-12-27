@@ -8,6 +8,7 @@ namespace BO
 {
     public class BusTravel
     {
+        public bool Valid { get; set; }
         public long LicenseNumber { get; set; }
         public DateTime FormalDepartureTime { get; set; }
         public DateTime RealDepartureTime { get; set; }
@@ -20,6 +21,7 @@ namespace BO
         }
         public BusTravel(long licenseNumber, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime)
         {
+            Valid = true;
             LicenseNumber = licenseNumber;
             DateTime FormalDepartureTime = formalDepartureTime;
             DateTime RealDepartureTime = realDepartureTime;

@@ -28,6 +28,7 @@ namespace BO
 
         public Stop( double latitude, double longitude, string stopName)
         {
+            Valid = true;
             Latitude = latitude;
             Longitude = longitude;
             StopName = stopName;
@@ -37,7 +38,7 @@ namespace BO
 
         public override string ToString()
         {
-            return ("latitude" + Latitude + "longitude" + Longitude + "stopName" + StopName + "Address" + Address);
+            return ("latitude" + Latitude + "longitude" + Longitude + "stopName" + StopName + "Address" + Address + "valid" + Valid);
         }
        
 

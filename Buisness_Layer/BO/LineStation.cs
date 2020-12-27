@@ -23,14 +23,15 @@ namespace BO
         {
 
         }
-        public LineStation(LineStation line_Station)//not implemented
+        public LineStation(LineStation line_Station )//not implemented
         {
+            Valid = true;
             Code = line_Station.Code;
             NumberInLine = line_Station.NumberInLine;
         }
         public override string ToString()
         {
-            return "code: " + Code + "number in line: " + NumberInLine;
+            return "code: " + Code + "number in line: " + NumberInLine + "valid" + Valid;
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented
         public static bool[,] ConvertFromSring(string matrix) { return new bool[1, 1]; }//not implemented
