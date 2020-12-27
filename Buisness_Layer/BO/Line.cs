@@ -9,11 +9,13 @@ namespace BO
 {
     public class Line
     {
+        public int Id { get; set; }
         public bool Valid { get; set; }
         public  long Number { get; set; }
         public string Area { get; set; }
         public int FirstStop { get; set; }
         public int LastStop { get; set; }
+
         private List<Stop> stops;
         //public List<LineStation> Stops
         //{
@@ -26,7 +28,8 @@ namespace BO
         }
         public Line(long number, string area, int firstStop, int lastStop )
         {
-            Valid = true;
+            Id = 0;
+           Valid = true;
             Number = number;
             Area = area;
             FirstStop = firstStop;
