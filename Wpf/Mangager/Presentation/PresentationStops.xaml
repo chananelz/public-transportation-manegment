@@ -65,7 +65,7 @@
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Content="delete"  Foreground ="Red" Width="200"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Content="delete"  Foreground ="Red" Width="200"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="Delete_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/delete.png"/>
                                 </Button.Background>

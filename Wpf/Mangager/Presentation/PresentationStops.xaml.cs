@@ -66,7 +66,9 @@ namespace Wpf.Mangager.Presentation
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            new StopMangaer().Show();
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            new StopMangaer(tempStop).Show();
             this.Close();
         }
         private void OnClick(object sender, RoutedEventArgs e)
@@ -95,6 +97,21 @@ namespace Wpf.Mangager.Presentation
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             new StopManagerAdd().Show();
+            this.Close();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            try
+            {
+                bl.DeleteStop(tempStop.StopCode);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            new PresentationStops().Show();
             this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)

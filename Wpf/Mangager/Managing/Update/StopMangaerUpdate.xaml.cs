@@ -23,11 +23,23 @@ namespace Wpf.Mangager.Managing
     {
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
-        public StopMangaer()
+
+        string name;
+        double longitude;
+        double latitude;
+
+        BO.Stop managingStop;
+
+        BLApi.IBL bl;
+
+        public StopMangaer(BO.Stop stop)
         {
             InitializeComponent();
+            managingStop = new BO.Stop();
+            managingStop = stop;
             busFunc();
-           
+            bl = BLApi.Factory.GetBL("1");
+
         }
 
         private void busFunc()
@@ -118,38 +130,67 @@ namespace Wpf.Mangager.Managing
         private void Name_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            MessageBox.Show("input submited" + textRange.Text);
-            MyTextBox0.Document.Blocks.Clear();
+            name = textRange.Text;
+            try
+            {
+                bl.UpdateStopName(name, managingStop.StopCode);
+                MessageBox.Show("input submited" + textRange.Text);
+                MyTextBox0.Document.Blocks.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MyTextBox0.Document.Blocks.Clear();
+            }
         }
        
         private void Longitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
+            double result = 0;
+            if (double.TryParse(textRange.Text, out result) && result > 0)
             {
-
-                MessageBox.Show("input submited" + result);
-                MyTextBox2.Document.Blocks.Clear();
+                longitude = result;
+                try
+                {
+                    bl.UpdateStopLongitude(result, managingStop.StopCode);
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox1.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    MyTextBox1.Document.Blocks.Clear();
+                }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox2.Document.Blocks.Clear();
             }
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            double result = 0;
+            if (double.TryParse(textRange.Text, out result) && result > 0)
             {
-
-                MessageBox.Show("input submited" + result);
-                MyTextBox2.Document.Blocks.Clear();
+                latitude = result;
+                try
+                {
+                    bl.UpdateStopLatitude(result, managingStop.StopCode);
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox2.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox2.Document.Blocks.Clear();
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)

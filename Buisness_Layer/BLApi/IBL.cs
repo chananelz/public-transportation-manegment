@@ -94,14 +94,21 @@ namespace BLApi
 
 
         void CreateStop(double latitude, double longitude, string stopName);
-        Stop RequestStop(long id);
-        void UpdateStop(double latitude, double longitude, string stopName);
-        void DeleteStop(double latitude, double longitude, string stopName);
+        Stop RequestStop(Predicate<Stop> pr = null);
+        void UpdateStopName(string name, long code);
+        void UpdateStopLongitude(double longitude, long code);
+        void UpdateStopLatitude(double latitude, long code);
+        void DeleteStop(long code);
         IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
         //IEnumerable<Stop> GetAllValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllStopeInSpecificArea();
+       
+      
+
+
+
 
 
         void CreateUser(string userName, string password, int permission);

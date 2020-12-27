@@ -7,44 +7,86 @@ using DalApi;
 using DS;
 using DO;
 
+
+
+
+
 namespace DL
 {
     public partial class DLObject : IDal
     {
         public void CreateStop(Stop stop)
         {
-            DataSource.StopList.Add(stop);
-        }
-        public Stop RequestStop(long id)
-        {
-            return DataSource.StopList.Find(s => s.StopCode == id);
-        }
-        public void UpdateStop(Stop stop)
-        {
-            int indLine;
-            if (stop.StopCode != null)
+            stop.Valid = true;
+            try
             {
-                indLine = DataSource.StopList.FindIndex(l => l.StopCode == stop.StopCode);
-                DataSource.StopList[indLine] = stop;
+                GetBus(stop.StopCode);
             }
-            else
-                throw new Exception("stop doesn't exist!!");
+            catch (Exception ex)
+            {
+                if (ex.Message == "no bus with such license number!!")
+                    DataSource.StopList.Add(stop);
+                else if (ex.Message == "bus is not valid!!")
+                {
+                    var t = from stopInput in DataSource.StopList
+                            where (stopInput.StopCode == stop.StopCode)
+                            select stopInput;
+                    t.ToList().First().Valid = true;
+                }
+                return;
+            }
+            throw new Exception("bus already exists!!!");
         }
-        public void DeleteStop(Stop stop)
+        public Stop RequestStop(Predicate<Stop> pr = null)
         {
-            if (stop.StopCode != null)
-                DataSource.StopList.Remove(stop);
-            else
-                throw new Exception("stop doesn't exist!!");
+            Stop ret = DataSource.StopList.Find(stop => pr(stop));
+            if (ret == null)
+                throw new Exception("no bus that meets these conditions!");
+            ret = DataSource.StopList.Find(stop => stop.Valid == true);
+            if (ret == null)
+                throw new Exception("bus that meets these conditions is not valid");
+            return ret.GetPropertiesFrom<Stop, Stop>();
         }
-        public IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null)
+        public void UpdateStopName(string name, long licenseNumber)
         {
-            if (pr == null)
-                return DataSource.StopList;
-            else
-                return from b in DataSource.StopList
-                   where (pr(b))
-                   select b;
+            GetStop(licenseNumber).StopName = name;
+        }
+
+        public void UpdateStopLongitude(double longitude, long licenseNumber)
+        {
+            GetStop(licenseNumber).Longitude = longitude;
+        }
+
+        public void UpdateStopLatitude(double latitude, long licenseNumber)
+        {
+            GetStop(licenseNumber).Latitude = latitude;
+        }
+        public void DeleteStop(long code)
+        {
+            GetStop(code).Valid = false;
+        }
+        public Stop GetStop(long code)
+        {
+            var t = from stop in DataSource.StopList
+                    where (stop.StopCode == code)
+                    select stop;
+            if (t.ToList().Count == 0)
+                throw new Exception("no stop with such license number!!");
+            if (!t.First().Valid)
+                throw new Exception("stop is not valid!!");
+            return t.ToList().First();
+        }
+
+       
+        public IEnumerable<Stop> GetAllStops()
+        {
+            var cloneList = new List<Stop>();
+            foreach (Stop stop in DataSource.StopList)
+            {
+                if (stop.Valid == true)
+                    cloneList.Add(stop.GetPropertiesFrom<Stop, Stop>());
+            }
+            return cloneList;
         }
     }
 }
