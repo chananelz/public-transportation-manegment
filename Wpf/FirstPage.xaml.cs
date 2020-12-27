@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using BLApi;
 
-//netanel mmm
+//netanchan
 
 namespace Wpf
 {
