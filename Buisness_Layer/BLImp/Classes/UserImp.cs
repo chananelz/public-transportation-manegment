@@ -18,41 +18,48 @@ namespace BLImp
     {
         public void CreateUser(string userName, string password, int permission)
         {
+
+            // check userName 
+
+            //check password
+
+            //check permission
+
             User userBO = new User(userName, password, permission);
             DO.User userDO = userBO.GetPropertiesFrom<DO.User, BO.User>();
             dal.CreateUser(userDO);
         }
-        public User RequestUser(string id)
+        public User RequestUser(Predicate<User> pr)
         {
-            DO.User userDO = new DO.User();
-            userDO = dal.RequestUser(id);
-            BO.User userBO = userDO.GetPropertiesFrom<BO.User, DO.User>();
-            return userBO;
+            return dal.RequestUser(user => pr(user.GetPropertiesFrom<BO.User, DO.User>())).GetPropertiesFrom<BO.User, DO.User>();
+
         }
-        public void UpdateUser(string userName, string password, int permission)
+        public void UpdateName(string name, string nameId)
         {
-            User userBO = new User(userName, password, permission);
-            DO.User userDO = userBO.GetPropertiesFrom<DO.User, BO.User>();
-            dal.UpdateUser(userDO);
+            // check name 
+            dal.UpdateName(name, nameId);
         }
-        public void DeleteUser(string userName, string password, int permission)
+
+        public void UpdatePassword(string password, string nameId)
         {
-            User userBO = new User(userName, password, permission);
-            DO.User userDO = userBO.GetPropertiesFrom<DO.User, BO.User>();
-            dal.DeleteUser(userDO);
+            //check status
+            dal.UpdatePassword(password, nameId);
+        }
+        public void DeleteUser(string nameId)
+        {
+            dal.DeleteUser(nameId);
         }
 
         public IEnumerable<User> GetAllUsers(Predicate<User> pr)
         {
-            //var tempList = new List<DO.User>();
-            //tempList = dal.GetAllUsers().ToList();
-            var tempList = dal.GetAllUsers();
-            IEnumerable<User> thirdTempList = tempList.Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).ToList();
-          
-            List<User> secondTempList = thirdTempList.Where(b => pr(b)).ToList();
-            if (secondTempList.Count ==0)
-                return null;
-            return secondTempList.ToList();
+            if (pr == null)
+            {
+                var tempList = dal.GetAllUsers();
+                var secondTempList = tempList.Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).ToList();
+                return secondTempList;
+            }
+            return dal.GetAllUsers().Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).Where(b => pr(b)).ToList();
+
         }
 
         public User Authinticate(string username, string password,authority au)

@@ -14,44 +14,80 @@ namespace DL
     {
         public void CreateUser(User user)
         {
-            DataSource.UserList.Add(user);
-        }
-        public User RequestUser(string id)
-        {
-            return DataSource.UserList.Find(s => s.Password == id);
-        }
-        public void UpdateUser(User user)
-        {
-            int indLine;
-            if (user.Password != null)
+            user.Valid = true;
+            try
             {
-                indLine = DataSource.UserList.FindIndex(l => l.Password == user.Password);
-                DataSource.UserList[indLine] = user;
+                GetUser(user.Password);
             }
-            else
-                throw new Exception("user doesn't exist!!");
-        }
-        public void DeleteUser(User user)
-        {
-            if (user.Password != null) 
-                DataSource.UserList.Remove(user);
-            else
-                throw new Exception("user doesn't exist!!");
-        }
-        public IEnumerable<User> GetAllUsers(Predicate<User> pr = null)
-        {
-            if (pr == null)
+            catch (Exception ex)
             {
-                IEnumerable<User> userList = new List<User>();
-                userList = DataSource.UserList;
-                var temp = DataSource.UserList;
-                return temp as IEnumerable<User>;
-                //return DataSource.UserList;
+                if (ex.Message == "no user with such UserName!!")
+                    DataSource.UserList.Add(user);
+                else if (ex.Message == "user is not valid!!")
+                {
+                    var t = from userInput in DataSource.UserList
+                            where (userInput.Password == user.Password)
+                            select user;
+                    t.ToList().First().Valid = true;
+                }
+                return;
             }
-            else
-                return from b in DataSource.UserList
-                       where (pr(b))
-                       select b;
+            throw new Exception("user already exists!!!");
+        }
+
+        public User RequestUser(Predicate<User> pr = null)
+        {
+            User ret = DataSource.UserList.Find(bus => pr(bus));
+            if (ret == null)
+                throw new Exception("no user with such UserName!!");
+            ret = DataSource.UserList.Find(user => user.Valid == true);
+            if (ret == null)
+                throw new Exception("user is not valid!!");
+            return ret.GetPropertiesFrom<User, User>();
+        }
+       
+
+        public void UpdateName(string name, string nameId)
+        {
+            GetUser(nameId).UserName = name;
+        }
+        public void UpdatePassword(string password, string nameId)
+        {
+            GetUser(nameId).Password = password;
+        }
+        public void DeleteUser(string nameId)
+        {
+            GetUser(nameId).Valid = false;
+
+        }
+
+
+        public User GetUser(string password)
+        {
+            var t = from user in DataSource.UserList
+                    where (user.Password == password)
+                    select user;
+            if (t.ToList().Count == 0)
+                throw new Exception("no user with such UserName!!");
+            if (!t.First().Valid)
+                throw new Exception("user is not valid!!");
+            return t.ToList().First();
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            var cloneList = new List<User>();
+            foreach (User user in DataSource.UserList)
+            {
+                if (user.Valid == true)
+                    cloneList.Add(user.GetPropertiesFrom<User, User>());
+            }
+            return cloneList;
         }
     }
 }
+
+
+
+
+

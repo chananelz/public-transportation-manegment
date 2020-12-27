@@ -112,15 +112,20 @@ namespace BLApi
 
 
         void CreateUser(string userName, string password, int permission);
-        User RequestUser(string id);
-        void UpdateUser(string userName, string password, int permission);
-        void DeleteUser(string userName, string password, int permission);
+        User RequestUser(Predicate<User> pr = null);
+        void UpdateName(string name, string nameId);
+        void UpdatePassword(string password, string nameId);
+        void DeleteUser(string nameId);
         IEnumerable<User> GetAllUsers(Predicate<User> pr = null);
         User Authinticate(string username, string password,authority au);
         //IEnumerable<User> GetAllValidUsers();
         //IEnumerable<User> GetAllUnValidUsers();
         //IEnumerable<User> GetAllUnValidManager();
         //IEnumerable<User> GetAllUnValidUser()
+       
+
+
+
 
 
         void CreateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);

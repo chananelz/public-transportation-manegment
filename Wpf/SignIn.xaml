@@ -72,7 +72,13 @@
         </Grid>
 
 
-        <Button Name="stops"  HorizontalAlignment="Center" Width="200" Grid.Row="2" Grid.ColumnSpan="2" Content="submit"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="submit_Click" Foreground="Red">
+        <Button Name="submit"  HorizontalAlignment="Center" Width="200" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="submit"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="submit_Click" Foreground="Red">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/Button.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button Name="Sign_In"  HorizontalAlignment="Left" Width="200" Grid.Row="2" Grid.ColumnSpan="1" Content="sign up"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="SignIn_Click" Foreground="LightGreen" >
             <Button.Background>
                 <ImageBrush ImageSource="myImages/Button.png"/>
             </Button.Background>
