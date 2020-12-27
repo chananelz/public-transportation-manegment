@@ -18,7 +18,8 @@
                               Color="Gray"/>
         </Grid.Effect>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
@@ -35,8 +36,10 @@
         <Label Content="Stop name:"     Name="stopName"          Grid.Column="0" Grid.Row="1"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="Longitude:"     Name="longitude"         Grid.Column="0" Grid.Row="2"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="Latitude:"     Name="latitude"           Grid.Column="0" Grid.Row="3"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content="All Line:"     Name="line"           Grid.Column="0" Grid.Row="4"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
 
-
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="LineListS" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" MaxWidth="200" HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15" SelectionChanged="LineListS_SelectionChanged" >
+        </ComboBox>
 
         <Grid x:Name="stopInfo"  Grid.Row ="1" Grid.Column="1" Grid.RowSpan="3">
             <Grid.RowDefinitions>
@@ -55,19 +58,19 @@
 
 
 
-        <Button Grid.Row="4" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="5" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/home.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="4" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="5" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
             </Button.Background>
         </Button>
-        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="5" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="5" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
+        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>

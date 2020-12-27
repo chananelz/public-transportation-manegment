@@ -63,5 +63,10 @@ namespace Wpf.Mangager.Information
         {
             this.Close();
         }
+
+        private void LineListB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

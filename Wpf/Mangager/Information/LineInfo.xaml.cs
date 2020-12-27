@@ -66,7 +66,12 @@ namespace Wpf.Mangager.Information
 
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            busList.DataContext = ((BO.Line)sender).stops;
-    }
+
+        }
+
+        //    private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //    {
+        //        busList.DataContext = ((BO.Line)sender).stops;
+        //}
     }
 }
