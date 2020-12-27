@@ -61,8 +61,7 @@
             </Button.Background>
         </Button>
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="busList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom"  MaxWidth="200" HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15" Margin="-4,0,182,56.2">
-        </ComboBox>
+       
         <Button Grid.Row="6" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
