@@ -111,21 +111,25 @@ namespace Wpf.Mangager.Managing.Add
                 MessageBox.Show("work cancelled");
             }
 
-            input0 = false;
-            input1 = false;
-            input2 = false;
-            MyTextBox0.Document.Blocks.Clear();
-            MyTextBox1.Document.Blocks.Clear();
-            MyTextBox2.Document.Blocks.Clear();
 
-            resultProgressBar.Value = 0;
-            resultLabel.Content = (0 + "%");
-            amount = 0;
+            try
+            {
+                bl.CreateStop(latitude, longitude, stopName);
+            }
 
-            bl.CreateStop(latitude, longitude, stopName);
 
-            worker.RunWorkerAsync(12);
-            return;
+           
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                new PresentationStops().Show();
+                this.Close();
+                return;
+            }
+            MessageBox.Show("stop added!");
+
+            new PresentationStops().Show();
+            this.Close();
         }
 
 
@@ -221,11 +225,11 @@ namespace Wpf.Mangager.Managing.Add
             if (!input0)
             {
                 input0 = true;
-                amount++;
                
             }
             if (amount != 3)
             {
+                amount++;
 
                 TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
                 stopName = textRange.Text;
@@ -236,6 +240,7 @@ namespace Wpf.Mangager.Managing.Add
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox2.Document.Blocks.Clear();
             }
         }
      
@@ -248,20 +253,21 @@ namespace Wpf.Mangager.Managing.Add
                 if (!input1)
                 {
                     input1 = true;
-                    amount++;
                     
                 }
                 if (amount != 3)
                 {
+                    amount++;
                     longitude = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox1.Document.Blocks.Clear();
                 }
 
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox2.Document.Blocks.Clear();
             }
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
@@ -273,11 +279,11 @@ namespace Wpf.Mangager.Managing.Add
                 if (!input2)
                 {
                     input2 = true;
-                    amount++;
                    
                 }
                 if (amount != 3)
                 {
+                    amount++;
                     latitude = result;
                     MessageBox.Show("input submited" + result);
                     MyTextBox2.Document.Blocks.Clear();
@@ -287,6 +293,7 @@ namespace Wpf.Mangager.Managing.Add
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox2.Document.Blocks.Clear();
             }
         }
     }

@@ -53,9 +53,9 @@
 
 
 
-        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center" Click="Name_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Longitude_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Latitude_Click"/>
+        <Button Content="Update" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center" Click="Name_Click" />
+        <Button Content="Update" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Longitude_Click" />
+        <Button Content="Update" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Latitude_Click"/>
 
 
       

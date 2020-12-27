@@ -16,28 +16,43 @@ namespace BLImp
     {
         public void CreateStop(double latitude, double longitude, string stopName)
         {
-            Stop stopBO = new Stop(latitude, longitude,stopName);
+
+            // check latitude 
+
+            //check longitude
+
+            //check stopName
+
+            Stop stopBO = new Stop(latitude, longitude, stopName);
             DO.Stop stopDO = stopBO.GetPropertiesFrom<DO.Stop, BO.Stop>();
             dal.CreateStop(stopDO);
         }
-        public Stop RequestStop(long id)
+        public Stop RequestStop(Predicate<Stop> pr = null)
         {
-            DO.Stop stopDO = new DO.Stop();
-            stopDO = dal.RequestStop(id);
-            BO.Stop stopBO = stopDO.GetPropertiesFrom<BO.Stop, DO.Stop>();
-            return stopBO;
+            return dal.RequestStop(stop => pr(stop.GetPropertiesFrom<BO.Stop, DO.Stop>())).GetPropertiesFrom<BO.Stop, DO.Stop>();
         }
-        public  void UpdateStop(double latitude, double longitude, string stopName)
+        public void UpdateStopName(string name, long code)
         {
-            Stop stopBO = new Stop(latitude, longitude, stopName);
-            DO.Stop stopDO = stopBO.GetPropertiesFrom<DO.Stop, BO.Stop>();
-            dal.UpdateStop(stopDO);
+
+            //check stopName
+            dal.UpdateStopName(name, code);
         }
-        public  void DeleteStop(double latitude, double longitude, string stopName)
+        public void UpdateStopLongitude(double longitude, long code)
         {
-            Stop stopBO = new Stop(latitude, longitude, stopName);
-            DO.Stop stopDO = stopBO.GetPropertiesFrom<DO.Stop, BO.Stop>();
-            dal.DeleteStop(stopDO);
+
+            //check longitude
+
+            dal.UpdateStopLongitude(longitude, code);
+        }
+        public void UpdateStopLatitude(double latitude, long code)
+        {
+            // check latitude 
+
+            dal.UpdateStopLatitude(latitude, code);
+        }
+        public void DeleteStop(long code)
+        {
+            dal.DeleteStop(code);
         }
 
         public IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null)
@@ -51,6 +66,5 @@ namespace BLImp
             return dal.GetAllStops().Select(stop => stop.GetPropertiesFrom<BO.Stop, DO.Stop>()).Where(b => pr(b));
         }
 
-        
     }
 }

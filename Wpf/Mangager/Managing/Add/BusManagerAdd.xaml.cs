@@ -252,11 +252,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (!input0)
                 {
                     input0 = true;
-                    amount++;
                    
                 }
                 if (amount != 5)
                 {
+                    amount++;
                     licenseNumber = result;
                     MessageBox.Show("input submited" + result);
                     MyTextBox0.Document.Blocks.Clear();
@@ -297,11 +297,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (!input1)
                 {
                     input1 = true;
-                    amount++;
                    
                 }
                 if (amount != 5)
                 {
+                    amount++;
                     DateTime temp = new DateTime(year, month, day);
                     licenseDate = temp;
                     MessageBox.Show("input submited" + stInput);
@@ -324,11 +324,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (!input2)
                 {
                     input2 = true;
-                    amount++;
                     
                 }
                 if (amount != 5)
                 {
+                    amount++;
                     MessageBox.Show("input submited" + result);
                     kM = result;
                     MyTextBox2.Document.Blocks.Clear();
@@ -350,11 +350,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (!input3)
                 {
                     input3 = true;
-                    amount++;
                     
                 }
                 if (amount != 5)
                 {
+                    amount++;
                     fuel = result;
                     MessageBox.Show("input submited" + result);
                     MyTextBox3.Document.Blocks.Clear();
@@ -375,11 +375,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (!input4)
                 {
                     input4 = true;
-                    amount++;
                     
                 }
                 if (amount != 5)
                 {
+                    amount++;
                     statusInput = result;
                     MessageBox.Show("input submited" + result);
                     MyTextBox4.Document.Blocks.Clear();

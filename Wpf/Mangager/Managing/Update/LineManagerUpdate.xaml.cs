@@ -181,7 +181,6 @@ namespace Wpf.Mangager.Managing
                 MessageBox.Show(ex.Message);
                 MyTextBox1.Document.Blocks.Clear();
             }
-
         }
         private void FirstStop_Click(object sender, RoutedEventArgs e)
         {

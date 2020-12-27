@@ -33,6 +33,7 @@ namespace DL
                             select bus;
                     t.ToList().First().Valid = true;
                 }
+                return;
             }
             throw new Exception("bus already exists!!!");
         }

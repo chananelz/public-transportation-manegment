@@ -63,10 +63,16 @@ namespace DalApi
 
 
         void CreateStop(Stop stop);
-        Stop RequestStop(long id);
-        void UpdateStop(Stop stop);
-        void DeleteStop(Stop stop);
-        IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
+        Stop RequestStop(Predicate<Stop> pr = null);
+        void UpdateStopName(string name, long licenseNumber);
+        void UpdateStopLongitude(double longitude, long licenseNumber);
+        void UpdateStopLatitude(double latitude, long licenseNumber);
+        Stop GetStop(long code);
+        void DeleteStop(long code);
+        IEnumerable<Stop> GetAllStops();
+
+
+
 
         void CreateUser(User user);
         User RequestUser(string Id);  //check this...
