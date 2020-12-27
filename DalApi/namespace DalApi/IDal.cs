@@ -30,10 +30,14 @@ namespace DalApi
 
 
         void CreateLine(Line line);
-        Line RequestLine(long Id);  //check this...
-        void UpdateLine(Line line);
-        void DeleteLine(Line line);
-        IEnumerable<Line> GetAllLines(Predicate<Line> pr = null);
+        Line RequestLine(Predicate<Line> pr = null);  //check this...
+        void UpdateLineNumber(long number, long id);
+        void UpdateLineArea(string area, long id);
+        void UpdateLineFirstStop(int firstStop, long id);
+        void UpdateLineLastStop(int lastStop, long id); 
+        Line GetLine(long id);
+        void DeleteLine(long id);
+        IEnumerable<Line> GetAllLines();
 
 
         void CreateLineDeparture(LineDeparture line_Departure);

@@ -55,11 +55,11 @@
         <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="3" Name="MyTextBox4" TextChanged="MyTextBox_TextChanged_4" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="License Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Text="License date &#10; day/month/year" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" Text="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" Text="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="12" Grid.ColumnSpan="3" Text="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="License Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Content="License date &#10; day/month/year" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" Content="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" Content="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="12" Grid.ColumnSpan="3" Content="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
 

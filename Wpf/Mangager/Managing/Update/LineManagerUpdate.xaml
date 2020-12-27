@@ -45,17 +45,17 @@
         <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Name="MyTextBox3" TextChanged="MyTextBox_TextChanged_3" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Area" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Text="Stops" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Text="Last Stop" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Area" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Content="First Stop" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Content="Last Stop" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
 
 
 
         <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Number_Click" />
         <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Area_Click"/>
         <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="FirstStop_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="LastStop_Click" />
+        <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="LastStop_Click" />
 
 
 

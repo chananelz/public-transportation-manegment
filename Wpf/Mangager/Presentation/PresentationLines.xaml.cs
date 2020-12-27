@@ -68,9 +68,11 @@ namespace Wpf.Mangager.Presentation
             this.Close();
 
         }
-        private void management_Click(object sender, RoutedEventArgs e)
+        private void Update_Click(object sender, RoutedEventArgs e)
         {
-            new LineManager().Show();
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+            new LineManager(tempLine).Show();
             this.Close();
         }
         private void OnClick(object sender, RoutedEventArgs e)
@@ -101,6 +103,21 @@ namespace Wpf.Mangager.Presentation
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+            try
+            {
+                bl.DeleteLine(tempLine.Id);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            new PresentationLines().Show();
             this.Close();
         }
     }

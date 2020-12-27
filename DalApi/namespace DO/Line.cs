@@ -9,7 +9,7 @@ namespace DO
     public class Line
     {
         public bool Valid { get; set; }
-        public int Id { get; set; }
+        public long Id { get; set; }
         public long Number { get; set; }
         public string Area { get; set; }
         public int FirstStop{ get; set; }
@@ -33,6 +33,5 @@ namespace DO
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented
         public static bool[,] ConvertFromSring(string matrix) { return new bool[1, 1]; }//not implemented
-
     }
 }

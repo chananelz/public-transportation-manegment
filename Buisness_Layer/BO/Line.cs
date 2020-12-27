@@ -10,7 +10,7 @@ namespace BO
 {
     public class Line
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public bool Valid { get; set; }
         public  long Number { get; set; }
         public string Area { get; set; }
@@ -34,7 +34,7 @@ namespace BO
         public Line(long number, string area, int firstStop, int lastStop )
         {
             Id = 0;
-           Valid = true;
+            Valid = true;
             Number = number;
             Area = area;
             FirstStop = firstStop;

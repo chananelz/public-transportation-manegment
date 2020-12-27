@@ -24,12 +24,26 @@ namespace Wpf.Mangager.Managing
     {
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
-        public LineManager()
+
+        BLApi.IBL bl;
+
+        long number;
+        string area;
+        int firstStop;
+        int lastStop;
+
+        BO.Line managingLine;
+
+        public LineManager(BO.Line line)
         {
             InitializeComponent();
+            managingLine = new BO.Line();
+            managingLine = line;
             busFunc();
-
+            bl = BLApi.Factory.GetBL("1");
         }
+
+
 
         private void busFunc()
         {
@@ -131,35 +145,93 @@ namespace Wpf.Mangager.Managing
         private void Number_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            long result = 0;
+            if (long.TryParse(textRange.Text, out result) && result > 0)
             {
-
-                MessageBox.Show("input submited" + result);
-                MyTextBox0.Document.Blocks.Clear();
+                number = result;
+                try
+                {
+                    bl.UpdateLineNumber(result, managingLine.Id);  
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox0.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox0.Document.Blocks.Clear();
             }
         }
         private void Area_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-            MessageBox.Show("input submited" + textRange.Text);
-            MyTextBox1.Document.Blocks.Clear();
+            area = textRange.Text;
+            try
+            {
+                bl.UpdateLineArea(area, managingLine.Id);
+                MessageBox.Show("input submited" + area);
+                MyTextBox1.Document.Blocks.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MyTextBox1.Document.Blocks.Clear();
+            }
+
         }
         private void FirstStop_Click(object sender, RoutedEventArgs e)
         {
+
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            MessageBox.Show("input submited" + textRange);
-            MyTextBox2.Document.Blocks.Clear();
+            int result = 0;
+            if (int.TryParse(textRange.Text, out result) && result > 0)
+            {
+                firstStop = result;
+                try
+                {
+                    bl.UpdateLineFirstStop(result, managingLine.Id);
+                    MessageBox.Show("input submited" + textRange.Text);
+                    MyTextBox2.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("wrong input!!!!");
+                MyTextBox2.Document.Blocks.Clear();
+            }
         }
         private void LastStop_Click(object sender, RoutedEventArgs e)
         {
+          
             TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
-            MessageBox.Show("input submited" + textRange);
-            MyTextBox3.Document.Blocks.Clear();
+            int result = 0;
+            if (int.TryParse(textRange.Text, out result) && result > 0)
+            {
+                lastStop = result;
+                try
+                {
+                    bl.UpdateLineLastStop(result, managingLine.Id);
+                    MessageBox.Show("input submited" + textRange.Text);
+                    MyTextBox3.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("wrong input!!!!");
+                MyTextBox3.Document.Blocks.Clear();
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

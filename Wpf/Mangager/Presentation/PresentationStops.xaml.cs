@@ -64,7 +64,7 @@ namespace Wpf.Mangager.Presentation
             new StopInfo(tempStop).Show();
             this.Close();
         }
-        private void management_Click(object sender, RoutedEventArgs e)
+        private void Update_Click(object sender, RoutedEventArgs e)
         {
             new StopMangaer().Show();
             this.Close();
