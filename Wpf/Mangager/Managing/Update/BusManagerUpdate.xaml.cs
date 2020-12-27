@@ -58,6 +58,8 @@ namespace Wpf.Mangager.Managing
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
+
+
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
@@ -72,11 +74,10 @@ namespace Wpf.Mangager.Managing
 
 
 
-      
 
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -91,9 +92,27 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+
+        private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
+            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            {
+                try
+                {
+                    Travel_Update_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+        }
+
+        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        {
+            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -108,11 +127,9 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-      
-
         private void Travel_Update_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
             float result = 0;
             if (float.TryParse(textRange.Text, out result) && result > 0)
             {
@@ -121,7 +138,7 @@ namespace Wpf.Mangager.Managing
                 {
                     bl.UpdateBusKM(kM, managingBus.LicenseNumber);
                     MessageBox.Show("input updated" + result);
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox0.Document.Blocks.Clear();
                 }
                 catch(Exception ex)
                 {
@@ -131,12 +148,12 @@ namespace Wpf.Mangager.Managing
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox1.Document.Blocks.Clear();
             }
         }
-
         private void Fuel_Update_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
             float result = 0;
             if (float.TryParse(textRange.Text, out result) && result > 0)
             {
@@ -145,7 +162,7 @@ namespace Wpf.Mangager.Managing
                 {
                     bl.UpdateBusFuel(fuel, managingBus.LicenseNumber);
                     MessageBox.Show("input submited" + result);
-                    MyTextBox3.Document.Blocks.Clear();
+                    MyTextBox1.Document.Blocks.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -156,11 +173,12 @@ namespace Wpf.Mangager.Managing
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox1.Document.Blocks.Clear();
             }
         }
         private void Status_Update_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             int result = 0;
             if (int.TryParse(textRange.Text, out result) && result > 0)
             {
@@ -169,7 +187,7 @@ namespace Wpf.Mangager.Managing
                 {
                     bl.UpdateBusFuel(statusInput, managingBus.LicenseNumber);
                     MessageBox.Show("input submited" + result);
-                    MyTextBox3.Document.Blocks.Clear();
+                    MyTextBox2.Document.Blocks.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -181,7 +199,7 @@ namespace Wpf.Mangager.Managing
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox3.Document.Blocks.Clear();
+                MyTextBox2.Document.Blocks.Clear();
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)

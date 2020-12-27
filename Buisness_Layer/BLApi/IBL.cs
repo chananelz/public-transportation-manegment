@@ -54,9 +54,12 @@ namespace BLApi
 
 
         void CreateLine(long number, string area, int firstStop, int lastStop);
-        Line RequestLine(long id);
-        void UpdateLine(long number, string area, int firstStop, int lastStop);
-        void DeleteLine(long number, string area, int firstStop, int lastStop);
+        Line RequestLine(Predicate<Line> pr = null);  //check this...
+        void UpdateLineNumber(long number, long id);
+        void UpdateLineArea(string area, long id);
+        void UpdateLineFirstStop(int firstStop, long id);
+        void UpdateLineLastStop(int lastStop, long id); 
+        void DeleteLine(long id);
         IEnumerable<Line> GetAllLines(Predicate<Line> pr = null);
         //IEnumerable<Line> GetAllValidLines();
         //IEnumerable<Line> GetAllUnValidLines();

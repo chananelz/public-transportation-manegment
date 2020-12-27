@@ -108,20 +108,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 MessageBox.Show("work cancelled");
             }
 
-            input0 = false;
-            input1 = false;
-            input2 = false;
-            input3 = false;
-            input4 = false;
-            MyTextBox0.Document.Blocks.Clear();
-            MyTextBox1.Document.Blocks.Clear();
-            MyTextBox2.Document.Blocks.Clear();
-            MyTextBox3.Document.Blocks.Clear();
-            MyTextBox4.Document.Blocks.Clear();
-
-            resultProgressBar.Value = 0;
-            resultLabel.Content = (0 + "%");
-            amount = 0;
+          
 
             try
             {

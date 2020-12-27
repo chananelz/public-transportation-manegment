@@ -60,7 +60,7 @@
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="management"   Grid.Column="2"     Content="management"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="management_Click">
+                            <Button Name="management"   Grid.Column="2"     Content="Update"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>

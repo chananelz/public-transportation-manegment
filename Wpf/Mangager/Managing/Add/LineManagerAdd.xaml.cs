@@ -40,7 +40,7 @@ namespace Wpf.Mangager.Managing.Add
 
         int amount = 0;
         BackgroundWorker worker;
-        
+
         BLApi.IBL bl;
 
 
@@ -85,7 +85,7 @@ namespace Wpf.Mangager.Managing.Add
             {
                 int length = (int)e.Argument;
 
-                while (amount != 3)
+                while (amount != 4)
                 {
                     System.Threading.Thread.Sleep(500);
                     worker.ReportProgress(amount * 100 / (length));
@@ -112,24 +112,13 @@ namespace Wpf.Mangager.Managing.Add
                 MessageBox.Show("work cancelled");
             }
 
-            input0 = false;
-            input1 = false;
-            input2 = false;
-            MyTextBox0.Document.Blocks.Clear();
-            MyTextBox1.Document.Blocks.Clear();
-            MyTextBox2.Document.Blocks.Clear();
-
-            resultProgressBar.Value = 0;
-            resultLabel.Content = (0 + "%");
-            amount = 0;
-
             bl.CreateLine(number, area, firstStop, lastStop);
 
+            MessageBox.Show("line added!");
 
-            worker.RunWorkerAsync(3);
-            return;
+            new PresentationLines().Show();
+            this.Close();
         }
-
 
         private void busFunc()
         {
@@ -231,17 +220,18 @@ namespace Wpf.Mangager.Managing.Add
         private void Number_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            long result = 0;
+            if (long.TryParse(textRange.Text, out result))
             {
                 if (!input0)
                 {
                     input0 = true;
-                    amount++;
-                    
+
                 }
                 if (amount != 4)
                 {
+                    amount++;
+
                     number = result;
                     MessageBox.Show("input submited" + result);
                     MyTextBox0.Document.Blocks.Clear();
@@ -258,11 +248,12 @@ namespace Wpf.Mangager.Managing.Add
             if (!input1)
             {
                 input1 = true;
-                amount++;
-                
+
             }
             if (amount != 4)
             {
+                amount++;
+
                 area = textRange.Text;
                 MessageBox.Show("input submited" + textRange.Text);
                 MyTextBox1.Document.Blocks.Clear();
@@ -282,13 +273,13 @@ namespace Wpf.Mangager.Managing.Add
                 if (!input2)
                 {
                     input2 = true;
-                    amount++;
-                   
+
                 }
                 if (amount != 4)
                 {
+                    amount++;
                     firstStop = result;
-                    MessageBox.Show("input submited" + textRange);
+                    MessageBox.Show("input submited" + textRange.Text);
                     MyTextBox2.Document.Blocks.Clear();
                 }
             }
@@ -307,13 +298,13 @@ namespace Wpf.Mangager.Managing.Add
                 if (!input3)
                 {
                     input3 = true;
-                    amount++;
-                   
+
                 }
                 if (amount != 4)
                 {
+                    amount++;
                     lastStop = result;
-                    MessageBox.Show("input submited" + textRange);
+                    MessageBox.Show("input submited" + textRange.Text);
                     MyTextBox3.Document.Blocks.Clear();
                 }
             }
