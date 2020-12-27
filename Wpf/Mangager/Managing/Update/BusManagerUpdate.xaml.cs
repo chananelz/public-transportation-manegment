@@ -81,7 +81,7 @@ namespace Wpf.Mangager.Managing
             {
                 try
                 {
-                    Travel_Click(sender, e);
+                    Travel_Update_Click(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -98,7 +98,7 @@ namespace Wpf.Mangager.Managing
             {
                 try
                 {
-                    Fuel_Click(sender, e);
+                    Fuel_Update_Click(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -110,7 +110,7 @@ namespace Wpf.Mangager.Managing
 
       
 
-        private void Travel_Click(object sender, RoutedEventArgs e)
+        private void Travel_Update_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             float result = 0;
@@ -134,30 +134,48 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-        private void Fuel_Click(object sender, RoutedEventArgs e)
+        private void Fuel_Update_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
             float result = 0;
             if (float.TryParse(textRange.Text, out result) && result > 0)
             {
                 fuel = result;
-                MessageBox.Show("input submited" + result);
-                MyTextBox3.Document.Blocks.Clear();
+                try
+                {
+                    bl.UpdateBusFuel(fuel, managingBus.LicenseNumber);
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox3.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+             
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
             }
         }
-        private void Status_Click(object sender, RoutedEventArgs e)
+        private void Status_Update_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
             int result = 0;
             if (int.TryParse(textRange.Text, out result) && result > 0)
             {
                 statusInput = result;
-                MessageBox.Show("input submited" + result);
-                MyTextBox3.Document.Blocks.Clear();
+                try
+                {
+                    bl.UpdateBusFuel(statusInput, managingBus.LicenseNumber);
+                    MessageBox.Show("input submited" + result);
+                    MyTextBox3.Document.Blocks.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
 
             }
             else

@@ -55,12 +55,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000000,
-                Line_Id = 10,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Last_Passed_Stop = 570,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 8, 30),
+                LineId = 10,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
                 DriverId = 206275811
             });
             #endregion
@@ -73,12 +73,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000001,
-                Line_Id = 10,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 30, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Last_Passed_Stop = 570,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 38, 35),
+                LineId = 10,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
                 DriverId = 206275812
             });
 
@@ -90,12 +90,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000002,
-                Line_Id = 10,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 07, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Last_Passed_Stop = 570,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 07, 8, 30),
+                LineId = 10,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
                 DriverId = 206275813
             });
             #endregion
@@ -106,12 +106,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000003,
-                Line_Id = 11,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Last_Passed_Stop = 579,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 8, 30),
+                LineId = 11,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                LastPassedStop = 579,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
                 DriverId = 206275814
             });
             #endregion
@@ -122,12 +122,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000004,
-                Line_Id = 11,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 30, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Last_Passed_Stop = 579,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 38, 35),
+                LineId = 11,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                LastPassedStop = 579,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
                 DriverId = 206275815
             });
             #endregion
@@ -138,12 +138,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000005,
-                Line_Id = 11,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 07, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Last_Passed_Stop = 579,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 07, 8, 30),
+                LineId = 11,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                LastPassedStop = 579,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
                 DriverId = 206275816
             });
             #endregion
@@ -154,12 +154,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000006,
-                Line_Id = 12,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Last_Passed_Stop = 585,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 8, 30),
+                LineId = 12,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
                 DriverId = 206275817
             });
             #endregion
@@ -170,12 +170,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000007,
-                Line_Id = 12,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 30, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Last_Passed_Stop = 585,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 38, 35),
+                LineId = 12,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
                 DriverId = 206275818
             });
             #endregion
@@ -186,12 +186,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000008,
-                Line_Id = 12,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 07, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Last_Passed_Stop = 585,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 07, 8, 30),
+                LineId = 12,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
                 DriverId = 206275819
             });
             #endregion
@@ -202,12 +202,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000009,
-                Line_Id = 13,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Last_Passed_Stop = 585,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 8, 30),
+                LineId = 13,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
                 DriverId = 206275820
             });
             #endregion
@@ -219,12 +219,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000010,
-                Line_Id = 13,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 06, 30, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Last_Passed_Stop = 585,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 06, 35, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 06, 38, 35),
+                LineId = 13,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
                 DriverId = 206275821
             });
             #endregion
@@ -235,12 +235,12 @@ namespace DS
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
                 License_Number = 1000011,
-                Line_Id = 13,
-                Formal_Departure_Time = new DateTime(2020, 12, 20, 07, 00, 0),
-                Real_Departure_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Last_Passed_Stop = 585,
-                Last_Passed_Stop_Time = new DateTime(2020, 12, 20, 07, 05, 0),
-                Next_Stop_Time = new DateTime(2020, 12, 20, 07, 8, 30),
+                LineId = 13,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
                 DriverId = 206275822
             });
             #endregion
@@ -1108,157 +1108,157 @@ namespace DS
         }
         #endregion
 
-        #region initLine_Station //++
+        #region initLineStation //++
         static void initLineStationList()
         {
 
-            #region Line_Station #1
+            #region LineStation #1
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 10,
+                LineId = 10,
                 Code = 571,
-                Number_In_Line = 2
+                NumberInLine = 2
             });
             #endregion
 
-            #region Line_Station #2
+            #region LineStation #2
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 10,
+                LineId = 10,
                 Code = 574,
-                Number_In_Line = 5
+                NumberInLine = 5
             });
             #endregion
 
-            #region Line_Station #3
+            #region LineStation #3
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 10,
+                LineId = 10,
                 Code = 577,
-                Number_In_Line = 8
+                NumberInLine = 8
             });
             #endregion
 
-            #region Line_Station #4
+            #region LineStation #4
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 11,
+                LineId = 11,
                 Code = 581,
-                Number_In_Line = 3
+                NumberInLine = 3
             });
             #endregion
 
-            #region Line_Station #5
+            #region LineStation #5
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 11,
+                LineId = 11,
                 Code = 582,
-                Number_In_Line = 4
+                NumberInLine = 4
             });
             #endregion
 
-            #region Line_Station #6
+            #region LineStation #6
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 11,
+                LineId = 11,
                 Code = 583,
-                Number_In_Line = 5
+                NumberInLine = 5
             });
             #endregion
 
-            #region Line_Station #7
+            #region LineStation #7
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 12,
+                LineId = 12,
                 Code = 577,
-                Number_In_Line = 3
+                NumberInLine = 3
             });
             #endregion
 
-            #region Line_Station #8
+            #region LineStation #8
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 12,
+                LineId = 12,
                 Code = 569,
-                Number_In_Line = 9
+                NumberInLine = 9
             });
             #endregion
 
-            #region Line_Station #9
+            #region LineStation #9
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 13,
+                LineId = 13,
                 Code = 562,
-                Number_In_Line = 4
+                NumberInLine = 4
             });
             #endregion
 
-            #region Line_Station #10
+            #region LineStation #10
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 14,
+                LineId = 14,
                 Code = 577,
-                Number_In_Line = 4
+                NumberInLine = 4
             });
             #endregion
 
-            #region Line_Station #11
+            #region LineStation #11
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 15,
+                LineId = 15,
                 Code = 578,
-                Number_In_Line = 2
+                NumberInLine = 2
             });
             #endregion
 
-            #region Line_Station #12
+            #region LineStation #12
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 15,
+                LineId = 15,
                 Code = 572,
-                Number_In_Line = 7
+                NumberInLine = 7
             });
             #endregion
 
-            #region Line_Station #13
+            #region LineStation #13
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 16,
+                LineId = 16,
                 Code = 593,
-                Number_In_Line = 5
+                NumberInLine = 5
             });
             #endregion
 
-            #region Line_Station #14
+            #region LineStation #14
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 17,
+                LineId = 17,
                 Code = 573,
-                Number_In_Line = 3
+                NumberInLine = 3
             });
 
             #endregion
-            #region Line_Station #14
+            #region LineStation #14
             LineStationList.Add(new LineStation()
             {
                 Valid = true,
-                Line_Id = 18,
+                LineId = 18,
                 Code = 590,
-                Number_In_Line = 5
+                NumberInLine = 5
             });
             #endregion
 

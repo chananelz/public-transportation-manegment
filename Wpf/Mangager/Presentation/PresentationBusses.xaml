@@ -41,6 +41,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -60,12 +61,22 @@
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="management"   Grid.Column="2"     Content="management"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="management_Click">
+                            <Button Name="update"   Grid.Column="2"     Content="Update"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="update_Click" HorizontalAlignment="Right">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Content="delete"  Foreground ="Red" Width="200"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                            <Button Name="refule"   Grid.Column="3"     Content="refule"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0"                   Click="Refule_Click" HorizontalAlignment="Right">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Name="treatment"   Grid.Column="3"   Grid.Row="1"  Content="treatment"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Treatment_Click" HorizontalAlignment="Right">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Content="delete"  Foreground ="Red" Width="200"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="Delete_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/delete.png"/>
                                 </Button.Background>

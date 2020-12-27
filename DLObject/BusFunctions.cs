@@ -18,8 +18,23 @@ namespace DL
         public void CreateBus(Bus bus)
         {
             bus.Valid = true;
-            bus.LicenseNumber = Configuration.BusCounter;
-            DataSource.BusesList.Add(bus);
+            try
+            {
+                GetBus(bus.LicenseNumber);
+            }
+            catch(Exception ex)
+            {
+                if(ex.Message == "no bus with such license number!!")
+                    DataSource.BusesList.Add(bus);
+                else if(ex.Message == "bus is not valid!!")
+                {
+                    var t = from busInput in DataSource.BusesList
+                            where (busInput.LicenseNumber == bus.LicenseNumber)
+                            select bus;
+                    t.ToList().First().Valid = true;
+                }
+            }
+            throw new Exception("bus already exists!!!");
         }
 
         public Bus RequestBus(Predicate<Bus> pr = null)
@@ -71,7 +86,10 @@ namespace DL
         {
             var cloneList = new List<Bus>();
             foreach (Bus bus in DataSource.BusesList)
-                cloneList.Add(bus.GetPropertiesFrom<Bus,Bus>());
+            {
+                if(bus.Valid == true)
+                    cloneList.Add(bus.GetPropertiesFrom<Bus, Bus>());
+            }
             return cloneList;
         }
     }

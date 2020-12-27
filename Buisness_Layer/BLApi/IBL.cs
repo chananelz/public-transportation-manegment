@@ -72,6 +72,8 @@ namespace BLApi
         LineStation RequestLineStation(long id);
         void UpdateLineStation(long code, long number);
         void DeleteLineStation(long code, long number);
+        //IEnumerable<Stop> GetAllStopsByLineNumber(long number);
+        
         //IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
         //IEnumerable<LineStation> GetAllValidLineStations();
         //IEnumerable<LineStation> GetAllUnValidLineStation();
@@ -97,6 +99,7 @@ namespace BLApi
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllStopeInSpecificArea();
+
 
         void CreateUser(string userName, string password, int permission);
         User RequestUser(string id);

@@ -16,8 +16,7 @@ namespace BO
     public class Bus
     {
         public long LicenseNumber { get; set; }
-       
-
+        public bool Valid { get; set; }
         public DateTime LicenseDate { get; set; }
         public float KM { get; set; }
         public float Fuel { get; set; }

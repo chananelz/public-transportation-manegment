@@ -9,7 +9,7 @@ namespace DO
     public class Stop
     {
         public bool Valid { get; set; }
-        public int StopCode { get; set; }
+        public long StopCode { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string StopName { get; set; }

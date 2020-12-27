@@ -112,19 +112,32 @@ namespace Wpf.Mangager.Managing.Add.myImages
             input1 = false;
             input2 = false;
             input3 = false;
+            input4 = false;
             MyTextBox0.Document.Blocks.Clear();
             MyTextBox1.Document.Blocks.Clear();
             MyTextBox2.Document.Blocks.Clear();
             MyTextBox3.Document.Blocks.Clear();
+            MyTextBox4.Document.Blocks.Clear();
 
             resultProgressBar.Value = 0;
             resultLabel.Content = (0 + "%");
             amount = 0;
 
-            bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
+            try
+            {
+                bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                new PresentationBusses().Show();
+                this.Close();
+                return;
+            }
+            MessageBox.Show("bus added!");
 
-            worker.RunWorkerAsync(5);
-            return;
+            new PresentationBusses().Show();
+            this.Close();
         }
 
 
@@ -228,7 +241,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
         }
         private void MyTextBox_TextChanged_4(object sender, TextChangedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
             if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
             {
                 try
@@ -382,7 +395,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     statusInput = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox3.Document.Blocks.Clear();
+                    MyTextBox4.Document.Blocks.Clear();
                 }
             }
             else

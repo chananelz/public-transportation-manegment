@@ -9,9 +9,9 @@ namespace DO
     public class LineStation
     {
         public bool Valid { get; set; }
-        public long Line_Id { get; set; }
+        public long LineId { get; set; }
         public long Code { get; set; }
-        public long Number_In_Line { get; set; }
+        public long NumberInLine { get; set; }
         public LineStation()//not implemented
         {
 
@@ -19,13 +19,13 @@ namespace DO
         public LineStation(LineStation line_Station)//not implemented
         {
             Valid = line_Station.Valid;
-            Line_Id = line_Station.Line_Id;
+            LineId = line_Station.LineId;
             Code = line_Station.Code;
-            Number_In_Line = line_Station.Number_In_Line;
+            NumberInLine = line_Station.NumberInLine;
         }
         public override string ToString()
         {
-            return "Valid:" + Valid + "line id: " + Line_Id + "code: " + Code + "number in line: " + Number_In_Line;
+            return "Valid:" + Valid + "line id: " + LineId + "code: " + Code + "number in line: " + NumberInLine;
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented
         public static bool[,] ConvertFromSring(string matrix) { return new bool[1, 1]; }//not implemented

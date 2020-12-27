@@ -8,6 +8,8 @@ namespace BO
 {
     public class LineStation
     {
+        public bool Valid { get; set; }
+        public long Line_Id { get; set; }
         public long Code { get; set; }
         public long NumberInLine { get; set; }
 

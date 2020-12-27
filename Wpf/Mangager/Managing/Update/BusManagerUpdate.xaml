@@ -50,9 +50,9 @@
 
 
 
-        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="0"     Grid.ColumnSpan="3"     Click="Travel_Click" />
-        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="3"     Grid.ColumnSpan="3"     Click="Fuel_Click"/>
-        <Button Content="Update" HorizontalAlignment="Center"   VerticalAlignment="Center"    Grid.Row="2" Grid.Column="6"    Grid.ColumnSpan="3"    Click="Status_Click" />
+        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="0"     Grid.ColumnSpan="3"     Click="Travel_Update_Click" />
+        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="3"     Grid.ColumnSpan="3"     Click="Fuel_Update_Click"/>
+        <Button Content="Update" HorizontalAlignment="Center"   VerticalAlignment="Center"    Grid.Row="2" Grid.Column="6"    Grid.ColumnSpan="3"    Click="Status_Update_Click" />
 
 
 

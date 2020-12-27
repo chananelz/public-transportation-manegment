@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLApi;
 
 namespace BO
 {
     public class Line
     {
-        public long Number { get; set; }
+        public  long Number { get; set; }
         public string Area { get; set; }
         public int FirstStop { get; set; }
         public int LastStop { get; set; }
+        private List<Stop> stops;
+        //public List<LineStation> Stops
+        //{
+        //    get { return BLApi.Factory.GetBL("1").GetAllStopsByLineNumber(Number).ToList(); }
+        //}
+        public Bus CurrentBus { get; set; }
         public Line()//not implemented
         {
 

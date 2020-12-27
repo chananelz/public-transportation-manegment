@@ -65,7 +65,7 @@ namespace Wpf.Mangager.Presentation
             new BusInfo(tempBus).Show();
             this.Close();
         }
-        private void management_Click(object sender, RoutedEventArgs e)
+        private void update_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
@@ -102,6 +102,30 @@ namespace Wpf.Mangager.Presentation
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempBus = (BO.Bus)a.DataContext;
+            bl.DeleteBus(tempBus.LicenseNumber);
+            new PresentationBusses().Show();
+            this.Close();
+        }
+        private void Refule_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempBus = (BO.Bus)a.DataContext;
+            bl.UpdateBusFuel(0, tempBus.LicenseNumber);
+            new PresentationBusses().Show();
+            this.Close();
+        }
+        private void Treatment_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempBus = (BO.Bus)a.DataContext;
+            bl.UpdateBusFuel(0, tempBus.LicenseNumber);//not implemented
+            new PresentationBusses().Show();
             this.Close();
         }
     }
