@@ -27,6 +27,7 @@ namespace Wpf.Mangager.Information
         {
             InitializeComponent();
             busInfo.DataContext = infoBus;
+            //LineListB.DataContext = 
             busFunc();
         }
 

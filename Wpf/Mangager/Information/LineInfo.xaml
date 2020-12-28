@@ -35,31 +35,26 @@
         </Grid.ColumnDefinitions>
         <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom"  MaxWidth="200" HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Center"  MaxWidth="200" HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
         </ComboBox>
 
-        <Label Content="Number:"           Name="number"           Grid.Column="0" Grid.Row="1" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content="All stops:"        Name="AllStops"         Grid.Column="0" Grid.Row="1" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
         <Label Content="Area:"             Name="area"             Grid.Column="0" Grid.Row="2" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="First Stop:"       Name="firstStop"        Grid.Column="0" Grid.Row="3" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="Last Stop:"        Name="lastStop"         Grid.Column="0" Grid.Row="4" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
         <Label Content="Bus Number"        Name="bus"              Grid.Column="0" Grid.Row="5" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-        <Label Content="All stops:"        Name="AllStops"         Grid.Column="0" Grid.Row="0" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
 
-        <Grid x:Name="lineInfo"  Grid.Row ="1" Grid.Column="1" Grid.RowSpan="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="147*"/>
-                <ColumnDefinition Width="253*"/>
-            </Grid.ColumnDefinitions>
+        <Grid x:Name="lineInfo"  Grid.Row ="2" Grid.Column="2" Grid.RowSpan="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Content ="{Binding Number}"          Name="number1"           Grid.Column="1" Grid.Row="0" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Margin="48.245,18,195,17.8" />
-            <Label Content ="{Binding Area}"            Name="area1"             Grid.Column="1" Grid.Row="1" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Margin="48.245,17.2,195,17.6" />
-            <Label Content ="{Binding FirstStop}"       Name="firstStop1"        Grid.Column="1" Grid.Row="2" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Margin="48.245,17.4,195,17.4" />
-            <Label Content ="{Binding LastStop}"        Name="lastStop1"          Grid.Column="1" Grid.Row="3" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Margin="48.245,17.6,195,17.2" />
+            <Label Content ="{Binding Area}"            Name="area1"             Grid.Column="1" Grid.Row="0" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+            <Label Content ="{Binding FirstStop}"       Name="firstStop1"        Grid.Column="1" Grid.Row="1" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding LastStop}"        Name="lastStop1"          Grid.Column="1" Grid.Row="2" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding Number}"          Name="number1"           Grid.Column="1" Grid.Row="3" Background="Transparent"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
 
         </Grid>
 

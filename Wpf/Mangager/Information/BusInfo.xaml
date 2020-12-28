@@ -35,17 +35,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
-        <Label Content ="License number:" Name ="licenseNumber"  Grid.Column="0" Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+        <Label Content ="License number:" Name ="licenseNumber"  Grid.Column="0" Grid.Row="6"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
         <Label Content ="License date:"   Name="licenseDate"     Grid.Column="0" Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content ="Km:"             Name="km"              Grid.Column="0" Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content ="Fuel:"           Name="fuel"            Grid.Column="0" Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content ="Status:"         Name="status"          Grid.Column="0" Grid.Row="5"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content ="All line:"         Name="AllLine"       Grid.Column="0" Grid.Row="6"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="All line:"         Name="AllLine"       Grid.Column="0" Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="LineListB" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center"  MaxWidth="200" HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15" SelectionChanged="LineListB_SelectionChanged">
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="LineListB" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  MaxWidth="200" HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15" SelectionChanged="LineListB_SelectionChanged">
         </ComboBox>
 
-        <Grid x:Name="busInfo"  Grid.Row ="1" Grid.Column="1" Grid.RowSpan="5">
+        <Grid x:Name="busInfo"  Grid.Row ="2" Grid.Column="1" Grid.RowSpan="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -53,11 +53,11 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Content ="{Binding LicenseNumber}" Name ="licenseNumber1"  Grid.Row="0"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-            <Label Content ="{Binding LicenseDate}"   Name="licenseDate1"     Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-            <Label Content ="{Binding KM}"            Name="km1"              Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-            <Label Content ="{Binding Fuel}"          Name="fuel1"            Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-            <Label Content ="{Binding Status}"        Name="status1"          Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding LicenseNumber}" Name ="licenseNumber1"  Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+            <Label Content ="{Binding LicenseDate}"   Name="licenseDate1"     Grid.Row="0"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding KM}"            Name="km1"              Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding Fuel}"          Name="fuel1"            Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding Status}"        Name="status1"          Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         </Grid>
 
         <Button Grid.Row="7" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">

@@ -65,6 +65,11 @@ namespace Wpf.Mangager.Information
             this.Close();
         }
 
+        private void LineListS_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
         //private void LineListS_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         //{
         //    LineListS.
