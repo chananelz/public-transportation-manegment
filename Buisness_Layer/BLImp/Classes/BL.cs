@@ -10,6 +10,7 @@ namespace BLImp
 {
     public partial class BL:IBL
     {
+        Validator valid = new Validator();
         public static IDal dal;
         public BL()
         {

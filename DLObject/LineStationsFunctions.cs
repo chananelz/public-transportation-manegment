@@ -7,45 +7,79 @@ using DalApi;
 using DS;
 using DO;
 
+
+
 namespace DL
 {
     public partial class DLObject : IDal
     {
         public void CreateLineStation(LineStation lineStation)
         {
-            DataSource.LineStationList.Add(lineStation);
-        }
-        public LineStation RequestLineStation(long id)
-        {
-            return DataSource.LineStationList.Find(l => l.Code == id);
-        }
-        public void UpdateLineStation(LineStation lineStation)
-        {
-            int indLine;
-            if (lineStation.Code != null)
+
+            lineStation.Valid = true;
+            try
             {
-                indLine = DataSource.LineStationList.FindIndex(l => l.Code == lineStation.Code);
-                DataSource.LineStationList[indLine] = lineStation;
+                GetLineStation(lineStation.Code,lineStation.LineId);
             }
-            else
-                throw new Exception("lineStation doesn't exist!!");
+            catch (Exception ex)
+            {
+                if (ex.Message == "no such line!!")
+                    DataSource.LineStationList.Add(lineStation);
+                else if (ex.Message == "line is not valid!!")
+                {
+                    var t = from lineS in DataSource.LineStationList
+                            where (lineS.Code == lineStation.Code)
+                            select lineStation;
+                    t.ToList().First().Valid = true;
+                }
+                return;
+            }
+            throw new Exception("lineStation already exists!!!");
+
         }
-        public void DeleteLineStation(LineStation lineStation)
+        public LineStation RequestLineStation(Predicate<LineStation> pr = null)
         {
-            if (lineStation.Code != null)
-                DataSource.LineStationList.Remove(lineStation);
-            else
-                throw new Exception("lineStation doesn't exist!!");
+            LineStation ret = DataSource.LineStationList.Find(line => pr(line));
+            if (ret == null)
+                throw new Exception("no line that meets these conditions!");
+            ret = DataSource.LineStationList.Find(line => line.Valid == true);
+            if (ret == null)
+                throw new Exception("line that meets these conditions is not valid");
+            return ret.GetPropertiesFrom<LineStation, LineStation>();
+        }
+
+        public void UpdateLineStationNumberInLine(long numberInLine, long lineId,long code)
+        {
+            GetLineStation(code,lineId).NumberInLine = numberInLine;
+        }
+
+
+
+        public void DeleteLineStation(long code,long lineId)
+        {
+            GetLineStation(code, lineId).Valid = false;
+        }
+
+        public LineStation GetLineStation(long code,long lineId)
+        {
+            var t = from lineStation in DataSource.LineStationList
+                    where (lineStation.Code == code &&  lineStation.LineId == lineId)
+                    select lineStation;
+            if (t.ToList().Count == 0)
+                throw new Exception("no such line!!");
+            if (!t.First().Valid)
+                throw new Exception("line is not valid!!");
+            return t.ToList().First();
         }
         public IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null)
         {
-
-            if (pr == null)
-                return DataSource.LineStationList;
-            else
-                return from b in DataSource.LineStationList
-                   where (pr(b))
-                   select b;
+            var cloneList = new List<LineStation>();
+            foreach (LineStation lineStation in DataSource.LineStationList)
+            {
+                if (lineStation.Valid == true)
+                    cloneList.Add(lineStation.GetPropertiesFrom<LineStation, LineStation>());
+            }
+            return cloneList;
         }
     }
 }

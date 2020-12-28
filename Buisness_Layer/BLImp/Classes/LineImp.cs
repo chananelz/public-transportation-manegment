@@ -18,7 +18,7 @@ namespace BLImp
             bool foundException = false;
             try
             {
-                Validator.GoodLong(number);
+                valid.GoodLong(number);
             }
             catch (Exception ex)
             {
@@ -27,7 +27,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodString(area);
+                valid.GoodString(area);
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodInt(firstStop);
+                valid.GoodInt(firstStop);
             }
             catch (Exception ex)
             {
@@ -45,7 +45,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodInt(lastStop);
+                valid.GoodInt(lastStop);
             }
             catch (Exception ex)
             {
@@ -63,28 +63,31 @@ namespace BLImp
             if (pr == null)
                 throw new Exception("can't request a line with no predicate");
             return dal.RequestLine(line => pr(line.GetPropertiesFrom<BO.Line, DO.Line>())).GetPropertiesFrom<BO.Line, DO.Line>();
-
+        }
+        public Line RequestLineById(long id)
+        {
+            return RequestLine(line => line.Id == id);
         }
         public void UpdateLineNumber(long number, long id)
         {
-            Validator.GoodLong(number);
+            valid.GoodLong(number);
             dal.UpdateLineNumber(number, id);
         }
 
         public void UpdateLineArea(string area, long id)
         {
-            Validator.GoodString(area);
+            valid.GoodString(area);
             dal.UpdateLineArea(area, id);
         }
 
         public void UpdateLineFirstStop(int firstStop, long id)
         {
-            Validator.GoodInt(firstStop);
+            valid.GoodInt(firstStop);
             dal.UpdateLineFirstStop(firstStop, id);
         }
         public void UpdateLineLastStop(int lastStop, long id)
         {
-            Validator.GoodInt(lastStop);
+            valid.GoodInt(lastStop);
             dal.UpdateLineLastStop(lastStop, id);
         }
 
@@ -93,6 +96,10 @@ namespace BLImp
             dal.DeleteLine(id);
         }
 
+        public long GetIdByNumber(long number)
+        {
+            return RequestLine(line => line.Number == number).Id;
+        }
 
         public IEnumerable<Line> GetAllLines(Predicate<Line> pr = null)
         {
@@ -102,7 +109,5 @@ namespace BLImp
             }
             return dal.GetAllLines().Select(line => line.GetPropertiesFrom<BO.Line, DO.Line>()).Where(b => pr(b));
         }
-
-
     }
 }

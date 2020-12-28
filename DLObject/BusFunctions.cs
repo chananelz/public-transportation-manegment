@@ -43,8 +43,7 @@ namespace DL
             Bus ret = DataSource.BusesList.Find(bus => pr(bus));
             if (ret == null)
                 throw new Exception("no bus that meets these conditions!");
-            ret = DataSource.BusesList.Find(bus => bus.Valid == true);
-            if (ret == null)
+            if (ret.Valid == false)
                 throw new Exception("bus that meets these conditions is not valid");
             return ret.GetPropertiesFrom<Bus,Bus>();
         }
@@ -91,8 +90,6 @@ namespace DL
                 if(bus.Valid == true)
                     cloneList.Add(bus.GetPropertiesFrom<Bus, Bus>());
             }
-            if (cloneList.Count == 0)
-                throw new Exception("no such busses!");
             return cloneList;
         }
     }

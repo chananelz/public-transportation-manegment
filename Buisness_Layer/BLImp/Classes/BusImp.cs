@@ -21,7 +21,7 @@ namespace BLImp
             bool foundException = false;
             try
             {
-                Validator.GoodLicense(licenseNumber, dateTime);
+                valid.GoodLicense(licenseNumber, dateTime);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace BLImp
             }
             try
             {
-                Validator.ExistLicense(licenseNumber);
+                valid.ExistLicense(licenseNumber);
             }
             catch (Exception ex)
             {
@@ -39,17 +39,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodFuel(fuel);
-            }
-            catch (Exception ex)
-            {
-                exception += ex.Message;
-                foundException = true;
-            }
-
-            try
-            {
-                Validator.GoodStatus(statusInput);
+                valid.GoodFuel(fuel);
             }
             catch (Exception ex)
             {
@@ -59,7 +49,17 @@ namespace BLImp
 
             try
             {
-                Validator.GoodFloat(kM);
+                valid.GoodStatus(statusInput);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+
+            try
+            {
+                valid.GoodFloat(kM);
             }
             catch (Exception ex)
             {
@@ -81,19 +81,19 @@ namespace BLImp
 
         public void UpdateBusKM(float kM, long licenseNumber)
         {
-            Validator.GoodFloat(kM);
+            valid.GoodFloat(kM);
             dal.UpdateBusKM(kM, licenseNumber);
         }
 
         public void UpdateBusFuel(float fuel, long licenseNumber)
         {
-            Validator.GoodFuel(fuel);
+            valid.GoodFuel(fuel);
             dal.UpdateBusFuel(fuel, licenseNumber);
         }
 
         public void UpdateBusStatus(int st, long licenseNumber)
         {
-            Validator.GoodStatus(st);
+            valid.GoodStatus(st);
             dal.UpdateBusStatus(st, licenseNumber);
         }
 

@@ -47,11 +47,15 @@ namespace DalApi
         IEnumerable<LineDeparture> GetAllLineDepartures(Predicate<LineDeparture> pr = null);
 
 
-        void CreateLineStation(LineStation line_Station);
-        LineStation RequestLineStation(long Id);  //check this...
-        void UpdateLineStation(LineStation line_Station);
-        void DeleteLineStation(LineStation line_Station);
+
+        void CreateLineStation(LineStation lineStation);
+        LineStation RequestLineStation(Predicate<LineStation> pr = null);
+        void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
+        void DeleteLineStation(long code, long lineId);
+        LineStation GetLineStation(long code, long lineId);
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
+
+
 
 
         void CreateSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);

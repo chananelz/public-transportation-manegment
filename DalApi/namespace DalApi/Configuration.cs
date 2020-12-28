@@ -20,7 +20,7 @@ namespace DalApi
 
 
 
-        static int lineCounter = 10;
+        static int lineCounter = 9;
         public static int LineCounter => ++lineCounter;
 
 

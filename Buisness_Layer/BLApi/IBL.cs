@@ -61,6 +61,8 @@ namespace BLApi
         void UpdateLineLastStop(int lastStop, long id); 
         void DeleteLine(long id);
         IEnumerable<Line> GetAllLines(Predicate<Line> pr = null);
+        Line RequestLineById(long lineId);
+        long GetIdByNumber(long number);
         //IEnumerable<Line> GetAllValidLines();
         //IEnumerable<Line> GetAllUnValidLines();
         //IEnumerable<stop> GetAllStopInSpecificLine();
@@ -71,23 +73,27 @@ namespace BLApi
 
 
 
-        void CreateLineStation(long code, long number);
-        LineStation RequestLineStation(long id);
-        void UpdateLineStation(long code, long number);
-        void DeleteLineStation(long code, long number);
-        //IEnumerable<Stop> GetAllStopsByLineNumber(long number);
-        
-        //IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
+        void CreateLineStation(long lineId, long numberInLine, long code);
+        LineStation RequestLineStation(Predicate<LineStation> pr = null);
+        void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
+        void DeleteLineStation(long code,long lineId);
+        IEnumerable<Stop> GetAllStopsByLineNumber(long number);
+
+        IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
         //IEnumerable<LineStation> GetAllValidLineStations();
         //IEnumerable<LineStation> GetAllUnValidLineStation();
         //int GetAllUnValidLineStation();
+
+
+
+
 
 
         void CreateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
         SequentialStopInfo RequestSequentialStopInfo(long fid, long sid);
         void UpdateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
         void DeleteSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
-        //IEnumerable<SequentialStopInfo> GetAll_StopsInfo(Predicate<SequentialStopInfo> pr = null);
+        //IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null);
         //IEnumerable<SequentialStopInfo> GetAllValidSequentialStopInfo();
         //IEnumerable<SequentialStopInfo> GetAllUnValidSequentialStopInfo();
 

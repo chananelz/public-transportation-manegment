@@ -18,14 +18,13 @@ namespace BO
         public int LastStop { get; set; }
 
         public List<Stop> stops;
-        //public List<LineStation> Stops
-        //{
-            //get { return BLApi.Factory.GetBL("1").GetAllStopsByLineNumber(Number).ToList(); }
-            // get { return BL. }
-         //   return;
-       // }
-            
-            
+        public List<Stop> Stops
+        {
+            get { return Factory.GetBL("1").GetAllStopsByLineNumber(Number).ToList(); }
+        }
+
+
+
         public Bus CurrentBus { get; set; }
         public Line()//not implemented
         {

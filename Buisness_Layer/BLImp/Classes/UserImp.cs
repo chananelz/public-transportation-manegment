@@ -23,7 +23,7 @@ namespace BLImp
             bool foundException = false;
             try
             {
-                Validator.UserNameExist(userName);
+                valid.UserNameExist(userName);
             }
             catch (Exception ex)
             {
@@ -32,7 +32,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodString(userName);
+                valid.GoodString(userName);
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodPassword(password);
+                valid.GoodPassword(password);
             }
             catch (Exception ex)
             {
@@ -50,7 +50,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodPermission(permission);
+                valid.GoodPermission(permission);
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace BLImp
             bool foundException = false;
             try
             {
-                Validator.UserNameExist(name);
+                valid.UserNameExist(name);
             }
             catch (Exception ex)
             {
@@ -85,7 +85,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodString(name);
+                valid.GoodString(name);
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace BLImp
 
         public void UpdatePassword(string password, string nameId)
         {
-            Validator.GoodPassword(password);
+            valid.GoodPassword(password);
             dal.UpdatePassword(password, nameId);
         }
         public void DeleteUser(string nameId)

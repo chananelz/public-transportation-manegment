@@ -21,7 +21,7 @@ namespace BLImp
             bool foundException = false;
             try
             {
-                Validator.GoodLatitude(latitude);
+                valid.GoodLatitude(latitude);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodLongitude(longitude);
+                valid.GoodLongitude(longitude);
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace BLImp
             }
             try
             {
-                Validator.GoodString(stopName);
+                valid.GoodString(stopName);
             }
             catch (Exception ex)
             {
@@ -61,18 +61,17 @@ namespace BLImp
         public void UpdateStopName(string name, long code)
         {
 
-            Validator.GoodString(name);
+            valid.GoodString(name);
             dal.UpdateStopName(name, code);
         }
         public void UpdateStopLongitude(double longitude, long code)
         {
-
-            Validator.GoodLongitude(longitude);
+            valid.GoodLongitude(longitude);
             dal.UpdateStopLongitude(longitude, code);
         }
         public void UpdateStopLatitude(double latitude, long code)
         {
-            Validator.GoodLatitude(latitude);
+            valid.GoodLatitude(latitude);
             dal.UpdateStopLatitude(latitude, code);
         }
         public void DeleteStop(long code)

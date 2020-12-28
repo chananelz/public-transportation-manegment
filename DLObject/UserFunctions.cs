@@ -40,8 +40,7 @@ namespace DL
             User ret = DataSource.UserList.Find(bus => pr(bus));
             if (ret == null)
                 throw new Exception("no user with such UserName!!");
-            ret = DataSource.UserList.Find(user => user.Valid == true);
-            if (ret == null)
+            if (ret.Valid == false)
                 throw new Exception("user is not valid!!");
             return ret.GetPropertiesFrom<User, User>();
         }

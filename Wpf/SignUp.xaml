@@ -56,7 +56,12 @@
         </Label>
 
 
-
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
+        
         <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"  Click="Name_Click" />
         <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center"  Click="Password_Click"/>
 

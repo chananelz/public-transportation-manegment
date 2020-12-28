@@ -42,8 +42,7 @@ namespace DL
             Stop ret = DataSource.StopList.Find(stop => pr(stop));
             if (ret == null)
                 throw new Exception("no bus that meets these conditions!");
-            ret = DataSource.StopList.Find(stop => stop.Valid == true);
-            if (ret == null)
+            if (ret.Valid == false)
                 throw new Exception("bus that meets these conditions is not valid");
             return ret.GetPropertiesFrom<Stop, Stop>();
         }

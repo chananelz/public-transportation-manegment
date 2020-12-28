@@ -39,8 +39,7 @@ namespace DL
             Line ret = DataSource.LineList.Find(line => pr(line));
             if (ret == null)
                 throw new Exception("no bus that meets these conditions!");
-            ret = DataSource.LineList.Find(line => line.Valid == true);
-            if (ret == null)
+            if (ret.Valid == false)
                 throw new Exception("line that meets these conditions is not valid");
             return ret.GetPropertiesFrom<Line, Line>();
         }

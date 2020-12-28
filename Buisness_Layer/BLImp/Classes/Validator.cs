@@ -10,71 +10,71 @@ using BL;
 
 namespace BLImp
 {
-    static class Validator
+    public class Validator
     {
-        public static void GoodLicense(long licenseNumber, DateTime dateTime)
+        public void GoodLicense(long licenseNumber, DateTime dateTime)
         {
             if ((licenseNumber >= 1000000 && licenseNumber < 10000000 && dateTime.Year <= 2018) || licenseNumber >= 10000000 && licenseNumber < 100000000 && (dateTime.Year > 2018 || dateTime.Year == 0))
                 return;
             throw new Exception("license number and year don't match!");
 
         }
-        public static void ExistLicense(long licenseNumber)
+        public void ExistLicense(long licenseNumber)
         {
             if (BL.dal.GetAllBusses().Any(bus => bus.LicenseNumber == licenseNumber))
                 return;
             throw new Exception("licenseNumber exists!!");
         }
 
-        public static void GoodFuel(float fuel)//check this 1200
+        public void GoodFuel(float fuel)//check this 1200
         {
             if (fuel >= 0 && fuel <= 1200)
                 return;
             throw new Exception("fuel not good!!!");
         }
-        public static void GoodStatus(int status)
+        public void GoodStatus(int status)
         {
             if (status >= 0 && status <= 3)
                 return;
             throw new Exception("status not correct!!");
         }
 
-        public static void GoodInt(long number)
+        public void GoodInt(long number)
         {
             if (number > 0)
                 return;
             throw new Exception("number negative!!!");
         }
-        public static void GoodLong(long number)
+        public void GoodLong(long number)
         {
             if (number > 0)
                 return;
             throw new Exception("number negative!!!");
         }
-        public static void GoodFloat(float number)
+        public void GoodFloat(float number)
         {
             if (number > 0)
                 return;
             throw new Exception("number negative!!!");
         }
-        public static void GoodString(string st)
+        public void GoodString(string st)
         {
             if (!string.IsNullOrEmpty(st))
                 return;
             throw new Exception("string is empty!!!");
         }
-        public static void UserNameExist(string userName)
+        public void UserNameExist(string userName)
         {
             if (BL.dal.GetAllUsers().Any(user => user.UserName == userName))
                 throw new Exception("user name already exists!!!");
             return;
         }
-        public static void GoodPassword(string password)//
+        public void GoodPassword(string password)//
         {
             string exception = "";
             if (password.Length < 8 ||
-                password.Length > 15) 
-               exception += "length not good";
+                password.Length > 15)
+                exception += "length not good";
 
             bool containsDigits = false;
             bool containsSpecial = false;
@@ -116,23 +116,47 @@ namespace BLImp
                 exception += "password not strong enough!";
 
         }
-        public static void GoodPermission(int permission)
+        public void GoodPermission(int permission)
         {
             if (permission == 0 || permission == 1)
                 return;
             throw new Exception("permission not good!");
         }
-        public static void GoodLongitude(double longitude)//34.3 - 35.5
+        public void GoodLongitude(double longitude)
         {
             if (longitude >= 34.3 && longitude <= 35.5)
                 return;
             throw new Exception("lonigtude not between 34.3 - 35.5");
         }//31,33.3
-        public static void GoodLatitude(double latitude)//31 - 33.3
+        public void GoodLatitude(double latitude)
         {
             if (latitude >= 31 && latitude <= 33.3)
                 return;
             throw new Exception("latitude not between 31 - 33.3");
+        }
+        public void LineIdExist(long lineId)
+        {
+            BL bl = new BL();
+            var a = bl.RequestLineById(lineId);
+            if (a != null)
+                return;
+            throw new Exception("line doesn't exist!");
+        }
+        public void NumberInLineExist(long lineId, long numberInLine)
+        {
+            BL bl = new BL();
+            var a = bl.GetAllLineStations().Count();
+            if (a > numberInLine)
+                return;
+            throw new Exception("number in line doesn't fit!");
+        }
+        public void StopCodeExist(long stopCode)
+        {
+            BL bl = new BL();
+            var a = bl.GetAllLineStations().Where(stop => stop.Code == stopCode);
+            if (a.Count() != 0)
+                return;
+            throw new Exception("no such stop exists!");
         }
     }
 }
