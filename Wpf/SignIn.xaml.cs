@@ -35,6 +35,9 @@ namespace Wpf
             Status = status;
             InitializeComponent();
 
+            if (status == "MANAGER")
+                Sign_In.Visibility = Visibility.Collapsed;
+
             MyData myData = new MyData()
             {
                 UserLable = status
@@ -115,6 +118,12 @@ namespace Wpf
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            new SignUp().Show();
             this.Close();
         }
     }

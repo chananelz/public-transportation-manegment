@@ -34,7 +34,7 @@ namespace DalApi
         void UpdateLineNumber(long number, long id);
         void UpdateLineArea(string area, long id);
         void UpdateLineFirstStop(int firstStop, long id);
-        void UpdateLineLastStop(int lastStop, long id); 
+        void UpdateLineLastStop(int lastStop, long id);
         Line GetLine(long id);
         void DeleteLine(long id);
         IEnumerable<Line> GetAllLines();
@@ -55,7 +55,7 @@ namespace DalApi
 
 
         void CreateSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);
-        SequentialStopInfo RequestSequentialStopInfo(long firstId,long secondId);  //check this...
+        SequentialStopInfo RequestSequentialStopInfo(long firstId, long secondId);  //check this...
         void UpdateSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);
         void DeleteSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);
         IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null);
@@ -74,11 +74,15 @@ namespace DalApi
 
 
 
+
         void CreateUser(User user);
-        User RequestUser(string Id);  //check this...
-        void UpdateUser(User user);
-        void DeleteUser(User user);
-        IEnumerable<User> GetAllUsers(Predicate<User> pr = null);
+        User RequestUser(Predicate<User> pr = null);
+        void UpdateName(string name, string nameId);
+        void UpdatePassword(string password, string nameId);
+        void DeleteUser(string nameId);
+        User GetUser(string password);
+        IEnumerable<User> GetAllUsers();
+
 
 
         void CreateUserTravel(UserTravel user_Travel);
