@@ -2142,8 +2142,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 143,
                 Area = "Benjamin East",
-                FirstStop = 4879,
-                LastStop = 8767
+                FirstStop = 570,
+                LastStop = 555
             });
             #endregion
 
@@ -2154,8 +2154,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 142,
                 Area = "Benjamin North",
-                FirstStop = 9764,
-                LastStop = 6482
+                FirstStop = 579,
+                LastStop = 598
 
             });
             #endregion
@@ -2167,8 +2167,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 145,
                 Area = "Benjamin East",
-                FirstStop = 9437,
-                LastStop = 4879
+                FirstStop = 585,
+                LastStop = 570
             });
             #endregion
 
@@ -2179,8 +2179,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 144,
                 Area = "Benjamin East",
-                FirstStop = 9437,
-                LastStop = 8767
+                FirstStop = 585,
+                LastStop = 555
 
             });
             #endregion
@@ -2192,8 +2192,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 148,
                 Area = "Benjamin Southeast",
-                FirstStop = 9437,
-                LastStop = 3379
+                FirstStop = 585,
+                LastStop = 580
             });
             #endregion
 
@@ -2204,8 +2204,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 472,
                 Area = "Benjamin North",
-                FirstStop = 6482,
-                LastStop = 4879
+                FirstStop = 598,
+                LastStop = 570
 
             });
             #endregion
@@ -2217,8 +2217,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 141,
                 Area = "Benjamin North",
-                FirstStop = 6482,
-                LastStop = 3379
+                FirstStop = 598,
+                LastStop = 580
             });
             #endregion
 
@@ -2229,8 +2229,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 442,
                 Area = "Benjamin Southeast",
-                FirstStop = 4879,
-                LastStop = 3379
+                FirstStop = 570,
+                LastStop = 580
 
             });
             #endregion
@@ -2242,8 +2242,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 433,
                 Area = "Benjamin North",
-                FirstStop = 6482,
-                LastStop = 4571
+                FirstStop = 598,
+                LastStop = 595
             });
             #endregion
 
@@ -2254,8 +2254,8 @@ namespace DS
                 Id = Configuration.LineCounter,
                 Number = 456,
                 Area = "Benjamin East",
-                FirstStop = 4879,
-                LastStop = 9627
+                FirstStop = 570,
+                LastStop = 578
 
             });
             #endregion
