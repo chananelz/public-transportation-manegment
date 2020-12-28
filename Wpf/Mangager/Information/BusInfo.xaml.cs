@@ -30,7 +30,12 @@ namespace Wpf.Mangager.Information
             busInfo.DataContext = infoBus;
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
-            LineListB.ItemsSource = bl.GetAllBusses().Select(p=>p.LicenseNumber).ToList();
+
+            //var temp = bl.GetAllBusTravels().Where(s => s.LicenseNumber == infoBus.LicenseNumber).FirstOrDefault();
+            //temp.LicenseNumber = 143;
+            //BO.BusTravel infoBusTravel = new BO.BusTravel(temp.LicenseNumber, temp.FormalDepartureTime, temp.RealDepartureTime, temp.LastPassedStop, temp.LastPassedStopTime, temp.NextStopTime, temp.LineId);
+
+            //LineListB.ItemsSource = bl.GetAllBusTravels().Where(s => s.LineId == infoBusTravel.LineId).OrderBy(s => s.LineId).Select(p => p.LineId).ToList();
             busFunc();
         }
 
@@ -70,7 +75,7 @@ namespace Wpf.Mangager.Information
 
         private void LineListB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
     }
 }
