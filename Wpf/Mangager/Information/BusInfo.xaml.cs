@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
+using BLImp;
 
 namespace Wpf.Mangager.Information
 {
@@ -27,7 +28,9 @@ namespace Wpf.Mangager.Information
         {
             InitializeComponent();
             busInfo.DataContext = infoBus;
-            //LineListB.DataContext = 
+            BLApi.IBL bl;
+            bl = BLApi.Factory.GetBL("1");
+            LineListB.ItemsSource = bl.GetAllBusses().Select(p=>p.LicenseNumber).ToList();
             busFunc();
         }
 
@@ -67,7 +70,7 @@ namespace Wpf.Mangager.Information
 
         private void LineListB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }
