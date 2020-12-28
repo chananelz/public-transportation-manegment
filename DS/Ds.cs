@@ -904,6 +904,25 @@ namespace DS
 
         static void initUserList()
         {
+            #region User #0 //temp erase it!
+            UserList.Add(new User()
+            {
+                Password = "1",
+                Valid = true,
+                UserName = "a",
+                Permission = authority.USER
+            });
+            #endregion
+
+            #region User #0 ////temp erase it!
+            UserList.Add(new User()
+            {
+                Password = "2",
+                Valid = true,
+                UserName = "b",
+                Permission = authority.CEO
+            });
+            #endregion
 
             #region User #1
             UserList.Add(new User()

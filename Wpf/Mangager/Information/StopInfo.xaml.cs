@@ -28,6 +28,9 @@ namespace Wpf.Mangager.Information
         {
             InitializeComponent();
             stopInfo.DataContext = infoStop;
+            BLApi.IBL bl;
+            bl = BLApi.Factory.GetBL("1");
+            LineListS.ItemsSource = bl.GetAllStops().Select(p => p.StopName ).ToList();
             busFunc();
         }
 
