@@ -78,7 +78,6 @@ namespace Wpf
                 au = authority.CEO;
             try
             {
-
                 User user = bl.Authinticate(userName, password, au);
                 new Options().Show();
                 this.Close();

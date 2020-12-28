@@ -19,7 +19,8 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="60*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="10*"/>
@@ -39,36 +40,48 @@
         <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="1" Name="MyTextBox1"  TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Name"     VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Password"       VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0"  Content="Name"     VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="1"  Content="Password"       VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+
+
+        <Label  Foreground="Red"    HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="1" Content="Passwords criteria:&#10;Length: 8 - 15&#10;Digits: 0-9&#10;Punctuation letters: !@#...&#10;Upper case letters: A B...&#10;Lower case leters: a b..."     VerticalAlignment="Stretch"  FontSize="14" FontFamily="Bernard MT Condensed" >
+            <Label.Background>
+                <ImageBrush ImageSource="myImages/busListBackground.png" Opacity="0.3"/>
+            </Label.Background>
+        </Label>
+        <Label  Foreground="Red"    HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="0" Content="User Name must be unique"     VerticalAlignment="Stretch"  FontSize="14" FontFamily="Bernard MT Condensed" >
+            <Label.Background>
+                <ImageBrush ImageSource="myImages/busListBackground.png" Opacity="0.3"/>
+            </Label.Background>
+        </Label>
 
 
 
-        <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  Click="Name_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center"  Click="Password_Click"/>
+        <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"  Click="Name_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center"  Click="Password_Click"/>
 
 
-        <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="12"/>
-        <Label Background="DarkOrange" x:Name="resultLabel"  Content="0 %" Grid.Row="3"  Grid.ColumnSpan="12" HorizontalAlignment="Center"   FontFamily="Bernard MT Condensed" FontSize="10"/>
+        <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Stretch" Grid.ColumnSpan="12"/>
+        <Label Background="DarkOrange" x:Name="resultLabel"  Content="0 %" Grid.Row="4"  Grid.ColumnSpan="12" HorizontalAlignment="Center"   FontFamily="Bernard MT Condensed" FontSize="10"/>
 
 
 
 
-        <Button Grid.Row="4" Grid.Column="0"  Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="5" Grid.Column="0"  Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/home.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="4" Grid.Column="1"  Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="5" Grid.Column="1"  Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
             </Button.Background>
         </Button>
 
 
-        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="5" Width="50" Source="myImages/Bus.png" Margin="350,0,0,0" />
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="5" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="350,0,0,0" />
+        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
 
         <Grid.Background>

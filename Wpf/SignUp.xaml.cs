@@ -104,21 +104,14 @@ namespace Wpf
                 MessageBox.Show("work cancelled");
             }
 
-
-
             try
             {
                 bl.CreateUser(name, password,1);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                new PresentationBusses().Show();
-                this.Close();
-                return;
+                MessageBox.Show(ex.Message); 
             }
-            MessageBox.Show("user added!");
-
             new SignIn("USER").Show();
             this.Close();
         }
@@ -210,6 +203,7 @@ namespace Wpf
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox0.Document.Blocks.Clear();
             }
         }
 
@@ -232,6 +226,7 @@ namespace Wpf
             else
             {
                 MessageBox.Show("wrong input!!!!");
+                MyTextBox1.Document.Blocks.Clear();
             }
 
         }

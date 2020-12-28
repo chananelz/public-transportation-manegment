@@ -100,7 +100,7 @@ namespace Wpf.Mangager.Managing
             {
                 try
                 {
-                    Travel_Update_Click(sender, e);
+                    Fuel_Update_Click(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -117,7 +117,7 @@ namespace Wpf.Mangager.Managing
             {
                 try
                 {
-                    Fuel_Update_Click(sender, e);
+                    Status_Update_Click(sender, e);
                 }
                 catch (Exception ex)
                 {
@@ -131,7 +131,7 @@ namespace Wpf.Mangager.Managing
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
             float result = 0;
-            if (float.TryParse(textRange.Text, out result) && result > 0)
+            if (float.TryParse(textRange.Text, out result))
             {
                 kM = result;
                 try 
@@ -143,6 +143,7 @@ namespace Wpf.Mangager.Managing
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    MyTextBox0.Document.Blocks.Clear();
                 }
             }
             else
@@ -155,7 +156,7 @@ namespace Wpf.Mangager.Managing
         {
             TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
             float result = 0;
-            if (float.TryParse(textRange.Text, out result) && result > 0)
+            if (float.TryParse(textRange.Text, out result))
             {
                 fuel = result;
                 try
@@ -167,8 +168,9 @@ namespace Wpf.Mangager.Managing
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    MyTextBox1.Document.Blocks.Clear();
                 }
-             
+
             }
             else
             {
@@ -180,7 +182,7 @@ namespace Wpf.Mangager.Managing
         {
             TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
             int result = 0;
-            if (int.TryParse(textRange.Text, out result) && result > 0)
+            if (int.TryParse(textRange.Text, out result))
             {
                 statusInput = result;
                 try
@@ -192,8 +194,9 @@ namespace Wpf.Mangager.Managing
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    MyTextBox2.Document.Blocks.Clear();
                 }
-                
+
 
             }
             else

@@ -17,37 +17,62 @@ namespace BLImp
         public void CreateStop(double latitude, double longitude, string stopName)
         {
 
-            // check latitude 
-
-            //check longitude
-
-            //check stopName
-
+            string exception = "";
+            bool foundException = false;
+            try
+            {
+                Validator.GoodLatitude(latitude);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodLongitude(longitude);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodString(stopName);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            if (foundException)
+                throw new Exception(exception);
             Stop stopBO = new Stop(latitude, longitude, stopName);
             DO.Stop stopDO = stopBO.GetPropertiesFrom<DO.Stop, BO.Stop>();
             dal.CreateStop(stopDO);
         }
         public Stop RequestStop(Predicate<Stop> pr = null)
         {
+            if (pr == null)
+                throw new Exception("can't request a line with no predicate");
             return dal.RequestStop(stop => pr(stop.GetPropertiesFrom<BO.Stop, DO.Stop>())).GetPropertiesFrom<BO.Stop, DO.Stop>();
         }
         public void UpdateStopName(string name, long code)
         {
 
-            //check stopName
+            Validator.GoodString(name);
             dal.UpdateStopName(name, code);
         }
         public void UpdateStopLongitude(double longitude, long code)
         {
 
-            //check longitude
-
+            Validator.GoodLongitude(longitude);
             dal.UpdateStopLongitude(longitude, code);
         }
         public void UpdateStopLatitude(double latitude, long code)
         {
-            // check latitude 
-
+            Validator.GoodLatitude(latitude);
             dal.UpdateStopLatitude(latitude, code);
         }
         public void DeleteStop(long code)
@@ -59,9 +84,7 @@ namespace BLImp
         {
             if (pr == null)
             {
-                var tempList = dal.GetAllStops();
-                var secondTempList = tempList.Select(stop => stop.GetPropertiesFrom<BO.Stop, DO.Stop>()).ToList();
-                return secondTempList;
+                return dal.GetAllStops().Select(stop => stop.GetPropertiesFrom<BO.Stop, DO.Stop>()).ToList(); ;
             }
             return dal.GetAllStops().Select(stop => stop.GetPropertiesFrom<BO.Stop, DO.Stop>()).Where(b => pr(b));
         }

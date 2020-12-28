@@ -91,6 +91,8 @@ namespace DL
                 if(bus.Valid == true)
                     cloneList.Add(bus.GetPropertiesFrom<Bus, Bus>());
             }
+            if (cloneList.Count == 0)
+                throw new Exception("no such busses!");
             return cloneList;
         }
     }

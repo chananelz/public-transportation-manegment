@@ -19,30 +19,87 @@ namespace BLImp
         public void CreateUser(string userName, string password, int permission)
         {
 
-            // check userName 
-
-            //check password
-
-            //check permission
-
+            string exception = "";
+            bool foundException = false;
+            try
+            {
+                Validator.UserNameExist(userName);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodString(userName);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodPassword(password);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodPermission(permission);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            if (foundException)
+                throw new Exception(exception);
             User userBO = new User(userName, password, permission);
             DO.User userDO = userBO.GetPropertiesFrom<DO.User, BO.User>();
             dal.CreateUser(userDO);
         }
         public User RequestUser(Predicate<User> pr)
         {
+            if (pr == null)
+                throw new Exception("can't request user with no predicate!");
             return dal.RequestUser(user => pr(user.GetPropertiesFrom<BO.User, DO.User>())).GetPropertiesFrom<BO.User, DO.User>();
 
         }
         public void UpdateName(string name, string nameId)
         {
-            // check name 
+            string exception = "";
+            bool foundException = false;
+            try
+            {
+                Validator.UserNameExist(name);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodString(name);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            if (foundException)
+                throw new Exception(exception);
             dal.UpdateName(name, nameId);
         }
 
         public void UpdatePassword(string password, string nameId)
         {
-            //check status
+            Validator.GoodPassword(password);
             dal.UpdatePassword(password, nameId);
         }
         public void DeleteUser(string nameId)
@@ -54,9 +111,7 @@ namespace BLImp
         {
             if (pr == null)
             {
-                var tempList = dal.GetAllUsers();
-                var secondTempList = tempList.Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).ToList();
-                return secondTempList;
+                return dal.GetAllUsers().Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).ToList();
             }
             return dal.GetAllUsers().Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).Where(b => pr(b)).ToList();
 

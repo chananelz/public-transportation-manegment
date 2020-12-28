@@ -14,47 +14,86 @@ namespace BLImp
 {
     public partial class BL : IBL
     {
-        public void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput)
+        public void CreateBus(long licenseNumber, DateTime dateTime, float kM, float fuel, int statusInput)
         {
-            //if (!GoodLicense(licenseNumber, dateTime))
-            //    throw new Exception("license number isn't accurate if greater than 2018 - 8 digits else 7 digits!");
-            
-            //check license number and date
 
-            // check fuel 
-            
-            //check status
+            string exception = "";
+            bool foundException = false;
+            try
+            {
+                Validator.GoodLicense(licenseNumber, dateTime);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.ExistLicense(licenseNumber);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                Validator.GoodFuel(fuel);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
 
-            //check km
+            try
+            {
+                Validator.GoodStatus(statusInput);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
 
-            Bus busBO = new Bus(licenseNumber, dateTime, kM, Fuel, statusInput);
+            try
+            {
+                Validator.GoodFloat(kM);
+            }
+            catch (Exception ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            if (foundException)
+                throw new Exception(exception);
+            Bus busBO = new Bus(licenseNumber, dateTime, kM, fuel, statusInput);
             DO.Bus busDO = busBO.GetPropertiesFrom<DO.Bus, BO.Bus>();
             dal.CreateBus(busDO);
         }
         public Bus RequestBus(Predicate<Bus> pr)
         {
-            return dal.RequestBus(bus => pr(bus.GetPropertiesFrom<BO.Bus, DO.Bus>())).GetPropertiesFrom<BO.Bus,DO.Bus>();
+            if (pr == null)
+                throw new Exception("can't request a line with no predicate");
+            return dal.RequestBus(bus => pr(bus.GetPropertiesFrom<BO.Bus, DO.Bus>())).GetPropertiesFrom<BO.Bus, DO.Bus>();
         }
 
         public void UpdateBusKM(float kM, long licenseNumber)
         {
-            //check km
-
+            Validator.GoodFloat(kM);
             dal.UpdateBusKM(kM, licenseNumber);
         }
 
         public void UpdateBusFuel(float fuel, long licenseNumber)
         {
-            // check fuel 
-
+            Validator.GoodFuel(fuel);
             dal.UpdateBusFuel(fuel, licenseNumber);
         }
 
         public void UpdateBusStatus(int st, long licenseNumber)
         {
-            //check status
-
-
+            Validator.GoodStatus(st);
             dal.UpdateBusStatus(st, licenseNumber);
         }
 
@@ -69,9 +108,7 @@ namespace BLImp
         {
             if (pr == null)
             {
-                var tempList = dal.GetAllBusses();
-                var secondTempList = tempList.Select(bus => bus.GetPropertiesFrom<BO.Bus, DO.Bus>()).ToList();
-                return secondTempList;
+                return dal.GetAllBusses().Select(bus => bus.GetPropertiesFrom<BO.Bus, DO.Bus>()).ToList(); ;
             }
             return dal.GetAllBusses().Select(bus => bus.GetPropertiesFrom<BO.Bus, DO.Bus>()).Where(b => pr(b));
         }

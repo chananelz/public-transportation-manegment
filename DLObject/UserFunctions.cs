@@ -82,7 +82,7 @@ namespace DL
                 if (user.Valid == true)
                     cloneList.Add(user.GetPropertiesFrom<User, User>());
             }
-            return cloneList;
+            return cloneList.ToList();
         }
     }
 }
