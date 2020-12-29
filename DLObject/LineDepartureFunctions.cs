@@ -11,31 +11,45 @@ namespace DL
 {
     public partial class DLObject : IDal
     {
-        public void CreateLineDeparture(LineDeparture lineDeparture)
+        public void CreateLineDeparture(LineDeparture lineDeparture) 
         {
             DataSource.LineDepartureList.Add(lineDeparture);
         }
-        public LineDeparture RequestLineDeparture(long id)
+        public LineDeparture RequestLineDeparture(Predicate<LineDeparture> pr = null) // ++
         {
-            return DataSource.LineDepartureList.Find(ld => ld.Id == id);
+            LineDeparture ret = DataSource.LineDepartureList.Find(lineDeparture => pr(lineDeparture));
+            if (ret == null)
+                throw new Exception("no lineDeparture that meets these conditions!");
+            if (ret.Valid == false)
+                throw new Exception("lineDeparture that meets these conditions is not valid");
+            return ret.GetPropertiesFrom<LineDeparture, LineDeparture>();
         }
-        public void UpdateLineDeparture(LineDeparture lineDeparture)
+
+        public LineDeparture GetLineDeparture(long id, DateTime time_Start) //++
         {
-            int indBus;
-            if (lineDeparture.Id != null)
-            {
-                indBus = DataSource.LineDepartureList.FindIndex(ld => lineDeparture.Id == ld.Id);
-                DataSource.LineDepartureList[indBus] = lineDeparture;
-            }
-            else
-                throw new Exception("lineDeparture doesn't exist!!");
+            var t = from lineDeparture in DataSource.LineDepartureList
+                    where (lineDeparture.Id == id)
+                    select lineDeparture;
+            if (t.ToList().Count == 0)
+                throw new Exception("no bus with such license number!!");
+            if (!t.First().Valid)
+                throw new Exception("bus is not valid!!");
+
+            return t.ToList().First();
         }
-        public void DeleteLineDeparture(LineDeparture lineDeparture)
+
+        public void UpdateLineDepartureFrequency(long id, DateTime time_Start ,int frequency)//++
         {
-            if (lineDeparture.Id != null)
-                DataSource.LineDepartureList.Remove(lineDeparture);
-            else
-                throw new Exception("lineDeparture doesn't exist!!");
+            GetLineDeparture(id, time_Start).Frequency = frequency;
+        }
+
+        public void UpdateLineDepartureTime_End(long id, DateTime time_Start , DateTime time_End)//++
+        {
+            GetLineDeparture(id, time_Start).Time_End = time_End;
+        }
+        public void DeleteLineDeparture(long id, DateTime time_Start) //++
+        {
+            GetLineDeparture(id, time_Start).Valid = false;
         }
         public IEnumerable<LineDeparture> GetAllLineDepartures(Predicate<LineDeparture> pr = null)
         {
