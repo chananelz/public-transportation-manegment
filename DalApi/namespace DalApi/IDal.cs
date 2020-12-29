@@ -21,11 +21,18 @@ namespace DalApi
 
 
 
-        void CreateBusTravel(BusTravel bus_Travel);
-        BusTravel RequestBusTravel(long Id);  //check this...
-        void UpdateBusTravel(BusTravel bus_Travel);
-        void DeleteBusTravel(BusTravel bus_Travel);
+        void CreateBusTravel(BusTravel busTravel);
+        BusTravel GetBusTravel(long id);
+        BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
+        void UpdateFormalDepartureTime(DateTime formalDepartureTime, long id);
+        void UpdateRealDepartureTime(DateTime realDepartureTime, long id);
+        void UpdateLastPassedStop(int lastPassedStop, long id);
+        void UpdateLastPassedStopTime(DateTime lastPassedStopTime, long id);
+        void UpdateNextStopTime(DateTime nextStopTime, long id);
+        void UpdateDriverId(long driverId, long id);
+        void DeleteBusTravel(long id);
         IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
+
 
 
 

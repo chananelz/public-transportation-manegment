@@ -54,7 +54,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000000,
+                LicenseNumber = 1000000,
                 LineId = 10,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
@@ -72,7 +72,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000001,
+                LicenseNumber = 1000001,
                 LineId = 10,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
@@ -89,7 +89,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000002,
+                LicenseNumber = 1000002,
                 LineId = 10,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
@@ -105,7 +105,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000003,
+                LicenseNumber = 1000003,
                 LineId = 11,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
@@ -121,7 +121,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000004,
+                LicenseNumber = 1000004,
                 LineId = 11,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
@@ -137,7 +137,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000005,
+                LicenseNumber = 1000005,
                 LineId = 11,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
@@ -153,7 +153,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000006,
+                LicenseNumber = 1000006,
                 LineId = 12,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
@@ -169,7 +169,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000007,
+                LicenseNumber = 1000007,
                 LineId = 12,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
@@ -185,7 +185,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000008,
+                LicenseNumber = 1000008,
                 LineId = 12,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
@@ -201,7 +201,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000009,
+                LicenseNumber = 1000009,
                 LineId = 13,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
@@ -218,7 +218,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000010,
+                LicenseNumber = 1000010,
                 LineId = 13,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
@@ -234,7 +234,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                License_Number = 1000011,
+                LicenseNumber = 1000011,
                 LineId = 13,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),

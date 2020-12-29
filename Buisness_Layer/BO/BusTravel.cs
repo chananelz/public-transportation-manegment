@@ -10,24 +10,29 @@ namespace BO
     {
         public bool Valid { get; set; }
         public long LicenseNumber { get; set; }
+        public long LineId { get; set; }
         public DateTime FormalDepartureTime { get; set; }
         public DateTime RealDepartureTime { get; set; }
         public int LastPassedStop { get; set; }
         public DateTime LastPassedStopTime { get; set; }
         public DateTime NextStopTime { get; set; }
+        public long DriverId { get; set; }
+
         public BusTravel()//not implemented
         {
 
         }
-        public BusTravel(long licenseNumber, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime)
+        public BusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,long driverId)
         {
             Valid = true;
+            LineId = lineId;
             LicenseNumber = licenseNumber;
             DateTime FormalDepartureTime = formalDepartureTime;
             DateTime RealDepartureTime = realDepartureTime;
             LastPassedStop = lastPassedStop;
             DateTime LastPassedStopTime = lastPassedStopTime;
             NextStopTime = nextStopTime;
+            DriverId = driverId;
         }
         public override string ToString()
         {

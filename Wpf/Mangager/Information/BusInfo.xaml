@@ -42,7 +42,7 @@
         <Label Content ="Status:"         Name="status"          Grid.Column="0" Grid.Row="5"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content ="All line:"         Name="AllLine"       Grid.Column="0" Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="LineListB" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  MaxWidth="200" HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15" SelectionChanged="LineListB_SelectionChanged">
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="LineListB" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  MaxWidth="200" HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15" SelectionChanged="LineListB_SelectionChanged" RenderTransformOrigin="0.75,0.5">
         </ComboBox>
 
         <Grid x:Name="busInfo"  Grid.Row ="2" Grid.Column="1" Grid.RowSpan="5">
