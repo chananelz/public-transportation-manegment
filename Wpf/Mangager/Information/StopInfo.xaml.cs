@@ -30,7 +30,7 @@ namespace Wpf.Mangager.Information
             stopInfo.DataContext = infoStop;
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
-            LineListS.ItemsSource = infoStop.lines;
+            LineListS.ItemsSource = /*bl.GetAllLinesByStopCode(infoStop.StopCode).ToList()*/infoStop.Lines;
             busFunc();
         }
 

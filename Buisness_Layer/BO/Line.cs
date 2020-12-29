@@ -17,7 +17,7 @@ namespace BO
         public long FirstStop { get; set; }
         public long LastStop { get; set; }
 
-        public List<Stop> stops;
+        private List<Stop> stops;
         public List<Stop> Stops
         {
             get { return Factory.GetBL("1").GetAllStopsByLineNumber(Number).ToList(); }

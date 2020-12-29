@@ -22,8 +22,8 @@ namespace BO
         public float KM { get; set; }
         public float Fuel { get; set; }
         public status Status { get; set; }
+        
         private List<Line> lineList;
-
         public List<Line> LineList
         {
             get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList(); }

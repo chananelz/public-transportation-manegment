@@ -101,7 +101,7 @@ namespace BLApi
         LineStation RequestLineStation(Predicate<LineStation> pr = null);
         void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
         void DeleteLineStation(long code,long lineId);
-        IEnumerable<Stop> GetAllStopsByLineNumber(long number);
+        IEnumerable<Stop> GetAllStopsByLineNumber(long id);
 
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
         //IEnumerable<LineStation> GetAllValidLineStations();
@@ -117,6 +117,7 @@ namespace BLApi
         SequentialStopInfo RequestSequentialStopInfo(long fid, long sid);
         void UpdateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
         void DeleteSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
+        IEnumerable<Line> GetAllLinesByStopCode(long code);
         //IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null);
         //IEnumerable<SequentialStopInfo> GetAllValidSequentialStopInfo();
         //IEnumerable<SequentialStopInfo> GetAllUnValidSequentialStopInfo();

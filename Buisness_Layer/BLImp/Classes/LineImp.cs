@@ -114,5 +114,18 @@ namespace BLImp
             }
             return dal.GetAllLines().Select(line => line.GetPropertiesFrom<BO.Line, DO.Line>()).Where(b => pr(b));
         }
+
+        public IEnumerable<Stop> GetAllStopsByLineNumber(long number)
+        {
+            long lineId = GetIdByNumber(number);
+            var myList = GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList();
+            List<Stop> li = new List<Stop>();
+            //convert lineStations to Stops
+            foreach (LineStation lineStation in myList)
+            {
+                li.Add(RequestStop(stop => stop.StopCode == lineStation.Code));
+            }
+            return li;
+        }
     }
 }

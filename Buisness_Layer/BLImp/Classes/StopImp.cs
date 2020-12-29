@@ -87,5 +87,62 @@ namespace BLImp
             }
             return dal.GetAllStops().Select(stop => stop.GetPropertiesFrom<BO.Stop, DO.Stop>()).Where(b => pr(b));
         }
+        public IEnumerable<Line> GetAllLinesByStopCode(long id)
+        {
+
+            var myList = GetAllLineStations(lineStation => lineStation.Code == id).ToList();
+            List<Line> li = new List<Line>();
+            //convert lineStations to Stops
+            foreach (LineStation lineStation in myList)
+            {
+                li.Add(RequestLine(line => line.Id == lineStation.LineId));
+            }
+            return li;
+
+
+
+
+
+            //bool flag = false;
+            //List<Line> myList = new List<Line>();
+            //myList = null;
+            //foreach (var line in Factory.GetBL("1").GetAllLines().ToList())
+            //{
+            //    foreach (var stop in line.stops)
+            //    {
+            //        if (stop.StopCode == StopCode)
+            //        {
+            //            flag = true;
+            //            break;
+            //        }
+            //    }
+            //    if (flag)
+            //    {
+            //        myList.Add(line);
+            //    }
+            //    flag = false;
+            //}
+            //return myList;
+
+
+
+
+            //public IEnumerable<Line> GetAllLinesByStopsNumber(long stopCoder)
+            //{
+            //    var myLineDeList = get
+
+
+            //    long lineId = GetIdByNumber(number);
+            //    var myList = GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList();
+            //    List<Stop> li = new List<Stop>();
+            //    //convert lineStations to Stops
+            //    foreach (LineStation lineStation in myList)
+            //    {
+            //        li.Add(RequestStop(stop => stop.StopCode == lineStation.Code));
+            //    }
+            //    return li;
+            //}
+
+        }
     }
 }
