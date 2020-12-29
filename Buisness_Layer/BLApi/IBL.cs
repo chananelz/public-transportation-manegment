@@ -63,8 +63,11 @@ namespace BLApi
 
         void CreateLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
         LineDeparture RequestLineDeparture(long id);
-        void UpdateLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
         void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
+        //void UpdateLineDepartureFrequency(long id, DateTime Time_Start);
+        //void UpdateLineDepartureTime_End(DateTime time_Start, DateTime timeEnd, int frequency);
+
+        //IEnumerable<LineDeparture> GetAllLineDeparture(Predicate<LineDeparture> pr = null);
         //IEnumerable<LineDeparture> GetAllLineDepartures(Predicate<LineDeparture> pr = null);
         //IEnumerable<LineDeparture> GetAllValidLineDeparture();
         //IEnumerable<LineDeparture> GetAllUnValidLineDeparture();
