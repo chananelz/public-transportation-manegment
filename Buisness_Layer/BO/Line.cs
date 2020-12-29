@@ -14,8 +14,8 @@ namespace BO
         public bool Valid { get; set; }
         public  long Number { get; set; }
         public string Area { get; set; }
-        public int FirstStop { get; set; }
-        public int LastStop { get; set; }
+        public long FirstStop { get; set; }
+        public long LastStop { get; set; }
 
         public List<Stop> stops;
         public List<Stop> Stops
@@ -30,7 +30,7 @@ namespace BO
         {
             
         }
-        public Line(long number, string area, int firstStop, int lastStop )
+        public Line(long number, string area, long firstStop, long lastStop )
         {
             Id = 0;
             Valid = true;

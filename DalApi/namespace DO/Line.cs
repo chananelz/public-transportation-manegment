@@ -12,8 +12,8 @@ namespace DO
         public long Id { get; set; }
         public long Number { get; set; }
         public string Area { get; set; }
-        public int FirstStop{ get; set; }
-        public int LastStop { get; set; }
+        public long FirstStop{ get; set; }
+        public long LastStop { get; set; }
         public Line()//not implemented
         {
 

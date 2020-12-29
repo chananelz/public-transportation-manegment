@@ -40,8 +40,8 @@ namespace DalApi
         Line RequestLine(Predicate<Line> pr = null);  //check this...
         void UpdateLineNumber(long number, long id);
         void UpdateLineArea(string area, long id);
-        void UpdateLineFirstStop(int firstStop, long id);
-        void UpdateLineLastStop(int lastStop, long id);
+        void UpdateLineFirstStop(long firstStop, long id);
+        void UpdateLineLastStop(long lastStop, long id);
         Line GetLine(long id);
         void DeleteLine(long id);
         IEnumerable<Line> GetAllLines();

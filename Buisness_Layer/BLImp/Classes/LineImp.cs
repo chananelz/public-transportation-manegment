@@ -12,7 +12,7 @@ namespace BLImp
 {
     public partial class BL : IBL
     {
-        public void CreateLine(long number, string area, int firstStop, int lastStop)
+        public void CreateLine(long number, string area, List<Stop> stopList)
         {
             string exception = "";
             bool foundException = false;
@@ -36,16 +36,7 @@ namespace BLImp
             }
             try
             {
-                valid.GoodInt(firstStop);
-            }
-            catch (Exception ex)
-            {
-                exception += ex.Message;
-                foundException = true;
-            }
-            try
-            {
-                valid.GoodInt(lastStop);
+                //valid.stopListExist;
             }
             catch (Exception ex)
             {
@@ -54,9 +45,10 @@ namespace BLImp
             }
             if (foundException)
                 throw new Exception(exception);
-            Line lineBO = new Line(number, area, firstStop, lastStop);
+            Line lineBO = new Line(number, area, stopList[0].StopCode,stopList[stopList.Count() - 1].StopCode );
             DO.Line lineDO = lineBO.GetPropertiesFrom<DO.Line, BO.Line>();
             dal.CreateLine(lineDO);
+            UpdateLineStations(stopList, GetIdByNumber(number));
         }
         public Line RequestLine(Predicate<Line> pr = null)
         {
@@ -80,15 +72,28 @@ namespace BLImp
             dal.UpdateLineArea(area, id);
         }
 
-        public void UpdateLineFirstStop(int firstStop, long id)
+        public void UpdateLineFirstStop(long firstStop, long id)
         {
             valid.GoodInt(firstStop);
             dal.UpdateLineFirstStop(firstStop, id);
         }
-        public void UpdateLineLastStop(int lastStop, long id)
+        public void UpdateLineLastStop(long lastStop, long id)
         {
             valid.GoodInt(lastStop);
             dal.UpdateLineLastStop(lastStop, id);
+        }
+        public void UpdateLineStations(List<Stop>stopLines,long id)
+        {
+            //valid.stopListExist;
+            long i = 1;
+            foreach(Stop stop in stopLines)
+            {
+                if (i == 0)
+                    UpdateLineFirstStop(stop.StopCode,id);
+                if (i == stopLines.Count() - 1)
+                    UpdateLineFirstStop(stop.StopCode, id);
+                CreateLineStation(id, i, stop.StopCode);
+            }
         }
 
         public void DeleteLine(long id)

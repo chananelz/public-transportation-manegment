@@ -18,6 +18,7 @@ namespace BO
         {
             Code = code;
             NumberInLine = number;
+            LineId = lineId;
         }
         public LineStation()//not implemented
         {

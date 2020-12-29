@@ -118,5 +118,6 @@ namespace Wpf.Mangager.Presentation
         {
             this.Close();
         }
+
     }
 }

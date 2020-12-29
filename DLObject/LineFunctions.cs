@@ -14,6 +14,7 @@ namespace DL
         public void CreateLine(Line line)
         {
             line.Valid = true;
+            line.Id = Configuration.LineCounter;
             try
             {
                 GetBus(line.Id);
@@ -57,12 +58,12 @@ namespace DL
             GetLine(id).Area = area;
         }
 
-        public void UpdateLineFirstStop(int firstStop, long id)
+        public void UpdateLineFirstStop(long firstStop, long id)
         {
             //***************************CONVERT INT TO STATUS!!!!!!!!!!!!!************
             GetLine(id).FirstStop = firstStop;
         }
-        public void UpdateLineLastStop(int lastStop, long id)
+        public void UpdateLineLastStop(long lastStop, long id)
         {
             //***************************CONVERT INT TO STATUS!!!!!!!!!!!!!************
             GetLine(id).LastStop = lastStop;

@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using System.ComponentModel;
-
+using Wpf.Mangager.Information;
 
 
 namespace Wpf.Mangager.Managing.Add
@@ -31,18 +31,19 @@ namespace Wpf.Mangager.Managing.Add
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
-        bool input3 = false;
+
 
         long number;
         string area;
-        int firstStop;
-        int lastStop;
+        List<BO.Stop> stopListInput = new List<BO.Stop>();
+
 
         int amount = 0;
         BackgroundWorker worker;
 
         BLApi.IBL bl;
 
+        public BO.Stop tempStop;
 
 
 
@@ -52,7 +53,8 @@ namespace Wpf.Mangager.Managing.Add
             busFunc();
             bl = BLApi.Factory.GetBL("1");
             ProgressBar();
-
+            StopListComboBox.ItemsSource = bl.GetAllStops().ToList();
+            StopListListBox.ItemsSource = stopListInput;
         }
 
 
@@ -65,7 +67,7 @@ namespace Wpf.Mangager.Managing.Add
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             if (worker.IsBusy != true)
-                worker.RunWorkerAsync(4);
+                worker.RunWorkerAsync(3);
         }
 
 
@@ -85,7 +87,7 @@ namespace Wpf.Mangager.Managing.Add
             {
                 int length = (int)e.Argument;
 
-                while (amount != 4)
+                while (amount != 3)
                 {
                     System.Threading.Thread.Sleep(500);
                     worker.ReportProgress(amount * 100 / (length));
@@ -111,9 +113,15 @@ namespace Wpf.Mangager.Managing.Add
             {
                 MessageBox.Show("work cancelled");
             }
-
-            bl.CreateLine(number, area, firstStop, lastStop);
-
+            try
+            {
+                bl.CreateLine(number, area, stopListInput);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
             MessageBox.Show("line added!");
 
             new PresentationLines().Show();
@@ -184,38 +192,6 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-            {
-                try
-                {
-                    FirstStop_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-            }
-        }
-        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-            {
-                try
-                {
-                    LastStop_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-            }
-        }
 
         private void Number_Click(object sender, RoutedEventArgs e)
         {
@@ -228,7 +204,7 @@ namespace Wpf.Mangager.Managing.Add
                     input0 = true;
 
                 }
-                if (amount != 4)
+                if (amount != 3)
                 {
                     amount++;
 
@@ -250,7 +226,7 @@ namespace Wpf.Mangager.Managing.Add
                 input1 = true;
 
             }
-            if (amount != 4)
+            if (amount != 3)
             {
                 amount++;
 
@@ -264,54 +240,77 @@ namespace Wpf.Mangager.Managing.Add
             }
 
         }
-        private void FirstStop_Click(object sender, RoutedEventArgs e)
+        private void StopList_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            if (!input2)
             {
-                if (!input2)
-                {
-                    input2 = true;
-
-                }
-                if (amount != 4)
-                {
-                    amount++;
-                    firstStop = result;
-                    MessageBox.Show("input submited" + textRange.Text);
-                    MyTextBox2.Document.Blocks.Clear();
-                }
+                input2 = true;
+            }
+            if (amount != 3)
+            {
+                amount++;
+                MessageBox.Show("input submited");
+                MyTextBox1.Document.Blocks.Clear();
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
             }
+
         }
 
-        private void LastStop_Click(object sender, RoutedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result))
-            {
-                if (!input3)
-                {
-                    input3 = true;
 
-                }
-                if (amount != 4)
-                {
-                    amount++;
-                    lastStop = result;
-                    MessageBox.Show("input submited" + textRange.Text);
-                    MyTextBox3.Document.Blocks.Clear();
-                }
-            }
-            else
-            {
-                MessageBox.Show("wrong input!!!!");
-            }
+        private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            new Options().Show();
+            this.Close();
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            new StopManagerAdd().Show();
+            this.Close();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            stopListInput.Remove(tempStop);
+            StopListListBox.Items.Refresh();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void StopList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BO.Stop tempStop = (BO.Stop)StopListComboBox.SelectedItem;
+            stopListInput.Add(tempStop);
+            StopListListBox.Items.Refresh();
+        }
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lineList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void information_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            new StopInfo(tempStop).Show();
+            this.Close();
+        }
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            new StopMangaer(tempStop).Show();
+            this.Close();
         }
     }
 }

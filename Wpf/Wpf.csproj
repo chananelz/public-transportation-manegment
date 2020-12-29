@@ -392,5 +392,17 @@
   <ItemGroup>
     <Resource Include="Mangager\Presentation\myImages\close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Managing\Update\myImages\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Managing\Add\myImages\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Managing\Update\myImages\busForPresentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Managing\Add\myImages\busForPresentation.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
