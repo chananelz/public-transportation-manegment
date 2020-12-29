@@ -20,7 +20,6 @@ namespace BLImp
         }
 
 
-
         public LineDeparture RequestLineDeparture(long id)
         {
             DO.LineDeparture lineDepartureDO = new DO.LineDeparture();
@@ -28,12 +27,7 @@ namespace BLImp
             BO.LineDeparture lineDepartureBO = lineDepartureDO.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>();
             return lineDepartureBO;
         }
-        public void UpdateLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency)
-        {
-            LineDeparture lineDepartureBO = new LineDeparture(time_Start, timeEnd, frequency);
-            DO.LineDeparture lineDepartureDO = lineDepartureBO.GetPropertiesFrom<DO.LineDeparture, BO.LineDeparture>();
-            dal.UpdateLineDeparture(lineDepartureDO);
-        }
+
         public void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency)
         {
             LineDeparture lineDepartureBO = new LineDeparture(time_Start, timeEnd, frequency);
