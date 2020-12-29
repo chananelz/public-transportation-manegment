@@ -79,5 +79,20 @@ namespace BLImp
         {
             dal.DeleteLineDeparture(id, time_Start);
         }
+
+        public IEnumerable<Line> GetAllLineById(long id)
+        {
+            var myList = GetAllLines(lineStation => lineStation.Id == id).ToList();
+    
+            return myList;
+        }
+        //public IEnumerable<LineDeparture> GetAllLineDeparture(Predicate<LineDeparture> pr)
+        //{
+        //    if (pr == null)
+        //    {
+        //        return dal.GetAllLineDepartures().Select(lineDepartures => lineDepartures.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>()).ToList(); ;
+        //    }
+        //    return dal.GetAllLineStations().Select(line => line.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>()).Where(b => pr(b));
+        //}
     }
 }
