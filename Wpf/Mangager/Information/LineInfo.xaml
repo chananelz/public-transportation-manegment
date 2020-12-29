@@ -35,7 +35,14 @@
         </Grid.ColumnDefinitions>
         <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Center"  MaxWidth="200" HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding StopName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
 
         <Label Content="All stops:"        Name="AllStops"         Grid.Column="0" Grid.Row="1" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
