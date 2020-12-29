@@ -118,5 +118,23 @@ namespace BLImp
             }
             return li;
         }
+
+        //public IEnumerable<Line> GetAllLinesByStopsNumber(long stopCoder)
+        //{
+        //    var myLineDeList = get
+
+
+        //    long lineId = GetIdByNumber(number);
+        //    var myList = GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList();
+        //    List<Stop> li = new List<Stop>();
+        //    //convert lineStations to Stops
+        //    foreach (LineStation lineStation in myList)
+        //    {
+        //        li.Add(RequestStop(stop => stop.StopCode == lineStation.Code));
+        //    }
+        //    return li;
+        //}
+
+
     }
 }

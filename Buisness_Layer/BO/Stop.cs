@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DalApi;
+using BLApi;
+using BLImp;
 
 namespace BO
 {
@@ -16,15 +17,46 @@ namespace BO
         public string StopName { get; set; }
 
         public string Address { get; set; }
-        private IEnumerable<Line> lines;
 
-        public IEnumerable<Line> Lines
+        public List<Line> lines;
+        public List<Line> Lines
         {
-            get 
+            get
             {
-                return null;
-            }//query
+                bool flag = false;
+                List<Line> myList = new List<Line>();
+                myList = null;
+                foreach (var line in Factory.GetBL("1").GetAllLines().ToList())
+                {
+                    foreach (var stop in line.stops)
+                    {
+                        if (stop.StopCode == StopCode)
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        myList.Add(line);
+                    }
+                    flag = false;
+                }
+                return myList;
+            }
         }
+
+
+
+        //private IEnumerable<Line> lines;
+
+        //public IEnumerable<Line> Lines
+        //{
+        //    get 
+        //    {
+        //        return null;
+        //    }//query
+        //}
 
         public Stop( double latitude, double longitude, string stopName)
         {

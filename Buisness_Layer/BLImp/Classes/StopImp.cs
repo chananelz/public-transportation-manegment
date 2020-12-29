@@ -87,6 +87,5 @@ namespace BLImp
             }
             return dal.GetAllStops().Select(stop => stop.GetPropertiesFrom<BO.Stop, DO.Stop>()).Where(b => pr(b));
         }
-
     }
 }

@@ -9,6 +9,8 @@ namespace DalApi
 {
     public interface IDal
     {
+
+
         void CreateBus(Bus bus);
         Bus RequestBus(Predicate<Bus> pr = null);
         void UpdateBusKM(float kM, long licenseNumber);
@@ -47,10 +49,12 @@ namespace DalApi
         IEnumerable<Line> GetAllLines();
 
 
-        void CreateLineDeparture(LineDeparture line_Departure);
-        LineDeparture RequestLineDeparture(long Id);  //check this...
-        void UpdateLineDeparture(LineDeparture line_Departure);
-        void DeleteLineDeparture(LineDeparture line_Departure);
+        void CreateLineDeparture(LineDeparture lineDeparture);
+        LineDeparture RequestLineDeparture(Predicate<LineDeparture> pr = null);  //check this...
+        LineDeparture GetLineDeparture(long id, DateTime time_Start);
+        void UpdateLineDepartureFrequency(long id, DateTime time_Start, int frequency);
+        void UpdateLineDepartureTime_End(long id, DateTime time_Start , DateTime time_End);
+        void DeleteLineDeparture(long id, DateTime time_Start);
         IEnumerable<LineDeparture> GetAllLineDepartures(Predicate<LineDeparture> pr = null);
 
 

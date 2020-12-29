@@ -10,7 +10,7 @@ namespace BLApi
 {
     public interface IBL
     {
-        void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput);
+        void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput );
         Bus RequestBus(Predicate<Bus> pr);
         void UpdateBusKM(float kM, long licenseNumber);
         void UpdateBusFuel(float fuel, long licenseNumber);
@@ -61,9 +61,11 @@ namespace BLApi
 
 
 
-        void CreateLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
-        LineDeparture RequestLineDeparture(long id);
-        void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
+        void CreateLineDeparture(long id, DateTime time_Start, int frequency, DateTime timeEnd);
+        LineDeparture RequestLineDeparture(Predicate<LineDeparture> pr);
+        void UpdateLineDepartureFrequency(long id, DateTime time_Start, int frequency);
+        void UpdateLineDepartureTime_End(long id, DateTime time_Start, DateTime time_End);
+        void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency, long id);
         //void UpdateLineDepartureFrequency(long id, DateTime Time_Start);
         //void UpdateLineDepartureTime_End(DateTime time_Start, DateTime timeEnd, int frequency);
 
