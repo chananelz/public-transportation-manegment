@@ -10,7 +10,7 @@ namespace DO
     {
         public bool Valid { get; set; }
         public int Id { get; set; }
-        public long License_Number { get; set; }
+        public long LicenseNumber { get; set; }
         public long LineId { get; set; }
         public DateTime FormalDepartureTime { get; set; }
         public DateTime RealDepartureTime { get; set; }
@@ -26,7 +26,7 @@ namespace DO
         {
             Valid = busTravel.Valid;
             Id = busTravel.Id;
-            License_Number = busTravel.License_Number;
+            LicenseNumber = busTravel.LicenseNumber;
             LineId = busTravel.LineId;
             FormalDepartureTime = new DateTime();
             FormalDepartureTime = busTravel.FormalDepartureTime;
@@ -41,7 +41,7 @@ namespace DO
         }
         public override string ToString()
         {
-            return "Valid:" + Valid + "license number: " + License_Number + "line id: " + LineId + "Formal Departure Time:" + FormalDepartureTime + "Real Departure Time:" + RealDepartureTime + 
+            return "Valid:" + Valid + "license number: " + LicenseNumber + "line id: " + LineId + "Formal Departure Time:" + FormalDepartureTime + "Real Departure Time:" + RealDepartureTime + 
                 "last passed stop: " + LastPassedStop + "last passed stop time: " + LastPassedStop + "next stop time: " + NextStopTime + " DriverId" + DriverId;
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented

@@ -25,15 +25,22 @@ namespace BLApi
         //IEnumerable<Bus> GetAllRefulingBuses();
         //int GetTotalTravel();
 
-     
 
 
 
 
-        void CreateBusTravel(long licenseNumber, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime);
-        BusTravel RequestBusTravel(long id);
-        void UpdateBusTravel(long licenseNumber, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime);
-        void DeleteBusTravel(long licenseNumber, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime);
+
+        void CreateBusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,long driverId);
+        BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
+        void UpdateFormalDepartureTime(DateTime formalDepartureTime, long id);
+        void UpdateRealDepartureTime(DateTime realDepartureTime, long id);
+        void UpdateLastPassedStop(int lastPassedStop, long id);
+        void UpdateNextStopTime(DateTime lastPassedStopTime, long id);
+        void UpdateLastPassedStopTime(DateTime nextStopTime, long id);
+        void UpdateDriverId(long driverId, long id);
+        void DeleteBusTravel(long id);
+        IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
+        IEnumerable<Line> GetAllLinesByLicenseNumber(long licenseNumber);
         //IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         //IEnumerable<BusTravel> GetAllValidBusTravels();
         //IEnumerable<BusTravel> GetAllUnValidBusTravels();
@@ -41,6 +48,18 @@ namespace BLApi
         //TimeSpan GetTimeUntilEnd(int id);
         //TimeSpan GetTimeUntilNextStop(int id);
         //TimeSpan GetTimeUntilSpecificStop(int id);
+
+
+
+
+
+
+
+
+
+
+
+
 
         void CreateLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency);
         LineDeparture RequestLineDeparture(long id);

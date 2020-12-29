@@ -158,5 +158,11 @@ namespace BLImp
                 return;
             throw new Exception("no such stop exists!");
         }
+        public void TimeAfter(DateTime dateTime1, DateTime dateTime2,string f, string l)
+        {
+            if (dateTime1 < dateTime2)
+                return;
+            throw new Exception(f + " doesn't come before " + l) ;
+        }
     }
 }
