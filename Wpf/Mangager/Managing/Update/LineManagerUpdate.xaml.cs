@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
+using Wpf.Mangager.Information;
 
 namespace Wpf.Mangager.Managing
 {
@@ -29,10 +30,10 @@ namespace Wpf.Mangager.Managing
 
         long number;
         string area;
-        int firstStop;
-        int lastStop;
+        List<BO.Stop> stopListInput = new List<BO.Stop>();
 
         BO.Line managingLine;
+        BO.Stop tempStop;
 
         public LineManager(BO.Line line)
         {
@@ -41,6 +42,8 @@ namespace Wpf.Mangager.Managing
             managingLine = line;
             busFunc();
             bl = BLApi.Factory.GetBL("1");
+            StopListComboBox.ItemsSource = bl.GetAllStops().ToList();
+            StopListListBox.ItemsSource = stopListInput;
         }
 
 
@@ -109,38 +112,7 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-            {
-                try
-                {
-                    FirstStop_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-            }
-        }
-        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-            {
-                try
-                {
-                    LastStop_Click(sender, e); 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-            }
-        }
+       
 
         private void Number_Click(object sender, RoutedEventArgs e)
         {
@@ -182,58 +154,69 @@ namespace Wpf.Mangager.Managing
                 MyTextBox1.Document.Blocks.Clear();
             }
         }
-        private void FirstStop_Click(object sender, RoutedEventArgs e)
+        private void StopList_Click(object sender, RoutedEventArgs e)
         {
-
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result) && result > 0)
+            try
             {
-                firstStop = result;
-                try
-                {
-                    bl.UpdateLineFirstStop(result, managingLine.Id);
-                    MessageBox.Show("input submited" + textRange.Text);
-                    MyTextBox2.Document.Blocks.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                bl.UpdateLineStations(stopListInput, managingLine.Id);
+                MessageBox.Show("input updated successfully!");
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MessageBox.Show(ex.Message);
             }
         }
-        private void LastStop_Click(object sender, RoutedEventArgs e)
+
+
+        private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
-          
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
-            int result = 0;
-            if (int.TryParse(textRange.Text, out result) && result > 0)
-            {
-                lastStop = result;
-                try
-                {
-                    bl.UpdateLineLastStop(result, managingLine.Id);
-                    MessageBox.Show("input submited" + textRange.Text);
-                    MyTextBox3.Document.Blocks.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("wrong input!!!!");
-                MyTextBox3.Document.Blocks.Clear();
-            }
+            new OptionsForDriver().Show();
+            this.Close();
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            new StopManagerAdd().Show();
+            this.Close();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            stopListInput.Remove(tempStop);
+            StopListListBox.Items.Refresh();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+        private void StopList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BO.Stop tempStop = (BO.Stop)StopListComboBox.SelectedItem;
+            stopListInput.Add(tempStop);
+            StopListListBox.Items.Refresh();
+        }
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lineList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void information_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            new StopInfo(tempStop).Show();
+        }
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            new StopMangaer(tempStop).Show();
             this.Close();
         }
     }

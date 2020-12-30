@@ -250,7 +250,6 @@ namespace Wpf.Mangager.Managing.Add
             {
                 amount++;
                 MessageBox.Show("input submited");
-                MyTextBox1.Document.Blocks.Clear();
             }
             else
             {
