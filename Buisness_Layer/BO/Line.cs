@@ -23,6 +23,17 @@ namespace BO
             get { return Factory.GetBL("1").GetAllLineStationsByLineNumber(Number).ToList(); }
         }
 
+        private List<BusTravel> buses;
+        public List<BusTravel> Bines
+        {
+            get
+            {
+
+                //List <Line> = Factory.GetBL("1").GetAllLineByLineNumber(Number).ToList();
+                return Factory.GetBL("1").GetAllBusseseByLineNumber(Number).ToList();
+            }
+        }
+
 
 
         public Bus CurrentBus { get; set; }

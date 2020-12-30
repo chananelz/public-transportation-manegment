@@ -39,6 +39,7 @@ namespace Wpf.Mangager.Information
                 MessageBox.Show(ex.Message);
             }
             StopList.ItemsSource = infoLine.Stops;
+            BusesList.ItemsSource = infoLine.Bines;
             busFunc();
         }
 

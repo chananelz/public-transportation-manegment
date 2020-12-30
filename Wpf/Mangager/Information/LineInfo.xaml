@@ -45,6 +45,17 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="BusesList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="0" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LicenseNumber}"/>
+                        <TextBlock Text="{Binding FormalDepartureTime}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
         <Label Content="All stops:"        Name="AllStops"         Grid.Column="0" Grid.Row="1" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
         <Label Content="Area:"             Name="area"             Grid.Column="0" Grid.Row="2" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="First Stop:"       Name="firstStop"        Grid.Column="0" Grid.Row="3" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />

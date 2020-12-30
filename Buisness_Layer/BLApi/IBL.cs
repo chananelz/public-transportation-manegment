@@ -87,6 +87,8 @@ namespace BLApi
         IEnumerable<Line> GetAllLines(Predicate<Line> pr = null);
         Line RequestLineById(long lineId);
         long GetIdByNumber(long number);
+        IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number);
+
         //IEnumerable<Line> GetAllValidLines();
         //IEnumerable<Line> GetAllUnValidLines();
         //IEnumerable<stop> GetAllStopInSpecificLine();
@@ -133,6 +135,7 @@ namespace BLApi
         IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
         string GetNameByStopCode(long code);
         IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number);
+        
         //IEnumerable<Stop> GetAllValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();

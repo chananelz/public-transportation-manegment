@@ -132,5 +132,42 @@ namespace BLImp
             long lineId = GetIdByNumber(number);
            return GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList(); 
         }
+
+        public IEnumerable<Line> GetAllLineByLineNumber(long number)
+        {
+            long lineId = GetIdByNumber(number);
+            return GetAllLineById(lineId);
+        }
+
+        public IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number)
+        {
+
+            return GetAllBusTravels().Where(busT => exist(busT, number));
+
+        }
+
+        public bool exist(BusTravel mbus , long number)
+        {
+            bool flag = false;
+            List<long> mList = new List<long>();
+            foreach (var item in GetAllLines())
+            {
+                if (item.Number == number)
+                {
+                    mList.Add(item.Id);
+                }
+            }
+
+            foreach (var item in mList)
+            {
+                if (item == mbus.LineId)
+                {
+                    flag = true;
+                }
+            }
+
+            return flag;
+        }
+
     }
 }
