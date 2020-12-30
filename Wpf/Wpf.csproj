@@ -71,6 +71,9 @@
     <Compile Include="Mangager\Managing\Add\StopManagerAdd.xaml.cs">
       <DependentUpon>StopManagerAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mangager\threading\StartTravel.xaml.cs">
+      <DependentUpon>StartTravel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\Presentation\PresentationStops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mangager\threading\StartTravel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Wpf.Mangager.Information;
 using Wpf.Mangager.Managing;
+using Wpf.Mangager.threading;
 using System.Windows.Threading;
 using BLApi;
 using Wpf.Mangager.Managing.Add.myImages;
@@ -126,6 +127,13 @@ namespace Wpf.Mangager.Presentation
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);//not implemented
             new PresentationBusses().Show();
+            this.Close();
+        }
+
+            private void startDrive_Click(object sender, RoutedEventArgs e)
+        {
+
+            new StartTravel().Show();
             this.Close();
         }
     }

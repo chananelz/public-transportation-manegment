@@ -244,6 +244,202 @@ namespace DS
                 DriverId = 206275822
             });
             #endregion
+
+            #region Bus_Travel # 13
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000000,
+                LineId = 18,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                DriverId = 206275811
+            });
+            #endregion
+
+
+            #region Bus_Travel # 14
+
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000001,
+                LineId = 18,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
+                DriverId = 206275812
+            });
+
+            #endregion
+
+            #region Bus_Travel # 15
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000002,
+                LineId = 18,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                DriverId = 206275813
+            });
+            #endregion
+
+            #region Bus_Travel # 16
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000003,
+                LineId = 17,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                LastPassedStop = 579,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                DriverId = 206275814
+            });
+            #endregion
+
+            #region Bus_Travel # 17
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000004,
+                LineId = 17,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                LastPassedStop = 579,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
+                DriverId = 206275815
+            });
+            #endregion
+
+            #region Bus_Travel # 18
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000005,
+                LineId = 17,
+                FormalDepartureTime = new DateTime(2020, 12, 20,17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                LastPassedStop = 579,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                DriverId = 206275816
+            });
+            #endregion
+
+            #region Bus_Travel # 19
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000006,
+                LineId = 15,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                DriverId = 206275817
+            });
+            #endregion
+
+            #region Bus_Travel # 20
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000007,
+                LineId = 15,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
+                DriverId = 206275818
+            });
+            #endregion
+
+            #region Bus_Travel # 21
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000008,
+                LineId = 15,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                DriverId = 206275819
+            });
+            #endregion
+
+            #region Bus_Travel # 22
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000009,
+                LineId = 14,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                DriverId = 206275820
+            });
+            #endregion
+
+            #region Bus_Travel # 23
+
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000010,
+                LineId = 14,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
+                DriverId = 206275821
+            });
+            #endregion
+
+            #region Bus_Travel # 24
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = true,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000011,
+                LineId = 14,
+                FormalDepartureTime = new DateTime(2020, 12, 20, 17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                LastPassedStop = 585,
+                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                DriverId = 206275822
+            });
+            #endregion
         }
 
         #endregion
@@ -2847,5 +3043,4 @@ namespace DS
 
     }
 }
-
 

@@ -52,7 +52,7 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Row ="0" Content="License Number:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
+                                <Label Grid.Row ="0" Content="Line Number:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
                                 <Label Grid.Row ="1" Content="{Binding Number}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground="Red"  Background="Transparent"/>
                             </Grid>
                             <Button Name="information"  Grid.Column="1"     Content="information"  Foreground ="Red" Width="200"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">

@@ -28,6 +28,7 @@ namespace Wpf.Mangager.Information
         {
             InitializeComponent();
             busInfo.DataContext = infoBus;
+            licenseDate1.Content = infoBus.LicenseDate.ToShortDateString();
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
             LineListB.ItemsSource = infoBus.LineList;
