@@ -20,6 +20,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            
         </Grid.ColumnDefinitions>
         <Label Grid.ColumnSpan="1" Content="Select a line" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="260"    Height="80" FontSize="32"   FontFamily="Arial Black" Foreground ="Red"  BorderThickness="0" />
         <Label Grid.Column =" 1"  Grid.ColumnSpan="1" Content="Select a driver" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="280"    Height="80" FontSize="32"   FontFamily="Arial Black" Foreground ="Red"  BorderThickness="0" />
@@ -34,8 +35,10 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
@@ -51,18 +54,27 @@
                             </Grid>
                             <Button x:Name ="information"  Grid.Column="2"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="images.jpg"/>
+                                    <ImageBrush ImageSource="information.png"/>
                                 </Button.Background>
-
                             </Button>
-                  
+                            <Grid Grid.Column="3">
+                            <CheckBox x:Name="checkBoxAgree" Content="select" IsChecked="False"   />
+                            </Grid>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
 
-        <Grid Name="DriverGrid" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" >
+        <Grid Name="DriverGrid" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" RenderTransformOrigin="0.5,0.5" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.581"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
             <ListBox Name="DriverListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -86,18 +98,23 @@
                             <Grid Grid.Column="1">
                                 <Label Grid.Row ="1"  Content="{Binding UserName}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Orange"  Background="Transparent"/>
                             </Grid>
-                            <Button x:Name ="information"  Grid.Column="2"   Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="images.jpg" Stretch="Fill" TileMode="None"/>
-                                </Button.Background>
-
-                            </Button>
-                     
+                            <Grid Grid.Column="2">
+                            <CheckBox x:Name="checkBoxAgree"
+                                        Content="select"
+                                         IsChecked="False"   />
+                            </Grid>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+
+
         </Grid>
+        <Button Content="start travel" Grid.Column="1" HorizontalAlignment="right" Height="70"  Grid.Row="2" VerticalAlignment="Top" Width="93" FontFamily="Arial Black"   BorderThickness="0" Grid.RowSpan="2" Foreground="Azure">
+            <Button.Background>
+                <ImageBrush ImageSource="kuba_arrow_button_set_2.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

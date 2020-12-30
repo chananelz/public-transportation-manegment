@@ -15,6 +15,7 @@ using Wpf.Mangager.Information;
 using Wpf.Mangager.Managing;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
+using BLApi;
 //
 
 namespace Wpf.Mangager.threading
@@ -24,18 +25,22 @@ namespace Wpf.Mangager.threading
     /// </summary>
     public partial class StartTravel : Window
     {
-        public BO.Stop tempStop;
+        public BO.Line tempLine;
         public StartTravel()
         {
             InitializeComponent();
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
             lineListBox.ItemsSource = bl.GetAllLines().ToList();
-            DriverListBox.ItemsSource = bl.GetAllUsers().ToList();
+            DriverListBox.ItemsSource = bl.GetAllUsers(user => user.Permission == BO.authority.Driver).ToList();
         }
         private void information_Click(object sender, RoutedEventArgs e)
         {
-
+            BLApi.IBL bl;
+            bl = BLApi.Factory.GetBL("1");
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+            new LineInfo(tempLine).Show();
         }
     }
 }

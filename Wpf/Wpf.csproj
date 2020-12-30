@@ -210,7 +210,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Mangager\threading\information.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="myImages\Bus.png" />
   </ItemGroup>
@@ -410,13 +412,7 @@
     <Resource Include="Mangager\Managing\Add\myImages\busForPresentation.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Mangager\threading\right-arrow-icon-4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Mangager\threading\kuba_arrow_button_set_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Mangager\threading\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
