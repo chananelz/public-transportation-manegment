@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
         Title="FirstPage" Height="450" Width="800"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage1">

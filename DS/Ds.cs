@@ -1334,7 +1334,7 @@ namespace DS
                 Password = "0",
                 Valid = true,
                 UserName = "N",
-                Permission = authority.Driver
+                Permission = authority.CEO
             });
             #endregion
 

@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Presentation"
         mc:Ignorable="d"
         Title="PresentationBusses" Height="450" Width="800"
-         WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
@@ -66,7 +64,7 @@
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="travel"   Grid.Column="2"   Grid.Row="1"   Content="startDrive"   Foreground ="Red" Width="180"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="startDrive_Click" HorizontalAlignment="Right">
+                            <Button Name="travel"   Grid.Column="2" Visibility="{Binding Show}"  Grid.Row="1"   Content="startDrive"   Foreground ="Red" Width="180"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="startDrive_Click" HorizontalAlignment="Right">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/Button.png"/>
                                 </Button.Background>

@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
         Title="SignIn" Height="450" Width="800"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
+
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
         <Grid.Effect>
@@ -48,17 +47,22 @@
 
             <StackPanel x:Name="stackPanel"
               Orientation="Horizontal" Grid.ColumnSpan="2" Margin="4,-101,375,100.8">
-                <Label Grid.ColumnSpan="2" Content="{Binding Path = UserLable}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+                <Label Name="label" Grid.ColumnSpan="2" Content="{Binding UserLable}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
             </StackPanel>
 
 
             <TextBox                       Grid.Row="0"  Text="user name:"    HorizontalAlignment="Left" VerticalAlignment="Center"       FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red" />
-            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410" Margin="9.333,8,0,8.667"/>
+            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410" Margin="9.333,8,0,8.667" TextChanged="userNameTxtBox_TextChanged"/>
 
 
             <TextBox  Grid.Row="1"   Text="password:"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red"/>
-            <PasswordBox  Name="PasswordContent"  Background="CadetBlue" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="3" PasswordChar="•"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black"  Width="410"/>
-            <TextBox Name="passwordTxtBox" Grid.Row="1"  Background="CadetBlue"  Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="3"   Width="410"/>
+            <PasswordBox  Name="PasswordContent" KeyDown="txtPassword_KeyDown"  Background="CadetBlue" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="3" PasswordChar="•"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black"  Width="410">
+
+
+            </PasswordBox>
+
+
+                <TextBox Name="passwordTxtBox" Grid.Row="1"  Background="CadetBlue"  Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="3"   Width="410"/>
 
 
             <CheckBox Grid.Row="1" Grid.Column="2"  Name="showPassword" VerticalAlignment="Center" HorizontalAlignment="Center" Unchecked="ShowPassword_Unchecked_Password"  Checked="ShowPassword_Checked_Password" BorderThickness="0">

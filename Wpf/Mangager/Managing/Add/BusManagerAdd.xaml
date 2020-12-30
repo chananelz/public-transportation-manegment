@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Managing.Add.myImages"
         mc:Ignorable="d"
         Title="BusManagerAdd" Height="450" Width="800"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
         
                 WindowStartupLocation="CenterScreen">
@@ -94,7 +92,7 @@
 
 
 
-        <Image x:Name="movingBus"   Grid.Column="11"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="16.333,0,0,0"/>
+        <Image x:Name="movingBus"   Grid.Column="15"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="16.333,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
 

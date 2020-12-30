@@ -62,6 +62,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CEO\OptionsForCEO.xaml.cs">
+      <DependentUpon>OptionsForCEO.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mangager\Managing\Add\LineManagerAdd.xaml.cs">
       <DependentUpon>LineManagerAdd.xaml</DependentUpon>
     </Compile>
@@ -71,8 +74,14 @@
     <Compile Include="Mangager\Managing\Add\StopManagerAdd.xaml.cs">
       <DependentUpon>StopManagerAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mangager\OptionsForDriver.xaml.cs">
+      <DependentUpon>OptionsForDriver.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mangager\threading\StartTravel.xaml.cs">
       <DependentUpon>StartTravel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Passenger\OptionsForPassenger.xaml.cs">
+      <DependentUpon>OptionsForPassenger.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
@@ -141,6 +150,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CEO\OptionsForCEO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FirstPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +194,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Mangager\OptionsForDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Mangager\Presentation\PresentationBusses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,6 +218,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Passenger\OptionsForPassenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,7 +232,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Mangager\threading\information.png" />
+    <Resource Include="Mangager\threading\myImages\information.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="myImages\Bus.png" />
@@ -412,7 +433,166 @@
     <Resource Include="Mangager\Managing\Add\myImages\busForPresentation.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Mangager\threading\kuba_arrow_button_set_2.png" />
+    <Resource Include="Mangager\threading\myImages\kuba_arrow_button_set_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\BusBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\busListBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\eyeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\green_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\school_building_of_primary_with_bus_icon_w1ghj2_wHa_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\stop_sign-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\ADD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\BusBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\busListBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\eyeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\green_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\school_building_of_primary_with_bus_icon_w1ghj2_wHa_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\stop_sign-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\myImages\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\BusBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\busListBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\eyeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\green_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\school_building_of_primary_with_bus_icon_w1ghj2_wHa_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\stop_sign-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Passenger\myImages\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\BusBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\busForPresentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\busListBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\green_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\school_building_of_primary_with_bus_icon_w1ghj2_wHa_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\stop_sign-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

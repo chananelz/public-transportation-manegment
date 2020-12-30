@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Managing"
         mc:Ignorable="d"
         Title="LineManager" Height="450" Width="800"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="LineManagerUpdate">

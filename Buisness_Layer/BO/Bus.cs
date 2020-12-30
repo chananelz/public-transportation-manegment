@@ -29,6 +29,9 @@ namespace BO
             get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList(); }
         }
 
+        public string Show { get => show; set => show = value; }
+
+        private string show;
 
         public Bus()//not implemented
         {

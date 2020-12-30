@@ -35,13 +35,22 @@ namespace Wpf.Mangager.Presentation
         {
             InitializeComponent();
             bl = BLApi.Factory.GetBL("1");
-            busList.ItemsSource = bl.GetAllBusses().ToList();
+            var a = bl.GetAllBusses().ToList();
+            foreach (BO.Bus bus in a)
+            {
+                if (bus.Status == BO.status.READY_FOR_DRIVE)
+                    bus.Show =  "Visible";
+                else bus.Show = "Collapsed";
+            }
+
+            busList.ItemsSource = a;
             // stackPanel.DataContext = busList.ItemsSource;
             busFunc();
         }
 
         private void busFunc()
         {
+            
             place = movingBus.Margin.Left;
             FirstPage.Focus();
             gameTimer.Tick += gameTimerEvent;

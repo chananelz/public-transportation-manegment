@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Information"
         mc:Ignorable="d"
         Title="LineInfo" Height="450" Width="800"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">

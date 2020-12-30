@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using BO;
+using Wpf.CEO;
+using Wpf.Mangager;
+using Wpf.Passenger;
 
 namespace Wpf
 {
@@ -81,7 +84,12 @@ namespace Wpf
             try
             {
                 User user = bl.Authinticate(userName, password, au);
-                new Options().Show();
+                if (Status == "PASSENGER")
+                    new OptionsForPassenger().Show();
+                else if (Status == "DRIVER")
+                    new OptionsForDriver().Show();
+                else
+                    new OptionsForCEO().Show();
                 this.Close();
             }
             catch (Exception ex)
@@ -126,6 +134,16 @@ namespace Wpf
         {
             new SignUp().Show();
             this.Close();
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+                submit_Click(sender, e);
+        }
+
+        private void userNameTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
