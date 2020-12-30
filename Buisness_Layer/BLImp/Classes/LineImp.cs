@@ -34,15 +34,15 @@ namespace BLImp
                 exception += ex.Message;
                 foundException = true;
             }
-            try
-            {
-                //valid.stopListExist;
-            }
-            catch (Exception ex)
-            {
-                exception += ex.Message;
-                foundException = true;
-            }
+            //try
+            //{
+            //    //valid.stopListExist;
+            //}
+            //catch (Exception ex)
+            //{
+            //    exception += ex.Message;
+            //    foundException = true;
+            //}
             if (foundException)
                 throw new Exception(exception);
             Line lineBO = new Line(number, area, stopList[0].StopCode,stopList[stopList.Count() - 1].StopCode );
@@ -85,14 +85,22 @@ namespace BLImp
         public void UpdateLineStations(List<Stop>stopLines,long id)
         {
             //valid.stopListExist;
+            if(GetAllLineById(id).ToList().Count() != 0)
+            {
+                foreach(LineStation lineStation in GetAllLineStationsByLineNumber(RequestLine(line => line.Id == id).Number))
+                {
+                    DeleteLineStation(lineStation.Code, lineStation.LineId);
+                }
+            }
             long i = 1;
             foreach(Stop stop in stopLines)
             {
-                if (i == 0)
+                if (i == 1)
                     UpdateLineFirstStop(stop.StopCode,id);
-                if (i == stopLines.Count() - 1)
-                    UpdateLineFirstStop(stop.StopCode, id);
+                if (i == stopLines.Count())
+                    UpdateLineLastStop(stop.StopCode, id);
                 CreateLineStation(id, i, stop.StopCode);
+                i++;
             }
         }
 

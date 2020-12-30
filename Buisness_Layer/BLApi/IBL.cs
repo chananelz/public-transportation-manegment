@@ -104,6 +104,7 @@ namespace BLApi
         IEnumerable<Stop> GetAllStopsByLineNumber(long id);
 
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
+        void UpdateLineStations(List<Stop> stopLines, long id);
         //IEnumerable<LineStation> GetAllValidLineStations();
         //IEnumerable<LineStation> GetAllUnValidLineStation();
         //int GetAllUnValidLineStation();

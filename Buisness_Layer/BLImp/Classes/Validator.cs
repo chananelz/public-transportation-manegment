@@ -127,7 +127,7 @@ namespace BLImp
 
         #region LineStation
 
-        public void NumberInLineExist(long lineId, long numberInLine)
+        public void NumberInLineExist(long lineId, long numberInLine)//not good function
         {
             BL bl = new BL();
             var a = bl.GetAllLineStations().Count();
@@ -138,7 +138,7 @@ namespace BLImp
         public void StopCodeExist(long stopCode)
         {
             BL bl = new BL();
-            var a = bl.GetAllLineStations().Where(stop => stop.Code == stopCode);
+            var a = bl.GetAllStops().Where(stop => stop.StopCode == stopCode);
             if (a.Count() != 0)
                 return;
             throw new Exception("no such stop exists!");

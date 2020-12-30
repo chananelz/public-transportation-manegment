@@ -16,26 +16,7 @@ namespace DL
         public void CreateLineStation(LineStation lineStation)
         {
 
-            lineStation.Valid = true;
-            try
-            {
-                GetLineStation(lineStation.LineId, lineStation.Code);
-            }
-            catch (Exception ex)
-            {
-                if (ex.Message == "no such line!!")
-                    DataSource.LineStationList.Add(lineStation);
-                else if (ex.Message == "line is not valid!!")
-                {
-                    var t = from lineS in DataSource.LineStationList
-                            where (lineS.Code == lineStation.Code)
-                            select lineStation;
-                    t.ToList().First().Valid = true;
-                }
-                return;
-            }
-            throw new Exception("lineStation already exists!!!");
-
+            DataSource.LineStationList.Add(lineStation);
         }
         public LineStation RequestLineStation(Predicate<LineStation> pr = null)
         {

@@ -49,6 +49,7 @@ namespace BLImp
                 throw new Exception(exception);
             LineStation lineStationBO = new LineStation(code, numberInLine,lineId);
             DO.LineStation lineStationDO = lineStationBO.GetPropertiesFrom<DO.LineStation, BO.LineStation>();
+            lineStationDO.Valid = true;
             dal.CreateLineStation(lineStationDO);
         }
         public LineStation RequestLineStation(Predicate<LineStation> pr = null)
