@@ -15,6 +15,7 @@ using Wpf.Mangager.Information;
 using Wpf.Mangager.Managing;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
+//
 
 namespace Wpf.Mangager.threading
 {
