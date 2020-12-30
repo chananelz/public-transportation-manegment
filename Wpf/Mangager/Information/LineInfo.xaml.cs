@@ -27,9 +27,17 @@ namespace Wpf.Mangager.Information
         public LineInfo(BO.Line infoLine)
         {
             InitializeComponent();
-            lineInfo.DataContext = infoLine;
+          
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
+            try
+            {
+                lineInfo.DataContext = infoLine;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             StopList.ItemsSource = infoLine.Stops;
             busFunc();
         }
