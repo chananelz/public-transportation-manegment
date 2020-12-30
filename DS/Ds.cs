@@ -1319,6 +1319,15 @@ namespace DS
                 Permission = authority.Driver
             });
             #endregion
+            #region User #21
+            UserList.Add(new User()
+            {
+                Password = "0",
+                Valid = true,
+                UserName = "N",
+                Permission = authority.Driver
+            });
+            #endregion
 
         }
         #endregion
