@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf.Mangager.threading"
         mc:Ignorable="d"
-        Title="StartTravel" Height="450" Width="800">
+        Title="StartTravel" Height="450" Width="1000">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Wpf;component/Mangager/Managing/Add/myImages/BusBackground.png" Stretch="UniformToFill"/>
@@ -21,17 +21,16 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.ColumnSpan="2" Content="Select a line" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="200"    Height="80" FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"/>
+        <Label Grid.ColumnSpan="1" Content="Select a line" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="260"    Height="80" FontSize="32"   FontFamily="Arial Black" Foreground ="Red"  BorderThickness="0" />
+        <Label Grid.Column =" 1"  Grid.ColumnSpan="1" Content="Select a driver" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="280"    Height="80" FontSize="32"   FontFamily="Arial Black" Foreground ="Red"  BorderThickness="0" />
 
 
-
-        <Grid Name="BusGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
-            <ListBox Name="busList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" >
+        <Grid Name="BusGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" >
+            <ListBox Name="lineListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -40,22 +39,65 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                           
                             <Grid Grid.Column="0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Row ="0" Content="License Number:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
-                                <Label Grid.Row ="1" Content="{Binding LicenseNumber}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground="Red"  Background="Transparent"/>
+                                <Label Grid.Row ="0" Content="Line Name:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
                             </Grid>
-                            
+                            <Grid Grid.Column="1">
+                                <Label Grid.Row ="1" Grid.Column ="1" Content="{Binding Number}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"   Foreground= "Orange"  Background="Transparent"/>
+                            </Grid>
+                            <Button x:Name ="information"  Grid.Column="2"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="images.jpg"/>
+                                </Button.Background>
+
+                            </Button>
+                  
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
 
+        <Grid Name="DriverGrid" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" >
+            <ListBox Name="DriverListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row ="0" Content="Driver ID:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Label Grid.Row ="1"  Content="{Binding UserName}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Orange"  Background="Transparent"/>
+                            </Grid>
+                            <Button x:Name ="information"  Grid.Column="2"   Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="images.jpg" Stretch="Fill" TileMode="None"/>
+                                </Button.Background>
+
+                            </Button>
+                     
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
 
     </Grid>
 </Window>

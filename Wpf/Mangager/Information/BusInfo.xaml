@@ -69,7 +69,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content ="{Binding LicenseNumber}" Name ="licenseNumber1"  Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-            <Label Content ="{Binding LicenseDate}"   Name="licenseDate1"     Grid.Row="0"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+            <Label Content ="{Binding}"   Name="licenseDate1"     Grid.Row="0"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
             <Label Content ="{Binding KM}"            Name="km1"              Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
             <Label Content ="{Binding Fuel}"          Name="fuel1"            Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
             <Label Content ="{Binding Status}"        Name="status1"          Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />

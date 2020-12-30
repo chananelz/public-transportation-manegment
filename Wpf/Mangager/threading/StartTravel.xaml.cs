@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Wpf.Mangager.Information;
+using Wpf.Mangager.Managing;
+using System.Windows.Threading;
+using Wpf.Mangager.Managing.Add;
 
 namespace Wpf.Mangager.threading
 {
@@ -19,9 +23,18 @@ namespace Wpf.Mangager.threading
     /// </summary>
     public partial class StartTravel : Window
     {
+        public BO.Stop tempStop;
         public StartTravel()
         {
             InitializeComponent();
+            BLApi.IBL bl;
+            bl = BLApi.Factory.GetBL("1");
+            lineListBox.ItemsSource = bl.GetAllLines().ToList();
+            DriverListBox.ItemsSource = bl.GetAllUsers().ToList();
+        }
+        private void information_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
