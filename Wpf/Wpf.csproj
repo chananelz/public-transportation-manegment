@@ -62,8 +62,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CEO\Drivers\PresentationDriver.xaml.cs">
+      <DependentUpon>PresentationDriver.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CEO\OptionsForCEO.xaml.cs">
       <DependentUpon>OptionsForCEO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CEO\Users\Presentation.xaml.cs">
+      <DependentUpon>Presentation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mangager\Managing\Add\LineManagerAdd.xaml.cs">
       <DependentUpon>LineManagerAdd.xaml</DependentUpon>
@@ -121,9 +127,6 @@
     <Compile Include="Mangager\Presentation\PresentationStops.xaml.cs">
       <DependentUpon>PresentationStops.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Options.xaml.cs">
-      <DependentUpon>Options.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -150,7 +153,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CEO\Drivers\PresentationDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CEO\OptionsForCEO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CEO\Users\Presentation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,10 +222,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\threading\StartTravel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Options.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -593,6 +600,48 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Mangager\threading\myImages\stop_sign-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\ADD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\BusBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\busForPresentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\busListBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\green_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\school_building_of_primary_with_bus_icon_w1ghj2_wHa_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\Drivers\myImages\stop_sign-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

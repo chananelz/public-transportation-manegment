@@ -95,7 +95,7 @@ namespace Wpf.Mangager.Presentation
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new Options().Show();
+            new OptionsForDriver().Show();
             this.Close();
         }
 

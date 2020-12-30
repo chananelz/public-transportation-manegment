@@ -262,7 +262,7 @@ namespace Wpf.Mangager.Managing.Add
 
         private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            new Options().Show();
+            new OptionsForDriver().Show();
             this.Close();
         }
 

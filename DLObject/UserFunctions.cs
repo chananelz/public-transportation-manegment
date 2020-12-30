@@ -61,10 +61,10 @@ namespace DL
         }
 
 
-        public User GetUser(string password)
+        public User GetUser(string nameId)
         {
             var t = from user in DataSource.UserList
-                    where (user.Password == password)
+                    where (user.UserName == nameId)
                     select user;
             if (t.ToList().Count == 0)
                 throw new Exception("no user with such UserName!!");

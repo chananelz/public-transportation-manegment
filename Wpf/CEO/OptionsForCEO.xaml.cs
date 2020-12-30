@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
-
+using Wpf.CEO.Drivers;
 
 namespace Wpf.CEO
 {
@@ -54,7 +54,7 @@ namespace Wpf.CEO
 
         private void line_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationLines().Show();
+            new PresentationDriver().Show();
             this.Close();
         }
 

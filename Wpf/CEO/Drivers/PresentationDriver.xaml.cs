@@ -11,32 +11,33 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Wpf.Mangager.Information;
-using Wpf.Mangager.Managing;
 using System.Windows.Threading;
-using Wpf.Mangager.Managing.Add;
 
 
-namespace Wpf.Mangager.Presentation
+
+
+namespace Wpf.CEO.Drivers
 {
     /// <summary>
-    /// Interaction logic for PresentationLines.xaml
+    /// Interaction logic for PresentationDriver.xaml
     /// </summary>
-    public partial class PresentationLines : Window
+    public partial class PresentationDriver : Window
     {
+
+
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
-        public BO.Line tempLine;
+        public BO.User tempUser;
 
 
-        public PresentationLines()
+        public PresentationDriver()
         {
             InitializeComponent();
             bl = BLApi.Factory.GetBL("1");
-            lineList.ItemsSource = bl.GetAllLines().ToList();
+            driverList.ItemsSource = bl.GetAllDrivers().ToList();
             busFunc();
-            
+
         }
 
         private void busFunc()
@@ -62,22 +63,21 @@ namespace Wpf.Mangager.Presentation
         }
         private void information_Click(object sender, RoutedEventArgs e)
         {
-            Button a = (Button)sender;
-            tempLine = (BO.Line)a.DataContext;
-            new LineInfo(tempLine).Show();
-            this.Close();
-
+            //Button a = (Button)sender;
+            //tempUser = (BO.User)a.DataContext;
+            //new LineInfo(tempUser).Show();
+            //this.Close();
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            Button a = (Button)sender;
-            tempLine = (BO.Line)a.DataContext;
-            new LineManager(tempLine).Show();
-            this.Close();
+            //Button a = (Button)sender;
+            //tempLine = (BO.Line)a.DataContext;
+            //new LineManager(tempLine).Show();
+            //this.Close();
         }
         private void OnClick(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void home_Click(object sender, RoutedEventArgs e)
@@ -88,18 +88,18 @@ namespace Wpf.Mangager.Presentation
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new OptionsForDriver().Show();
+            new OptionsForCEO().Show();
             this.Close();
         }
         private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            new LineManagerAdd().Show();
-            this.Close();
+            //new LineManagerAdd().Show();
+            //this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -108,16 +108,16 @@ namespace Wpf.Mangager.Presentation
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
-            tempLine = (BO.Line)a.DataContext;
+            tempUser = (BO.User)a.DataContext;
             try
             {
-                bl.DeleteLine(tempLine.Id);
+                bl.DeleteUser(tempUser.UserName);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            new PresentationLines().Show();
+            new PresentationDriver().Show();
             this.Close();
         }
     }

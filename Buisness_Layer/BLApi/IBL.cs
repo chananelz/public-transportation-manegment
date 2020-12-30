@@ -151,11 +151,13 @@ namespace BLApi
         void DeleteUser(string nameId);
         IEnumerable<User> GetAllUsers(Predicate<User> pr = null);
         User Authinticate(string username, string password,authority au);
+        IEnumerable<User> GetAllDrivers();
+        IEnumerable<User> GetAllPassengers();
         //IEnumerable<User> GetAllValidUsers();
         //IEnumerable<User> GetAllUnValidUsers();
         //IEnumerable<User> GetAllUnValidManager();
         //IEnumerable<User> GetAllUnValidUser()
-       
+
 
 
 
@@ -165,6 +167,7 @@ namespace BLApi
         UserTravel RequestUserTravel(long id);
         void UpdateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
         void DeleteUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
+
         //IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();
         //IEnumerable<UserTravel> GetAllValidUserTravels();

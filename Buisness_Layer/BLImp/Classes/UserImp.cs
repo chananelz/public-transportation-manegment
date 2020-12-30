@@ -124,5 +124,13 @@ namespace BLImp
                 throw new Exception("no such user!");
             else return temp.First();
         }
+        public IEnumerable<User> GetAllDrivers()
+        {
+            return GetAllUsers(user => user.Permission == authority.Driver);
+        }
+        public IEnumerable<User> GetAllPassengers()
+        {
+            return GetAllUsers(user => user.Permission == authority.Passenger);
+        }
     }
 }
