@@ -35,7 +35,7 @@ namespace Wpf
             Status = status;
             InitializeComponent();
 
-            if (status == "MANAGER")
+            if (status == "DRIVER" || status == "CEO")
                 Sign_In.Visibility = Visibility.Collapsed;
 
             MyData myData = new MyData()
@@ -72,8 +72,10 @@ namespace Wpf
             string password = PasswordContent.Password;
             string userName = userNameTxtBox.Text;
             authority au;
-            if (Status == "USER")
-                au = authority.USER;
+            if (Status == "PASSENGER")
+                au = authority.Passenger;
+            else if (Status == "DRIVER")
+                au = authority.Driver;
             else
                 au = authority.CEO;
             try

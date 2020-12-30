@@ -127,5 +127,10 @@ namespace BLImp
             }
             return li;
         }
+        public IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number)
+        {
+            long lineId = GetIdByNumber(number);
+           return GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList(); 
+        }
     }
 }

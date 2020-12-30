@@ -95,7 +95,7 @@ namespace BLImp
         }
         public void DeleteLineStation(long code,long lineId)
         {
-            dal.DeleteLineStation(code, lineId);
+            dal.DeleteLineStation(lineId, code);
         }
         public IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null)
         {

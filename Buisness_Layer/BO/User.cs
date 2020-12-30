@@ -8,9 +8,9 @@ namespace BO
 {
     public enum authority
     {
-        CEO = 0,
-        USER
-
+        Passenger = 0,
+        Driver,
+        CEO
     }
     public class User
     {
@@ -28,10 +28,13 @@ namespace BO
             switch(permission)
             {
                 case 0:
-                    Permission = authority.CEO;
+                    Permission = authority.Passenger;
                     break;
                 case 1:
-                    Permission = authority.USER;
+                    Permission = authority.Driver;
+                    break;
+                case 2:
+                    Permission = authority.CEO;
                     break;
             }
         }

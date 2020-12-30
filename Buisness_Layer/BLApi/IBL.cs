@@ -131,12 +131,14 @@ namespace BLApi
         void UpdateStopLatitude(double latitude, long code);
         void DeleteStop(long code);
         IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
+        string GetNameByStopCode(long code);
+        IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number);
         //IEnumerable<Stop> GetAllValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllStopeInSpecificArea();
-       
-      
+
+
 
 
 

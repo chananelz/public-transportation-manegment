@@ -24,26 +24,6 @@ namespace BO
             get
             {
                 return Factory.GetBL("1").GetAllLinesByStopCode(StopCode).ToList();
-                //bool flag = false;
-                //List<Line> myList = new List<Line>();
-                //myList = null;
-                //foreach (var line in Factory.GetBL("1").GetAllLines().ToList())
-                //{
-                //    foreach (var stop in line.stops)
-                //    {
-                //        if (stop.StopCode == StopCode)
-                //        {
-                //            flag = true;
-                //            break;
-                //        }
-                //    }
-                //    if (flag)
-                //    {
-                //        myList.Add(line);
-                //    }
-                //    flag = false;
-                //}
-                //return myList;
             }
         }
 

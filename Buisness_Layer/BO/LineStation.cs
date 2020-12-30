@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLApi;
+using BLImp;
 
 namespace BO
 {
@@ -12,6 +14,12 @@ namespace BO
         public long LineId { get; set; }   
         public long Code { get; set; }
         public long NumberInLine { get; set; }
+        private string name;
+
+        public string Name
+        {
+            get { return BLApi.Factory.GetBL("1").GetNameByStopCode(Code); }
+        }
 
 
         public LineStation(long code, long number,long lineId)

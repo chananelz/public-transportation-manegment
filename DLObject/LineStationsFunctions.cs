@@ -19,7 +19,7 @@ namespace DL
             lineStation.Valid = true;
             try
             {
-                GetLineStation(lineStation.Code,lineStation.LineId);
+                GetLineStation(lineStation.LineId, lineStation.Code);
             }
             catch (Exception ex)
             {
@@ -48,28 +48,26 @@ namespace DL
             return ret.GetPropertiesFrom<LineStation, LineStation>();
         }
 
-        public void UpdateLineStationNumberInLine(long numberInLine, long lineId,long code)
+        public void UpdateLineStationNumberInLine(long numberInLine, long code, long lineId)
         {
-            GetLineStation(code,lineId).NumberInLine = numberInLine;
+            GetLineStation(lineId, code).NumberInLine = numberInLine;
         }
 
 
 
-        public void DeleteLineStation(long code,long lineId)
+        public void DeleteLineStation(long lineId, long code)
         {
-            GetLineStation(code, lineId).Valid = false;
+            GetLineStation(lineId, code).Valid = false;
         }
 
-        public LineStation GetLineStation(long code,long lineId)
+        public LineStation GetLineStation(long lineId, long code)
         {
-            var t = from lineStation in DataSource.LineStationList
-                    where (lineStation.Code == code &&  lineStation.LineId == lineId)
-                    select lineStation;
-            if (t.ToList().Count == 0)
+            LineStation t = DataSource.LineStationList.Find(lineStation => lineStation.Code == code && lineStation.LineId == lineId);
+            if (t == null)
                 throw new Exception("no such line!!");
-            if (!t.First().Valid)
+            if (!t.Valid)
                 throw new Exception("line is not valid!!");
-            return t.ToList().First();
+            return t;
         }
         public IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null)
         {

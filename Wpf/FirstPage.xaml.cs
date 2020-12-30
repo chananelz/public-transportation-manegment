@@ -52,13 +52,18 @@ namespace Wpf
 
         private void user_Click(object sender, RoutedEventArgs e)
         {
-            new SignIn("USER").Show();
+            new SignIn("PASSENGER").Show();
             this.Close();
         }
 
-        private void manager_Click(object sender, RoutedEventArgs e)
+        private void driver_Click(object sender, RoutedEventArgs e)
         {
-            new SignIn("MANAGER").Show();
+            new SignIn("DRIVER").Show();
+            this.Close();
+        }
+        private void ceo_Click(object sender, RoutedEventArgs e)
+        {
+            new SignIn("CEO").Show();
             this.Close();
         }
 

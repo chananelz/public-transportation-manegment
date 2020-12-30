@@ -76,6 +76,27 @@ namespace BLImp
         }
         public void DeleteStop(long code)
         {
+            var stop = RequestStop(stop1 => stop1.StopCode == code);
+            var myList = GetAllLineStations(lineStation => lineStation.Code == code).ToList();
+            var lineList = GetAllLinesByStopCode(code).ToList();
+            bool found = false;
+            foreach(Line line in lineList)
+            {
+                foreach(LineStation lineStation in line.Stops)
+                {
+                    if (lineStation.Code == stop.StopCode)
+                        found = true;
+                    else if (found)
+                    {
+                        UpdateLineStationNumberInLine(lineStation.NumberInLine - 1, line.Id, lineStation.Code);
+                    }
+                }
+                found = false;
+            }
+            foreach (LineStation lineStation in myList)
+            {
+                //DeleteLineStation(lineStation.Code, lineStation.LineId);
+            }
             dal.DeleteStop(code);
         }
 
@@ -98,51 +119,11 @@ namespace BLImp
                 li.Add(RequestLine(line => line.Id == lineStation.LineId));
             }
             return li;
-
-
-
-
-
-            //bool flag = false;
-            //List<Line> myList = new List<Line>();
-            //myList = null;
-            //foreach (var line in Factory.GetBL("1").GetAllLines().ToList())
-            //{
-            //    foreach (var stop in line.stops)
-            //    {
-            //        if (stop.StopCode == StopCode)
-            //        {
-            //            flag = true;
-            //            break;
-            //        }
-            //    }
-            //    if (flag)
-            //    {
-            //        myList.Add(line);
-            //    }
-            //    flag = false;
-            //}
-            //return myList;
-
-
-
-
-            //public IEnumerable<Line> GetAllLinesByStopsNumber(long stopCoder)
-            //{
-            //    var myLineDeList = get
-
-
-            //    long lineId = GetIdByNumber(number);
-            //    var myList = GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList();
-            //    List<Stop> li = new List<Stop>();
-            //    //convert lineStations to Stops
-            //    foreach (LineStation lineStation in myList)
-            //    {
-            //        li.Add(RequestStop(stop => stop.StopCode == lineStation.Code));
-            //    }
-            //    return li;
-            //}
-
         }
+        public string GetNameByStopCode(long code)
+        {
+            return RequestStop(stop => stop.StopCode == code).StopName;
+        }
+
     }
 }

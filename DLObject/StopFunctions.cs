@@ -63,6 +63,7 @@ namespace DL
         public void DeleteStop(long code)
         {
             GetStop(code).Valid = false;
+           
         }
         public Stop GetStop(long code)
         {
@@ -76,7 +77,7 @@ namespace DL
             return t.ToList().First();
         }
 
-       
+
         public IEnumerable<Stop> GetAllStops()
         {
             var cloneList = new List<Stop>();

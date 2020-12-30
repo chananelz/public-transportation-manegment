@@ -8,9 +8,9 @@ namespace DO
 {
     public enum authority
     {
-        CEO,
-        USER
-
+        Passenger,
+        Driver,
+        CEO
     }
     public class User
     {

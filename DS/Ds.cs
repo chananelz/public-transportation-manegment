@@ -1106,7 +1106,7 @@ namespace DS
                 Password = "1",
                 Valid = true,
                 UserName = "a",
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1116,7 +1116,7 @@ namespace DS
                 Password = "2",
                 Valid = true,
                 UserName = "b",
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1126,7 +1126,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[0],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1136,7 +1136,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[1],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1146,7 +1146,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[2],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1156,7 +1156,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[3],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1166,7 +1166,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[4],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1176,7 +1176,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[5],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1186,7 +1186,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[6],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1196,7 +1196,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[7],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1206,7 +1206,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[8],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1216,7 +1216,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[9],
-                Permission = authority.USER
+                Permission = authority.Passenger
             });
             #endregion
 
@@ -1226,7 +1226,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[10],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1236,7 +1236,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[11],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1246,7 +1246,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[12],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1256,7 +1256,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[13],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1266,7 +1266,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[14],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1276,7 +1276,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[15],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1286,7 +1286,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[16],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1296,7 +1296,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[17],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1306,7 +1306,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[18],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 
@@ -1316,7 +1316,7 @@ namespace DS
                 Password = "123123",
                 Valid = true,
                 UserName = User_Name[19],
-                Permission = authority.CEO
+                Permission = authority.Driver
             });
             #endregion
 

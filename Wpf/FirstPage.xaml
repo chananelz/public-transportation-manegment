@@ -29,14 +29,20 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="user" Grid.Row="0" Content="User"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
+            <Button Name="user" Grid.Row="0" Content="Passenger"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="manager" Grid.Row="1"  Content="Manager"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="manager_Click" Foreground="Red">
+            <Button Name="driver" Grid.Row="1"  Content="Driver"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="driver_Click" Foreground="Red">
+                <Button.Background>
+                    <ImageBrush ImageSource="myImages/Button.png"/>
+                </Button.Background>
+            </Button>
+            <Button Name="ceo" Grid.Row="2"  Content="CEO"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="ceo_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>

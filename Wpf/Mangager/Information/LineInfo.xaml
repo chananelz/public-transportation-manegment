@@ -39,7 +39,8 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding StopName}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding NumberInLine}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
