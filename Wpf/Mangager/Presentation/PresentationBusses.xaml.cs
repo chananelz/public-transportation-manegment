@@ -39,7 +39,7 @@ namespace Wpf.Mangager.Presentation
             foreach (BO.Bus bus in a)
             {
                 if (bus.Status == BO.status.READY_FOR_DRIVE)
-                    bus.Show =  "Visible";
+                    bus.Show = "Visible";
                 else bus.Show = "Collapsed";
             }
 
@@ -50,7 +50,7 @@ namespace Wpf.Mangager.Presentation
 
         private void busFunc()
         {
-            
+
             place = movingBus.Margin.Left;
             FirstPage.Focus();
             gameTimer.Tick += gameTimerEvent;
@@ -66,12 +66,12 @@ namespace Wpf.Mangager.Presentation
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
-        
+
         private void information_Click(object sender, RoutedEventArgs e)
         {
 
             Button a = (Button)sender;
-            tempBus = (BO.Bus)a.DataContext; 
+            tempBus = (BO.Bus)a.DataContext;
             new BusInfo(tempBus).Show();
             this.Close();
         }
@@ -106,7 +106,7 @@ namespace Wpf.Mangager.Presentation
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-           
+
             new BusManagerAdd().Show();
             this.Close();
         }
@@ -139,11 +139,12 @@ namespace Wpf.Mangager.Presentation
             this.Close();
         }
 
-            private void startDrive_Click(object sender, RoutedEventArgs e)
+        private void startDrive_Click(object sender, RoutedEventArgs e)
         {
-
-            new StartTravel().Show();
-            this.Close();
+            var ab = new StartTravel();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
         }
     }
 }

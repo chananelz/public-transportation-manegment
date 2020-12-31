@@ -17,6 +17,7 @@ namespace BLApi
         void UpdateBusStatus(int status, long licenseNumber); 
         void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
+        IEnumerable<Bus> GetAllBussesReadyForDrive();
         //IEnumerable<Bus> GetAllValidBuses();
         //IEnumerable<Bus> GetAllUnValidBuses();
         //IEnumerable<Bus> GetAllTravelingBuses();

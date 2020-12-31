@@ -57,10 +57,17 @@ namespace BLImp
                 }
             }
             catch { }
+            var allLineStatoins = GetAllLineStations(line => line.LineId == lineId);
+            foreach (LineStation lineStation in allLineStatoins)
+            {
+                if (lineStation.NumberInLine >= numberInLine)
+                    UpdateLineStationNumberInLine(lineStation.NumberInLine + 1, lineStation.LineId, lineStation.Code);
+            }
             LineStation lineStationBO = new LineStation(code, numberInLine, lineId);
             DO.LineStation lineStationDO = lineStationBO.GetPropertiesFrom<DO.LineStation, BO.LineStation>();
             lineStationDO.Valid = true;
             dal.CreateLineStation(lineStationDO);
+           
         }
         public LineStation RequestLineStation(Predicate<LineStation> pr = null)
         {

@@ -114,6 +114,21 @@ namespace Wpf.Mangager.Presentation
             new PresentationStops().Show();
             this.Close();
         }
+        private void AddStopToLine_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            try
+            {
+                bl.DeleteStop(tempStop.StopCode);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            new PresentationStops().Show();
+            this.Close();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

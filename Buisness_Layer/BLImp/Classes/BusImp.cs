@@ -112,5 +112,10 @@ namespace BLImp
             }
             return dal.GetAllBusses().Select(bus => bus.GetPropertiesFrom<BO.Bus, DO.Bus>()).Where(b => pr(b));
         }
+        public IEnumerable<Bus> GetAllBussesReadyForDrive()
+        { 
+            return GetAllBusses(bus => bus.Status == BO.status.READY_FOR_DRIVE);
+        }
+        
     }
 }

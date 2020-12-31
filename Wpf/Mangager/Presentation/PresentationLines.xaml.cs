@@ -108,7 +108,7 @@ namespace Wpf.Mangager.Presentation
         }
         private void StartTravel_Click(object sender, RoutedEventArgs e)
         {
-            var ab = new StartTravel();
+            var ab = new StartTravelLine();
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
