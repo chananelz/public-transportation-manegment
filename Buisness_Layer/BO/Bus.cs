@@ -23,10 +23,10 @@ namespace BO
         public float Fuel { get; set; }
         public status Status { get; set; }
         
-        private List<Line> lineList;
-        public List<Line> LineList
+        private Line lineList;
+        public Line LineList
         {
-            get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList(); }
+            get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList().First(); }
         }
 
         public string Show { get => show; set => show = value; }

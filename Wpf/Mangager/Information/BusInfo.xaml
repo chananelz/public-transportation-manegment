@@ -32,31 +32,33 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+
         <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
-        <Label Content ="License number:" Name ="licenseNumber"  Grid.Column="0" Grid.Row="6"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-        <Label Content ="License date:"   Name="licenseDate"     Grid.Column="0" Grid.Row="2"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content ="Km:"             Name="km"              Grid.Column="0" Grid.Row="3"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content ="Fuel:"           Name="fuel"            Grid.Column="0" Grid.Row="4"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content ="Status:"         Name="status"          Grid.Column="0" Grid.Row="5"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content ="All line:"         Name="AllLine"       Grid.Column="0" Grid.Row="1"  Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="License number:" Name ="licenseNumber"  Grid.Column="0" Grid.Row="6"     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+        <Label Content ="License date:"   Name="licenseDate"     Grid.Column="0" Grid.Row="2"     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="Km:"             Name="km"              Grid.Column="0" Grid.Row="3"     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="Fuel:"           Name="fuel"            Grid.Column="0" Grid.Row="4"     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="Status:"         Name="status"          Grid.Column="0" Grid.Row="5"     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content ="line:"         Name="AllLine"       Grid.Column="0" Grid.Row="1"     HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="LineListB" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15" SelectionChanged="LineListB_SelectionChanged">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Number: "/>
-                        <TextBlock Text="{Binding Number}"/>
-                        <TextBlock Text="    last stop: "/>
-                        <TextBlock Text="{Binding LastStop}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
 
-        
-        
+        <StackPanel x:Name="LineListB" Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Number: "              VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="0"/>
+                <Label Content="{Binding Number}"      VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="1"/>
+                <Label Content="    last stop: "       VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="2"/>
+                <Label Content="{Binding LastStop}"    VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="3"/>
+            </Grid>
+        </StackPanel>
+
+
 
         <Grid x:Name="busInfo"  Grid.Row ="2" Grid.Column="1" Grid.RowSpan="5">
             <Grid.RowDefinitions>
@@ -79,7 +81,7 @@
             </Button.Background>
         </Button>
 
-       
+
         <Button Grid.Row="7" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
