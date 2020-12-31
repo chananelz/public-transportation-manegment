@@ -26,6 +26,7 @@ namespace BO
         private Line lineList;
         public Line LineList
         {
+            //try
             get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList().First(); }
         }
 

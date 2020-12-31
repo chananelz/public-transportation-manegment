@@ -22,6 +22,8 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+
             <RowDefinition Height="10*"/>
             
             <RowDefinition Height="10*"/>
@@ -45,7 +47,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="BusesList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="0" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="BusesList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="2" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -57,12 +59,13 @@
         </ComboBox>
 
         <Label Content="All stops:"        Name="AllStops"         Grid.Column="0" Grid.Row="1" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-        <Label Content="Area:"             Name="area"             Grid.Column="0" Grid.Row="2" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content="First Stop:"       Name="firstStop"        Grid.Column="0" Grid.Row="3" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
-        <Label Content="Last Stop:"        Name="lastStop"         Grid.Column="0" Grid.Row="4" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-        <Label Content="Bus Number"        Name="bus"              Grid.Column="0" Grid.Row="5" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+        <Label Content="All buses:"        Name="AllBusses"        Grid.Column="0" Grid.Row="2" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+        <Label Content="Area:"             Name="area"             Grid.Column="0" Grid.Row="3" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content="First Stop:"       Name="firstStop"        Grid.Column="0" Grid.Row="4" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
+        <Label Content="Last Stop:"        Name="lastStop"         Grid.Column="0" Grid.Row="5" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+        <Label Content="Bus Number"        Name="bus"              Grid.Column="0" Grid.Row="6" Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
 
-        <Grid x:Name="lineInfo"  Grid.Row ="2" Grid.Column="2" Grid.RowSpan="4">
+        <Grid x:Name="lineInfo"  Grid.Row ="3" Grid.Column="2" Grid.RowSpan="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -79,21 +82,21 @@
 
 
 
-        <Button Grid.Row="6" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="7" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/home.png"/>
             </Button.Background>
         </Button>
 
 
-        <Button Grid.Row="6" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="7" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
             </Button.Background>
         </Button>
 
-        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="7" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="7" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="8" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
+        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="8" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>

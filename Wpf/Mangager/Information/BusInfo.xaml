@@ -45,17 +45,9 @@
 
         <StackPanel x:Name="LineListB" Grid.Row="1" Grid.Column="1">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Number: "              VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="0"/>
-                <Label Content="{Binding Number}"      VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="1"/>
-                <Label Content="    last stop: "       VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="2"/>
-                <Label Content="{Binding LastStop}"    VerticalAlignment="Center" FontSize="15" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="3"/>
-            </Grid>
+
+                <Label Content="{Binding Number}"   HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="25" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="1"/>
+                           </Grid>
         </StackPanel>
 
 
