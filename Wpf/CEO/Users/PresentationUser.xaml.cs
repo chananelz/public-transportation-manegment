@@ -11,26 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
-using Wpf.CEO.Drivers;
-using Wpf.CEO.Users;
-
-namespace Wpf.CEO
+namespace Wpf.CEO.Users
 {
-    /// <summary>
-    /// Interaction logic for OptionsForCEO.xaml
-    /// </summary>
-    public partial class OptionsForCEO : Window
+
+
+    public partial class PresentationUser : Window
     {
+
 
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
-        public OptionsForCEO()
+        BLApi.IBL bl;
+        public BO.User tempUser;
+
+
+        public PresentationUser()
         {
             InitializeComponent();
+            bl = BLApi.Factory.GetBL("1");
+            userList.ItemsSource = bl.GetAllPassengers().ToList();
             busFunc();
+
         }
+
         private void busFunc()
         {
             place = movingBus.Margin.Left;
@@ -39,6 +43,7 @@ namespace Wpf.CEO
             gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
             gameTimer.Start();
         }
+
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -47,23 +52,29 @@ namespace Wpf.CEO
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
-        private void bus_Click(object sender, RoutedEventArgs e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            new PresentationUser().Show();
-            this.Close();
+
+        }
+        private void information_Click(object sender, RoutedEventArgs e)
+        {
+            //Button a = (Button)sender;
+            //tempUser = (BO.User)a.DataContext;
+            //new LineInfo(tempUser).Show();
+            //this.Close();
+        }
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            //Button a = (Button)sender;
+            //tempLine = (BO.Line)a.DataContext;
+            //new LineManager(tempLine).Show();
+            //this.Close();
+        }
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+
         }
 
-        private void line_Click(object sender, RoutedEventArgs e)
-        {
-            new PresentationDriver().Show();
-            this.Close();
-        }
-
-        private void stop_Click(object sender, RoutedEventArgs e)
-        {
-            new PresentationStops().Show();
-            this.Close();
-        }
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
@@ -72,11 +83,36 @@ namespace Wpf.CEO
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new FirstPage().Show();
+            new OptionsForCEO().Show();
             this.Close();
+        }
+        private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            //new LineManagerAdd().Show();
+            //this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempUser = (BO.User)a.DataContext;
+            try
+            {
+                bl.DeleteUser(tempUser.UserName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            new PresentationUser().Show();
             this.Close();
         }
     }

@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Wpf.CEO.Users
+namespace Wpf.CEO.CEOS
 {
     /// <summary>
-    /// Interaction logic for Presentation.xaml
+    /// Interaction logic for PresentationCEO.xaml
     /// </summary>
-    public partial class Presentation : Window
+    public partial class PresentationCEO : Window
     {
-        public Presentation()
+        public PresentationCEO()
         {
             InitializeComponent();
         }

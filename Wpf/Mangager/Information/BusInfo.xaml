@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Information"
         mc:Ignorable="d"
         Title="BusInfo" Height="450" Width="800"
+        Name="Window"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
@@ -45,9 +46,17 @@
 
         <StackPanel x:Name="LineListB" Grid.Row="1" Grid.Column="1">
             <Grid>
-
-                <Label Content="{Binding Number}"   HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="25" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" Grid.Column="1"/>
-                           </Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Number}" Grid.Column="0"  HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="25" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
+                <Button Name="information"  Grid.Column="1"     Content="information"  Foreground ="Red" Width="200"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="myImages/Button.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
         </StackPanel>
 
 

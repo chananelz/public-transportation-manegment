@@ -15,6 +15,7 @@ using Wpf.Mangager.Information;
 using Wpf.Mangager.Managing;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
+using Wpf.Mangager.threading;
 
 
 namespace Wpf.Mangager.Presentation
@@ -36,7 +37,7 @@ namespace Wpf.Mangager.Presentation
             bl = BLApi.Factory.GetBL("1");
             lineList.ItemsSource = bl.GetAllLines().ToList();
             busFunc();
-            
+
         }
 
         private void busFunc()
@@ -77,7 +78,7 @@ namespace Wpf.Mangager.Presentation
         }
         private void OnClick(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void home_Click(object sender, RoutedEventArgs e)
@@ -93,7 +94,7 @@ namespace Wpf.Mangager.Presentation
         }
         private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -105,6 +106,14 @@ namespace Wpf.Mangager.Presentation
         {
             this.Close();
         }
+        private void StartTravel_Click(object sender, RoutedEventArgs e)
+        {
+            var ab = new StartTravel();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+        }
+
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -113,7 +122,7 @@ namespace Wpf.Mangager.Presentation
             {
                 bl.DeleteLine(tempLine.Id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

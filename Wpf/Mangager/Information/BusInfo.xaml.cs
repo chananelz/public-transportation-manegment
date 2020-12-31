@@ -24,6 +24,11 @@ namespace Wpf.Mangager.Information
     {
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
+        public BO.Line tempLine;
+
+
+
+
         public BusInfo(BO.Bus infoBus)
         {
             InitializeComponent();
@@ -67,6 +72,16 @@ namespace Wpf.Mangager.Information
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void information_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+            var ab = new LineInfo(tempLine);
+            ab.Height = 400;
+            ab.Width = 300;
+            ab.Show();
+            
         }
 
         private void LineListB_SelectionChanged(object sender, SelectionChangedEventArgs e)
