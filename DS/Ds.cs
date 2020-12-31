@@ -658,7 +658,7 @@ namespace DS
             {
                 Valid = true,
                 LicenseNumber = Configuration.BusCounter,
-                LicenseDate = new DateTime(2020, 2, 22),
+                LicenseDate = new DateTime(2020, 4, 22),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
                 Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
                 Status = status.REFULING
@@ -670,7 +670,7 @@ namespace DS
             {
                 Valid = true,
                 LicenseNumber = Configuration.BusCounter,
-                LicenseDate = new DateTime(2020, 2, 23),
+                LicenseDate = new DateTime(2020, 4, 23),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
                 Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
                 Status = status.REFULING
@@ -682,10 +682,10 @@ namespace DS
             {
                 Valid = true,
                 LicenseNumber = Configuration.BusCounter,
-                LicenseDate = new DateTime(2020, 2, 24),
+                LicenseDate = new DateTime(2020, 4, 24),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
                 Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
-                Status = status.REFULING
+                Status = status.TREATING
             });
             #endregion
 
@@ -695,10 +695,10 @@ namespace DS
             {
                 Valid = true,
                 LicenseNumber = Configuration.BusCounter,
-                LicenseDate = new DateTime(2020, 2, 25),
+                LicenseDate = new DateTime(2020, 4, 25),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
                 Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
-                Status = status.REFULING
+                Status = status.TREATING
             });
             #endregion
 
@@ -708,7 +708,7 @@ namespace DS
             {
                 Valid = true,
                 LicenseNumber = Configuration.BusCounter,
-                LicenseDate = new DateTime(2020, 2, 26),
+                LicenseDate = new DateTime(2020, 4, 26),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
                 Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
                 Status = status.READY_FOR_DRIVE
@@ -720,14 +720,65 @@ namespace DS
             {
                 Valid = true,
                 LicenseNumber = Configuration.BusCounter,
-                LicenseDate = new DateTime(2020, 2, 27),
+                LicenseDate = new DateTime(2020, 4, 27),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
                 Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
                 Status = status.READY_FOR_DRIVE
             });
             #endregion
 
-            
+
+            #region Bus # 28
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 3, 24),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.READY_FOR_DRIVE
+            });
+            #endregion
+
+
+            #region Bus # 29
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 3, 25),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.READY_FOR_DRIVE
+            });
+            #endregion
+
+
+            #region Bus # 30
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 3, 26),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.READY_FOR_DRIVE
+            });
+            #endregion
+
+            #region Bus # 31
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 3, 27),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.READY_FOR_DRIVE
+            });
+            #endregion
+
+
         }
         #endregion
 
