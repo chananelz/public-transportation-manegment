@@ -17,6 +17,7 @@ namespace DL
 
 
             busTravel.Valid = true;
+            busTravel.Id = Configuration.Bus_TravelCounter;
             try
             {
                 GetBusTravel(busTravel.Id);

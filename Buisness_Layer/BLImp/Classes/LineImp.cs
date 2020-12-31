@@ -106,6 +106,17 @@ namespace BLImp
 
         public void DeleteLine(long id)
         {
+            if (GetAllLineById(id).ToList().Count() != 0)
+            {
+                foreach (LineStation lineStation in GetAllLineStationsByLineNumber(RequestLine(line => line.Id == id).Number))
+                {
+                    DeleteLineStation(lineStation.Code, lineStation.LineId);
+                }
+                foreach (BusTravel busTravel in GetAllBusseseByLineNumber(RequestLine(line => line.Id == id).Number))
+                {
+                    DeleteBusTravel(busTravel.Id);
+                }
+            }
             dal.DeleteLine(id);
         }
 

@@ -9,7 +9,7 @@ namespace DO
     public class BusTravel
     {
         public bool Valid { get; set; }
-        public int Id { get; set; }
+        public long Id { get; set; }
         public long LicenseNumber { get; set; }
         public long LineId { get; set; }
         public DateTime FormalDepartureTime { get; set; }

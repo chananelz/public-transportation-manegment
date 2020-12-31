@@ -24,7 +24,7 @@ namespace BO
         }
 
         private List<BusTravel> buses;
-        public List<BusTravel> Bines
+        public List<BusTravel> Buses
         {
             get
             {

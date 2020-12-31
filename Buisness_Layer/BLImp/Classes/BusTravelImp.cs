@@ -129,7 +129,7 @@ namespace BLImp
 
         public IEnumerable<Line> GetAllLinesByLicenseNumber(long licenseNumber)
         {
-            var tempList = GetAllBusTravels(busTravel => busTravel.LicenseNumber == licenseNumber).ToList();
+            var tempList = GetAllBusTravels(busTravel => busTravel.LicenseNumber == licenseNumber && busTravel.Valid).ToList();
             List<Line> retList = new List<Line>();
             foreach (BusTravel busTravel in tempList)
             {
