@@ -87,14 +87,17 @@ namespace BLImp
             //valid.stopListExist;
             if(GetAllLineById(id).ToList().Count() != 0)
             {
-                foreach(LineStation lineStation in GetAllLineStationsByLineNumber(RequestLine(line => line.Id == id).Number))
+                var a = GetAllLineStations(line => line.LineId == id).ToList();
+                var b = GetAllLineStations().ToList();
+                foreach (LineStation lineStation in a)
                 {
-                    DeleteLineStation(lineStation.Code, lineStation.LineId);
+                    DeleteLineStation(lineStation.Code, lineStation.LineId,lineStation.NumberInLine);
                 }
             }
             long i = 1;
             foreach(Stop stop in stopLines)
             {
+                var a = GetAllLineStations(line => line.LineId == id).ToList();
                 if (i == 1)
                     UpdateLineFirstStop(stop.StopCode,id);
                 if (i == stopLines.Count())
@@ -110,7 +113,7 @@ namespace BLImp
             {
                 foreach (LineStation lineStation in GetAllLineStationsByLineNumber(RequestLine(line => line.Id == id).Number))
                 {
-                    DeleteLineStation(lineStation.Code, lineStation.LineId);
+                    DeleteLineStation(lineStation.Code, lineStation.LineId,lineStation.NumberInLine);
                 }
                 foreach (BusTravel busTravel in GetAllBusseseByLineNumber(RequestLine(line => line.Id == id).Number))
                 {
@@ -149,7 +152,7 @@ namespace BLImp
         public IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number)
         {
             long lineId = GetIdByNumber(number);
-           return GetAllLineStations(lineStation => lineStation.LineId == lineId).ToList(); 
+           return GetAllLineStations(lineStation => lineStation.LineId == lineId && lineStation.Valid == true).ToList(); 
         }
 
         public IEnumerable<Line> GetAllLineByLineNumber(long number)

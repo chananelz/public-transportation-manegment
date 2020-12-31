@@ -102,7 +102,7 @@ namespace BLApi
         void CreateLineStation(long lineId, long numberInLine, long code);
         LineStation RequestLineStation(Predicate<LineStation> pr = null);
         void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
-        void DeleteLineStation(long code,long lineId);
+        void DeleteLineStation(long code,long lineId,long numberInLine);
         IEnumerable<Stop> GetAllStopsByLineNumber(long id);
 
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);

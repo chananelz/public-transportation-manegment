@@ -52,7 +52,7 @@
 
 
             <TextBox                       Grid.Row="0"  Text="user name:"    HorizontalAlignment="Left" VerticalAlignment="Center"       FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red" />
-            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410" Margin="9.333,8,0,8.667" TextChanged="userNameTxtBox_TextChanged"/>
+            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410"  TextChanged="userNameTxtBox_TextChanged"/>
 
 
             <TextBox  Grid.Row="1"   Text="password:"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red"/>

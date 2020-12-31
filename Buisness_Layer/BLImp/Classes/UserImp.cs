@@ -113,14 +113,18 @@ namespace BLImp
             {
                 return dal.GetAllUsers().Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).ToList();
             }
-            return dal.GetAllUsers().Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).Where(b => pr(b)).ToList();
+            IEnumerable<DO.User> temp =  dal.GetAllUsers();
+            if (temp.ToList().Count == 0)
+                throw new Exception("no such user!");
+            else
+                return temp.Select(user => user.GetPropertiesFrom<BO.User, DO.User>()).Where(b => pr(b)).ToList();
 
         }
 
         public User Authinticate(string username, string password,authority au)
         {
             IEnumerable<User> temp = GetAllUsers(user => user.UserName == username && user.Password == password && au == user.Permission);
-            if (temp == null)
+            if (temp.ToList().Count == 0)
                 throw new Exception("no such user!");
             else return temp.First();
         }

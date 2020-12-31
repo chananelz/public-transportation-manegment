@@ -31,19 +31,23 @@ namespace DL
 
         public void UpdateLineStationNumberInLine(long numberInLine, long code, long lineId)
         {
-            GetLineStation(lineId, code).NumberInLine = numberInLine;
+            GetLineStation(lineId, code, numberInLine).NumberInLine = numberInLine;
         }
 
 
 
-        public void DeleteLineStation(long lineId, long code)
+        public void DeleteLineStation(long lineId, long code, long numberInLine)
         {
-            GetLineStation(lineId, code).Valid = false;
+            try
+            {
+                GetLineStation(lineId, code, numberInLine).Valid = false;
+            }
+            catch { GetLineStation(lineId, code, numberInLine).Valid = false; }
         }
 
-        public LineStation GetLineStation(long lineId, long code)
+        public LineStation GetLineStation(long lineId, long code,long numberInLine)
         {
-            LineStation t = DataSource.LineStationList.Find(lineStation => lineStation.Code == code && lineStation.LineId == lineId);
+            LineStation t = DataSource.LineStationList.Find(lineStation => lineStation.Code == code && lineStation.LineId == lineId && lineStation.NumberInLine == numberInLine);
             if (t == null)
                 throw new Exception("no such line!!");
             if (!t.Valid)

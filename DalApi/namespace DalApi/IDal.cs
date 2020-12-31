@@ -62,8 +62,8 @@ namespace DalApi
         void CreateLineStation(LineStation lineStation);
         LineStation RequestLineStation(Predicate<LineStation> pr = null);
         void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
-        void DeleteLineStation(long code, long lineId);
-        LineStation GetLineStation(long code, long lineId);
+        void DeleteLineStation(long code, long lineId,long numberInLine);
+        LineStation GetLineStation(long code, long lineId,long numberInLine);
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
 
 

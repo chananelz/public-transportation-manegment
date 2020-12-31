@@ -27,7 +27,7 @@ namespace BO
         public Line LineList
         {
             //try
-            get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList().First(); }
+            get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList()?.First(); }
         }
 
         public string Show { get => show; set => show = value; }
