@@ -56,15 +56,14 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000000,
                 LineId = 10,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 1, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 1, 06, 05, 0),
                 LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 1, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 1, 06, 8, 30),
                 DriverId = 206275811
             });
             #endregion
-
 
             #region Bus_Travel # 2
 
@@ -74,11 +73,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000001,
                 LineId = 10,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 2, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 2, 06, 35, 0),
                 LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
+                LastPassedStopTime = new DateTime(2020, 12, 2, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 2, 06, 38, 35),
                 DriverId = 206275812
             });
 
@@ -91,11 +90,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000002,
                 LineId = 10,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 3, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 3, 07, 05, 0),
                 LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 3, 20, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 3, 07, 8, 30),
                 DriverId = 206275813
             });
             #endregion
@@ -107,11 +106,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000003,
                 LineId = 11,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 4, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 4, 06, 05, 0),
                 LastPassedStop = 579,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 4, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 4, 06, 8, 30),
                 DriverId = 206275814
             });
             #endregion
@@ -123,11 +122,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000004,
                 LineId = 11,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 5, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 5, 06, 35, 0),
                 LastPassedStop = 579,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
+                LastPassedStopTime = new DateTime(2020, 12, 5, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 20, 5, 38, 35),
                 DriverId = 206275815
             });
             #endregion
@@ -139,11 +138,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000005,
                 LineId = 11,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 6, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 6, 07, 05, 0),
                 LastPassedStop = 579,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 6, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 6, 07, 8, 30),
                 DriverId = 206275816
             });
             #endregion
@@ -155,11 +154,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000006,
                 LineId = 12,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 7, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 7, 06, 05, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 7, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 7, 06, 8, 30),
                 DriverId = 206275817
             });
             #endregion
@@ -171,11 +170,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000007,
                 LineId = 12,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 8, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 8, 06, 35, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
+                LastPassedStopTime = new DateTime(2020, 12, 8, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 8, 06, 38, 35),
                 DriverId = 206275818
             });
             #endregion
@@ -187,11 +186,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000008,
                 LineId = 12,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 9, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 9, 07, 05, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 9, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 9, 07, 8, 30),
                 DriverId = 206275819
             });
             #endregion
@@ -203,11 +202,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000009,
                 LineId = 13,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 10, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 10, 06, 05, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 10, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 10, 06, 8, 30),
                 DriverId = 206275820
             });
             #endregion
@@ -220,11 +219,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000010,
                 LineId = 13,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 06, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 06, 35, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 11, 06, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 11, 06, 35, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 06, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 06, 38, 35),
+                LastPassedStopTime = new DateTime(2020, 12, 11, 06, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 11, 06, 38, 35),
                 DriverId = 206275821
             });
             #endregion
@@ -236,11 +235,11 @@ namespace DS
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000011,
                 LineId = 13,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 07, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 07, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 12, 07, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 12, 07, 05, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 07, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 07, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 12, 07, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 12, 07, 8, 30),
                 DriverId = 206275822
             });
             #endregion
@@ -250,17 +249,16 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000000,
+                LicenseNumber = 1000012,
                 LineId = 18,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 13, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 13, 16, 05, 0),
                 LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 13, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 13, 16, 8, 30),
                 DriverId = 206275811
             });
             #endregion
-
 
             #region Bus_Travel # 14
 
@@ -268,13 +266,13 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000001,
+                LicenseNumber = 1000013,
                 LineId = 18,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 14, 16, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 14, 16, 35, 0),
                 LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
+                LastPassedStopTime = new DateTime(2020, 12, 14, 16, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 14, 16, 38, 35),
                 DriverId = 206275812
             });
 
@@ -285,13 +283,13 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000002,
+                LicenseNumber = 1000014,
                 LineId = 18,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 17, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 15, 17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 15, 17, 05, 0),
                 LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 15, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 15, 17, 8, 30),
                 DriverId = 206275813
             });
             #endregion
@@ -301,13 +299,13 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000003,
+                LicenseNumber = 1000015,
                 LineId = 17,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 16, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 16, 16, 05, 0),
                 LastPassedStop = 579,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 16, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 16, 16, 8, 30),
                 DriverId = 206275814
             });
             #endregion
@@ -317,13 +315,13 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000004,
+                LicenseNumber = 1000016,
                 LineId = 17,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 17, 16, 30, 0),
+                RealDepartureTime = new DateTime(2020, 12, 17, 16, 35, 0),
                 LastPassedStop = 579,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
+                LastPassedStopTime = new DateTime(2020, 12, 17, 16, 35, 0),
+                NextStopTime = new DateTime(2020, 12, 17, 16, 38, 35),
                 DriverId = 206275815
             });
             #endregion
@@ -333,13 +331,13 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000005,
+                LicenseNumber = 1000017,
                 LineId = 17,
-                FormalDepartureTime = new DateTime(2020, 12, 20,17, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 18, 17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 18, 17, 05, 0),
                 LastPassedStop = 579,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 18, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 18, 17, 8, 30),
                 DriverId = 206275816
             });
             #endregion
@@ -349,13 +347,13 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000006,
+                LicenseNumber = 1000018,
                 LineId = 15,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 19, 16, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 19, 16, 05, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 19, 16, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 19, 16, 8, 30),
                 DriverId = 206275817
             });
             #endregion
@@ -365,7 +363,7 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000007,
+                LicenseNumber = 1000019,
                 LineId = 15,
                 FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
                 RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
@@ -381,108 +379,355 @@ namespace DS
             {
                 Valid = true,
                 Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000008,
+                LicenseNumber = 1000020,
                 LineId = 15,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 17, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
+                FormalDepartureTime = new DateTime(2020, 12, 21, 17, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 21, 17, 05, 0),
                 LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
+                LastPassedStopTime = new DateTime(2020, 12, 21, 17, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 21, 17, 8, 30),
                 DriverId = 206275819
             });
             #endregion
 
-            #region Bus_Travel # 22
-            BusTravelList.Add(new BusTravel()
-            {
-                Valid = true,
-                Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000009,
-                LineId = 14,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 05, 0),
-                LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 8, 30),
-                DriverId = 206275820
-            });
-            #endregion
 
-            #region Bus_Travel # 23
-
-            BusTravelList.Add(new BusTravel()
-            {
-                Valid = true,
-                Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000010,
-                LineId = 14,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 16, 30, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 16, 35, 0),
-                LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
-                DriverId = 206275821
-            });
-            #endregion
-
-            #region Bus_Travel # 24
-            BusTravelList.Add(new BusTravel()
-            {
-                Valid = true,
-                Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000011,
-                LineId = 14,
-                FormalDepartureTime = new DateTime(2020, 12, 20, 17, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 20, 17, 05, 0),
-                LastPassedStop = 585,
-                LastPassedStopTime = new DateTime(2020, 12, 20, 17, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 20, 17, 8, 30),
-                DriverId = 206275822
-            });
-            #endregion
         }
 
         #endregion
 
+
         #region initBus //++
-        public static status getRandomStatus()
-        {
-            int a = r.Next(4);
-
-            switch (a)
-            {
-                case 0:
-                    return status.READY_FOR_DRIVE;
-                case 1:
-                    return status.REFULING;
-                case 2:
-                    return status.TRAVELING;
-                case 3:
-                    return status.READY_FOR_DRIVE;
-
-                default:
-                    return status.READY_FOR_DRIVE;
-            }
-        }
+       
         static void initBusesList()
         {
 
-            for (int i = 0; i < 20; i++)
+            #region Bus # 1
+            BusesList.Add(new Bus()
             {
-                int a = r.Next(2000, 2020);
-                int b = r.Next(11) + 1;
-                int c = r.Next(29) + 1;
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 1),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
 
-                BusesList.Add(new Bus()
-                {
-                    Valid = true,
-                    LicenseNumber = Configuration.BusCounter,
-                    LicenseDate = new DateTime(a, b, c),
-                    KM = (float)r.NextDouble() + r.Next(1, 1199),
-                    Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
-                    Status = getRandomStatus()
-                });
-            }
+            #region Bus # 2
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 2),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 3
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 3),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 4
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 4),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 5
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 5),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 6
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 6),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 7
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 7),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 8
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 8),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 9
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 9),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 10
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 10),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 11
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 11),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 12
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 12),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 13
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 13),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 14
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 14),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 15
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 15),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 16
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 16),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 17
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 17),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 18
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 18),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 19
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 19),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 20
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 20),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 21
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 21),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.TRAVELING
+            });
+            #endregion
+
+            #region Bus # 22
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 22),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.REFULING
+            });
+            #endregion
+
+            #region Bus # 23
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 23),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.REFULING
+            });
+            #endregion
+
+            #region Bus # 24
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 24),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.REFULING
+            });
+            #endregion
+
+
+            #region Bus # 25
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 25),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.REFULING
+            });
+            #endregion
+
+
+            #region Bus # 26
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 26),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.READY_FOR_DRIVE
+            });
+            #endregion
+
+            #region Bus # 27
+            BusesList.Add(new Bus()
+            {
+                Valid = true,
+                LicenseNumber = Configuration.BusCounter,
+                LicenseDate = new DateTime(2020, 2, 27),
+                KM = (float)r.NextDouble() + r.Next(1, 1199),
+                Fuel = r.Next(0, 1199) + (float)r.NextDouble(),
+                Status = status.READY_FOR_DRIVE
+            });
+            #endregion
+
+            
         }
         #endregion
 
