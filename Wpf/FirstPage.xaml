@@ -17,6 +17,7 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
+            
             <RowDefinition Height="20*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="10*"/>
@@ -34,18 +35,37 @@
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
+                <Button.RenderTransform>
+                    <RotateTransform/>
+                </Button.RenderTransform>
             </Button>
             <Button Name="driver" Grid.Row="1"  Content="Driver"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="driver_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="ceo" Grid.Row="2"  Content="CEO"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="ceo_Click" Foreground="Red">
+            <Button Name="AnimatedWidthButton" Grid.Row="2"       Width="200" 
+ Content="CEO"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="ceo_Click" Foreground="Red">
+                <Button.Triggers>
+
+                    <!-- Animate the button's Width property. -->
+                    <EventTrigger RoutedEvent="Button.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                Storyboard.TargetName="AnimatedWidthButton"
+                Storyboard.TargetProperty="(Button.Width)"
+                To="500" Duration="0:0:10" AutoReverse="True" 
+                RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
-            </Button>
 
+            </Button>
         </Grid>
 
         <Image x:Name="movingBus"   Grid.Row="3" Width="50" Source="myImages/Bus.png"                        Margin="740,0,0,0"/>
