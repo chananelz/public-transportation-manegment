@@ -11,14 +11,28 @@ namespace DL
 {
     public partial class DLObject : IDal
     {
+        /// <summary>
+        /// add new sequentialStopInfo to database
+        /// </summary>
+        /// <param name="sequentialStopInfo"></param>
         public void CreateSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
         {
             DataSource.SequentialStopInfoList.Add(sequentialStopInfo);
         }
+        /// <summary>
+        /// request a SequentialStopInfo according to a predicate
+        /// </summary>
+        /// <param name="firstId"></param>
+        /// <param name="secondId"></param>
+        /// <returns></returns>
         public SequentialStopInfo RequestSequentialStopInfo(long firstId, long secondId)
         {
             return DataSource.SequentialStopInfoList.Find(s => s.stationCodeF == firstId && s.stationCodeS == secondId);
         }
+        /// <summary>
+        /// update sequentialStopInfo in database
+        /// </summary>
+        /// <param name="sequentialStopInfo"></param>
         public void UpdateSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
         {
             int indLine;
@@ -30,6 +44,10 @@ namespace DL
             else
                 throw new Exception("sequentialStopInfo doesn't exist!!");
         }
+        /// <summary>
+        /// sets sequential  stop info valid to false
+        /// </summary>
+        /// <param name="sequentialStopInfo"></param>
         public void DeleteSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
         {
             if (sequentialStopInfo.stationCodeF != null && sequentialStopInfo.stationCodeS != null)
@@ -37,6 +55,11 @@ namespace DL
             else
                 throw new Exception("sequentialStopInfo doesn't exist!!");
         }
+        /// <summary>
+        /// gets all stops info
+        /// </summary>
+        /// <param name="pr"></param>
+        /// <returns></returns>
         public IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null)
         {
             if (pr == null)

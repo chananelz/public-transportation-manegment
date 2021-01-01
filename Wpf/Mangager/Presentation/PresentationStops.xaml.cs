@@ -68,8 +68,11 @@ namespace Wpf.Mangager.Presentation
         {
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
-            new StopMangaer(tempStop).Show();
-            this.Close();
+            var ab = new StopMangaer(tempStop);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+
         }
         private void OnClick(object sender, RoutedEventArgs e)
         {

@@ -21,8 +21,7 @@ namespace Wpf.Mangager.Managing
     /// </summary>
     public partial class BusManager : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+       
         public BO.Bus managingBus;
 
         float kM;
@@ -37,61 +36,18 @@ namespace Wpf.Mangager.Managing
             InitializeComponent();
             managingBus = new BO.Bus();
             managingBus = bus;
-            busFunc();
             bl = BLApi.Factory.GetBL("1");
         }
 
-        private void busFunc()
-        {
-            place = movingBus.Margin.Left;
-            FirstPage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
-
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
+      
 
 
 
-        private void home_Click(object sender, RoutedEventArgs e)
-        {
-            new FirstPage().Show();
-            this.Close();
-        }
-
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            new PresentationBusses().Show();
-            this.Close();
-        }
 
         private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
         { }
 
 
-        //private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
-        //{
-        //    TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-        //    if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-        //    {
-        //        try
-        //        {
-        //            Travel_Update_Click(sender, e);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message);
-
-        //        }
-        //    }
-        //}MyTextBox1
         private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -123,30 +79,9 @@ namespace Wpf.Mangager.Managing
                 }
             }
         }
-        private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        { }
-
-        //private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        //{
-        //    TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-        //    if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
-        //    {
-        //        try
-        //        {
-        //            Fuel_Update_Click(sender, e);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message);
-
-        //        }
-        //    }
-        //}
-
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -158,6 +93,15 @@ namespace Wpf.Mangager.Managing
 
                 }
             }
+        }
+        private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        { }
+
+       
+
+        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        {
+           
         }
 
         private void Travel_Update_Click(object sender, RoutedEventArgs e)
@@ -213,21 +157,21 @@ namespace Wpf.Mangager.Managing
         }
         private void Status_Update_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
+            string textRange = MyTextBox2.Text;
             int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            if (int.TryParse(textRange, out result))
             {
                 statusInput = result;
                 try
                 {
                     bl.UpdateBusFuel(statusInput, managingBus.LicenseNumber);
                     MessageBox.Show("input submited" + result);
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox2.Clear();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox2.Clear();
                 }
 
 
@@ -235,7 +179,7 @@ namespace Wpf.Mangager.Managing
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox2.Clear();
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)

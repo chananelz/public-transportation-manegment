@@ -12,6 +12,10 @@ namespace DL
 {
     public partial class DLObject : IDal
     {
+        /// <summary>
+        /// add new user to database
+        /// </summary>
+        /// <param name="user"></param>
         public void CreateUser(User user)
         {
             user.Valid = true;
@@ -34,7 +38,11 @@ namespace DL
             }
             throw new Exception("user already exists!!!");
         }
-
+        /// <summary>
+        /// request a User according to a predicate
+        /// </summary>
+        /// <param name="pr"></param>
+        /// <returns></returns>
         public User RequestUser(Predicate<User> pr = null)
         {
             User ret = DataSource.UserList.Find(bus => pr(bus));
@@ -44,22 +52,39 @@ namespace DL
                 throw new Exception("user is not valid!!");
             return ret.GetPropertiesFrom<User, User>();
         }
-       
 
+        /// <summary>
+        /// update name in database
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="nameId"></param>
         public void UpdateName(string name, string nameId)
         {
             GetUser(nameId).UserName = name;
         }
+        /// <summary>
+        /// update password in database
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="nameId"></param>
         public void UpdatePassword(string password, string nameId)
         {
             GetUser(nameId).Password = password;
         }
+        /// <summary>
+        /// sets a user id valid to false
+        /// </summary>
+        /// <param name="nameId"></param>
         public void DeleteUser(string nameId)
         {
             GetUser(nameId).Valid = false;
 
         }
-
+        /// <summary>
+        /// gets a user according to name
+        /// </summary>
+        /// <param name="nameId"></param>
+        /// <returns></returns>
 
         public User GetUser(string nameId)
         {
@@ -72,7 +97,10 @@ namespace DL
                 throw new Exception("user is not valid!!");
             return t.ToList().First();
         }
-
+        /// <summary>
+        /// returns all users
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<User> GetAllUsers()
         {
             var cloneList = new List<User>();

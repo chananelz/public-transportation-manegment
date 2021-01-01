@@ -24,8 +24,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
     /// </summary>
     public partial class BusManagerAdd : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+       
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
@@ -46,7 +45,6 @@ namespace Wpf.Mangager.Managing.Add.myImages
         public BusManagerAdd()
         {
             InitializeComponent();
-            busFunc();
             ProgressBar();
             bl = BLApi.Factory.GetBL("1");
 
@@ -122,47 +120,27 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 return;
             }
             MessageBox.Show("bus added!");
-
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w.Name == "PresentatinBuses")
+                {
+                    w.Close();
+                }
+            }
             new PresentationBusses().Show();
+
             this.Close();
         }
 
 
-        private void busFunc()
+      
+
+    
+
+
+        private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
-            place = movingBus.Margin.Left;
-            BusManagerAddPage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
-
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
-
-        private void home_Click(object sender, RoutedEventArgs e)
-        {
-            new FirstPage().Show();
-            this.Close();
-        }
-
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            new PresentationBusses().Show();
-            this.Close();
-        }
-
-
-
-        private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -176,10 +154,10 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
-        private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+
+        private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -193,10 +171,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -210,10 +187,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
-        private void MyTextBox_TextChanged_3(object sender, TextChangedEventArgs e)
+        private void MyTextBox3_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -226,10 +202,10 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 }
             }
         }
-        private void MyTextBox_TextChanged_4(object sender, TextChangedEventArgs e)
+
+        private void MyTextBox4_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -243,11 +219,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+
+
+
+       
+
         private void LicenseNumber_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
+            string textRange = MyTextBox0.Text;
             long result = 0;
-            if (long.TryParse(textRange.Text, out result))
+            if (long.TryParse(textRange, out result))
             {
                 if (!input0)
                 {
@@ -259,13 +240,13 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     amount++;
                     licenseNumber = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox0.Document.Blocks.Clear();
+                    MyTextBox0.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox0.Document.Blocks.Clear();
+                MyTextBox0.Clear();
             }
         }
 
@@ -284,7 +265,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
 
 
-            stInput = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd).Text;
+            stInput = MyTextBox1.Text;
             string[] inputValues = stInput.Split('/');
 
 
@@ -305,21 +286,21 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     DateTime temp = new DateTime(year, month, day);
                     licenseDate = temp;
                     MessageBox.Show("input submited" + stInput);
-                    MyTextBox1.Document.Blocks.Clear();
+                    MyTextBox1.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox1.Document.Blocks.Clear();
+                MyTextBox1.Clear();
             }
         }
 
         private void Travel_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
+            string textRange = MyTextBox2.Text;
             float result = 0;
-            if (float.TryParse(textRange.Text, out result) && result > 0)
+            if (float.TryParse(textRange, out result))
             {
                 if (!input2)
                 {
@@ -331,21 +312,21 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     amount++;
                     MessageBox.Show("input submited" + result);
                     kM = result;
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox2.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox2.Clear();
             }
         }
 
         private void Fuel_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd);
+            string textRange = MyTextBox3.Text;
             float result = 0;
-            if (float.TryParse(textRange.Text, out result) && result > 0)
+            if (float.TryParse(textRange, out result))
             {
                 if (!input3)
                 {
@@ -357,20 +338,20 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     amount++;
                     fuel = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox3.Document.Blocks.Clear();
+                    MyTextBox3.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox3.Document.Blocks.Clear();
+                MyTextBox3.Clear();
             }
         }
         private void Status_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox4.Document.ContentStart, MyTextBox4.Document.ContentEnd);
+            string textRange = MyTextBox4.Text;
             int result = 0;
-            if (int.TryParse(textRange.Text, out result) && result > 0)
+            if (int.TryParse(textRange, out result))
             {
                 if (!input4)
                 {
@@ -382,14 +363,18 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     amount++;
                     statusInput = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox4.Document.Blocks.Clear();
+                    MyTextBox4.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox3.Document.Blocks.Clear();
+                MyTextBox3.Clear();
             }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

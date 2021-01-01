@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="PresentationLines" Height="450" Width="800"
         Background="Transparent"
+        x:Name="PresentationLines1"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
         <Grid.Effect>
