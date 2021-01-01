@@ -114,7 +114,15 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
             }
-            catch(Exception ex)
+            catch(BO.BOBusException ex)
+            {
+                MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                new PresentationBusses().Show();
+                this.Close();
+                return;
+            }
+
+            catch (BO.BODOBadBusIdException ex)
             {
                 MessageBox.Show(ex.Message);
                 new PresentationBusses().Show();
@@ -393,3 +401,6 @@ namespace Wpf.Mangager.Managing.Add.myImages
         }
     }
 }
+
+
+

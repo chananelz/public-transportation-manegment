@@ -23,7 +23,7 @@ namespace BLImp
             {
                 valid.GoodLicense(licenseNumber, dateTime);
             }
-            catch (Exception ex)
+            catch (BOBadBusIdException ex)
             {
                 exception += ex.Message;
                 foundException = true;
@@ -32,7 +32,7 @@ namespace BLImp
             {
                 valid.ExistLicense(licenseNumber);
             }
-            catch (Exception ex)
+            catch (BOBadBusIdException ex)
             {
                 exception += ex.Message;
                 foundException = true;
@@ -41,7 +41,7 @@ namespace BLImp
             {
                 valid.GoodFuel(fuel);
             }
-            catch (Exception ex)
+            catch (BOBusException ex)
             {
                 exception += ex.Message;
                 foundException = true;
@@ -51,7 +51,7 @@ namespace BLImp
             {
                 valid.GoodStatus(statusInput);
             }
-            catch (Exception ex)
+            catch (BOBusException ex)
             {
                 exception += ex.Message;
                 foundException = true;
@@ -61,46 +61,123 @@ namespace BLImp
             {
                 valid.GoodFloat(kM);
             }
-            catch (Exception ex)
+            catch (BOBusException ex)
             {
                 exception += ex.Message;
                 foundException = true;
             }
             if (foundException)
-                throw new Exception(exception);
+                throw new BOBusException("There is something wrong with your input." + "/n" + "Please Check these things :" + exception);  //להוסיף את האינפוט שלו עם דולר
             Bus busBO = new Bus(licenseNumber, dateTime, kM, fuel, statusInput);
             DO.Bus busDO = busBO.GetPropertiesFrom<DO.Bus, BO.Bus>();
-            dal.CreateBus(busDO);
+            try
+            {
+                dal.CreateBus(busDO);
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+
+                throw new BODOBadBusIdException("cant create this bus" , ex);
+            }
+          
         }
         public Bus RequestBus(Predicate<Bus> pr)
         {
-            if (pr == null)
-                throw new Exception("can't request a line with no predicate");
-            return dal.RequestBus(bus => pr(bus.GetPropertiesFrom<BO.Bus, DO.Bus>())).GetPropertiesFrom<BO.Bus, DO.Bus>();
+            try
+            {
+                return dal.RequestBus(bus => pr(bus.GetPropertiesFrom<BO.Bus, DO.Bus>())).GetPropertiesFrom<BO.Bus, DO.Bus>();
+            }
+            catch (DO.DOBusException ex)
+            {
+
+                throw  new BODOBadBusIdException("can't find this bus", ex) ;
+            }
+            
         }
 
         public void UpdateBusKM(float kM, long licenseNumber)
         {
-            valid.GoodFloat(kM);
-            dal.UpdateBusKM(kM, licenseNumber);
+            try
+            {
+                valid.GoodFloat(kM);
+            }
+            catch (BOBusException ex)
+            {
+
+                throw new BOBusException(ex.Message);
+            }
+
+            try
+            {
+                dal.UpdateBusKM(kM, licenseNumber);
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+
+                throw new BODOBadBusIdException("",ex);
+            }
         }
 
         public void UpdateBusFuel(float fuel, long licenseNumber)
         {
-            valid.GoodFuel(fuel);
-            dal.UpdateBusFuel(fuel, licenseNumber);
+            try
+            {
+                valid.GoodFuel(fuel);
+            }
+            catch (BOBusException ex)
+            {
+
+                throw new BOBusException(ex.Message);
+            }
+
+            try
+            {
+                dal.UpdateBusFuel(fuel, licenseNumber);
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+
+                throw new BODOBadBusIdException("", ex);
+            }
+
+
         }
 
         public void UpdateBusStatus(int st, long licenseNumber)
         {
-            valid.GoodStatus(st);
-            dal.UpdateBusStatus(st, licenseNumber);
+            try
+            {
+                valid.GoodStatus(st);
+            }
+            catch (BOBusException ex)
+            {
+
+                throw new BOBusException(ex.Message);
+            }
+
+            try
+            {
+                dal.UpdateBusStatus(st, licenseNumber);
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+
+                throw new BODOBadBusIdException("", ex);
+            }
         }
 
 
         public void DeleteBus(long licenseNumber)
         {
-            dal.DeleteBus(licenseNumber);
+            try
+            {
+                dal.DeleteBus(licenseNumber);
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+
+                throw new BODOBadBusIdException("", ex);
+            }
         }
 
 

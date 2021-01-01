@@ -6,31 +6,83 @@ using System.Threading.Tasks;
 
 namespace DO
 {
-    public class Exceptions
+
+    #region Bus Exceptions
+    [Serializable]
+    public class DOBusException : Exception
     {
-
-
-        [Serializable]
-
-        public class DOBadBusIdException : Exception
+        public DOBusException()
         {
-            public long ID;
-            public DOBadBusIdException(long id) : base() => ID = id;
-            public DOBadBusIdException(long id, string message) : base(message) => ID = id;
-            public DOBadBusIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
-            public override string ToString() => base.ToString() + $", DOBad Bus id: {ID}";
         }
 
-        public class DOBadBusTravelIdException : Exception
+        public DOBusException(string message)
+            : base(message)
         {
-            public long ID;
-            public DOBadBusTravelIdException(long id) : base() => ID = id;
-            public DOBadBusTravelIdException(long id, string message) : base(message) => ID = id;
-            public DOBadBusTravelIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
-            public override string ToString() => base.ToString() + $", DOBad BusTravel id: {ID}";
         }
 
-        public class DOBadLineIdException : Exception
+        public DOBusException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+
+        public override string ToString() => "bus general Exception";
+    }
+
+    [Serializable]
+
+    public class DOBadBusIdException : DOBusException
+    {
+        public long ID;
+        public DOBadBusIdException(long id) : base() => ID = id;
+        public DOBadBusIdException(long id, string message) : base(message) => ID = id;
+        public DOBadBusIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
+        public override string ToString() => base.ToString() + $", DOBad Bus id: {ID}";
+    }
+
+    #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public class DOBadBusTravelIdException : Exception
+    {
+        public long ID;
+        public DOBadBusTravelIdException(long id) : base() => ID = id;
+        public DOBadBusTravelIdException(long id, string message) : base(message) => ID = id;
+        public DOBadBusTravelIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
+        public override string ToString() => base.ToString() + $", DOBad BusTravel id: {ID}";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public class DOBadLineIdException : Exception
         {
             public long ID;
             public DOBadLineIdException(long id) : base() => ID = id;
@@ -92,7 +144,5 @@ namespace DO
             public DOBadUserTravelIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
             public override string ToString() => base.ToString() + $", DOBad UserTravel id: {ID}";
         }
-
-    }
 }
 

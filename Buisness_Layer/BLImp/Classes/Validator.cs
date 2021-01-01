@@ -46,7 +46,7 @@ namespace BLImp
         {
             if ((licenseNumber >= 1000000 && licenseNumber < 10000000 && dateTime.Year <= 2018) || licenseNumber >= 10000000 && licenseNumber < 100000000 && (dateTime.Year > 2018 || dateTime.Year == 0))
                 return;
-            throw new Exception("license number and year don't match!");
+            throw new BOBadBusIdException(licenseNumber, "license number and year don't match!");
 
         }
 
@@ -54,7 +54,7 @@ namespace BLImp
         {
             if (fuel >= 0 && fuel <= 1200)
                 return;
-            throw new Exception("fuel not good!!!");
+            throw new BOBusException("fuel not good!!!");
         }
 
 
@@ -62,7 +62,7 @@ namespace BLImp
         {
             if (status >= 0 && status <= 3)
                 return;
-            throw new Exception("status not correct!!");
+            throw new BOBusException("status not correct!!");
         }
 
 
@@ -70,7 +70,7 @@ namespace BLImp
         {
             if (number > 0)
                 return;
-            throw new Exception("number negative!!!");
+            throw new BOBusException("number negative!!!");
         }
 
         #endregion
@@ -102,7 +102,7 @@ namespace BLImp
         {
             if (BL.dal.GetAllBusses().Any(bus => bus.LicenseNumber == licenseNumber))
                 return;
-            throw new Exception("licenseNumber exists!!");
+            throw new BOBadBusIdException(licenseNumber, "licenseNumber exists!!");
         }
 
 

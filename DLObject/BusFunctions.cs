@@ -22,7 +22,7 @@ namespace DL
             {
                 GetBus(bus.LicenseNumber);
             }
-            catch(Exception ex)
+            catch(Exception ex)                                             //try "BusException" and check if it work.
             {
                 if(ex.Message == "no bus with such license number!!")
                     DataSource.BusesList.Add(bus);
@@ -35,16 +35,16 @@ namespace DL
                 }
                 return;
             }
-            throw new Exception("bus already exists!!!");
+            throw new DOBadBusIdException(bus.LicenseNumber, "bus already exists!!!");
         }
 
         public Bus RequestBus(Predicate<Bus> pr = null)
         {
             Bus ret = DataSource.BusesList.Find(bus => pr(bus));
             if (ret == null)
-                throw new Exception("no bus that meets these conditions!");
+                throw new DOBusException("no bus that meets these conditions!");
             if (ret.Valid == false)
-                throw new Exception("bus that meets these conditions is not valid");
+                throw new DOBusException("bus that meets these conditions is not valid");
             return ret.GetPropertiesFrom<Bus,Bus>();
         }
 
@@ -71,9 +71,9 @@ namespace DL
                     where (bus.LicenseNumber == licenseNumber)
                     select bus;
             if (t.ToList().Count == 0)
-                throw new Exception("no bus with such license number!!");
+                throw new DOBadBusIdException(licenseNumber,"no bus with such license number!!");
             if (!t.First().Valid)
-                throw new Exception("bus is not valid!!");
+                throw new DOBadBusIdException(licenseNumber,"bus is not valid!!");
             return t.ToList().First();
         }
 

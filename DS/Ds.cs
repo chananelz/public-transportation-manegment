@@ -404,7 +404,7 @@ namespace DS
             #region Bus # 1
             BusesList.Add(new Bus()
             {
-                Valid = true,
+                Valid = false,  //////////////////////////////////// delete me!
                 LicenseNumber = Configuration.BusCounter,
                 LicenseDate = new DateTime(2020, 2, 1),
                 KM = (float)r.NextDouble() + r.Next(1, 1199),
