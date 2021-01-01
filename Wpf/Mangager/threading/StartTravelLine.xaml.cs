@@ -30,6 +30,7 @@ namespace Wpf.Mangager.threading
         {
             InitializeComponent();
             bl = BLApi.Factory.GetBL("1");
+            tempLine = mLine;
             busListBox.ItemsSource = bl.GetAllBussesReadyForDrive().ToList();
             DriverListBox.ItemsSource = bl.GetAllUsers(user => user.Permission == BO.authority.Driver).ToList();
         }
@@ -38,7 +39,7 @@ namespace Wpf.Mangager.threading
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
             Button a = (Button)sender;
-            tempLine = (BO.Line)a.DataContext;
+            tempBus = (BO.Bus)a.DataContext;
             //new LineInfo(tempLine).Show();
         }
         private void informationUser_Click(object sender, RoutedEventArgs e)

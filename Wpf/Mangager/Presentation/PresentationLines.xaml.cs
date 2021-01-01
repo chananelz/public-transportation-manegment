@@ -103,7 +103,10 @@ namespace Wpf.Mangager.Presentation
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            new LineManagerAdd().Show();
+            var ab = new LineManagerAdd();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
             this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
