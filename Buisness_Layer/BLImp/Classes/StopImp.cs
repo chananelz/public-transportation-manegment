@@ -95,7 +95,7 @@ namespace BLImp
             }
             foreach (LineStation lineStation in myList)
             {
-                //DeleteLineStation(lineStation.Code, lineStation.LineId);
+                dal.DeleteLineStation(lineStation.LineId, lineStation.Code,lineStation.NumberInLine);
             }
             dal.DeleteStop(code);
         }

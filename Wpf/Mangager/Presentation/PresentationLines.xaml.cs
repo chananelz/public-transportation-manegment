@@ -65,9 +65,10 @@ namespace Wpf.Mangager.Presentation
         {
             Button a = (Button)sender;
             tempLine = (BO.Line)a.DataContext;
-            new LineInfo(tempLine).Show();
-            this.Close();
-
+            var ab = new LineInfo(tempLine);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
@@ -107,7 +108,6 @@ namespace Wpf.Mangager.Presentation
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
-            this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -142,9 +142,10 @@ namespace Wpf.Mangager.Presentation
         {
             Button a = (Button)sender;
             tempLine = (BO.Line)a.DataContext;
-
-            new SequentialStopPresention(tempLine).Show();
-            this.Close();
+            var ab = new SequentialStopPresention(tempLine);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
         }
     }
 }

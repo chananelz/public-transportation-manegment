@@ -72,8 +72,10 @@ namespace Wpf.Mangager.Presentation
 
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
-            new BusInfo(tempBus).Show();
-            this.Close();
+            var ab = new BusInfo(tempBus);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
         }
         private void update_Click(object sender, RoutedEventArgs e)
         {

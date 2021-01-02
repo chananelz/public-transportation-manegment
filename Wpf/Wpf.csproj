@@ -98,6 +98,9 @@
     <Compile Include="CEO\Users\UserInformation.xaml.cs">
       <DependentUpon>UserInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mangager\Managing\Add\AddStopToLine.xaml.cs">
+      <DependentUpon>AddStopToLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mangager\Managing\Add\LineManagerAdd.xaml.cs">
       <DependentUpon>LineManagerAdd.xaml</DependentUpon>
     </Compile>
@@ -250,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\Information\StopInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mangager\Managing\Add\AddStopToLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

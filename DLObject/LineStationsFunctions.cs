@@ -71,7 +71,7 @@ namespace DL
         /// <returns></returns>
         public LineStation GetLineStation(long lineId, long code,long numberInLine)
         {
-            LineStation t = DataSource.LineStationList.Find(lineStation => lineStation.Code == code && lineStation.LineId == lineId && lineStation.NumberInLine == numberInLine);
+            LineStation t = DataSource.LineStationList.Find(lineStation => lineStation.Code == code && lineStation.LineId == lineId);
             if (t == null)
                 throw new Exception("no such line!!");
             if (!t.Valid)

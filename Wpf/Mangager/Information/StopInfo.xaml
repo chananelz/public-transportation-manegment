@@ -21,8 +21,7 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+            
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -56,20 +55,7 @@
 
 
 
-        <Button Grid.Row="5" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/home.png"/>
-            </Button.Background>
-        </Button>
-
-        <Button Grid.Row="5" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/goBack.png"/>
-            </Button.Background>
-        </Button>
-        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
-
+    
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/close.png"/>

@@ -61,8 +61,11 @@ namespace Wpf.Mangager.Presentation
         {
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
-            new StopInfo(tempStop).Show();
-            this.Close();
+            var ab = new StopInfo(tempStop);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
@@ -99,8 +102,10 @@ namespace Wpf.Mangager.Presentation
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            new StopManagerAdd().Show();
-            this.Close();
+            var ab = new StopManagerAdd();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
