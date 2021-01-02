@@ -124,6 +124,10 @@ namespace BLImp
         {
             return RequestStop(stop => stop.StopCode == code).StopName;
         }
+        public Stop GetStop(long code)
+        {
+            return dal.GetStop(code).GetPropertiesFrom<BO.Stop, DO.Stop>();
+        }
 
     }
 }

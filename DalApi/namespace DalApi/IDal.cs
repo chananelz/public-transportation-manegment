@@ -69,11 +69,14 @@ namespace DalApi
 
 
 
-        void CreateSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);
-        SequentialStopInfo RequestSequentialStopInfo(long firstId, long secondId);  //check this...
-        void UpdateSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);
-        void DeleteSequentialStopInfo(SequentialStopInfo sequential_Stop_Info);
-        IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null);
+        void CreateSequentialStopInfo(SequentialStopInfo sequentialStopInfo);
+        SequentialStopInfo RequestSequentialStopInfo(Predicate<SequentialStopInfo> pr);
+        void UpdateSequentialStopInfoDistance(long firstId, long secondId, double distance);
+        void UpdateSequentialStopInfoTravelTime(long firstId, long secondId, TimeSpan travelTime);
+        void DeleteSequentialStopInfo(long firstId, long secondId);
+        IEnumerable<SequentialStopInfo> GetAllSequentialStopInfo();
+        SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode);
+
 
 
 

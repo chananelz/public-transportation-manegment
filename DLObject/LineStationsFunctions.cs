@@ -32,7 +32,6 @@ namespace DL
             LineStation ret = DataSource.LineStationList.Find(line => pr(line));
             if (ret == null)
                 throw new Exception("no line that meets these conditions!");
-            ret = DataSource.LineStationList.Find(line => line.Valid == true);
             if (ret == null)
                 throw new Exception("line that meets these conditions is not valid");
             return ret.GetPropertiesFrom<LineStation, LineStation>();

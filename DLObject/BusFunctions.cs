@@ -66,7 +66,9 @@ namespace DL
         /// <param name="licenseNumber">license number for id</param>
         public void UpdateBusKM(float kM, long licenseNumber)
         {
-            GetBus(licenseNumber).KM = kM;
+
+                GetBus(licenseNumber).KM = kM;
+
         }
         /// <summary>
         /// a funciton to update the amount of fuel the bus has
@@ -76,7 +78,8 @@ namespace DL
 
         public void UpdateBusFuel(float fuel, long licenseNumber)
         {
-            GetBus(licenseNumber).Fuel = fuel;
+
+                GetBus(licenseNumber).Fuel = fuel;
         }
         /// <summary>
         /// updates the status you give in a number and according to that number between 0 - 3
@@ -87,7 +90,25 @@ namespace DL
         public void UpdateBusStatus(int status, long licenseNumber)
         {
             //***************************CONVERT INT TO STATUS!!!!!!!!!!!!!************
-            GetBus(licenseNumber).Status = 0;
+            status update;
+            switch(status)
+            {
+                case 0:
+                    update = DO.status.TRAVELING;
+                    break;
+                case 1:
+                    update = DO.status.READY_FOR_DRIVE;
+                    break;
+                case 2:
+                    update = DO.status.TREATING;
+                    break;
+                case 3:
+                    update = DO.status.REFULING;
+                    break;
+                default:
+                    throw new Exception("wrong status!!");
+            }
+            GetBus(licenseNumber).Status = update;
         }
         #endregion
         /// <summary>

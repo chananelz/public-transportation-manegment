@@ -138,5 +138,13 @@ namespace Wpf.Mangager.Presentation
             new PresentationLines().Show();
             this.Close();
         }
+        private void SeqStopInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+
+            new SequentialStopPresention(tempLine).Show();
+            this.Close();
+        }
     }
 }

@@ -113,6 +113,9 @@
     <Compile Include="Mangager\OptionsForDriver.xaml.cs">
       <DependentUpon>OptionsForDriver.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mangager\Presentation\SequentialStopPresention.xaml.cs">
+      <DependentUpon>SequentialStopPresention.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mangager\threading\StartTravel.xaml.cs">
       <DependentUpon>StartTravel.xaml</DependentUpon>
     </Compile>
@@ -291,6 +294,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\Presentation\PresentationStops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mangager\Presentation\SequentialStopPresention.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
