@@ -24,22 +24,23 @@ namespace DL
             stop.Valid = true;
             try
             {
-                GetBus(stop.StopCode);
+                GetStop(stop.StopCode);
             }
-            catch (Exception ex)
+            catch (DOStopException ex)
             {
-                if (ex.Message == "no bus with such license number!!")
+                if (ex.Message == "no stop with such license number!!")
                     DataSource.StopList.Add(stop);
-                else if (ex.Message == "bus is not valid!!")
+                else if (ex.Message == "stop is not valid!!")
                 {
                     var t = from stopInput in DataSource.StopList
                             where (stopInput.StopCode == stop.StopCode)
                             select stopInput;
                     t.ToList().First().Valid = true;
                 }
+              
                 return;
             }
-            throw new Exception("bus already exists!!!");
+            throw new DOBadStopIdException(stop.StopCode,"stop already exists!!!");
         }
         /// <summary>
         /// request a Stop according to a predicate
@@ -50,9 +51,9 @@ namespace DL
         {
             Stop ret = DataSource.StopList.Find(stop => pr(stop));
             if (ret == null)
-                throw new Exception("no bus that meets these conditions!");
+                throw new DOStopException("no stop that meets these conditions!");
             if (ret.Valid == false)
-                throw new Exception("bus that meets these conditions is not valid");
+                throw new DOStopException("stop that meets these conditions is not valid");
             return ret.GetPropertiesFrom<Stop, Stop>();
         }
         /// <summary>
@@ -60,27 +61,68 @@ namespace DL
         /// </summary>
         /// <param name="name"></param>
         /// <param name="licenseNumber"></param>
-        public void UpdateStopName(string name, long licenseNumber)
+        public void UpdateStopName(string name, long code)
         {
-            GetStop(licenseNumber).StopName = name;
+            try
+            {
+                Stop temp = RequestStop(myStop => myStop.StopName == name);
+            }
+            catch (DOStopException exc)
+            {
+                if (exc.Message == "no stop that meets these conditions!")
+                {
+                    try
+                    {
+                        GetStop(code).StopName = name;
+                    }
+                    catch (DOStopException ex)
+                    {
+
+                        throw new DOBadStopIdException(code, ex.Message);
+                    }
+                }
+  
+            }
+            
+            throw new  DOBadStopIdException(code, "stope with this name already exist");
+
+
         }
         /// <summary>
         /// update longitude in database
         /// </summary>
         /// <param name="longitude"></param>
         /// <param name="licenseNumber"></param>
-        public void UpdateStopLongitude(double longitude, long licenseNumber)
+        public void UpdateStopLongitude(double longitude, long code)
         {
-            GetStop(licenseNumber).Longitude = longitude;
+            try
+            {
+               // GetStop(code).Longitude = longitude;
+            }
+            catch (DOStopException ex)
+            {
+
+                throw new DOBadStopIdException(code, ex.Message);
+            }
         }
         /// <summary>
         /// update latitude in database
         /// </summary>
         /// <param name="latitude"></param>
         /// <param name="licenseNumber"></param>
-        public void UpdateStopLatitude(double latitude, long licenseNumber)
+        public void UpdateStopLatitude(double latitude, long code)
         {
-            GetStop(licenseNumber).Latitude = latitude;
+            try
+            {
+                GetStop(code).Latitude = latitude;
+            }
+            catch (DOStopException ex)
+            {
+
+                throw new DOBadStopIdException(code, ex.Message);
+            }
+
+           
         }
         /// <summary>
         /// sets a stop valid to false
@@ -88,8 +130,16 @@ namespace DL
         /// <param name="code"></param>
         public void DeleteStop(long code)
         {
-            GetStop(code).Valid = false;
-           
+            try
+            {
+                GetStop(code).Valid = false;
+            }
+            catch (DOStopException ex)
+            {
+
+                throw new DOBadStopIdException(code, ex.Message);
+            }
+
         }
         /// <summary>
         /// helper function to get a stop
@@ -102,9 +152,9 @@ namespace DL
                     where (stop.StopCode == code)
                     select stop;
             if (t.ToList().Count == 0)
-                throw new Exception("no stop with such license number!!");
+                throw new DOStopException("no stop with such license number!!");
             if (!t.First().Valid)
-                throw new Exception("stop is not valid!!");
+                throw new DOStopException("stop is not valid!!");
             return t.ToList().First();
         }
         /// <summary>

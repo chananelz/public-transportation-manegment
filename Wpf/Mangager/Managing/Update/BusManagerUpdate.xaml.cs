@@ -164,6 +164,16 @@ namespace Wpf.Mangager.Managing
                 statusInput = result;
                 try
                 {
+                    BLImp.Validator.GoodPositiveStatus(result);
+                }
+                catch (BO.BOBusException)
+                {
+                    MessageBox.Show("Wrong status format" + "\n" + "-  Click: 1 for a passenger,\n-  Click:  2 for a driver, \n-  Click: 3 for a CEO", " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox2.Clear();
+                    return;
+                }
+                try
+                {
                     bl.UpdateBusFuel(statusInput, managingBus.LicenseNumber);
                     MessageBox.Show("input submited" + result);
                     MyTextBox2.Clear();
@@ -184,6 +194,7 @@ namespace Wpf.Mangager.Managing
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            new PresentationBusses().Show();
             this.Close();
         }
     }

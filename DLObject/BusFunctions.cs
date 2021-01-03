@@ -26,7 +26,7 @@ namespace DL
             {
                 GetBus(bus.LicenseNumber);
             }
-            catch(Exception ex)                                             //try "BusException" and check if it work.
+            catch(DOBadBusIdException ex)                                             //try "BusException" and check if it work.
             {
                 if (ex.Message == "no bus with such license number!!")
                     DataSource.BusesList.Add(bus);

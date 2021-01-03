@@ -54,9 +54,9 @@ namespace Wpf.Mangager.Managing
                 {
                     Name_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
@@ -70,9 +70,9 @@ namespace Wpf.Mangager.Managing
                 {
                     Longitude_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
@@ -86,9 +86,9 @@ namespace Wpf.Mangager.Managing
                 {
                     Latitude_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
@@ -101,6 +101,15 @@ namespace Wpf.Mangager.Managing
         private void Name_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox0.Text;
+            try
+            {
+                BLImp.Validator.GetGoodString(textRange);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             name = textRange;
             try
             {
@@ -108,10 +117,11 @@ namespace Wpf.Mangager.Managing
                 MessageBox.Show("input submited" + textRange);
                 MyTextBox0.Clear();
             }
-            catch (Exception ex)
+            catch (BO.BODOStopBadIdException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + ex.InnerException.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox0.Clear();
+                return;
             }
         }
        
@@ -121,6 +131,16 @@ namespace Wpf.Mangager.Managing
             double result = 0;
             if (double.TryParse(textRange, out result) && result > 0)
             {
+                try
+                {
+                    BLImp.Validator.GetGoodLongitude(result);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox1.Clear();
+                    return;
+                }
                 longitude = result;
                 try
                 {
@@ -128,16 +148,17 @@ namespace Wpf.Mangager.Managing
                     MessageBox.Show("input submited" + result);
                     MyTextBox1.Clear();
                 }
-                catch (Exception ex)
+                catch (BO.BODOStopBadIdException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox1.Clear();
+                    return;
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Clear();
+                MyTextBox1.Clear();
             }
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
@@ -146,6 +167,16 @@ namespace Wpf.Mangager.Managing
             double result = 0;
             if (double.TryParse(textRange, out result) && result > 0)
             {
+                try
+                {
+                    BLImp.Validator.GetGoodLatitude(result);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox2.Clear();
+                    return;
+                }
                 latitude = result;
                 try
                 {
@@ -153,9 +184,11 @@ namespace Wpf.Mangager.Managing
                     MessageBox.Show("input submited" + result);
                     MyTextBox2.Clear();
                 }
-                catch (Exception ex)
+                catch (BO.BODOStopBadIdException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox1.Clear();
+                    return;
                 }
             }
             else

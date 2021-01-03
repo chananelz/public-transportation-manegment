@@ -83,6 +83,7 @@ namespace Wpf.Mangager.Presentation
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
+            this.Close();
 
         }
         private void OnClick(object sender, RoutedEventArgs e)

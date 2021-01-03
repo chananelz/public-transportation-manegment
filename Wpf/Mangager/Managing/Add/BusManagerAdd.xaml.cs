@@ -154,11 +154,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     LicenseNumber_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+               
             }
         }
 
@@ -171,9 +171,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     LicenseDate_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
@@ -187,9 +187,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     Travel_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
@@ -203,9 +203,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     Fuel_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
@@ -219,10 +219,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     Status_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -238,6 +237,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
             long result = 0;
             if (long.TryParse(textRange, out result))
             {
+                try
+                {                   
+                    BLImp.Validator.GoodPositiveLicenseNumber(result);
+                }
+                catch (BO.BOBusException)
+                {
+                    MessageBox.Show("Wrong LicenseNumber format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox0.Clear();
+                    return;
+                }
                 if (!input0)
                 {
                     input0 = true;
@@ -275,6 +284,12 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             stInput = MyTextBox1.Text;
             string[] inputValues = stInput.Split('/');
+            if (inputValues.Length != 3)
+            {
+                MessageBox.Show("Wrong date format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                MyTextBox1.Clear();
+                return;
+            }
 
 
             stDay = inputValues[0];
@@ -283,6 +298,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             if (int.TryParse(stDay, out day) && int.TryParse(stMonth, out month) && int.TryParse(stYear, out year))
             {
+                try
+                {
+                    BLImp.Validator.GoodTimeformat(day, month, year);
+                }
+                 catch 
+                {
+                    MessageBox.Show("Wrong date format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox1.Clear();
+                    return;
+                }
                 if (!input1)
                 {
                     input1 = true;
@@ -296,6 +321,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     MessageBox.Show("input submited" + stInput);
                     MyTextBox1.Clear();
                 }
+
             }
             else
             {
@@ -310,6 +336,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
             float result = 0;
             if (float.TryParse(textRange, out result))
             {
+                try
+                {
+                    BLImp.Validator.GoodPositiveflout(result);
+                }
+                catch (BO.BOBusException)
+                {
+                    MessageBox.Show("negative number", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox2.Clear();
+                    return;
+                }
                 if (!input2)
                 {
                     input2 = true;
@@ -336,6 +372,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
             float result = 0;
             if (float.TryParse(textRange, out result))
             {
+                try
+                {
+                    BLImp.Validator.GoodPositiveflout(result);
+                }
+                catch (BO.BOBusException)
+                {
+                    MessageBox.Show("negative number", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox3.Clear();
+                    return;
+                }
                 if (!input3)
                 {
                     input3 = true;
@@ -361,6 +407,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
             int result = 0;
             if (int.TryParse(textRange, out result))
             {
+                try
+                {
+                    BLImp.Validator.GoodPositiveStatus(result);
+                }
+                catch (BO.BOBusException)
+                {
+                    MessageBox.Show("Wrong status format" + "\n" + "-  Click: 1 for a passenger,\n-  Click:  2 for a driver, \n-  Click: 3 for a CEO", " Operation Failure " , MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox4.Clear();
+                    return;
+                }
                 if (!input4)
                 {
                     input4 = true;
@@ -389,3 +445,4 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
 
 
+ 

@@ -111,14 +111,33 @@ namespace Wpf.Mangager.Managing.Add
             {
                 MessageBox.Show("work cancelled");
             }
+
+            if (stopListInput.Count == 0)
+            {
+                MessageBox.Show("Please select at least one station", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Warning);
+                var ab = new LineManagerAdd();
+                ab.Height = 300;
+                ab.Width = 600;
+                ab.Show();
+                this.Close();
+
+                return;
+            }
             try
             {
                 bl.CreateLine(number, area, stopListInput);
+
             }
-            catch(Exception ex)
+            catch(BO.BODOBadLineIdException ex)
             {
-                MessageBox.Show(ex.Message);
-                return;
+                MessageBox.Show(ex.Message + ex.InnerException.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxResult res = MessageBox.Show("Would you like to add another bus in the opposite direction??", "Verification", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (res == MessageBoxResult.No)
+                    return;
+                else
+                {
+                    bl.CreateOppositeDirectionLine(number, area, stopListInput);
+                }
             }
             MessageBox.Show("line added!");
             foreach (Window w in Application.Current.Windows)
@@ -146,10 +165,9 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     Number_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -162,10 +180,9 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     Area_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -179,10 +196,9 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     StopList_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -194,6 +210,16 @@ namespace Wpf.Mangager.Managing.Add
             long result = 0;
             if (long.TryParse(textRange, out result))
             {
+                try
+                {
+                    BLImp.Validator.GoodLinePositiveLong(result);
+                }
+                catch (BO.BOBadLineIdException ex)
+                {
+                    MessageBox.Show("Wrong LicenseNumber format : " + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox0.Clear();
+                    return;
+                }
                 if (!input0)
                 {
                     input0 = true;

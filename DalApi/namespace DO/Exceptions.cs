@@ -25,7 +25,7 @@ namespace DO
         {
         }
 
-        public override string ToString() => "bus general Exception";
+        public override string ToString() => "bus Exception: ";
     }
 
     [Serializable]
@@ -66,32 +66,71 @@ namespace DO
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #region Line Exception
     public class DOBadLineIdException : Exception
+    {
+        public long ID;
+        public DOBadLineIdException(long id) : base() => ID = id;
+        public DOBadLineIdException(long id, string message) : base(message) => ID = id;
+        public DOBadLineIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
+        public override string ToString() => base.ToString() + $", DOBad Line id: {ID}";
+    }
+
+    public class DOLineException : Exception
+    {
+        public DOLineException()
         {
-            public long ID;
-            public DOBadLineIdException(long id) : base() => ID = id;
-            public DOBadLineIdException(long id, string message) : base(message) => ID = id;
-            public DOBadLineIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
-            public override string ToString() => base.ToString() + $", DOBad Line id: {ID}";
         }
 
-        public class DOBadLineDepartureIdException : Exception
+        public DOLineException(string message)
+            : base(message)
+        {
+        }
+
+        public DOLineException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+
+        public override string ToString() => "Stop Exception:  ";
+    }
+    #endregion
+
+
+
+    #region Stop Exception
+
+    public class DOBadStopIdException : Exception
+    {
+        public long ID;
+        public DOBadStopIdException(long id) : base() => ID = id;
+        public DOBadStopIdException(long id, string message) : base(message) => ID = id;
+        public DOBadStopIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
+        public override string ToString() => base.ToString() + $", DOBad Stop id: {ID}";
+    }
+
+    public class DOStopException : Exception
+    {
+        public DOStopException()
+        {
+        }
+
+        public DOStopException(string message)
+            : base(message)
+        {
+        }
+
+        public DOStopException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+
+        public override string ToString() => "Stop Exception:  ";
+    }
+    #endregion
+
+
+    public class DOBadLineDepartureIdException : Exception
         {
             public long ID;
             public DOBadLineDepartureIdException(long id) : base() => ID = id;
@@ -116,15 +155,6 @@ namespace DO
             public DOBadSequentialStopInfoIdException(long id, string message) : base(message) => ID = id;
             public DOBadSequentialStopInfoIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
             public override string ToString() => base.ToString() + $", DOBad SequentialStopInfo id: {ID}";
-        }
-
-        public class DOBadStopIdException : Exception
-        {
-            public long ID;
-            public DOBadStopIdException(long id) : base() => ID = id;
-            public DOBadStopIdException(long id, string message) : base(message) => ID = id;
-            public DOBadStopIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
-            public override string ToString() => base.ToString() + $", DOBad Stop id: {ID}";
         }
 
         public class DOBadUserIdException : Exception

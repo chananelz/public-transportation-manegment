@@ -21,13 +21,13 @@ namespace DL
             line.Id = Configuration.LineCounter;
             try
             {
-                GetBus(line.Id);
+                GetLineByNumber(line.Number);
             }
-            catch (Exception ex)
+            catch (DOBadLineIdException ex)
             {
-                if (ex.Message == "no bus with such license number!!")
+                if (ex.Message == "line doesn't  exist!!")
                     DataSource.LineList.Add(line);
-                else if (ex.Message == "bus is not valid!!")
+                else if (ex.Message == "line is not valid!!")
                 {
                     var t = from line1 in DataSource.LineList
                             where (line1.Id == line.Id)
@@ -36,8 +36,16 @@ namespace DL
                 }
                 return;
             }
-            throw new Exception("line already exists!!!");
+            throw new DOBadLineIdException(line.Id , "line already exists!!!");
         }
+
+        public void CreateOppositeDirectionLine(Line line)
+        {
+            line.Valid = true;
+            line.Id = Configuration.LineCounter;
+            DataSource.LineList.Add(line);
+        }
+       
         /// <summary>
         /// request a Line according to a predicate
         /// </summary>
@@ -47,9 +55,9 @@ namespace DL
         {
             Line ret = DataSource.LineList.Find(line => pr(line));
             if (ret == null)
-                throw new Exception("no bus that meets these conditions!");
+                throw new DOLineException("no line that meets these conditions!");
             if (ret.Valid == false)
-                throw new Exception("line that meets these conditions is not valid");
+                throw new DOLineException("line that meets these conditions is not valid");
             return ret.GetPropertiesFrom<Line, Line>();
         }
 
@@ -108,9 +116,9 @@ namespace DL
                     where (line.Id == id)
                     select line;
             if (t.ToList().Count == 0)
-                throw new Exception("line doesn't  exist!!");
+                throw new DOBadLineIdException( id,"line doesn't  exist!!");
             if (!t.First().Valid)
-                throw new Exception("line is not valid!!");
+                throw new DOBadLineIdException(id, "line is not valid!!");
             return t.ToList().First();
         }
         /// <summary>
@@ -127,6 +135,18 @@ namespace DL
                     cloneList.Add(line.GetPropertiesFrom<Line, Line>());
             }
             return cloneList;
+        }
+
+        public Line GetLineByNumber(long number)
+        {
+            var t = from line in DataSource.LineList
+                    where (line.Number == number)
+                    select line;
+            if (t.ToList().Count == 0)
+                throw new DOBadLineIdException(number, "line doesn't  exist!!");
+            if (!t.First().Valid)
+                throw new DOBadLineIdException(number, "line is not valid!!");
+            return t.ToList().First();
         }
     }
 }

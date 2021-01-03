@@ -36,7 +36,7 @@ namespace BO
         {
         }
 
-        public override string ToString() => "bus general Exception";
+        public override string ToString() => "bus Exception";
     }
 
     [Serializable]
@@ -50,10 +50,79 @@ namespace BO
     #endregion
 
 
+    #region Line Exception
+
+    [Serializable]
+    public class BODOBadLineIdException : Exception
+    {
+        public long ID;
+        public BODOBadLineIdException(string message, Exception innerException) : base(message, innerException) => ID = ((DO.DOBadLineIdException)innerException).ID;
+        public override string ToString() => base.ToString() + $", bad student id: {ID}";
+    }
+
+    public class BOLineException : Exception
+    {
+        public BOLineException()
+        {
+        }
+
+        public BOLineException(string message)
+            : base(message)
+        {
+        }
+
+        public BOLineException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+
+        public override string ToString() => "Line Exception";
+    }
 
 
 
+    public class BOBadLineIdException : Exception
+    {
+        public long ID;
+        public BOBadLineIdException(long id) : base() => ID = id;
+        public BOBadLineIdException(long id, string message) : base(message) => ID = id;
+        public BOBadLineIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
+        public override string ToString() => base.ToString() + $", BOBad Bus id: {ID}";
+    }
 
+    #endregion
+
+
+    #region stop Exception
+
+    [Serializable]
+    public class BODOStopBadIdException : Exception
+    {
+        public long ID;
+        public BODOStopBadIdException(string message, Exception innerException) : base(message, innerException) => ID = ((DO.DOBadStopIdException)innerException).ID;
+        public override string ToString() => base.ToString() + $", bad student id: {ID}";
+    }
+
+    public class BOStopException : Exception
+    {
+        public BOStopException()
+        {
+        }
+
+        public BOStopException(string message)
+            : base(message)
+        {
+        }
+
+        public BOStopException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+
+        public override string ToString() => "Line Exception";
+    }
+
+    #endregion
 
 
 
@@ -86,21 +155,7 @@ namespace BO
     }
 
 
-    [Serializable]
-    public class BoStopBadIdException : Exception
-    {
-        public long ID;
-        public BoStopBadIdException(string message, Exception innerException) : base(message, innerException) => ID = ((DO.DOBadStopIdException)innerException).ID;
-        public override string ToString() => base.ToString() + $", bad student id: {ID}";
-    }
-
-    [Serializable]
-    public class BOBadLineIdException : Exception
-    {
-        public long ID;
-        public BOBadLineIdException(string message, Exception innerException) : base(message, innerException) => ID = ((DO.DOBadLineIdException)innerException).ID;
-        public override string ToString() => base.ToString() + $", bad student id: {ID}";
-    }
+   
 
     [Serializable]
     public class BOBadLineDepartureLineDepartureFaultIdException : Exception

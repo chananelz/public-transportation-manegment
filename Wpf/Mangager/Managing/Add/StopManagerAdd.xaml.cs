@@ -116,13 +116,16 @@ namespace Wpf.Mangager.Managing.Add
 
 
            
-            catch (Exception ex)
+            catch (BO.BODOStopBadIdException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 new PresentationStops().Show();
                 this.Close();
                 return;
             }
+
+          
+
             MessageBox.Show("stop added!");
             foreach (Window w in Application.Current.Windows)
             {
@@ -151,15 +154,19 @@ namespace Wpf.Mangager.Managing.Add
         {
             if (e.Key == Key.Return)
             {
+
                 try
                 {
                     Name_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
 
                 }
+                catch
+                {
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
+
             }
         }
 
@@ -172,10 +179,9 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     Longitude_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -188,10 +194,9 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     Latitude_Click(sender, e);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -215,9 +220,18 @@ namespace Wpf.Mangager.Managing.Add
             }
             if (amount != 3)
             {
-                amount++;
-
+               
                 string textRange =  MyTextBox0.Text;
+                try
+                {
+                    BLImp.Validator.GetGoodString(textRange);
+                }
+                catch (ArgumentNullException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                amount++;
                 stopName = textRange;
                 MessageBox.Show("input submited" + textRange);
                 MyTextBox0.Clear();
@@ -236,6 +250,16 @@ namespace Wpf.Mangager.Managing.Add
             int result = 0;
             if (int.TryParse(textRange, out result))
             {
+                try
+                {
+                    BLImp.Validator.GetGoodLongitude(result);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox1.Clear();
+                    return;
+                }
                 if (!input1)
                 {
                     input1 = true;
@@ -262,6 +286,17 @@ namespace Wpf.Mangager.Managing.Add
             int result = 0;
             if (int.TryParse(textRange, out result))
             {
+                try
+                {
+                    BLImp.Validator.GetGoodLatitude(result);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox2.Clear();
+                    return;
+                }
+                
                 if (!input2)
                 {
                     input2 = true;

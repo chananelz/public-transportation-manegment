@@ -39,6 +39,7 @@ namespace DalApi
 
 
         void CreateLine(Line line);
+        void CreateOppositeDirectionLine(Line line);
         Line RequestLine(Predicate<Line> pr = null);  //check this...
         void UpdateLineNumber(long number, long id);
         void UpdateLineArea(string area, long id);

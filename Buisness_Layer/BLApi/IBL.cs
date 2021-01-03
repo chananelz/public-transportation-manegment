@@ -79,6 +79,7 @@ namespace BLApi
 
 
         void CreateLine(long number, string area, List<Stop> stopList);
+        void CreateOppositeDirectionLine(long number, string area, List<Stop> stopList);
         Line RequestLine(Predicate<Line> pr = null);  //check this...
         void UpdateLineNumber(long number, long id);
         void UpdateLineArea(string area, long id);

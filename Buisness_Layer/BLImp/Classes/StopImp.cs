@@ -16,66 +16,82 @@ namespace BLImp
     {
         public void CreateStop(double latitude, double longitude, string stopName)
         {
-
-            string exception = "";
-            bool foundException = false;
-            try
-            {
-                valid.GoodLatitude(latitude);
-            }
-            catch (Exception ex)
-            {
-                exception += ex.Message;
-                foundException = true;
-            }
-            try
-            {
-                valid.GoodLongitude(longitude);
-            }
-            catch (Exception ex)
-            {
-                exception += ex.Message;
-                foundException = true;
-            }
-            try
-            {
-                valid.GoodString(stopName);
-            }
-            catch (Exception ex)
-            {
-                exception += ex.Message;
-                foundException = true;
-            }
-            if (foundException)
-                throw new Exception(exception);
             Stop stopBO = new Stop(latitude, longitude, stopName);
             DO.Stop stopDO = stopBO.GetPropertiesFrom<DO.Stop, BO.Stop>();
-            dal.CreateStop(stopDO);
+            try
+            {
+                dal.CreateStop(stopDO);
+            }
+            catch (DO.DOBadStopIdException ex)
+            {
+
+                throw new BODOStopBadIdException("cant creat this stop :", ex) ;
+            }
+  
         }
         public Stop RequestStop(Predicate<Stop> pr = null)
         {
             if (pr == null)
-                throw new Exception("can't request a line with no predicate");
+                throw new BOStopException("can't request a line with no predicate");
             return dal.RequestStop(stop => pr(stop.GetPropertiesFrom<BO.Stop, DO.Stop>())).GetPropertiesFrom<BO.Stop, DO.Stop>();
         }
         public void UpdateStopName(string name, long code)
         {
 
             valid.GoodString(name);
-            dal.UpdateStopName(name, code);
+            try
+            {
+                dal.UpdateStopName(name, code);
+            }
+            catch (DO.DOBadStopIdException ex)
+            {
+
+                throw new BODOStopBadIdException("cant Update This Stop Name", ex); 
+            }
+           
         }
         public void UpdateStopLongitude(double longitude, long code)
         {
             valid.GoodLongitude(longitude);
-            dal.UpdateStopLongitude(longitude, code);
+            try
+            {
+                dal.UpdateStopLongitude(longitude, code);
+            }
+            catch (DO.DOBadStopIdException ex)
+            {
+
+                throw new BODOStopBadIdException("cant Update This Stop Name", ex); 
+            }
+            
+           
         }
         public void UpdateStopLatitude(double latitude, long code)
         {
             valid.GoodLatitude(latitude);
-            dal.UpdateStopLatitude(latitude, code);
+            try
+            {
+                dal.UpdateStopLatitude(latitude, code);
+            }
+            catch (DO.DOBadStopIdException ex)
+            {
+
+                throw new BODOStopBadIdException("cant Update This Stop Name", ex); 
+            }
+            
+           
         }
         public void DeleteStop(long code)
         {
+            try
+            {
+                RequestStop(stop1 => stop1.StopCode == code);
+            }
+            catch (DO.DOStopException ex)
+            {
+
+                throw new BODOStopBadIdException("cant delete This Stop Name", ex); 
+            }
+
             var stop = RequestStop(stop1 => stop1.StopCode == code);
             var myList = GetAllLineStations(lineStation => lineStation.Code == code).ToList();
             var lineList = GetAllLinesByStopCode(code).ToList();

@@ -34,8 +34,11 @@ namespace BLImp
             }
             catch (BOBadBusIdException ex)
             {
-                exception += ex.Message;
-                foundException = true;
+                if (!foundException)
+                {
+                    exception += ex.Message;
+                    foundException = true;
+                }
             }
             try
             {
@@ -67,7 +70,7 @@ namespace BLImp
                 foundException = true;
             }
             if (foundException)
-                throw new BOBusException("There is something wrong with your input." + "/n" + "Please Check these things :" + exception);  //להוסיף את האינפוט שלו עם דולר
+                throw new BOBusException("There is something wrong with your input." + "Please Check these things :\n" + exception);  //להוסיף את האינפוט שלו עם דולר
             Bus busBO = new Bus(licenseNumber, dateTime, kM, fuel, statusInput);
             DO.Bus busDO = busBO.GetPropertiesFrom<DO.Bus, BO.Bus>();
             try

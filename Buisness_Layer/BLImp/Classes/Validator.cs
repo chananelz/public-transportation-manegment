@@ -15,15 +15,23 @@ namespace BLImp
 
         #region general // כאן כתבתי כל מה שיהיה משותף כמעט לכל המחלקות
 
-        public void GoodString(string st) 
+        public void GoodString(string st)
         {
             if (!string.IsNullOrEmpty(st))
                 return;
-            throw new Exception("string is empty!!!");
+            throw new ArgumentNullException("string is empty!!!");
         }
 
-        
-        public void GoodLong(long number)  
+
+        public static void GetGoodString(string st)
+        {
+            if (!string.IsNullOrEmpty(st))
+                return;
+            throw new ArgumentNullException("string is empty!!!");
+        }
+
+
+        public void GoodLong(long number)
         {
             if (number > 0)
                 return;
@@ -49,6 +57,36 @@ namespace BLImp
             throw new BOBadBusIdException(licenseNumber, "license number and year don't match!");
 
         }
+
+        public static void GoodTimeformat(int day, int month, int year)//check this 1200
+        {
+            if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1950)
+            {
+                throw new BO.BOBusException();
+            }
+        }
+
+        public static void GoodPositiveLicenseNumber(long number)
+        {
+            if (number > 0)
+                return;
+            throw new BO.BOBusException("number negative!!!");
+        }
+
+        public static void GoodPositiveStatus(int result)
+        {
+            if (result > 0 && result <= 3)
+                return;
+            throw new BO.BOBusException("number negative!!!");
+        }
+
+        public static void GoodPositiveflout(float number)
+        {
+            if (number > 0)
+                return;
+            throw new BO.BOBusException("number negative!!!");
+        }
+
 
         public void GoodFuel(float fuel)//check this 1200
         {
@@ -110,11 +148,17 @@ namespace BLImp
 
         #region Line
 
+        public static void GoodLinePositiveLong(long number)
+        {
+            if (number > 0)
+                return;
+            throw new BOBadLineIdException(number, "number negative!!!");
+        }
         #endregion
 
         #region LineDeparture
 
-     
+
         public void GoodDate(DateTime firstTime, DateTime secondTime) // מקבל שני תאריכים ובודק אם השני אחרי הראשון
         {
             if (firstTime <= secondTime)
@@ -169,13 +213,26 @@ namespace BLImp
         {
             if (longitude >= 34.3 && longitude <= 35.5)
                 return;
-            throw new Exception("lonigtude not between 34.3 - 35.5");
+            throw new ArgumentOutOfRangeException("lonigtude not between 34.3 - 35.5");
         }//31,33.3
         public void GoodLatitude(double latitude)
         {
             if (latitude >= 31 && latitude <= 33.3)
                 return;
-            throw new Exception("latitude not between 31 - 33.3");
+            throw new ArgumentOutOfRangeException("latitude not between 31 - 33.3");
+        }
+
+        public static void GetGoodLongitude(double longitude)
+        {
+            if (longitude >= 34.3 && longitude <= 35.5)
+                return;
+            throw new ArgumentOutOfRangeException("lonigtude not between 34.3 - 35.5");
+        }//31,33.3
+        public static void GetGoodLatitude(double latitude)
+        {
+            if (latitude >= 31 && latitude <= 33.3)
+                return;
+            throw new ArgumentOutOfRangeException("latitude not between 31 - 33.3");
         }
 
         #endregion

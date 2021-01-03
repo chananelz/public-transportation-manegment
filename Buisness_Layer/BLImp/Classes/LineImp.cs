@@ -20,7 +20,7 @@ namespace BLImp
             {
                 valid.GoodLong(number);
             }
-            catch (Exception ex)
+            catch (BOLineException ex)
             {
                 exception += ex.Message;
                 foundException = true;
@@ -29,7 +29,7 @@ namespace BLImp
             {
                 valid.GoodString(area);
             }
-            catch (Exception ex)
+            catch (BOLineException ex)
             {
                 exception += ex.Message;
                 foundException = true;
@@ -44,12 +44,71 @@ namespace BLImp
             //    foundException = true;
             //}
             if (foundException)
-                throw new Exception(exception);
+                throw new BOLineException(exception);
             Line lineBO = new Line(number, area, stopList[0].StopCode,stopList[stopList.Count() - 1].StopCode );
             DO.Line lineDO = lineBO.GetPropertiesFrom<DO.Line, BO.Line>();
-            dal.CreateLine(lineDO);
+            try
+            {
+                dal.CreateLine(lineDO);
+            }
+            catch (DO.DOBadLineIdException ex )
+            {
+
+                throw  new BODOBadLineIdException ("cant create this line" , ex);
+            }
+           
             UpdateLineStations(stopList, GetIdByNumber(number));
         }
+
+        public void CreateOppositeDirectionLine(long number, string area, List<Stop> stopList)
+        {
+            string exception = "";
+            bool foundException = false;
+            try
+            {
+                valid.GoodLong(number);
+            }
+            catch (BOLineException ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                valid.GoodString(area);
+            }
+            catch (BOLineException ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            //try
+            //{
+            //    //valid.stopListExist;
+            //}
+            //catch (Exception ex)
+            //{
+            //    exception += ex.Message;
+            //    foundException = true;
+            //}
+            if (foundException)
+                throw new BOLineException(exception);
+            Line lineBO = new Line(number, area, stopList[0].StopCode, stopList[stopList.Count() - 1].StopCode);
+            DO.Line lineDO = lineBO.GetPropertiesFrom<DO.Line, BO.Line>();
+            try
+            {
+                dal.CreateOppositeDirectionLine(lineDO);
+            }
+            catch (DO.DOBadLineIdException ex)
+            {
+
+                throw new BODOBadLineIdException("cant create this line", ex);
+            }
+
+            UpdateLineStations(stopList, GetIdByNumber(number));
+        }
+
+        
         public Line RequestLine(Predicate<Line> pr = null)
         {
             if (pr == null)
