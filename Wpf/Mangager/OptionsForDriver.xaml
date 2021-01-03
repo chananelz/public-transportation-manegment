@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.ColumnSpan="2" Content="options: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Grid.ColumnSpan="2" Content="options: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="Red" FontFamily="Arial Black"/>
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -74,9 +74,8 @@
         <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="3" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
-
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

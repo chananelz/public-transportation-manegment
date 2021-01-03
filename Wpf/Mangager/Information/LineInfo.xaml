@@ -31,7 +31,7 @@
             <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
-        <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="Red" FontFamily="Arial Black"/>
 
         <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
             <ComboBox.ItemTemplate>
@@ -89,7 +89,7 @@
 
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

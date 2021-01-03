@@ -6,11 +6,10 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Presentation"
         mc:Ignorable="d"
         Title="SequentialStopPresention" Height="450" Width="800"
+                Background="Transparent"
          WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
-        <Grid.Background >
-            <ImageBrush Opacity="0.6" ImageSource="/Wpf;component/Mangager/Managing/Add/myImages/BusBackground.png" Stretch="UniformToFill"/>
-        </Grid.Background>
+        
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -55,9 +54,30 @@
 
 
 
+        <Grid Grid.Column="3" Grid.Row = "1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Name="distance_Binding"     Text="{Binding Distance}"      FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
+            <Button x:Name="submitDistanc" Grid.Row="1" Visibility="Hidden" Click="Distance_Click">
+                submit
+            </Button>
+        </Grid>
 
-        <Label Name="distance_Binding"     Content="{Binding Distance}"    Grid.Column="3" Grid.Row = "1"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
-        <Label Name="travel_time_Binding"  Content="{Binding TravelTime}" Grid.Column="3"  Grid.Row = "2"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
+        <Grid  Grid.Column="3"  Grid.Row = "2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Name="travel_time_Binding"  Text="{Binding TravelTime}" FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent" Margin="0,0,0,25.667" Grid.RowSpan="2"/>
+            <Button x:Name="submitTravelTime" Grid.Row="1" Visibility="Hidden" Click="TravelTime_Click" >
+                submit
+            </Button>
+        </Grid>
 
 
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="3" VerticalAlignment="Top" Width="50" Click="Button_Click">
@@ -66,7 +86,8 @@
             </Button.Background>
         </Button>
 
-
-
+        <Grid.Background>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
     </Grid>
 </Window>

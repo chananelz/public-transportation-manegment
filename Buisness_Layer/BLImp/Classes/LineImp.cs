@@ -190,6 +190,12 @@ namespace BLImp
 
             return flag;
         }
+        public Line GetLine(long id)
+        {
+            return dal.GetLine(id).GetPropertiesFrom<BO.Line, DO.Line>();
+        }
+
 
     }
+
 }

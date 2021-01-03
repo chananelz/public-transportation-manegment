@@ -29,7 +29,7 @@
             <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
-        <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="Red" FontFamily="Arial Black"/>
         <Label Content="Stop name:"     Name="stopName"          Grid.Column="0" Grid.Row="4"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="Longitude:"     Name="longitude"         Grid.Column="0" Grid.Row="2"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
         <Label Content="Latitude:"     Name="latitude"           Grid.Column="0" Grid.Row="3"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
@@ -62,8 +62,8 @@
             </Button.Background>
         </Button>
 
-       <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+        <Grid.Background>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

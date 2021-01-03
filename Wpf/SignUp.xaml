@@ -43,14 +43,10 @@
 
 
         <Label  Foreground="Red"    HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="1" Content="Passwords criteria:&#10;Length: 8 - 15&#10;Digits: 0-9&#10;Punctuation letters: !@#...&#10;Upper case letters: A B...&#10;Lower case leters: a b..."     VerticalAlignment="Stretch"  FontSize="14" FontFamily="Bernard MT Condensed" >
-            <Label.Background>
-                <ImageBrush ImageSource="myImages/busListBackground.png" Opacity="0.3"/>
-            </Label.Background>
+           
         </Label>
         <Label  Foreground="Red"    HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="0" Content="User Name must be unique"     VerticalAlignment="Stretch"  FontSize="14" FontFamily="Bernard MT Condensed" >
-            <Label.Background>
-                <ImageBrush ImageSource="myImages/busListBackground.png" Opacity="0.3"/>
-            </Label.Background>
+            
         </Label>
 
 
@@ -88,7 +84,7 @@
 
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

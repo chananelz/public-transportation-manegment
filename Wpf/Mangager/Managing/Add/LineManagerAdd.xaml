@@ -42,10 +42,10 @@
         <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Name="MyTextBox1"  KeyDown="MyTextBox1_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Number"     VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Area"       VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Content= "Stops" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Content="Add stop number: " VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Number"     VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Area"       VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Content= "Stops" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Content="Add stop number: " VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
 
         <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopListComboBox" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Stretch"  SelectionChanged="StopList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
             <ComboBox.ItemTemplate>
@@ -107,7 +107,7 @@
         </Button>
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

@@ -27,7 +27,7 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.ColumnSpan="2" Content="Log In: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Grid.ColumnSpan="2" Content="Log In: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="Red" FontFamily="Arial Black"/>
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -47,7 +47,7 @@
 
             <StackPanel x:Name="stackPanel"
               Orientation="Horizontal" Grid.ColumnSpan="2" Margin="4,-101,375,100.8">
-                <Label Name="label" Grid.ColumnSpan="2" Content="{Binding UserLable}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+                <Label Name="label" Grid.ColumnSpan="2" Content="{Binding UserLable}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="Red" FontFamily="Arial Black"/>
             </StackPanel>
 
 
@@ -111,7 +111,7 @@
         <Image x:Name="movingBus"   Grid.Column="3"   Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

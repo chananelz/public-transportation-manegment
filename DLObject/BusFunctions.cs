@@ -41,7 +41,6 @@ namespace DL
             }
             throw new Exception("bus already exists!!!");
         }
-
         /// <summary>
         /// request a bus according to a predicate
         /// </summary>

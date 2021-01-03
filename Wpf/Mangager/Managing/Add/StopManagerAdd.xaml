@@ -46,9 +46,9 @@
         <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
         <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="4" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4" Content="Name" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="4" Grid.ColumnSpan="4" Content="Longitude" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="8" Grid.ColumnSpan="4" Content="Latitude" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4" Content="Name" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="4" Grid.ColumnSpan="4" Content="Longitude" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Red" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="8" Grid.ColumnSpan="4" Content="Latitude" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
 
@@ -79,9 +79,9 @@
 
 
 
-     
+
         <Grid.Background>
-            <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

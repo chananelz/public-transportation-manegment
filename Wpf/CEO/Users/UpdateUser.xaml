@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf.CEO.Users"
         mc:Ignorable="d"
+                Background="Transparent"
+
         Title="UpdateUser" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
     </Grid>
 </Window>

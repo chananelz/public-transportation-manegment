@@ -127,6 +127,10 @@ namespace BLImp
 
         }
 
+        public LineStation GetLineStation(long code, long lineId, long numberInLine)
+        {
+            return dal.GetLineStation(code, lineId, numberInLine).GetPropertiesFrom<BO.LineStation, DO.LineStation>();
+        }
 
 
 

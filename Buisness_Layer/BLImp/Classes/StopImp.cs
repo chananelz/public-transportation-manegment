@@ -76,28 +76,43 @@ namespace BLImp
         }
         public void DeleteStop(long code)
         {
-            var stop = RequestStop(stop1 => stop1.StopCode == code);
-            var myList = GetAllLineStations(lineStation => lineStation.Code == code).ToList();
+            var myLineStationList = GetAllLineStations(lineStation => lineStation.Code == code).ToList();
+            var mySequentialStopInfoList = GetAllSequentialStopsInfo(seqStop => seqStop.StationCodeF == code || seqStop.StationCodeS == code);
             var lineList = GetAllLinesByStopCode(code).ToList();
-            bool found = false;
             foreach(Line line in lineList)
             {
-                foreach(LineStation lineStation in line.Stops)
-                {
-                    if (lineStation.Code == stop.StopCode)
-                        found = true;
-                    else if (found)
-                    {
-                        UpdateLineStationNumberInLine(lineStation.NumberInLine - 1, line.Id, lineStation.Code);
-                    }
-                }
-                found = false;
+                updateNumberInLine(line, code,-1);
             }
-            foreach (LineStation lineStation in myList)
+            foreach (LineStation lineStation in myLineStationList)
             {
                 dal.DeleteLineStation(lineStation.LineId, lineStation.Code,lineStation.NumberInLine);
             }
+            foreach (SequentialStopInfo seqStop in mySequentialStopInfoList)
+            {
+                dal.DeleteSequentialStopInfo(seqStop.StationCodeF,seqStop.StationCodeS);
+            }
             dal.DeleteStop(code);
+        }
+
+        public void updateNumberInLine(Line line, long code,int increase)
+        {
+            bool found = false;
+            foreach (LineStation lineStation in line.Stops)
+            {
+                if (lineStation.Code == code)
+                    found = true;
+                else if (found)
+                {
+                    UpdateLineStationNumberInLine(lineStation.NumberInLine + increase, line.Id, lineStation.Code);
+                }
+            }
+        }
+
+        public void AddStopInLine(long lineId,long code,long numberInLine)
+        {
+            var line = GetLine(lineId);
+            updateNumberInLine(line, code, 1);
+            CreateLineStation(lineId, numberInLine, code);
         }
 
         public IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null)

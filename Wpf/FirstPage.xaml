@@ -22,8 +22,8 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Label Content="Welcome to Netanel and Chananel's " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
-        <Label Content="Bus system:"               HorizontalAlignment="Center" VerticalAlignment="top"    Grid.Row="1" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Content="Welcome to Netanel and Chananel's " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="Red" FontFamily="Arial Black"/>
+        <Label Content="Bus system:"               HorizontalAlignment="Center" VerticalAlignment="top"    Grid.Row="1" FontSize="30" Foreground="Red" FontFamily="Arial Black"/>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -104,7 +104,7 @@
         </Button>
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>
