@@ -7,7 +7,6 @@ using BLApi;
 using BO;
 using BL;
 
-
 namespace BLImp
 {
     public partial class BL : IBL
