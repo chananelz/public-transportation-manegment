@@ -18,6 +18,7 @@ namespace BLApi
         void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
         IEnumerable<Bus> GetAllBussesReadyForDrive();
+        Bus GetBus(long licenseNumber);
         //IEnumerable<Bus> GetAllValidBuses();
         //IEnumerable<Bus> GetAllUnValidBuses();
         //IEnumerable<Bus> GetAllTravelingBuses();
@@ -45,10 +46,10 @@ namespace BLApi
         //IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         //IEnumerable<BusTravel> GetAllValidBusTravels();
         //IEnumerable<BusTravel> GetAllUnValidBusTravels();
-        //TimeSpan GetAvregeLate();
-        //TimeSpan GetTimeUntilEnd(int id);
-        //TimeSpan GetTimeUntilNextStop(int id);
-        //TimeSpan GetTimeUntilSpecificStop(int id);
+        //long GetAvregeLate();
+        //long GetTimeUntilEnd(int id);
+        //long GetTimeUntilNextStop(int id);
+        //long GetTimeUntilSpecificStop(int id);
 
 
 
@@ -118,18 +119,29 @@ namespace BLApi
 
 
 
-        void CreateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
-        SequentialStopInfo RequestSequentialStopInfo(long fid, long sid);
-        void UpdateSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
-        void DeleteSequentialStopInfo(int stationCodeF, int stationCodeS, float distance, TimeSpan averageTime, TimeSpan travelTime);
+
+
+        void CreateSequentialStopInfo(long stationCodeF, long stationCodeS);
+        SequentialStopInfo RequestSequentialStopInfo(Predicate<SequentialStopInfo> pr);
+        void UpdateSequentialStopInfoDistance(long firstId, long secondId, double distance);
+        void UpdateSequentialStopInfoTravelTime(long firstId, long secondId, TimeSpan travelTime);
+        void DeleteSequentialStopInfo(long firstId, long secondId);
         IEnumerable<Line> GetAllLinesByStopCode(long code);
-        //IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null);
+        SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode);
+        IEnumerable<SequentialStopInfo> GetAllSequentialStopsInfo(Predicate<SequentialStopInfo> pr = null);
+        TimeSpan TravelTimeCalculate(long lineId, long fStop, long sStop);
+        double DistanceCalculate(long lineId, long fStop, long lStop);
         //IEnumerable<SequentialStopInfo> GetAllValidSequentialStopInfo();
         //IEnumerable<SequentialStopInfo> GetAllUnValidSequentialStopInfo();
 
 
 
+
+
+
+
         void CreateStop(double latitude, double longitude, string stopName);
+        Stop GetStop(long code);
         Stop RequestStop(Predicate<Stop> pr = null);
         void UpdateStopName(string name, long code);
         void UpdateStopLongitude(double longitude, long code);
@@ -177,6 +189,6 @@ namespace BLApi
         //IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();
         //IEnumerable<UserTravel> GetAllValidUserTravels();
-        //TimeSpan GeTimeUntilArrival();
+        //long GeTimeUntilArrival();
     }
 }

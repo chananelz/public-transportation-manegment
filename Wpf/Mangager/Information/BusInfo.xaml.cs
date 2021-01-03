@@ -22,8 +22,7 @@ namespace Wpf.Mangager.Information
     /// </summary>
     public partial class BusInfo : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+        
         public BO.Line tempLine;
 
 
@@ -37,26 +36,9 @@ namespace Wpf.Mangager.Information
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
             LineListB.DataContext = infoBus.LineList;
-            busFunc();
         }
 
 
-        private void busFunc()
-        {
-            place = movingBus.Margin.Left;
-            FirstPage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
-
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
 
         private void home_Click(object sender, RoutedEventArgs e)
         {
@@ -78,8 +60,8 @@ namespace Wpf.Mangager.Information
             Button a = (Button)sender;
             tempLine = (BO.Line)a.DataContext;
             var ab = new LineInfo(tempLine);
-            ab.Height = 400;
-            ab.Width = 300;
+            ab.Height = 350;
+            ab.Width = 250;
             ab.Show();
             
         }

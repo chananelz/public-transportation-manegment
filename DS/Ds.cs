@@ -2872,10 +2872,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 570,
-                stationCodeS = 571,
-                distance = 587,
-                travelTime = new TimeSpan(0, 3, 30)
+                StationCodeF = 570,
+                StationCodeS = 571,
+                Distance = 587,
+                TravelTime = new TimeSpan(0, 3, 30)
             });
             #endregion
 
@@ -2883,10 +2883,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 571,
-                stationCodeS = 572,
-                distance = 87,
-                travelTime = new TimeSpan(0, 1, 10)
+                StationCodeF = 571,
+                StationCodeS = 572,
+                Distance = 87,
+                TravelTime = new TimeSpan(0, 1, 10)
             });
             #endregion
 
@@ -2894,10 +2894,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 572,
-                stationCodeS = 573,
-                distance = 55,
-                travelTime = new TimeSpan(0, 1, 08)
+                StationCodeF = 572,
+                StationCodeS = 573,
+                Distance = 55,
+                TravelTime = new TimeSpan(0, 1, 08)
             });
             #endregion
 
@@ -2905,10 +2905,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 573,
-                stationCodeS = 574,
-                distance = 86,
-                travelTime = new TimeSpan(0, 1, 15)
+                StationCodeF = 573,
+                StationCodeS = 574,
+                Distance = 86,
+                TravelTime = new TimeSpan(0, 1, 15)
             });
             #endregion
 
@@ -2916,10 +2916,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 574,
-                stationCodeS = 575,
-                distance = 162,
-                travelTime = new TimeSpan(0, 1, 53)
+                StationCodeF = 574,
+                StationCodeS = 575,
+                Distance = 162,
+                TravelTime = new TimeSpan(0, 1, 53)
             });
             #endregion
 
@@ -2927,10 +2927,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 575,
-                stationCodeS = 576,
-                distance = 142,
-                travelTime = new TimeSpan(0, 1, 15)
+                StationCodeF = 575,
+                StationCodeS = 576,
+                Distance = 142,
+                TravelTime = new TimeSpan(0, 1, 15)
             });
             #endregion
 
@@ -2938,10 +2938,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 576,
-                stationCodeS = 577,
-                distance = 93,
-                travelTime = new TimeSpan(0, 1, 03)
+                StationCodeF = 576,
+                StationCodeS = 577,
+                Distance = 93,
+                TravelTime = new TimeSpan(0, 1, 03)
             });
             #endregion
 
@@ -2949,10 +2949,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 577,
-                stationCodeS = 578,
-                distance = 152,
-                travelTime = new TimeSpan(0, 1, 12)
+                StationCodeF = 577,
+                StationCodeS = 578,
+                Distance = 152,
+                TravelTime = new TimeSpan(0, 1, 12)
             });
             #endregion
 
@@ -2960,10 +2960,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 578,
-                stationCodeS = 555,
-                distance = 979,
-                travelTime = new TimeSpan(0, 7, 26)
+                StationCodeF = 578,
+                StationCodeS = 555,
+                Distance = 979,
+                TravelTime = new TimeSpan(0, 7, 26)
             });
             #endregion
 
@@ -2971,10 +2971,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 579,
-                stationCodeS = 580,
-                distance = 2297,
-                travelTime = new TimeSpan(0, 14, 46)
+                StationCodeF = 579,
+                StationCodeS = 580,
+                Distance = 2297,
+                TravelTime = new TimeSpan(0, 14, 46)
             });
             #endregion
 
@@ -2982,10 +2982,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 580,
-                stationCodeS = 581,
-                distance = 137,
-                travelTime = new TimeSpan(0, 1, 16)
+                StationCodeF = 580,
+                StationCodeS = 581,
+                Distance = 137,
+                TravelTime = new TimeSpan(0, 1, 16)
             });
             #endregion
 
@@ -2993,10 +2993,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 581,
-                stationCodeS = 582,
-                distance = 241,
-                travelTime = new TimeSpan(0, 2, 18)
+                StationCodeF = 581,
+                StationCodeS = 582,
+                Distance = 241,
+                TravelTime = new TimeSpan(0, 2, 18)
             });
             #endregion
 
@@ -3004,10 +3004,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 582,
-                stationCodeS = 583,
-                distance = 251,
-                travelTime = new TimeSpan(0, 2, 33)
+                StationCodeF = 582,
+                StationCodeS = 583,
+                Distance = 251,
+                TravelTime = new TimeSpan(0, 2, 33)
             });
             #endregion
 
@@ -3015,10 +3015,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 583,
-                stationCodeS = 584,
-                distance = 248,
-                travelTime = new TimeSpan(0, 2, 21)
+                StationCodeF = 583,
+                StationCodeS = 584,
+                Distance = 248,
+                TravelTime = new TimeSpan(0, 2, 21)
             });
             #endregion
 
@@ -3026,10 +3026,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 584,
-                stationCodeS = 585,
-                distance = 98,
-                travelTime = new TimeSpan(0, 1, 12)
+                StationCodeF = 584,
+                StationCodeS = 585,
+                Distance = 98,
+                TravelTime = new TimeSpan(0, 1, 12)
             });
             #endregion
 
@@ -3037,10 +3037,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 585,
-                stationCodeS = 586,
-                distance = 80,
-                travelTime = new TimeSpan(0, 1, 08)
+                StationCodeF = 585,
+                StationCodeS = 586,
+                Distance = 80,
+                TravelTime = new TimeSpan(0, 1, 08)
             });
             #endregion
 
@@ -3048,10 +3048,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 586,
-                stationCodeS = 587,
-                distance = 57,
-                travelTime = new TimeSpan(0, 1, 04)
+                StationCodeF = 586,
+                StationCodeS = 587,
+                Distance = 57,
+                TravelTime = new TimeSpan(0, 1, 04)
             });
             #endregion
 
@@ -3059,10 +3059,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 587,
-                stationCodeS = 598,
-                distance = 824,
-                travelTime = new TimeSpan(0, 7, 17)
+                StationCodeF = 587,
+                StationCodeS = 598,
+                Distance = 824,
+                TravelTime = new TimeSpan(0, 7, 17)
             });
             #endregion
 
@@ -3070,10 +3070,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 585,
-                stationCodeS = 578,
-                distance = 201,
-                travelTime = new TimeSpan(0, 1, 57)
+                StationCodeF = 585,
+                StationCodeS = 578,
+                Distance = 201,
+                TravelTime = new TimeSpan(0, 1, 57)
             });
             #endregion
 
@@ -3081,10 +3081,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 578,
-                stationCodeS = 577,
-                distance = 152,
-                travelTime = new TimeSpan(0, 1, 17)
+                StationCodeF = 578,
+                StationCodeS = 577,
+                Distance = 152,
+                TravelTime = new TimeSpan(0, 1, 17)
             });
             #endregion
 
@@ -3092,10 +3092,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 577,
-                stationCodeS = 576,
-                distance = 93,
-                travelTime = new TimeSpan(0, 1, 17)
+                StationCodeF = 577,
+                StationCodeS = 576,
+                Distance = 93,
+                TravelTime = new TimeSpan(0, 1, 17)
             });
             #endregion
 
@@ -3103,10 +3103,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 576,
-                stationCodeS = 574,
-                distance = 86,
-                travelTime = new TimeSpan(0, 1, 26)
+                StationCodeF = 576,
+                StationCodeS = 574,
+                Distance = 86,
+                TravelTime = new TimeSpan(0, 1, 26)
             });
             #endregion
 
@@ -3114,10 +3114,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 574,
-                stationCodeS = 573,
-                distance = 87,
-                travelTime = new TimeSpan(0, 1, 16)
+                StationCodeF = 574,
+                StationCodeS = 573,
+                Distance = 87,
+                TravelTime = new TimeSpan(0, 1, 16)
             });
             #endregion
 
@@ -3125,10 +3125,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 573,
-                stationCodeS = 572,
-                distance = 55,
-                travelTime = new TimeSpan(0, 1, 08)
+                StationCodeF = 573,
+                StationCodeS = 572,
+                Distance = 55,
+                TravelTime = new TimeSpan(0, 1, 08)
             });
             #endregion
 
@@ -3136,10 +3136,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 572,
-                stationCodeS = 571,
-                distance = 87,
-                travelTime = new TimeSpan(0, 1, 16)
+                StationCodeF = 572,
+                StationCodeS = 571,
+                Distance = 87,
+                TravelTime = new TimeSpan(0, 1, 16)
             });
             #endregion
 
@@ -3147,10 +3147,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 571,
-                stationCodeS = 569,
-                distance = 702,
-                travelTime = new TimeSpan(0, 5, 46)
+                StationCodeF = 571,
+                StationCodeS = 569,
+                Distance = 702,
+                TravelTime = new TimeSpan(0, 5, 46)
             });
             #endregion
 
@@ -3158,10 +3158,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 569,
-                stationCodeS = 570,
-                distance = 154,
-                travelTime = new TimeSpan(0, 1, 23)
+                StationCodeF = 569,
+                StationCodeS = 570,
+                Distance = 154,
+                TravelTime = new TimeSpan(0, 1, 23)
             });
             #endregion
 
@@ -3169,10 +3169,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 585,
-                stationCodeS = 564,
-                distance = 753,
-                travelTime = new TimeSpan(0, 5, 42)
+                StationCodeF = 585,
+                StationCodeS = 564,
+                Distance = 753,
+                TravelTime = new TimeSpan(0, 5, 42)
             });
             #endregion
 
@@ -3180,10 +3180,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 564,
-                stationCodeS = 563,
-                distance = 917,
-                travelTime = new TimeSpan(0, 7, 15)
+                StationCodeF = 564,
+                StationCodeS = 563,
+                Distance = 917,
+                TravelTime = new TimeSpan(0, 7, 15)
             });
             #endregion
 
@@ -3191,10 +3191,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 563,
-                stationCodeS = 562,
-                distance = 72,
-                travelTime = new TimeSpan(0, 1, 04)
+                StationCodeF = 563,
+                StationCodeS = 562,
+                Distance = 72,
+                TravelTime = new TimeSpan(0, 1, 04)
             });
             #endregion
 
@@ -3202,10 +3202,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 562,
-                stationCodeS = 561,
-                distance = 158,
-                travelTime = new TimeSpan(0, 2, 06)
+                StationCodeF = 562,
+                StationCodeS = 561,
+                Distance = 158,
+                TravelTime = new TimeSpan(0, 2, 06)
             });
             #endregion
 
@@ -3213,10 +3213,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 561,
-                stationCodeS = 560,
-                distance = 26,
-                travelTime = new TimeSpan(0, 1, 01)
+                StationCodeF = 561,
+                StationCodeS = 560,
+                Distance = 26,
+                TravelTime = new TimeSpan(0, 1, 01)
             });
             #endregion
 
@@ -3224,10 +3224,10 @@ namespace DS
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
-                stationCodeF = 560,
-                stationCodeS = 559,
-                distance = 115,
-                travelTime = new TimeSpan(0, 1, 17)
+                StationCodeF = 560,
+                StationCodeS = 559,
+                Distance = 115,
+                TravelTime = new TimeSpan(0, 1, 17)
             });
             #endregion
 

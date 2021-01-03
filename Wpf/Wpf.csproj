@@ -98,6 +98,9 @@
     <Compile Include="CEO\Users\UserInformation.xaml.cs">
       <DependentUpon>UserInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mangager\Managing\Add\AddStopToLine.xaml.cs">
+      <DependentUpon>AddStopToLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mangager\Managing\Add\LineManagerAdd.xaml.cs">
       <DependentUpon>LineManagerAdd.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,9 @@
     </Compile>
     <Compile Include="Mangager\OptionsForDriver.xaml.cs">
       <DependentUpon>OptionsForDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mangager\Presentation\SequentialStopPresention.xaml.cs">
+      <DependentUpon>SequentialStopPresention.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mangager\threading\StartTravel.xaml.cs">
       <DependentUpon>StartTravel.xaml</DependentUpon>
@@ -250,6 +256,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Mangager\Managing\Add\AddStopToLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Mangager\Managing\Add\LineManagerAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -291,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\Presentation\PresentationStops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mangager\Presentation\SequentialStopPresention.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

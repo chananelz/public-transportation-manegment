@@ -111,7 +111,7 @@ namespace BLImp
             }
             foreach (LineStation lineStation in myList)
             {
-                //DeleteLineStation(lineStation.Code, lineStation.LineId);
+                dal.DeleteLineStation(lineStation.LineId, lineStation.Code,lineStation.NumberInLine);
             }
             dal.DeleteStop(code);
         }
@@ -139,6 +139,10 @@ namespace BLImp
         public string GetNameByStopCode(long code)
         {
             return RequestStop(stop => stop.StopCode == code).StopName;
+        }
+        public Stop GetStop(long code)
+        {
+            return dal.GetStop(code).GetPropertiesFrom<BO.Stop, DO.Stop>();
         }
 
     }

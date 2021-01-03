@@ -17,7 +17,22 @@ namespace DL
         /// <param name="sequentialStopInfo"></param>
         public void CreateSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
         {
-            DataSource.SequentialStopInfoList.Add(sequentialStopInfo);
+            sequentialStopInfo.Valid = true;
+            try
+            {
+                GetSequentialStopInfo(sequentialStopInfo.StationCodeF, sequentialStopInfo.StationCodeS);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "no SequentialStopInfo with such license number!!")
+                    DataSource.SequentialStopInfoList.Add(sequentialStopInfo);
+                else if (ex.Message == "SequentialStopInfoList is not valid!!")
+                {
+                    GetSequentialStopInfo(sequentialStopInfo.StationCodeF, sequentialStopInfo.StationCodeS).Valid = true;
+                }
+                return;
+            }
+            throw new Exception("bus already exists!!!");
         }
         /// <summary>
         /// request a SequentialStopInfo according to a predicate
@@ -25,49 +40,61 @@ namespace DL
         /// <param name="firstId"></param>
         /// <param name="secondId"></param>
         /// <returns></returns>
-        public SequentialStopInfo RequestSequentialStopInfo(long firstId, long secondId)
+        public SequentialStopInfo RequestSequentialStopInfo(Predicate<SequentialStopInfo> pr)
         {
-            return DataSource.SequentialStopInfoList.Find(s => s.stationCodeF == firstId && s.stationCodeS == secondId);
+            SequentialStopInfo ret = DataSource.SequentialStopInfoList.Find(seqStop => pr(seqStop));
+            if (ret == null)
+                throw new Exception("no seqStop that meets these conditions!");
+            if (ret.Valid == false)
+                throw new Exception("seqStop that meets these conditions is not valid");
+            return ret.GetPropertiesFrom<SequentialStopInfo, SequentialStopInfo>();
         }
         /// <summary>
         /// update sequentialStopInfo in database
         /// </summary>
         /// <param name="sequentialStopInfo"></param>
-        public void UpdateSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
+        public void UpdateSequentialStopInfoDistance(long firstId, long secondId, double distance)
         {
-            int indLine;
-            if (sequentialStopInfo.stationCodeF != null && sequentialStopInfo.stationCodeS != null)
-            {
-                indLine = DataSource.SequentialStopInfoList.FindIndex(s => s.stationCodeF == sequentialStopInfo.stationCodeF && s.stationCodeS == sequentialStopInfo.stationCodeS);
-                DataSource.SequentialStopInfoList[indLine] = sequentialStopInfo;
-            }
-            else
-                throw new Exception("sequentialStopInfo doesn't exist!!");
+            GetSequentialStopInfo(firstId, secondId).Distance = distance;
         }
+        public void UpdateSequentialStopInfoTravelTime(long firstId, long secondId, TimeSpan travelTime)
+        {
+            GetSequentialStopInfo(firstId, secondId).TravelTime = travelTime;
+        }
+
         /// <summary>
         /// sets sequential  stop info valid to false
         /// </summary>
         /// <param name="sequentialStopInfo"></param>
-        public void DeleteSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
+        public void DeleteSequentialStopInfo(long firstId, long secondId)
         {
-            if (sequentialStopInfo.stationCodeF != null && sequentialStopInfo.stationCodeS != null)
-                DataSource.SequentialStopInfoList.Remove(sequentialStopInfo);
-            else
-                throw new Exception("sequentialStopInfo doesn't exist!!");
+            GetSequentialStopInfo(firstId, secondId).Valid = false;
         }
         /// <summary>
         /// gets all stops info
         /// </summary>
         /// <param name="pr"></param>
         /// <returns></returns>
-        public IEnumerable<SequentialStopInfo> GetAllStopsInfo(Predicate<SequentialStopInfo> pr = null)
+        public IEnumerable<SequentialStopInfo> GetAllSequentialStopInfo()
         {
-            if (pr == null)
-                return DataSource.SequentialStopInfoList;
-            else
-            return from b in DataSource.SequentialStopInfoList
-                   where (pr(b))
-                   select b;
+            var cloneList = new List<SequentialStopInfo>();
+            foreach (SequentialStopInfo seqStop in DataSource.SequentialStopInfoList)
+            {
+                if (seqStop.Valid == true)
+                    cloneList.Add(seqStop.GetPropertiesFrom<SequentialStopInfo, SequentialStopInfo>());
+            }
+            return cloneList;
+        }
+        public SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode)
+        {
+            var t = from seqStop in DataSource.SequentialStopInfoList
+                    where (seqStop.StationCodeF == fCode && seqStop.StationCodeS == sCode)
+                    select seqStop;
+            if (t.ToList().Count == 0)
+                throw new Exception("no SequentialStopInfo with such license number!!");
+            if (!t.First().Valid)
+                throw new Exception("SequentialStopInfoList is not valid!!");
+            return t.ToList().First();
         }
     }
 }

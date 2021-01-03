@@ -182,7 +182,10 @@ namespace BLImp
                 throw new BODOBadBusIdException("", ex);
             }
         }
-
+        public Bus GetBus(long licenseNumber)
+        {
+            return dal.GetBus(licenseNumber).GetPropertiesFrom<BO.Bus, DO.Bus>();
+        }
 
         public IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null)
         {
