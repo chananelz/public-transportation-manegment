@@ -71,5 +71,10 @@ namespace Wpf
         {
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new map().Show();
+        }
     }
 }

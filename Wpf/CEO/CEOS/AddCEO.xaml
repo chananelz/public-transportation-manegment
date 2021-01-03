@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="AddCEO" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
     </Grid>
 </Window>

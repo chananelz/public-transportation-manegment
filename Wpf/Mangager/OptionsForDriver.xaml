@@ -33,18 +33,18 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="busses"      Grid.Row="0"  Content="press here for bus page"     FontSize="35" FontFamily="Arial Black"    BorderThickness="0"   Click="bus_Click" Foreground="Red">
+            <Button Name="busses"   Height="60"   Grid.Row="0"  Content="press here for bus page"     FontSize="35" FontFamily="Arial Black"    BorderThickness="0"   Click="bus_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="lines"       Grid.Row="1"  Content="press here for line page"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="line_Click" Foreground="Red">
+            <Button Name="lines"  Height="60"     Grid.Row="1"  Content="press here for line page"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="line_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
 
-            <Button Name="stops"       Grid.Row="2"  Content="press here for stop page"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="stop_Click" Foreground="Red">
+            <Button Name="stops"   Height="60"    Grid.Row="2"  Content="press here for stop page"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="stop_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
@@ -74,8 +74,9 @@
         <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="3" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
+
         <Grid.Background>
-            <ImageBrush Opacity="0.4" ImageSource="myImages/green_background.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

@@ -106,7 +106,7 @@ namespace Wpf
 
             try
             {
-                bl.CreateUser(name, password,1);
+                bl.CreateUser(name, password,0);
             }
             catch (Exception ex)
             {

@@ -10,9 +10,7 @@
         WindowStartupLocation="CenterScreen"
         >
     <Grid Name="FirstPage">
-        <Grid.Background>
-            <ImageBrush ImageSource="/Wpf;component/Mangager/Managing/Add/myImages/BusBackground.png" Stretch="UniformToFill"/>
-        </Grid.Background>
+        
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -103,7 +101,9 @@
             </Button.Background>
         </Button>
 
-
+        <Grid.Background>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
 
     </Grid>
 </Window>

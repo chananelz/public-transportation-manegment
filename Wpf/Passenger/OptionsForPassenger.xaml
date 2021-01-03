@@ -34,18 +34,18 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="busses"      Grid.Row="0"  Content="NULL"     FontSize="35" FontFamily="Arial Black"    BorderThickness="0"   Click="bus_Click" Foreground="Red">
+            <Button Name="busses"   Height="60"   Grid.Row="0"  Content="NULL"     FontSize="35" FontFamily="Arial Black"    BorderThickness="0"   Click="bus_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="lines"       Grid.Row="1"  Content="NULL"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="line_Click" Foreground="Red">
+            <Button Name="lines"   Height="60"    Grid.Row="1"  Content="NULL"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="line_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
 
-            <Button Name="stops"       Grid.Row="2"  Content="NULL"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="stop_Click" Foreground="Red">
+            <Button Name="stops"   Height="60"    Grid.Row="2"  Content="NULL"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="stop_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
@@ -77,7 +77,7 @@
 
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>
