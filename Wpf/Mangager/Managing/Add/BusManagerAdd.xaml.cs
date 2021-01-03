@@ -110,6 +110,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             try
             {
+                
+                
+                
                 bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
             }
             catch(BO.BOBusException ex)

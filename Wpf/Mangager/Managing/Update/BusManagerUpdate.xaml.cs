@@ -114,7 +114,7 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateBusKM(kM, managingBus.LicenseNumber);
-                    MessageBox.Show("input updated" + result);
+                    MessageBox.Show("input submited " + result +  "          click X to return bus page");
                     MyTextBox0.Clear();
                 }
                 catch (Exception ex)
@@ -139,7 +139,7 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateBusFuel(fuel, managingBus.LicenseNumber);
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited " + result + "        click X to return bus page");
                     MyTextBox1.Clear();
                 }
                 catch (Exception ex)
@@ -175,7 +175,8 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateBusFuel(statusInput, managingBus.LicenseNumber);
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited " + result + "        click X to return bus page");
+
                     MyTextBox2.Clear();
                 }
                 catch (Exception ex)

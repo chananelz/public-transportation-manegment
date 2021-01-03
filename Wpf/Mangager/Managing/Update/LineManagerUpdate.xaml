@@ -19,7 +19,7 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
-      
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -35,10 +35,10 @@
 
 
         <!-- textbox button and image Definitions -->
-        <TextBox Opacity="0.3"  KeyDown="MyTextBox0_KeyDown" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="MyTextBox0" FontSize="18" FontFamily="Bernard MT Condensed" />
+
         <TextBox Opacity="0.3" KeyDown ="MyTextBox1_KeyDown" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Name="MyTextBox1"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Number"     VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Area"       VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Content= "Stops" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Content="Add stop number: " VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
@@ -84,9 +84,9 @@
 
 
 
-        <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Number_Click" />
+
         <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center"  Click="Area_Click"/>
-        <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="5" VerticalAlignment="Bottom"  Click="StopList_Click" Margin="58,0,57.667,9.667" />
+        <Button Content="Update" HorizontalAlignment="Center"   Grid.Row="2" Grid.Column="4"  Grid.ColumnSpan="2" VerticalAlignment= "Center"  Click="StopList_Click"  />
 
 
 

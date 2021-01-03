@@ -30,7 +30,7 @@ namespace BLImp
             }
             try
             {
-                valid.ExistLicense(licenseNumber);
+                valid.ExistLicenseNumber(licenseNumber);
             }
             catch (BOBadBusIdException ex)
             {

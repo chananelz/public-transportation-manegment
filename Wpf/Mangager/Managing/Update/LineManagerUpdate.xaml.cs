@@ -49,21 +49,21 @@ namespace Wpf.Mangager.Managing
  
 
 
-        private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Return)
-            {
-                try
-                {
-                    Number_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+        //private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.Key == Key.Return)
+        //    {
+        //        try
+        //        {
+        //            Number_Click(sender, e);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -86,48 +86,48 @@ namespace Wpf.Mangager.Managing
 
        
 
-        private void Number_Click(object sender, RoutedEventArgs e)
-        {
-            string textRange = MyTextBox0.Text;
-            long result = 0;
-            if (long.TryParse(textRange, out result) && result > 0)
-            {
-                number = result;
-                try
-                {
-                    bl.UpdateLineNumber(result, managingLine.Id);  
-                    MessageBox.Show("input submited" + result);
-                    foreach (Window w in Application.Current.Windows)
-                    {
-                        if (w.Name == "PresentationLines1")
-                        {
-                            w.Close();
-                        }
-                    }
-                    new PresentationLines().Show();
-                    this.Topmost = true;
+        //private void Number_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string textRange = MyTextBox0.Text;
+        //    long result = 0;
+        //    if (long.TryParse(textRange, out result) && result > 0)
+        //    {
+        //        number = result;
+        //        try
+        //        {
+        //            bl.UpdateLineNumber(result, managingLine.Id);  
+        //            MessageBox.Show("input submited   " + result+ "  click on X to exit");
+        //            foreach (Window w in Application.Current.Windows)
+        //            {
+        //                if (w.Name == "PresentationLines1")
+        //                {
+        //                    w.Close();
+        //                }
+        //            }
+        //            new PresentationLines().Show();
+        //            this.Topmost = true;
 
-                    MyTextBox0.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("wrong input!!!!");
-                MyTextBox0.Clear();
-            }
-        }
+        //            MyTextBox0.Clear();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("wrong input!!!!");
+        //        MyTextBox0.Clear();
+        //    }
+        //}
         private void Area_Click(object sender, RoutedEventArgs e)
         {
-            string textRange = MyTextBox0.Text;
+            string textRange = MyTextBox1.Text;
             area = textRange;
             try
             {
                 bl.UpdateLineArea(area, managingLine.Id);
-                MessageBox.Show("input submited" + area);
+                MessageBox.Show("input submited" + area +"  click on X to exit");
                 MyTextBox1.Clear();
             }
             catch (Exception ex)
@@ -140,8 +140,14 @@ namespace Wpf.Mangager.Managing
         {
             try
             {
+                if (stopListInput.Count == 0)
+                {
+                    MessageBox.Show("please add at least one stop");
+                    return;
+                }
                 bl.UpdateLineStations(stopListInput, managingLine.Id);
-                MessageBox.Show("input updated successfully!");
+                
+                MessageBox.Show("input updated successfully!"+  "  click on X to exit");
             }
             catch(Exception ex)
             {
@@ -170,6 +176,7 @@ namespace Wpf.Mangager.Managing
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            new PresentationLines().Show();
             this.Close();
         }
         private void StopList_SelectionChanged(object sender, SelectionChangedEventArgs e)

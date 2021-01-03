@@ -74,6 +74,7 @@ namespace DL
                     try
                     {
                         GetStop(code).StopName = name;
+                        return;
                     }
                     catch (DOStopException ex)
                     {
@@ -97,7 +98,7 @@ namespace DL
         {
             try
             {
-               // GetStop(code).Longitude = longitude;
+               GetStop(code).Longitude = longitude;
             }
             catch (DOStopException ex)
             {

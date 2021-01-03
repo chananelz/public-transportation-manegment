@@ -134,7 +134,7 @@ namespace Wpf.Mangager.Managing.Add
                     w.Close();
                 }
             }
-            new PresentationLines().Show();
+            new PresentationStops().Show();
             this.Topmost = true;
 
             this.Close();

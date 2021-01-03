@@ -143,6 +143,15 @@ namespace BLImp
             throw new BOBadBusIdException(licenseNumber, "licenseNumber exists!!");
         }
 
+        public void ExistLicenseNumber(long licenseNumber)
+        {
+            if (!(BL.dal.GetAllBusses().Any(bus => bus.LicenseNumber == licenseNumber)))
+                return;
+
+            throw new BOBadBusIdException(licenseNumber, "licenseNumber not exists!!");
+
+
+        }
 
         #endregion
 

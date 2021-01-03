@@ -114,7 +114,7 @@ namespace Wpf.Mangager.Managing
             try
             {
                 bl.UpdateStopName(name, managingStop.StopCode);
-                MessageBox.Show("input submited" + textRange);
+                MessageBox.Show("input submited" + textRange +  "      to exit click X");
                 MyTextBox0.Clear();
             }
             catch (BO.BODOStopBadIdException ex)
@@ -145,7 +145,7 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateStopLongitude(result, managingStop.StopCode);
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited" + result + "   to exit click X");
                     MyTextBox1.Clear();
                 }
                 catch (BO.BODOStopBadIdException ex)
@@ -181,7 +181,7 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateStopLatitude(result, managingStop.StopCode);
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited" + result +"   to exit click X");
                     MyTextBox2.Clear();
                 }
                 catch (BO.BODOStopBadIdException ex)
@@ -199,6 +199,7 @@ namespace Wpf.Mangager.Managing
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            new PresentationStops().Show();
             this.Close();
         }
     }
