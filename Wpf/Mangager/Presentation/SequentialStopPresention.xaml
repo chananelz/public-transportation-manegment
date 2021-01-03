@@ -19,8 +19,8 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
 
@@ -48,8 +48,8 @@
         <Label Name="stopALabel"   Content="{Binding Name}" Grid.Row="4"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Red"  Background="Transparent"/>
         <Label Name="stopBLabel"  Content= "{Binding Name}" Grid.Row="4" Grid.Column="1" FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Red"  Background="Transparent"/>
 
-        <Label Name="distance"     Content="distance"     Grid.Column="2" Grid.Row = "1"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
-        <Label Name="travel_time"  Content="travel time"  Grid.Column="2"  Grid.Row = "2"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
+        <Label Name="distance"     Content="distance"     Grid.Column="2" Grid.Row = "1"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Red"  Background="Transparent"/>
+        <Label Name="travel_time"  Content="travel time"  Grid.Column="2"  Grid.Row = "2"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Red"  Background="Transparent"/>
 
 
 
@@ -60,7 +60,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBox Name="distance_Binding"     Text="{Binding Distance}"      FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
-            <Button x:Name="submitDistanc" Grid.Row="1" Visibility="Hidden" Click="Distance_Click">
+            <Button x:Name="submitDistanc" Grid.Row="1" Visibility="Hidden" Click="Distance_Click" BorderThickness="0">
                 submit
             </Button>
         </Grid>
@@ -74,7 +74,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBox Name="travel_time_Binding"  Text="{Binding TravelTime}" FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent" Margin="0,0,0,25.667" Grid.RowSpan="2"/>
-            <Button x:Name="submitTravelTime" Grid.Row="1" Visibility="Hidden" Click="TravelTime_Click" >
+            <Button x:Name="submitTravelTime" Grid.Row="1" Visibility="Hidden" Click="TravelTime_Click" BorderThickness="0">
                 submit
             </Button>
         </Grid>

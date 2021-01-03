@@ -47,7 +47,7 @@
 
             <StackPanel x:Name="stackPanel"
               Orientation="Horizontal" Grid.ColumnSpan="2" Margin="4,-101,375,100.8">
-                <Label Name="label" Grid.ColumnSpan="2" Content="{Binding UserLable}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="Red" FontFamily="Arial Black"/>
+                <Label Name="label" Grid.ColumnSpan="2" Content="{Binding UserLable}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="LightGreen" FontFamily="Arial Black"/>
             </StackPanel>
 
 
