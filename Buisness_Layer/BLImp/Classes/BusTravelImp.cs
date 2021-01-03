@@ -12,7 +12,7 @@ namespace BLImp
     public partial class BL : IBL
     {
 
-        public void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, long driverId)
+        public void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId)
         {
             string exception = "";
             bool foundException = false;
@@ -70,8 +70,8 @@ namespace BLImp
                 exception += ex.Message;
                 foundException = true;
             }
-            if (foundException)
-                throw new Exception(exception);
+            //if (foundException)
+            //    throw new Exception(exception);
             BusTravel busTravelBO = new BusTravel(licenseNumber, lineId, formalDepartureTime, realDepartureTime, lastPassedStop, lastPassedStopTime, nextStopTime, driverId);
             DO.BusTravel busTravelDO = busTravelBO.GetPropertiesFrom<DO.BusTravel, BO.BusTravel>();
             dal.CreateBusTravel(busTravelDO);
@@ -108,7 +108,7 @@ namespace BLImp
             valid.TimeAfter(dal.GetBusTravel(id).LastPassedStopTime, nextStopTime, "lastPassedStop", "nextStopTime");
             dal.UpdateNextStopTime(nextStopTime, id);
         }
-        public void UpdateDriverId(long driverId, long id)
+        public void UpdateDriverId(string driverId, long id)
         {
             //validate driver id
             dal.UpdateDriverId(driverId, id);

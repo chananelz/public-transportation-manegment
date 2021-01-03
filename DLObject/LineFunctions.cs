@@ -11,6 +11,10 @@ namespace DL
 {
     public partial class DLObject : IDal
     {
+        /// <summary>
+        ///add new line to database
+        /// </summary>
+        /// <param name="line"></param>
         public void CreateLine(Line line)
         {
             line.Valid = true;
@@ -34,7 +38,11 @@ namespace DL
             }
             throw new Exception("line already exists!!!");
         }
-
+        /// <summary>
+        /// request a Line according to a predicate
+        /// </summary>
+        /// <param name="pr"></param>
+        /// <returns></returns>
         public Line RequestLine(Predicate<Line> pr = null)
         {
             Line ret = DataSource.LineList.Find(line => pr(line));
@@ -47,7 +55,11 @@ namespace DL
 
 
 
-  
+        /// <summary>
+        /// update in database
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="id"></param>
         public void UpdateLineNumber(long number, long id)
         {
             GetLine(id).Number = number;
@@ -57,22 +69,39 @@ namespace DL
         {
             GetLine(id).Area = area;
         }
-
+        /// <summary>
+        /// update firstStop in database
+        /// </summary>
+        /// <param name="firstStop"></param>
+        /// <param name="id"></param>
         public void UpdateLineFirstStop(long firstStop, long id)
         {
             //***************************CONVERT INT TO STATUS!!!!!!!!!!!!!************
             GetLine(id).FirstStop = firstStop;
         }
+        /// <summary>
+        /// update lastStop in database
+        /// </summary>
+        /// <param name="lastStop"></param>
+        /// <param name="id"></param>
         public void UpdateLineLastStop(long lastStop, long id)
         {
             //***************************CONVERT INT TO STATUS!!!!!!!!!!!!!************
             GetLine(id).LastStop = lastStop;
         }
-
+        /// <summary>
+        /// deletes a line
+        /// </summary>
+        /// <param name="id"></param>
         public void DeleteLine(long id)
         {
             GetLine(id).Valid = false;
         }
+        /// <summary>
+        /// request a Line according to id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Line GetLine(long id)
         {
             var t = from line in DataSource.LineList
@@ -84,6 +113,10 @@ namespace DL
                 throw new Exception("line is not valid!!");
             return t.ToList().First();
         }
+        /// <summary>
+        /// gets all lines
+        /// </summary>
+        /// <returns></returns>
 
         public IEnumerable<Line> GetAllLines()
         {

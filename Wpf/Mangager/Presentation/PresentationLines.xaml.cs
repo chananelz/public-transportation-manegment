@@ -71,10 +71,14 @@ namespace Wpf.Mangager.Presentation
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
+            
             Button a = (Button)sender;
             tempLine = (BO.Line)a.DataContext;
-            new LineManager(tempLine).Show();
-            this.Close();
+            var ab = new LineManager(tempLine);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+            
         }
         private void OnClick(object sender, RoutedEventArgs e)
         {
@@ -99,7 +103,10 @@ namespace Wpf.Mangager.Presentation
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            new LineManagerAdd().Show();
+            var ab = new LineManagerAdd();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
             this.Close();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -108,7 +115,9 @@ namespace Wpf.Mangager.Presentation
         }
         private void StartTravel_Click(object sender, RoutedEventArgs e)
         {
-            var ab = new StartTravelLine();
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+            var ab = new StartTravelLine(tempLine);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();

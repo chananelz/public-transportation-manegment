@@ -31,7 +31,7 @@ namespace DalApi
         void UpdateLastPassedStop(int lastPassedStop, long id);
         void UpdateLastPassedStopTime(DateTime lastPassedStopTime, long id);
         void UpdateNextStopTime(DateTime nextStopTime, long id);
-        void UpdateDriverId(long driverId, long id);
+        void UpdateDriverId(string driverId, long id);
         void DeleteBusTravel(long id);
         IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
 

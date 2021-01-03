@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="StopManagerAdd" Height="450" Width="800"
         Background="Transparent"
+
         
                 WindowStartupLocation="CenterScreen">
     <Grid Name="StopManagerAddPage">
@@ -18,11 +19,9 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="65*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -43,9 +42,9 @@
 
 
         <!-- textbox button and image Definitions -->
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed" />
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Name="MyTextBox1" TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="4" Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed" />
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="4" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4" Content="Name" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="4" Grid.ColumnSpan="4" Content="Longitude" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
@@ -70,24 +69,17 @@
 
 
 
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/home.png"/>
-            </Button.Background>
-        </Button>
+       
 
-        <Button Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="6" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="11" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="myImages/goBack.png"/>
+                <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
 
 
 
-
-        <Image x:Name="movingBus"   Grid.Column="11"  Grid.Row="5" Width="50" Source="myImages/Bus.png" Margin="16.333,0,0,0" />
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="5" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
-
+     
         <Grid.Background>
             <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
         </Grid.Background>

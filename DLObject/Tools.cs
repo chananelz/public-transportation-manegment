@@ -7,6 +7,13 @@ namespace DL
 {
     public static class Tools
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="S"></typeparam>
+        /// <param name="from"></param>
+        /// <returns></returns>
         public static T GetPropertiesFrom<T, S>(this S from) where T : new()
         {
             T to = new T();

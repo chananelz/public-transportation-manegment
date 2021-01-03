@@ -31,20 +31,47 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="user" Grid.Row="0" Content="Passenger"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
+            <Button Name="AnimatedWidthPassengerButton"  Width="300" Grid.Row="0" Content="Passenger"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
+                <Button.Triggers>
+
+                    <!-- Animate the button's Width property. -->
+                    <EventTrigger RoutedEvent="Button.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                Storyboard.TargetName="AnimatedWidthPassengerButton"
+                Storyboard.TargetProperty="(Button.Width)"
+                To="500" Duration="0:0:10" AutoReverse="True" 
+                RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
-                <Button.RenderTransform>
-                    <RotateTransform/>
-                </Button.RenderTransform>
             </Button>
-            <Button Name="driver" Grid.Row="1"  Content="Driver"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="driver_Click" Foreground="Red">
+            <Button Name="AnimatedWidthDriverButton"  Width="300" Grid.Row="1"  Content="Driver"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="driver_Click" Foreground="Red">
+                <Button.Triggers>
+
+                    <!-- Animate the button's Width property. -->
+                    <EventTrigger RoutedEvent="Button.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                Storyboard.TargetName="AnimatedWidthDriverButton"
+                Storyboard.TargetProperty="(Button.Width)"
+                To="500" Duration="0:0:10" AutoReverse="True" 
+                RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="AnimatedWidthButton" Grid.Row="2"       Width="200" 
+            <Button Name="AnimatedWidthCEOButton" Grid.Row="2"       Width="300" 
  Content="CEO"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="ceo_Click" Foreground="Red">
                 <Button.Triggers>
 
@@ -53,7 +80,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation
-                Storyboard.TargetName="AnimatedWidthButton"
+                Storyboard.TargetName="AnimatedWidthCEOButton"
                 Storyboard.TargetProperty="(Button.Width)"
                 To="500" Duration="0:0:10" AutoReverse="True" 
                 RepeatBehavior="Forever" />

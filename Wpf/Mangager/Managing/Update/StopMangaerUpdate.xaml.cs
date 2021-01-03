@@ -21,8 +21,7 @@ namespace Wpf.Mangager.Managing
     /// </summary>
     public partial class StopMangaer : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+        
 
         string name;
         double longitude;
@@ -37,47 +36,19 @@ namespace Wpf.Mangager.Managing
             InitializeComponent();
             managingStop = new BO.Stop();
             managingStop = stop;
-            busFunc();
             bl = BLApi.Factory.GetBL("1");
 
         }
 
-        private void busFunc()
+       
+
+   
+
+
+
+        private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
-            place = movingBus.Margin.Left;
-            StopManagerUpdatePage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
-
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
-
-
-        private void home_Click(object sender, RoutedEventArgs e)
-        {
-            new FirstPage().Show();
-            this.Close();
-        }
-
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            new PresentationStops().Show();
-            this.Close();
-        }
-
-
-
-        private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -91,13 +62,9 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-       
-       
-
-        private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -111,10 +78,9 @@ namespace Wpf.Mangager.Managing
             }
         }
 
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -127,60 +93,65 @@ namespace Wpf.Mangager.Managing
                 }
             }
         }
+
+
+
+
+     
         private void Name_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            name = textRange.Text;
+            string textRange = MyTextBox0.Text;
+            name = textRange;
             try
             {
                 bl.UpdateStopName(name, managingStop.StopCode);
-                MessageBox.Show("input submited" + textRange.Text);
-                MyTextBox0.Document.Blocks.Clear();
+                MessageBox.Show("input submited" + textRange);
+                MyTextBox0.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MyTextBox0.Document.Blocks.Clear();
+                MyTextBox0.Clear();
             }
         }
        
         private void Longitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
+            string textRange = MyTextBox1.Text;
             double result = 0;
-            if (double.TryParse(textRange.Text, out result) && result > 0)
+            if (double.TryParse(textRange, out result) && result > 0)
             {
                 longitude = result;
                 try
                 {
                     bl.UpdateStopLongitude(result, managingStop.StopCode);
                     MessageBox.Show("input submited" + result);
-                    MyTextBox1.Document.Blocks.Clear();
+                    MyTextBox1.Clear();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    MyTextBox1.Document.Blocks.Clear();
+                    MyTextBox1.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox2.Clear();
             }
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
+            string textRange = MyTextBox2.Text;
             double result = 0;
-            if (double.TryParse(textRange.Text, out result) && result > 0)
+            if (double.TryParse(textRange, out result) && result > 0)
             {
                 latitude = result;
                 try
                 {
                     bl.UpdateStopLatitude(result, managingStop.StopCode);
                     MessageBox.Show("input submited" + result);
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox2.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -190,7 +161,7 @@ namespace Wpf.Mangager.Managing
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox2.Clear();
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)

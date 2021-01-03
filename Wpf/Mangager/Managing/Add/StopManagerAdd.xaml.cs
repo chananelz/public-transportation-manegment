@@ -24,8 +24,6 @@ namespace Wpf.Mangager.Managing.Add
     public partial class StopManagerAdd : Window
     {
 
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
@@ -46,7 +44,6 @@ namespace Wpf.Mangager.Managing.Add
         public StopManagerAdd()
         {
             InitializeComponent();
-            busFunc();
             bl = BLApi.Factory.GetBL("1");
 
             ProgressBar();
@@ -127,48 +124,32 @@ namespace Wpf.Mangager.Managing.Add
                 return;
             }
             MessageBox.Show("stop added!");
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w.Name == "PresentatinStops1")
+                {
+                    w.Close();
+                }
+            }
+            new PresentationLines().Show();
+            this.Topmost = true;
 
-            new PresentationStops().Show();
             this.Close();
         }
 
 
-        private void busFunc()
+        
+
+
+       
+
+
+
+
+
+        private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
-            place = movingBus.Margin.Left;
-            StopManagerAddPage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
-
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
-
-
-        private void home_Click(object sender, RoutedEventArgs e)
-        {
-            new FirstPage().Show();
-            this.Close();
-        }
-
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            new PresentationStops().Show();
-            this.Close();
-        }
-
-
-
-        private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
-        {
-            TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -182,12 +163,10 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
-       
 
-        private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -200,10 +179,10 @@ namespace Wpf.Mangager.Managing.Add
                 }
             }
         }
-        private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+
+        private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
-            if (textRange.Text.Length >= 3 && textRange.Text[textRange.Text.Length - 3] == '\n')
+            if (e.Key == Key.Return)
             {
                 try
                 {
@@ -216,6 +195,13 @@ namespace Wpf.Mangager.Managing.Add
                 }
             }
         }
+
+      
+
+       
+
+
+
 
 
         private void Name_Click(object sender, RoutedEventArgs e)
@@ -231,24 +217,24 @@ namespace Wpf.Mangager.Managing.Add
             {
                 amount++;
 
-                TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
-                stopName = textRange.Text;
-                MessageBox.Show("input submited" + textRange.Text);
-                MyTextBox0.Document.Blocks.Clear();
+                string textRange =  MyTextBox0.Text;
+                stopName = textRange;
+                MessageBox.Show("input submited" + textRange);
+                MyTextBox0.Clear();
             }
 
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox2.Clear();
             }
         }
      
         private void Longitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
+            string textRange = MyTextBox1.Text;
             int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            if (int.TryParse(textRange, out result))
             {
                 if (!input1)
                 {
@@ -260,21 +246,21 @@ namespace Wpf.Mangager.Managing.Add
                     amount++;
                     longitude = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox1.Document.Blocks.Clear();
+                    MyTextBox1.Clear();
                 }
 
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox1.Clear();
             }
         }
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
-            TextRange textRange = new TextRange(MyTextBox2.Document.ContentStart, MyTextBox2.Document.ContentEnd);
+            string textRange = MyTextBox2.Text;
             int result = 0;
-            if (int.TryParse(textRange.Text, out result))
+            if (int.TryParse(textRange, out result))
             {
                 if (!input2)
                 {
@@ -286,16 +272,21 @@ namespace Wpf.Mangager.Managing.Add
                     amount++;
                     latitude = result;
                     MessageBox.Show("input submited" + result);
-                    MyTextBox2.Document.Blocks.Clear();
+                    MyTextBox2.Clear();
                 }
 
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
-                MyTextBox2.Document.Blocks.Clear();
+                MyTextBox2.Clear();
             }
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 
 }

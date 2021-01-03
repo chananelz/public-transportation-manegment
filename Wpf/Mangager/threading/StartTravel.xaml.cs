@@ -16,6 +16,8 @@ using Wpf.Mangager.Managing;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
 using BLApi;
+using Wpf.Mangager.Presentation;
+
 //
 
 namespace Wpf.Mangager.threading
@@ -25,17 +27,19 @@ namespace Wpf.Mangager.threading
     /// </summary>
     public partial class StartTravel : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
-        public BO.Line tempLine;
-        public StartTravel()
+        
+        public BO.Line tempLine = new BO.Line();
+        public BO.User tempDriver = new BO.User();
+        public BO.Bus tempBus = new BO.Bus();
+        BLApi.IBL bl;
+
+        public StartTravel(BO.Bus mBus)
         {
             InitializeComponent();
-            BLApi.IBL bl;
+            tempBus = mBus;
             bl = BLApi.Factory.GetBL("1");
             lineListBox.ItemsSource = bl.GetAllLines().ToList();
             DriverListBox.ItemsSource = bl.GetAllUsers(user => user.Permission == BO.authority.Driver).ToList();
-            busFunc();
         }
         private void information_Click(object sender, RoutedEventArgs e)
         {
@@ -49,38 +53,50 @@ namespace Wpf.Mangager.threading
         {
             MessageBox.Show("didn't get to this yet!");
         }
-        private void home_Click(object sender, RoutedEventArgs e)
-        {
-            new FirstPage().Show();
-            this.Close();
-        }
-
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            new FirstPage().Show();
-            this.Close();
-        }
+     
         
-        private void busFunc()
-        {
-            place = movingBus.Margin.Left;
-            FirstPage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
-
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
+       
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+        private void StartTravel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bl.CreateBusTravel(tempBus.LicenseNumber, tempLine.Id, DateTime.Now, DateTime.Now, 0, DateTime.Now, DateTime.Now, tempDriver.UserName);
 
+            }
+            catch { }
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w.Name == "PresentatinBuses")
+                {
+                    w.Close();
+                }
+            }
+            bl.UpdateBusStatus(0, tempBus.LicenseNumber);
+            MessageBox.Show("bus started the travel successfully");
+            new PresentationBusses().Show();
+
+            this.Close();
+        }
+
+        private void current(object sender, RoutedEventArgs e)
+        {
+            //foreach(CheckBox check in )
+        }
+
+        private void lineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tempLine = (BO.Line)lineListBox.SelectedItem;
+            lineLabel.DataContext = tempLine;
+        }
+
+        private void DriverListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tempDriver = (BO.User)DriverListBox.SelectedItem;
+            driverLabel.DataContext = tempDriver;
+        }
     }
 }

@@ -79,8 +79,11 @@ namespace Wpf.Mangager.Presentation
         {
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
-            new BusManager(tempBus).Show();
-            this.Close();
+            var ab = new BusManager(tempBus);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+
         }
         private void OnClick(object sender, RoutedEventArgs e)
         {
@@ -107,8 +110,13 @@ namespace Wpf.Mangager.Presentation
         private void Add_Click(object sender, RoutedEventArgs e)
         {
 
-            new BusManagerAdd().Show();
-            this.Close();
+
+            Button a = (Button)sender;
+            tempBus = (BO.Bus)a.DataContext;
+            var ab = new BusManagerAdd();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -141,7 +149,9 @@ namespace Wpf.Mangager.Presentation
 
         private void startDrive_Click(object sender, RoutedEventArgs e)
         {
-            var ab = new StartTravel();
+            Button a = (Button)sender;
+            tempBus = (BO.Bus)a.DataContext;
+            var ab = new StartTravel(tempBus);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();

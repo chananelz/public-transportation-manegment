@@ -17,8 +17,9 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="20*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="20*"/>
+
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -30,7 +31,7 @@
 
 
         <Grid Name="BusGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" >
-            <ListBox Name="lineListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" >
+            <ListBox Name="busListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" SelectionChanged="busListBox_SelectionChanged" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -40,7 +41,6 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <CheckBox x:Name="checkBoxAgree" Grid.Column="0" Content="select"  IsChecked="False"   />
                             <Button x:Name ="information"  Grid.Column="1"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/information.png"/>
@@ -63,7 +63,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <ListBox Name="DriverListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" >
+            <ListBox Name="DriverListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" SelectionChanged="DriverListBox_SelectionChanged" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -73,9 +73,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <CheckBox x:Name="checkBoxAgree"
-                                        Content="select"
-                                         IsChecked="False"  Grid.Column="0" />
+                           
                             <Button x:Name ="information"  Grid.Column="1"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="informationUser_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/information.png"/>
@@ -92,26 +90,18 @@
 
         </Grid>
 
-        <Button Grid.Row="3" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/home.png"/>
-            </Button.Background>
-        </Button>
 
-        <Button Grid.Row="3" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/goBack.png"/>
-            </Button.Background>
-        </Button>
+        <Label Name="busLabel" Content="{Binding LicenseNumber}" Grid.Row="2"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Red"  Background="Transparent"/>
+        <Label Name="driverLabel" Content="{Binding UserName}" Grid.Row="2" Grid.Column="1" FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Red"  Background="Transparent"/>
 
-        <Button Content="start travel" Grid.Column="1" HorizontalAlignment="right"   Grid.Row="2"  Width="100" FontFamily="Arial Black"   BorderThickness="0"  Foreground="Azure">
+
+
+        <Button Content="start travel" Grid.Column="1" HorizontalAlignment="right"   Grid.Row="3"  Width="100" FontFamily="Arial Black"   BorderThickness="0"  Foreground="Azure" Click="Start_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/kuba_arrow_button_set_2.png"/>
             </Button.Background>
         </Button>
-        <Image x:Name="movingBus"   Grid.Row="4" Width="50" Source="myImages/Bus.png" Grid.Column="1" Margin="348.333,0,0,0"   />
-        <Image x:Name="stopSign"    Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
-        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="1" VerticalAlignment="Top" Width="50" Click="Button_Click">
+                <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="1" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>

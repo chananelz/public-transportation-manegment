@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="BusManager" Height="450" Width="800"
         Background="Transparent"
+
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
         <Grid.Effect>
@@ -17,10 +18,9 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="60*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+         
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -39,12 +39,12 @@
         <!-- textbox button and image Definitions -->
         <TextBox Opacity="0.3"    KeyDown="MyTextBox0_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed"/>
         <TextBox Opacity="0.3"   KeyDown ="MyTextBox1_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1" TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3"   KeyDown ="MyTextBox2_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Text="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" Text="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Content="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" Content="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
 
@@ -58,23 +58,6 @@
 
 
 
-
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/home.png"/>
-            </Button.Background>
-        </Button>
-
-        <Button Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="5" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/goBack.png"/>
-            </Button.Background>
-        </Button>
-        
-        
-
-        <Image x:Name="movingBus"   Grid.Column="11"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="16.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="8" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>

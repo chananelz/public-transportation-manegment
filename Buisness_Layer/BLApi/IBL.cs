@@ -31,14 +31,14 @@ namespace BLApi
 
 
 
-        void CreateBusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,long driverId);
+        void CreateBusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,string driverId);
         BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
         void UpdateFormalDepartureTime(DateTime formalDepartureTime, long id);
         void UpdateRealDepartureTime(DateTime realDepartureTime, long id);
         void UpdateLastPassedStop(int lastPassedStop, long id);
         void UpdateNextStopTime(DateTime lastPassedStopTime, long id);
         void UpdateLastPassedStopTime(DateTime nextStopTime, long id);
-        void UpdateDriverId(long driverId, long id);
+        void UpdateDriverId(string driverId, long id);
         void DeleteBusTravel(long id);
         IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         IEnumerable<Line> GetAllLinesByLicenseNumber(long licenseNumber);

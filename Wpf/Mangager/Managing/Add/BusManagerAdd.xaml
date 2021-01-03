@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf.Mangager.Managing.Add.myImages"
         mc:Ignorable="d"
+
         Title="BusManagerAdd" Height="450" Width="800"
         Background="Transparent"
         
@@ -19,11 +20,10 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+           
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -46,11 +46,11 @@
         </Grid.ColumnDefinitions>
 
         <!-- textbox button and image Definitions -->
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed" />
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1"  TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3" Name="MyTextBox3" TextChanged="MyTextBox_TextChanged_3" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="3" Name="MyTextBox4" TextChanged="MyTextBox_TextChanged_4" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed" />
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3" Name="MyTextBox3" KeyDown="MyTextBox3_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="3" Name="MyTextBox4" KeyDown="MyTextBox4_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="License Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
@@ -78,26 +78,18 @@
 
 
 
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+     
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="14" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="myImages/home.png"/>
+                <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="8" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="myImages/goBack.png"/>
-            </Button.Background>
-        </Button>
-
-
-
-        <Image x:Name="movingBus"   Grid.Column="15"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="16.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
 
         <Grid.Background>
             <ImageBrush Opacity ="0.5" ImageSource="myImages/green_background.png"/>
         </Grid.Background>
+        
     </Grid>
 </Window>

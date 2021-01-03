@@ -17,13 +17,13 @@ namespace BO
         public int LastPassedStop { get; set; }
         public DateTime LastPassedStopTime { get; set; }
         public DateTime NextStopTime { get; set; }
-        public long DriverId { get; set; }
+        public string DriverId { get; set; }
 
         public BusTravel()//not implemented
         {
 
         }
-        public BusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,long driverId)
+        public BusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,string driverId)
         {
             Valid = true;
             LineId = lineId;

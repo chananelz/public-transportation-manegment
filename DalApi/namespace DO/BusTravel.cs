@@ -17,7 +17,7 @@ namespace DO
         public int LastPassedStop { get; set; }
         public DateTime LastPassedStopTime { get; set; }
         public DateTime NextStopTime { get; set; }
-        public long DriverId { get; set; }
+        public string DriverId { get; set; }
         public BusTravel()//not implemented
         {
 
