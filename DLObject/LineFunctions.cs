@@ -104,6 +104,7 @@ namespace DL
         /// <returns></returns>
         public Line GetLine(long id)
         {
+            //aaa
             var t = from line in DataSource.LineList
                     where (line.Id == id)
                     select line;
