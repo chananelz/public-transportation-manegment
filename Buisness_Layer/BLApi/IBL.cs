@@ -1,10 +1,6 @@
-﻿using System;
+﻿using BO;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DalApi;
-using BO;
 
 //aaaa
 
@@ -14,11 +10,11 @@ namespace BLApi
 {
     public interface IBL
     {
-        void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput );
+        void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput);
         Bus RequestBus(Predicate<Bus> pr);
         void UpdateBusKM(float kM, long licenseNumber);
         void UpdateBusFuel(float fuel, long licenseNumber);
-        void UpdateBusStatus(int status, long licenseNumber); 
+        void UpdateBusStatus(int status, long licenseNumber);
         void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
         IEnumerable<Bus> GetAllBussesReadyForDrive();
@@ -36,7 +32,7 @@ namespace BLApi
 
 
 
-        void CreateBusTravel(long licenseNumber,long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime,string driverId);
+        void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId);
         BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
         void UpdateFormalDepartureTime(DateTime formalDepartureTime, long id);
         void UpdateRealDepartureTime(DateTime realDepartureTime, long id);
@@ -89,7 +85,7 @@ namespace BLApi
         void UpdateLineNumber(long number, long id);
         void UpdateLineArea(string area, long id);
         void UpdateLineFirstStop(long firstStop, long id);
-        void UpdateLineLastStop(long lastStop, long id); 
+        void UpdateLineLastStop(long lastStop, long id);
         void DeleteLine(long id);
         IEnumerable<Line> GetAllLines(Predicate<Line> pr = null);
         Line RequestLineById(long lineId);
@@ -108,8 +104,8 @@ namespace BLApi
 
         void CreateLineStation(long lineId, long numberInLine, long code);
         LineStation RequestLineStation(Predicate<LineStation> pr = null);
-        void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
-        void DeleteLineStation(long code,long lineId,long numberInLine);
+        void UpdateLineStationNumberInLine(long numberInLine, long code, long lineId);
+        void DeleteLineStation(long code, long lineId, long numberInLine);
         IEnumerable<Stop> GetAllStopsByLineNumber(long id);
 
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
@@ -154,7 +150,7 @@ namespace BLApi
         IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
         string GetNameByStopCode(long code);
         IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number);
-        
+
         //IEnumerable<Stop> GetAllValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
@@ -172,7 +168,7 @@ namespace BLApi
         void UpdatePassword(string password, string nameId);
         void DeleteUser(string nameId);
         IEnumerable<User> GetAllUsers(Predicate<User> pr = null);
-        User Authinticate(string username, string password,authority au);
+        User Authinticate(string username, string password, authority au);
         IEnumerable<User> GetAllDrivers();
         IEnumerable<User> GetAllPassengers();
         //IEnumerable<User> GetAllValidUsers();
