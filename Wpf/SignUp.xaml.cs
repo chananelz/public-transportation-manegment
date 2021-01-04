@@ -39,7 +39,9 @@ namespace Wpf
 
         BLApi.IBL bl;
 
-
+        /// <summary>
+        /// constractor
+        /// </summary>
         public SignUp()
         {
             InitializeComponent();
@@ -48,6 +50,11 @@ namespace Wpf
             bl = BLApi.Factory.GetBL("1");
         }
 
+        /// <summary>
+        /// Start up the "report progress" Function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ProgressBar()
         {
             worker = new BackgroundWorker();
@@ -60,10 +67,11 @@ namespace Wpf
                 worker.RunWorkerAsync(2);
         }
 
-
-
-
-
+        /// <summary>
+        ///  updat the "report progress" Function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
         {
@@ -85,6 +93,11 @@ namespace Wpf
             }
         }
 
+        /// <summary>
+        ///  updat the "report progress" Function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {

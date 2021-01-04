@@ -6,11 +6,10 @@
         xmlns:local="clr-namespace:Wpf.Mangager.Presentation"
         mc:Ignorable="d"
         Title="SequentialStopPresention" Height="450" Width="800"
+                Background="Transparent"
          WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
-        <Grid.Background >
-            <ImageBrush Opacity="0.6" ImageSource="/Wpf;component/Mangager/Managing/Add/myImages/BusBackground.png" Stretch="UniformToFill"/>
-        </Grid.Background>
+
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -65,7 +64,6 @@
                 submit
             </Button>
         </Grid>
-
         <Grid  Grid.Column="3"  Grid.Row = "2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -79,8 +77,6 @@
                 submit
             </Button>
         </Grid>
-        <Label Name="distance_Binding"     Content="{Binding Distance}"    Grid.Column="3" Grid.Row = "1"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
-        <Label Name="travel_time_Binding"  Content="{Binding TravelTime}" Grid.Column="3"  Grid.Row = "2"  FontSize="15"    FontFamily="Arial Black"     Foreground= "Black"  Background="Transparent"/>
 
 
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="3" VerticalAlignment="Top" Width="50" Click="Button_Click">
@@ -89,7 +85,8 @@
             </Button.Background>
         </Button>
 
-
-
+        <Grid.Background>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
     </Grid>
 </Window>
