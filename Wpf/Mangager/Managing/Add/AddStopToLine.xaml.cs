@@ -37,7 +37,7 @@ namespace Wpf.Mangager.Managing.Add
         private void Line_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             managingLine = (BO.Line)lines.SelectedItem;
-            for(int i  = 0; i< managingLine.Stops.Count();i++)
+            for(int i  = 1; i<= managingLine.Stops.Count();i++)
             {
                 number_in_lines.Items.Add(i);
             }
@@ -52,6 +52,8 @@ namespace Wpf.Mangager.Managing.Add
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             bl.AddStopInLine(managingLine.Id, managingStop.StopCode, numberInLine);
+            MessageBox.Show("stop to line added successfully");
+            this.Close();
         }
     }
 }

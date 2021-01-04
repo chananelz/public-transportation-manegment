@@ -46,7 +46,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- textbox button and image Definitions -->
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed" />
+        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"  />
         <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
         <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
         <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3" Name="MyTextBox3" KeyDown="MyTextBox3_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>

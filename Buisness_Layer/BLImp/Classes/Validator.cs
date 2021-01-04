@@ -58,7 +58,7 @@ namespace BLImp
 
         }
 
-        public static void GoodTimeformat(int day, int month, int year)//check this 1200
+        public  void GoodTimeformat(int day, int month, int year)//check this 1200
         {
             if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1950)
             {
@@ -66,21 +66,21 @@ namespace BLImp
             }
         }
 
-        public static void GoodPositiveLicenseNumber(long number)
+        public  void GoodPositiveLicenseNumber(long number)
         {
             if (number > 0)
                 return;
             throw new BO.BOBusException("number negative!!!");
         }
 
-        public static void GoodPositiveStatus(int result)
+        public void GoodPositiveStatus(int result)
         {
             if (result > 0 && result <= 3)
                 return;
             throw new BO.BOBusException("number negative!!!");
         }
 
-        public static void GoodPositiveflout(float number)
+        public void GoodPositiveflout(float number)
         {
             if (number > 0)
                 return;
@@ -157,7 +157,7 @@ namespace BLImp
 
         #region Line
 
-        public static void GoodLinePositiveLong(long number)
+        public void GoodLinePositiveLong(long number)
         {
             if (number > 0)
                 return;
@@ -231,13 +231,13 @@ namespace BLImp
             throw new ArgumentOutOfRangeException("latitude not between 31 - 33.3");
         }
 
-        public static void GetGoodLongitude(double longitude)
+        public void GetGoodLongitude(double longitude)
         {
             if (longitude >= 34.3 && longitude <= 35.5)
                 return;
             throw new ArgumentOutOfRangeException("lonigtude not between 34.3 - 35.5");
         }//31,33.3
-        public static void GetGoodLatitude(double latitude)
+        public void GetGoodLatitude(double latitude)
         {
             if (latitude >= 31 && latitude <= 33.3)
                 return;

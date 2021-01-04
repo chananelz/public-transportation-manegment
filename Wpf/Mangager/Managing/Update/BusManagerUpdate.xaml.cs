@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
+using BLImp;
 
 namespace Wpf.Mangager.Managing
 {
@@ -29,6 +30,8 @@ namespace Wpf.Mangager.Managing
         int statusInput;
 
         BLApi.IBL bl;
+        BLImp.Validator valid = new Validator();
+
 
 
         public BusManager(BO.Bus bus)
@@ -115,6 +118,16 @@ namespace Wpf.Mangager.Managing
                 {
                     bl.UpdateBusKM(kM, managingBus.LicenseNumber);
                     MessageBox.Show("input submited " + result +  "          click X to return bus page");
+                    foreach (Window w in Application.Current.Windows)
+                    {
+                        if (w.Name == "PresentatinBuses")
+                        {
+                            w.Close();
+                        }
+                    }
+                    new PresentationBusses().Show();
+
+                    this.Close();
                     MyTextBox0.Clear();
                 }
                 catch (Exception ex)
@@ -140,6 +153,16 @@ namespace Wpf.Mangager.Managing
                 {
                     bl.UpdateBusFuel(fuel, managingBus.LicenseNumber);
                     MessageBox.Show("input submited " + result + "        click X to return bus page");
+                    foreach (Window w in Application.Current.Windows)
+                    {
+                        if (w.Name == "PresentatinBuses")
+                        {
+                            w.Close();
+                        }
+                    }
+                    new PresentationBusses().Show();
+
+                    this.Close();
                     MyTextBox1.Clear();
                 }
                 catch (Exception ex)
@@ -164,11 +187,21 @@ namespace Wpf.Mangager.Managing
                 statusInput = result;
                 try
                 {
-                    BLImp.Validator.GoodPositiveStatus(result);
+                    valid.GoodPositiveStatus(result);
                 }
                 catch (BO.BOBusException)
                 {
                     MessageBox.Show("Wrong status format" + "\n" + "-  Click: 1 for a passenger,\n-  Click:  2 for a driver, \n-  Click: 3 for a CEO", " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
+                    foreach (Window w in Application.Current.Windows)
+                    {
+                        if (w.Name == "PresentatinBuses")
+                        {
+                            w.Close();
+                        }
+                    }
+                    new PresentationBusses().Show();
+
+                    this.Close();
                     MyTextBox2.Clear();
                     return;
                 }

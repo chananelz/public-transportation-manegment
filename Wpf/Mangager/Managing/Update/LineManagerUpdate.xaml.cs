@@ -128,6 +128,16 @@ namespace Wpf.Mangager.Managing
             {
                 bl.UpdateLineArea(area, managingLine.Id);
                 MessageBox.Show("input submited" + area +"  click on X to exit");
+                foreach (Window w in Application.Current.Windows)
+                {
+                    if (w.Name == "PresentationLines")
+                    {
+                        w.Close();
+                    }
+                }
+                new PresentationLines().Show();
+
+                this.Close();
                 MyTextBox1.Clear();
             }
             catch (Exception ex)
@@ -148,6 +158,16 @@ namespace Wpf.Mangager.Managing
                 bl.UpdateLineStations(stopListInput, managingLine.Id);
                 
                 MessageBox.Show("input updated successfully!"+  "  click on X to exit");
+                foreach (Window w in Application.Current.Windows)
+                {
+                    if (w.Name == "PresentationLines")
+                    {
+                        w.Close();
+                    }
+                }
+                new PresentationLines().Show();
+
+                this.Close();
             }
             catch(Exception ex)
             {
@@ -201,12 +221,6 @@ namespace Wpf.Mangager.Managing
             tempStop = (BO.Stop)a.DataContext;
             new StopInfo(tempStop).Show();
         }
-        private void Update_Click(object sender, RoutedEventArgs e)
-        {
-            Button a = (Button)sender;
-            tempStop = (BO.Stop)a.DataContext;
-            new StopMangaer(tempStop).Show();
-            this.Close();
-        }
+
     }
 }

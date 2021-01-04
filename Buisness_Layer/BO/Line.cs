@@ -17,10 +17,15 @@ namespace BO
         public long FirstStop { get; set; }
         public long LastStop { get; set; }
 
-        private List<LineStation> stops;
-        public List<LineStation> Stops
+        private List<BO.LineStation> stops;
+        public List<BO.LineStation> Stops
         {
-            get { return Factory.GetBL("1").GetAllLineStationsByLineNumber(Number).ToList(); }
+            get {
+                var a =  from lineStation in Factory.GetBL("1").GetAllLineStationsByLineNumber(Number)
+                       orderby lineStation.NumberInLine
+                       select lineStation;
+                return a.ToList();
+                     }
         }
 
         private List<BusTravel> buses;

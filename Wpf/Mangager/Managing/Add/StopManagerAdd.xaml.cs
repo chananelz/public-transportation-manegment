@@ -15,6 +15,7 @@ using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using System.ComponentModel;
 using BLApi;
+using BLImp;
 
 namespace Wpf.Mangager.Managing.Add
 {
@@ -31,6 +32,8 @@ namespace Wpf.Mangager.Managing.Add
 
         int amount = 0;
         BackgroundWorker worker;
+
+        BLImp.Validator valid = new Validator();
 
 
         double latitude;
@@ -252,7 +255,7 @@ namespace Wpf.Mangager.Managing.Add
             {
                 try
                 {
-                    BLImp.Validator.GetGoodLongitude(result);
+                    valid.GetGoodLongitude(result);
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -288,7 +291,7 @@ namespace Wpf.Mangager.Managing.Add
             {
                 try
                 {
-                    BLImp.Validator.GetGoodLatitude(result);
+                    valid.GetGoodLatitude(result);
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {

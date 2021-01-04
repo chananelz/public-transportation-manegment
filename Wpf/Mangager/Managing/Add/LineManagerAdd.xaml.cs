@@ -15,6 +15,7 @@ using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using System.ComponentModel;
 using Wpf.Mangager.Information;
+using BLImp;
 
 
 namespace Wpf.Mangager.Managing.Add
@@ -30,6 +31,8 @@ namespace Wpf.Mangager.Managing.Add
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
+
+        BLImp.Validator valid = new Validator();
 
 
         long number;
@@ -212,7 +215,7 @@ namespace Wpf.Mangager.Managing.Add
             {
                 try
                 {
-                    BLImp.Validator.GoodLinePositiveLong(result);
+                    valid.GoodLinePositiveLong(result);
                 }
                 catch (BO.BOBadLineIdException ex)
                 {

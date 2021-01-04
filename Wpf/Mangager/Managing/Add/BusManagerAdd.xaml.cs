@@ -15,6 +15,7 @@ using Wpf.Mangager.Presentation;
 using System.Windows.Threading;
 using System.ComponentModel;
 using BLApi;
+using BLImp;
 
 
 namespace Wpf.Mangager.Managing.Add.myImages
@@ -30,6 +31,8 @@ namespace Wpf.Mangager.Managing.Add.myImages
         bool input2 = false;
         bool input3 = false;
         bool input4 = false;
+        BLImp.Validator valid = new Validator();
+
 
         long licenseNumber;
         DateTime licenseDate;
@@ -242,7 +245,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 try
                 {                   
-                    BLImp.Validator.GoodPositiveLicenseNumber(result);
+                    valid.GoodPositiveLicenseNumber(result);
                 }
                 catch (BO.BOBusException)
                 {
@@ -250,6 +253,20 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     MyTextBox0.Clear();
                     return;
                 }
+                if (input1)
+                {
+                    try
+                    {
+                        valid.GoodLicense(result,licenseDate);
+                    }
+                    catch (BO.BOBusException)
+                    {
+                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MyTextBox0.Clear();
+                        return;
+                    }
+                }
+
                 if (!input0)
                 {
                     input0 = true;
@@ -303,13 +320,26 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 try
                 {
-                    BLImp.Validator.GoodTimeformat(day, month, year);
+                    valid.GoodTimeformat(day, month, year);
                 }
                  catch 
                 {
                     MessageBox.Show("Wrong date format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox1.Clear();
                     return;
+                }
+                if(input0)
+                {
+                    try
+                    {
+                        valid.GoodLicense(licenseNumber,licenseDate);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MyTextBox1.Clear();
+                        return;
+                    }
                 }
                 if (!input1)
                 {
@@ -341,7 +371,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 try
                 {
-                    BLImp.Validator.GoodPositiveflout(result);
+                    valid.GoodPositiveflout(result);
                 }
                 catch (BO.BOBusException)
                 {
@@ -377,7 +407,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 try
                 {
-                    BLImp.Validator.GoodPositiveflout(result);
+                    valid.GoodPositiveflout(result);
                 }
                 catch (BO.BOBusException)
                 {
@@ -412,7 +442,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
             {
                 try
                 {
-                    BLImp.Validator.GoodPositiveStatus(result);
+                    valid.GoodPositiveStatus(result);
                 }
                 catch (BO.BOBusException)
                 {
@@ -443,6 +473,8 @@ namespace Wpf.Mangager.Managing.Add.myImages
         {
             this.Close();
         }
+
+
     }
 }
 
