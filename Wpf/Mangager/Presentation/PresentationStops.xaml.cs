@@ -123,20 +123,16 @@ namespace Wpf.Mangager.Presentation
             new PresentationStops().Show();
             this.Close();
         }
-        private void AddStopToLine_Click(object sender, RoutedEventArgs e)
+        private void AddStopToLine_Click(object sender, RoutedEventArgs e) //aaa
         {
+            
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
-            try
-            {
-                bl.DeleteStop(tempStop.StopCode);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            new PresentationStops().Show();
-            this.Close();
+            var ab = new AddStopToLine(tempStop);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+            
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
