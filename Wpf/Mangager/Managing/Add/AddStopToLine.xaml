@@ -4,9 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf.Mangager.Managing.Add"
-        mc:Ignorable="d"
-        Title="AddStopToLine" Height="450" Width="800">
-    <Grid>
-        
+                Background="Transparent"
+
+        Title="AddStopToLine" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen">
+ 
+
+
+    <Grid Name="FirstPage">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="2"
+                              Direction="-90"
+                              Color="Gray"/>
+        </Grid.Effect>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="1" Content="Line" HorizontalAlignment="Center" VerticalAlignment="Stretch"  FontSize="32"   FontFamily="Arial Black" Foreground ="Red"  BorderThickness="0" />
+        <Label Grid.Column =" 1"  Grid.ColumnSpan="1" Content="Number In Line" HorizontalAlignment="Center" VerticalAlignment="Stretch"  FontSize="32"   FontFamily="Arial Black" Foreground ="Red"  BorderThickness="0" />
+
+
+
+
+        <ComboBox Name="number_in_lines" BorderThickness="0" ItemsSource="{Binding}" Background="Brown"  FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center" Width="200"  SelectionChanged="NumberInLine_SelectionChanged" MaxDropDownHeight="150" FontSize="15"/>
+        <ComboBox Name="lines" BorderThickness="0" ItemsSource="{Binding}" Background="Brown"  FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center"  SelectionChanged="Line_SelectionChanged" Width="200" MaxDropDownHeight="150" FontSize="15"/>
+
+
+
+        <Button x:Name="submit" Grid.Row="2" Grid.ColumnSpan="2" Click="Button_Click" Visibility="Collapsed">
+            submit
+        </Button>
+
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="3" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background >
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
+
+
+        <Grid.Background>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
     </Grid>
 </Window>

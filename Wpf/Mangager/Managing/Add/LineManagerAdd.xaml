@@ -107,7 +107,7 @@
         </Button>
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

@@ -32,12 +32,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="Users"      Grid.Row="0"  Content="Users"     FontSize="35" FontFamily="Arial Black"    BorderThickness="0"   Click="bus_Click" Foreground="Red">
+            <Button Name="Users"  Height="60"    Grid.Row="0"  Content="Users"     FontSize="35" FontFamily="Arial Black"    BorderThickness="0"   Click="bus_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="Drivers"       Grid.Row="1"  Content="Drivers"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="line_Click" Foreground="Red">
+            <Button Name="Drivers"   Height="60"    Grid.Row="1"  Content="Drivers"    FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="line_Click" Foreground="Red">
                 <Button.Background>
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
@@ -69,7 +69,7 @@
 
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

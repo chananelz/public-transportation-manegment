@@ -31,7 +31,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="AnimatedWidthPassengerButton"  Width="300" Grid.Row="0" Content="Passenger"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
+            <Button Name="AnimatedWidthPassengerButton"  Width="300" Height="60" Grid.Row="0" Content="Passenger"   FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="user_Click" Foreground="Red">
                 <Button.Triggers>
 
                     <!-- Animate the button's Width property. -->
@@ -51,7 +51,7 @@
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="AnimatedWidthDriverButton"  Width="300" Grid.Row="1"  Content="Driver"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="driver_Click" Foreground="Red">
+            <Button Name="AnimatedWidthDriverButton"  Width="300" Height="60" Grid.Row="1"  Content="Driver"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="driver_Click" Foreground="Red">
                 <Button.Triggers>
 
                     <!-- Animate the button's Width property. -->
@@ -71,7 +71,7 @@
                     <ImageBrush ImageSource="myImages/Button.png"/>
                 </Button.Background>
             </Button>
-            <Button Name="AnimatedWidthCEOButton" Grid.Row="2"       Width="300" 
+            <Button Name="AnimatedWidthCEOButton" Grid.Row="2"       Width="300" Height="60"
  Content="CEO"  FontSize="35" FontFamily="Arial Black"  BorderThickness="0" Click="ceo_Click" Foreground="Red">
                 <Button.Triggers>
 
@@ -102,9 +102,12 @@
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
+        <Button Click="Button_Click_1">
+            submit
+        </Button>
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

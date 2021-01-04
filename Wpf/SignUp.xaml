@@ -34,8 +34,8 @@
 
 
         <!-- textbox button and image Definitions -->
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed" />
-        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="1" Name="MyTextBox1"  TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed" BorderThickness="0.5" />
+        <RichTextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="1" Name="MyTextBox1"  TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed" />
 
 
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0"  Content="Name"     VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
@@ -88,7 +88,7 @@
 
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.5" ImageSource="MyImages/green_background.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

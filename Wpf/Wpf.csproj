@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,6 +40,15 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.7.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.7\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.2.0.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>..\..\..\..\Program Files (x86)\Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -125,6 +136,9 @@
     <Compile Include="Mangager\threading\StartTravelLine.xaml.cs">
       <DependentUpon>StartTravelLine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="map.xaml.cs">
+      <DependentUpon>map.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Passenger\OptionsForPassenger.xaml.cs">
       <DependentUpon>OptionsForPassenger.xaml</DependentUpon>
     </Compile>
@@ -183,6 +197,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -313,6 +328,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\threading\StartTravelLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -776,5 +795,54 @@
   <ItemGroup>
     <Resource Include="CEO\Users\myImages\stop_sign-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\ADD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\BusBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\busForPresentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\busListBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\green_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\school_building_of_primary_with_bus_icon_w1ghj2_wHa_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CEO\CEOS\myImages\stop_sign-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
 </Project>

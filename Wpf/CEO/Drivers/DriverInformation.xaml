@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="DriverInformation" Height="450" Width="800">
     <Grid>
-        
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="myImages/green_background.png"/>
+            </Grid.Background>
+        </Grid>
     </Grid>
 </Window>

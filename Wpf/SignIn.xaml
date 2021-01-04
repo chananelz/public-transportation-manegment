@@ -52,7 +52,7 @@
 
 
             <TextBox                       Grid.Row="0"  Text="user name:"    HorizontalAlignment="Left" VerticalAlignment="Center"       FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red" />
-            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410"  TextChanged="userNameTxtBox_TextChanged"/>
+            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410"  TextChanged="userNameTxtBox_TextChanged"/>
 
 
             <TextBox  Grid.Row="1"   Text="password:"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red"/>
@@ -76,13 +76,13 @@
         </Grid>
 
 
-        <Button Name="submit"  HorizontalAlignment="Center" Width="200" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="submit"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="submit_Click" Foreground="Red">
+        <Button Name="submit"  HorizontalAlignment="Center" Height="60" Width="200" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="submit"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="submit_Click" Foreground="Red">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/Button.png"/>
             </Button.Background>
         </Button>
 
-        <Button Name="Sign_In"  HorizontalAlignment="Left" Width="200" Grid.Row="2" Grid.ColumnSpan="1" Content="sign up"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="SignIn_Click" Foreground="LightGreen" >
+        <Button Name="Sign_In" Height="60" HorizontalAlignment="Left" Width="200" Grid.Row="2" Grid.ColumnSpan="1" Content="sign up"      FontSize="35" FontFamily="Arial Black" BorderThickness="0" Click="SignIn_Click" Foreground="LightGreen" >
             <Button.Background>
                 <ImageBrush ImageSource="myImages/Button.png"/>
             </Button.Background>
@@ -111,7 +111,7 @@
         <Image x:Name="movingBus"   Grid.Column="3"   Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>

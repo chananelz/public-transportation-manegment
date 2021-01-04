@@ -88,8 +88,8 @@
             </Button.Background>
         </Button>
 
-        <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
-        </Grid.Background>
+            <Grid.Background>
+                <ImageBrush ImageSource="myImages/green_background.png"/>
+            </Grid.Background>
     </Grid>
 </Window>

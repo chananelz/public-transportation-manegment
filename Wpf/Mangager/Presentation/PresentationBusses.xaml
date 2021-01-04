@@ -114,7 +114,7 @@
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
         <Grid.Background>
-            <ImageBrush Opacity ="0.7" ImageSource="myImages/BusBackground.png"/>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
     </Grid>
 </Window>
