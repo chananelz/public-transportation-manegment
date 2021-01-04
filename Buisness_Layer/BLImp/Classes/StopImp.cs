@@ -110,6 +110,7 @@ namespace BLImp
 
         public void AddStopInLine(long lineId,long code,long numberInLine)
         {
+            //lets see you now
             var line = GetLine(lineId);
             updateNumberInLine(line, code, 1);
             CreateLineStation(lineId, numberInLine, code);
