@@ -96,24 +96,23 @@ namespace BLImp
             var myList = GetAllLineStations(lineStation => lineStation.Code == code).ToList();
             var lineList = GetAllLinesByStopCode(code).ToList();
             bool found = false;
-            foreach(Line line in lineList)
+            foreach (LineStation lineStation in line.Stops)
             {
-                foreach(LineStation lineStation in line.Stops)
+                if (lineStation.Code == code)
+                    found = true;
+                else if (found)
                 {
-                    if (lineStation.Code == stop.StopCode)
-                        found = true;
-                    else if (found)
-                    {
-                        UpdateLineStationNumberInLine(lineStation.NumberInLine - 1, line.Id, lineStation.Code);
-                    }
+                    UpdateLineStationNumberInLine(lineStation.NumberInLine + increase, line.Id, lineStation.Code);
                 }
-                found = false;
             }
-            foreach (LineStation lineStation in myList)
-            {
-                dal.DeleteLineStation(lineStation.LineId, lineStation.Code,lineStation.NumberInLine);
-            }
-            dal.DeleteStop(code);
+        }
+
+        public void AddStopInLine(long lineId,long code,long numberInLine)
+        {
+            //lets see you now
+            var line = GetLine(lineId);
+            updateNumberInLine(line, code, 1);
+            CreateLineStation(lineId, numberInLine, code);
         }
 
         public IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null)
