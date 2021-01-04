@@ -43,6 +43,7 @@ namespace BLApi
         void DeleteBusTravel(long id);
         IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         IEnumerable<Line> GetAllLinesByLicenseNumber(long licenseNumber);
+        Line GetLineByLicenseNumber(long licenseNumber);
         //IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         //IEnumerable<BusTravel> GetAllValidBusTravels();
         //IEnumerable<BusTravel> GetAllUnValidBusTravels();

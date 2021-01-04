@@ -26,17 +26,18 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
+        <Button Grid.Row="0" Grid.Column="0" Height="60" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/ADD.png"/>
             </Button.Background>
         </Button>
         <Grid Name="BusGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
-            <ListBox Name="stopList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0" Button.Click="OnClick" Background="Transparent" SelectionChanged="lineList_SelectionChanged">
+            <ListBox Name="stopList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0" Button.Click="OnClick" Background="Transparent" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -72,6 +73,11 @@
                             <Button Grid.Row="1" Grid.Column="2"  Content="addStopToLine"  Foreground ="Red"     FontSize="15"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   FontFamily="Arial Black"   BorderThickness="0"   Click="AddStopToLine_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/delete.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="3"   Foreground ="Red" Height="60"  Width="60"   FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center"   FontFamily="Arial Black"   BorderThickness="0"  Click="Location_Click" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="myImages/map.png"/>
                                 </Button.Background>
                             </Button>
 

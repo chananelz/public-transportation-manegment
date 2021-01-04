@@ -116,7 +116,7 @@ namespace BLImp
         #region BusTravel
         public void TimeAfter(DateTime dateTime1, DateTime dateTime2, string f, string l)
         {
-            if (dateTime1 < dateTime2)
+            if (dateTime1 <= dateTime2)
                 return;
             throw new Exception(f + " doesn't come before " + l);
         }

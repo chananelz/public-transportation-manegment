@@ -115,25 +115,10 @@ namespace Wpf.Mangager.Managing.Add
                 MessageBox.Show("work cancelled");
             }
 
-            if (stopListInput.Count == 0)
-            {
-                MessageBox.Show("Please select at least one station", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Warning);
-                var ab = new LineManagerAdd();
-                ab.Height = 300;
-                ab.Width = 600;
-                ab.Show();
-                this.Close();
-
-                return;
-            }
+            
             try
             {
                 bl.CreateLine(number, area, stopListInput);
-
-            }
-            catch(BO.BODOBadLineIdException ex)
-            {
-                MessageBox.Show(ex.Message + ex.InnerException.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MessageBoxResult res = MessageBox.Show("Would you like to add another bus in the opposite direction??", "Verification", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (res == MessageBoxResult.No)
                     return;
@@ -141,6 +126,12 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     bl.CreateOppositeDirectionLine(number, area, stopListInput);
                 }
+            }
+            catch (BO.BODOBadLineIdException ex)
+            {
+                MessageBox.Show(ex.Message + ex.InnerException.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                worker.RunWorkerAsync(3);
+                return;
             }
             MessageBox.Show("line added!");
             foreach (Window w in Application.Current.Windows)
@@ -223,18 +214,20 @@ namespace Wpf.Mangager.Managing.Add
                     MyTextBox0.Clear();
                     return;
                 }
-                if (!input0)
-                {
-                    input0 = true;
-
-                }
+                
                 if (amount != 3)
                 {
-                    amount++;
 
                     number = result;
                     MessageBox.Show("input submited" + result);
+                    NumberLabel.Content = result;
                     MyTextBox0.Clear();
+                    if (!input0)
+                    {
+                        input0 = true;
+                        amount++;
+
+                    }
                 }
             }
             else
@@ -245,35 +238,46 @@ namespace Wpf.Mangager.Managing.Add
         private void Area_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
-            if (!input1)
-            {
-                input1 = true;
-
-            }
+           
             if (amount != 3)
             {
-                amount++;
 
                 area = textRange;
                 MessageBox.Show("input submited" + textRange);
+                AreaLabel.Content = area;
                 MyTextBox1.Clear();
+                if (!input1)
+                {
+                    input1 = true;
+                    amount++;
+
+                }
             }
             else
             {
                 MessageBox.Show("wrong input!!!!");
+               
             }
 
         }
         private void StopList_Click(object sender, RoutedEventArgs e)
         {
-            if (!input2)
-            {
-                input2 = true;
-            }
+           
             if (amount != 3)
             {
-                amount++;
-                MessageBox.Show("input submited");
+                if (stopListInput.Count == 0)
+                {
+                    MessageBox.Show("Please select at least one station", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("input submited");
+                    if (!input2)
+                    {
+                        input2 = true;
+                        amount++;
+                    }
+                }
             }
             else
             {

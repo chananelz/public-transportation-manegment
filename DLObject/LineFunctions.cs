@@ -113,9 +113,9 @@ namespace DL
         public Line GetLine(long id)
         {
             //aaa
-            var t = from line in DataSource.LineList
+            var t = (from line in DataSource.LineList
                     where (line.Id == id)
-                    select line;
+                    select line).ToList();
             if (t.ToList().Count == 0)
                 throw new DOBadLineIdException( id,"line doesn't  exist!!");
             if (!t.First().Valid)

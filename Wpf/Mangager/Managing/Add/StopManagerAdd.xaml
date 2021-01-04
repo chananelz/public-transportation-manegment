@@ -18,7 +18,8 @@
                               Color="Gray"/>
         </Grid.Effect>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="8*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
@@ -42,9 +43,9 @@
 
 
         <!-- textbox button and image Definitions -->
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed" />
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="4" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox CaretBrush="#FF6C6C6C" BorderThickness="1" VerticalAlignment="Center"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed" />
+        <TextBox CaretBrush="#FF6C6C6C" BorderThickness="1" VerticalAlignment="Center" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox CaretBrush="#FF6C6C6C" BorderThickness="1" VerticalAlignment="Center" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="4" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4" Content="Name" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0"  Grid.Column="4" Grid.ColumnSpan="4" Content="Longitude" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
@@ -52,13 +53,17 @@
 
 
 
-        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center" Click="Name_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Longitude_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Latitude_Click"/>
+        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center" Click="Name_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Longitude_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Latitude_Click"/>
+
+        <Label Name = "NameLabel" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center"        />
+        <Label Name = "LongitudeLabel" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"     />
+        <Label Name = "LatitudeLabel" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"       />
 
 
-        <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="12"/>
-        <Label Background="DarkOrange" x:Name="resultLabel"  Content="0 %" Grid.Row="3"  Grid.ColumnSpan="12" HorizontalAlignment="Center"   FontFamily="Bernard MT Condensed" FontSize="10"/>
+        <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Stretch" Grid.ColumnSpan="12"/>
+        <Label Background="DarkOrange" x:Name="resultLabel"  Content="0 %" Grid.Row="4"  Grid.ColumnSpan="12" HorizontalAlignment="Center"   FontFamily="Bernard MT Condensed" FontSize="10"/>
 
 
 

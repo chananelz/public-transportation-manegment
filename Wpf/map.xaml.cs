@@ -22,31 +22,29 @@ namespace Wpf
     /// </summary>
     public partial class map : Window
     {
-        public map()
+        double longitude;
+        double latitude;
+        public map(double longitudeInput, double latitudeInput)
         {
             InitializeComponent();
             myMap.Focus();
+            //MapLayer.SetPosition()
             //Set map to Aerial mode with labels
-            myMap.Mode = new AerialMode(true);
+            longitude = longitudeInput;
+            latitude = latitudeInput;
+            showLoc();
 
         }
-        private void MapWithPushpins_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void showLoc()
         {
-            // Disables the default mouse double-click action.
-            e.Handled = true;
 
-            // Determin the location to place the pushpin at on the map.
+            Location pinLocation = new Location();
+            pinLocation.Latitude = latitude;
+            pinLocation.Longitude = longitude;
 
-            //Get the mouse click coordinates
-            Point mousePosition = e.GetPosition(this);
-            //Convert the mouse coordinates to a locatoin on the map
-            Location pinLocation = myMap.ViewportPointToLocation(mousePosition);
-
-            // The pushpin to add to the map.
             Pushpin pin = new Pushpin();
             pin.Location = pinLocation;
 
-            // Adds the pushpin to the map.
             myMap.Children.Add(pin);
         }
 

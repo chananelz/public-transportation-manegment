@@ -102,9 +102,7 @@
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
-        <Button Click="Button_Click_1">
-            submit
-        </Button>
+     
 
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>

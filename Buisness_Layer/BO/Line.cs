@@ -20,12 +20,13 @@ namespace BO
         private List<BO.LineStation> stops;
         public List<BO.LineStation> Stops
         {
-            get {
+            get 
+            {
                 var a =  from lineStation in Factory.GetBL("1").GetAllLineStationsByLineNumber(Number)
-                       orderby lineStation.NumberInLine
-                       select lineStation;
-                return a.ToList();
-                     }
+                         orderby lineStation.NumberInLine
+                         select lineStation;
+                        return a.ToList();
+            }
         }
 
         private List<BusTravel> buses;

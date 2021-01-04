@@ -137,6 +137,12 @@ namespace BLImp
             }
             return retList;
         }
+        public Line GetLineByLicenseNumber(long licenseNumber)
+        {
+            return (from busTravel in GetAllBusTravels()
+                     where busTravel.LicenseNumber == licenseNumber
+                     select GetLine(busTravel.LineId)).First();
+        }
 
     }
 }

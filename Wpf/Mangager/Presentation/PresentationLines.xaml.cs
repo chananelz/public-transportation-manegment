@@ -138,6 +138,16 @@ namespace Wpf.Mangager.Presentation
             new PresentationLines().Show();
             this.Close();
         }
+        private void lineLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempLine = (BO.Line)a.DataContext;
+            var ab = new map2(tempLine.Number);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+        }
+        
         private void SeqStopInfo_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;

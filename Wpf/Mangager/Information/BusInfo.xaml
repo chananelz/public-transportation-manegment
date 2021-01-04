@@ -49,7 +49,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="{Binding Number}" Grid.Column="0"  HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="25" FontFamily="Arial Black" BorderThickness="0" Foreground="Red"/>
-                <Button Name="information"  Grid.Column="1"     Content="information"  Foreground ="Red" Width="200"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                <Button Name="information"  Grid.Column="1"     Content="information"  Foreground ="Red" Width="200"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0" Visibility="Visible"  Click="information_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="myImages/Button.png"/>
                     </Button.Background>

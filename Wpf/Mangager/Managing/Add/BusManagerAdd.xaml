@@ -20,6 +20,7 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
+            <RowDefinition Height="8*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
@@ -45,32 +46,45 @@
 
         </Grid.ColumnDefinitions>
 
+
+
         <!-- textbox button and image Definitions -->
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3" Name="MyTextBox3" KeyDown="MyTextBox3_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.3" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="3" Name="MyTextBox4" KeyDown="MyTextBox4_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox VerticalAlignment="Center"   CaretBrush="#FF6C6C6C" BorderThickness="1"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" KeyDown="MyTextBox0_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <TextBox VerticalAlignment="Center"   CaretBrush="#FF6C6C6C" BorderThickness="1" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1" KeyDown="MyTextBox1_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox  VerticalAlignment="Center"  CaretBrush="#FF6C6C6C" BorderThickness="1"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" KeyDown="MyTextBox2_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox VerticalAlignment="Center"   CaretBrush="#FF6C6C6C" BorderThickness="1" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3" Name="MyTextBox3" KeyDown="MyTextBox3_KeyDown" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox VerticalAlignment="Center"   CaretBrush="#FF6C6C6C" BorderThickness="1" Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="12" Grid.ColumnSpan="3" Name="MyTextBox4" KeyDown="MyTextBox4_KeyDown"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="License Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Content="License date &#10; day/month/year" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" Content="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" Content="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="3" Content="License Number" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3"  Grid.ColumnSpan="3" Content="License date &#10; day/month/year" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6"  Grid.ColumnSpan="3" Content="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="9"  Grid.ColumnSpan="3" Content="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="12" Grid.ColumnSpan="3" Content="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
 
-        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="3"    Click="LicenseNumber_Click"  />
-        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="2" Grid.Column="3"  Grid.ColumnSpan="3"    Click="LicenseDate_Click"/>
-        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="2" Grid.Column="6"  Grid.ColumnSpan="3"    Click="Travel_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="3"    Click="Fuel_Click" />
-        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="3"    Click="Status_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Bottom"   Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="3"    Click="LicenseNumber_Click"  />
+        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Bottom"   Grid.Row="2" Grid.Column="3"  Grid.ColumnSpan="3"    Click="LicenseDate_Click"/>
+        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Bottom"   Grid.Row="2" Grid.Column="6"  Grid.ColumnSpan="3"    Click="Travel_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Bottom"   Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="3"    Click="Fuel_Click" />
+        <Button Content="Submit" HorizontalAlignment="Center"   VerticalAlignment="Bottom"   Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="3"    Click="Status_Click" />
 
 
 
-        <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="15"/>
-        <Label Background="DarkOrange" x:Name="resultLabel"  Content="0 %" Grid.Row="3"  Grid.ColumnSpan="15" HorizontalAlignment="Center"   FontFamily="Bernard MT Condensed" FontSize="10"/>
+
+        <Label Name ="LicenseNumberLabel"  HorizontalAlignment="Center"           VerticalAlignment="Center"                                  Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="3"    />
+        <Label Name ="DateTimeLabel" Content="{Binding DateTime }"                HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="3" Grid.Column="3"  Grid.ColumnSpan="3"    />
+        <Label Name ="KMLabel"       Content="{Binding KM}"                       HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="3" Grid.Column="6"  Grid.ColumnSpan="3"     />
+        <Label Name ="FuelLabel"     Content="{Binding Fuel}"                     HorizontalAlignment="Center"   VerticalAlignment="Center"   Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="3"     />
+        <Label Name ="StatusLabel"   Content="{Binding Status}" HorizontalAlignment="Center"   VerticalAlignment="Center"                     Grid.Row="3" Grid.Column="12" Grid.ColumnSpan="3"     />
+
+
+
+
+
+        <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Stretch" Grid.ColumnSpan="15"/>
+        <Label Background="DarkOrange" x:Name="resultLabel"  Content="0 %" Grid.Row="4"  Grid.ColumnSpan="15" HorizontalAlignment="Center"   FontFamily="Bernard MT Condensed" FontSize="10"/>
 
 
 

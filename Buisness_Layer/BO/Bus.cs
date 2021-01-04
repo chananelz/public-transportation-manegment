@@ -22,12 +22,22 @@ namespace BO
         public float KM { get; set; }
         public float Fuel { get; set; }
         public status Status { get; set; }
-        
+
         private Line lineList;
         public Line LineList
         {
             //try
-            get { return Factory.GetBL("1").GetAllLinesByLicenseNumber(LicenseNumber).ToList()?.First(); }
+            get
+            {
+                try
+                {
+                    return Factory.GetBL("1").GetLineByLicenseNumber(LicenseNumber);
+                }
+                catch
+                {
+                    return null;
+                };
+            }
         }
 
         public string Show { get => show; set => show = value; }

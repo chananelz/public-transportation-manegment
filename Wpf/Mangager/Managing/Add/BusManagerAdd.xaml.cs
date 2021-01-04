@@ -49,8 +49,10 @@ namespace Wpf.Mangager.Managing.Add.myImages
         {
             InitializeComponent();
             ProgressBar();
-            bl = BLApi.Factory.GetBL("1");
 
+
+
+            bl = BLApi.Factory.GetBL("1");
         }
 
         public void ProgressBar()
@@ -113,16 +115,12 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             try
             {
-                
-                
-                
                 bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
             }
             catch(BO.BOBusException ex)
             {
                 MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
-                new PresentationBusses().Show();
-                this.Close();
+                worker.RunWorkerAsync(5);
                 return;
             }
 
@@ -263,26 +261,27 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     {
                         MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox0.Clear();
-                        return;
                     }
                 }
 
-                if (!input0)
-                {
-                    input0 = true;
-                   
-                }
+               
                 if (amount != 5)
                 {
-                    amount++;
                     licenseNumber = result;
                     MessageBox.Show("input submited" + result);
+                    LicenseNumberLabel.Content = result;
                     MyTextBox0.Clear();
+                    if (!input0)
+                    {
+                        input0 = true;
+                        amount++;
+
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!", " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox0.Clear();
             }
         }
@@ -318,6 +317,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             if (int.TryParse(stDay, out day) && int.TryParse(stMonth, out month) && int.TryParse(stYear, out year))
             {
+                licenseDate = new DateTime(year,month,day);
                 try
                 {
                     valid.GoodTimeformat(day, month, year);
@@ -334,31 +334,32 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     {
                         valid.GoodLicense(licenseNumber,licenseDate);
                     }
-                    catch
+                    catch(BO.BOBadBusIdException)
                     {
                         MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox1.Clear();
-                        return;
                     }
                 }
-                if (!input1)
-                {
-                    input1 = true;
-                   
-                }
+               
                 if (amount != 5)
                 {
-                    amount++;
                     DateTime temp = new DateTime(year, month, day);
                     licenseDate = temp;
                     MessageBox.Show("input submited" + stInput);
+                    DateTimeLabel.Content = temp;
                     MyTextBox1.Clear();
+                    if (!input1)
+                    {
+                        input1 = true;
+                        amount++;
+
+                    }
                 }
 
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!", " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox1.Clear();
             }
         }
@@ -379,26 +380,27 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     MyTextBox2.Clear();
                     return;
                 }
-                if (!input2)
-                {
-                    input2 = true;
-                    
-                }
+                
                 if (amount != 5)
                 {
-                    amount++;
                     MessageBox.Show("input submited" + result);
+                    KMLabel.Content = result;
                     kM = result;
                     MyTextBox2.Clear();
+                    if (!input2)
+                    {
+                        input2 = true;
+                        amount++;
+
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!", " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox2.Clear();
             }
         }
-
         private void Fuel_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox3.Text;
@@ -415,22 +417,24 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     MyTextBox3.Clear();
                     return;
                 }
-                if (!input3)
+               
+                if ( amount != 5)
                 {
-                    input3 = true;
-                    
-                }
-                if (amount != 5)
-                {
-                    amount++;
                     fuel = result;
                     MessageBox.Show("input submited" + result);
+                    FuelLabel.Content = result;
                     MyTextBox3.Clear();
+                    if (!input3)
+                    {
+                        input3 = true;
+                        amount++;
+
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!", " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox3.Clear();
             }
         }
@@ -450,31 +454,31 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     MyTextBox4.Clear();
                     return;
                 }
-                if (!input4)
-                {
-                    input4 = true;
-                    
-                }
+                
                 if (amount != 5)
                 {
-                    amount++;
                     statusInput = result;
                     MessageBox.Show("input submited" + result);
+                    StatusLabel.Content = result; 
                     MyTextBox4.Clear();
+                    if (!input4)
+                    {
+                        input4 = true;
+                        amount++;
+
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
-                MyTextBox3.Clear();
+                MessageBox.Show("wrong input!!!" , " Operation Failure ", MessageBoxButton.OK, MessageBoxImage.Error);
+                MyTextBox4.Clear();
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-
     }
 }
 

@@ -33,7 +33,7 @@
         </Grid.ColumnDefinitions>
         <Label Grid.ColumnSpan="2" Content="Information: " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="40" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="StopList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+        <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="StopList" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Center"     SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -44,7 +44,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <ComboBox BorderThickness="0" ItemsSource="{Binding}" Background="Brown" x:Name="BusesList" IsEditable="True" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="2" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+        <ComboBox BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="BusesList"  FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="2" VerticalAlignment= "Center"   HorizontalAlignment="Stretch"  SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

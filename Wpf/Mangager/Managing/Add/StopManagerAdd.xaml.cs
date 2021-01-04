@@ -122,8 +122,7 @@ namespace Wpf.Mangager.Managing.Add
             catch (BO.BODOStopBadIdException ex)
             {
                 MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
-                new PresentationStops().Show();
-                this.Close();
+                worker.RunWorkerAsync(3);
                 return;
             }
 
@@ -216,12 +215,8 @@ namespace Wpf.Mangager.Managing.Add
         {
 
 
-            if (!input0)
-            {
-                input0 = true;
-               
-            }
-            if (amount != 3)
+           
+            if (!input0 && amount != 3)
             {
                
                 string textRange =  MyTextBox0.Text;
@@ -237,7 +232,13 @@ namespace Wpf.Mangager.Managing.Add
                 amount++;
                 stopName = textRange;
                 MessageBox.Show("input submited" + textRange);
+                NameLabel.Content = stopName;
                 MyTextBox0.Clear();
+                if (!input0)
+                {
+                    input0 = true;
+                    amount++;
+                }
             }
 
             else
@@ -263,17 +264,19 @@ namespace Wpf.Mangager.Managing.Add
                     MyTextBox1.Clear();
                     return;
                 }
-                if (!input1)
-                {
-                    input1 = true;
-                    
-                }
-                if (amount != 3)
+                
+                if (!input1 && amount != 3)
                 {
                     amount++;
                     longitude = result;
                     MessageBox.Show("input submited" + result);
+                    LongitudeLabel.Content = result;
                     MyTextBox1.Clear();
+                    if (!input1)
+                    {
+                        input1 = true;
+
+                    }
                 }
 
             }
@@ -300,17 +303,19 @@ namespace Wpf.Mangager.Managing.Add
                     return;
                 }
                 
-                if (!input2)
-                {
-                    input2 = true;
-                   
-                }
-                if (amount != 3)
+                
+                if (!input2 && amount != 3)
                 {
                     amount++;
                     latitude = result;
                     MessageBox.Show("input submited" + result);
+                    LatitudeLabel.Content = result;
                     MyTextBox2.Clear();
+                    if (!input2)
+                    {
+                        input2 = true;
+
+                    }
                 }
 
             }

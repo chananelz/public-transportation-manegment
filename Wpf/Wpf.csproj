@@ -139,6 +139,12 @@
     <Compile Include="map.xaml.cs">
       <DependentUpon>map.xaml</DependentUpon>
     </Compile>
+    <Compile Include="map2.xaml.cs">
+      <DependentUpon>map2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="map3.xaml.cs">
+      <DependentUpon>map3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Passenger\OptionsForPassenger.xaml.cs">
       <DependentUpon>OptionsForPassenger.xaml</DependentUpon>
     </Compile>
@@ -335,6 +341,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="map2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="map3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Passenger\OptionsForPassenger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -376,6 +390,10 @@
     <ProjectReference Include="..\Buisness_Layer\BuisnessLayer.csproj">
       <Project>{92103fe0-c775-44b1-add6-98973b2e610c}</Project>
       <Name>BuisnessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DalApi\DalApi.csproj">
+      <Project>{D46F36DE-F9FB-4058-B98B-7564C3846778}</Project>
+      <Name>DalApi</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -836,6 +854,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CEO\CEOS\myImages\stop_sign-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Presentation\myImages\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\myImages\lineLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Presentation\myImages\lineLocation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

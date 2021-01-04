@@ -17,9 +17,9 @@
                               Color="Gray"/>
         </Grid.Effect>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
          
         </Grid.RowDefinitions>
 
@@ -27,30 +27,25 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            
 
         </Grid.ColumnDefinitions>
 
         <!-- textbox button and image Definitions -->
-        <TextBox Opacity="0.3"    KeyDown="MyTextBox0_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.3"   KeyDown ="MyTextBox1_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Name="MyTextBox1" TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <TextBox Opacity="0.3"   KeyDown ="MyTextBox2_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox  CaretBrush="#FF6C6C6C" BorderThickness="1" VerticalAlignment="Center"   KeyDown="MyTextBox0_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="0"  Name="MyTextBox0" TextChanged="MyTextBox_TextChanged_0" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox  CaretBrush="#FF6C6C6C" BorderThickness="1" VerticalAlignment="Center"  KeyDown ="MyTextBox1_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="1"  Name="MyTextBox1" TextChanged="MyTextBox_TextChanged_1" FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <TextBox  CaretBrush="#FF6C6C6C" BorderThickness="1" VerticalAlignment="Center"  KeyDown ="MyTextBox2_KeyDown"  Foreground="Black" Background="LightBlue" Grid.Row="1" Grid.Column="2"  Name="MyTextBox2" TextChanged="MyTextBox_TextChanged_2" FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Content="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
-        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" Content="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="0"  Content="Travel KM amount" VerticalAlignment="Center" FontSize="18" FontFamily="Bernard MT Condensed"  />
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="1"  Content="Fuel amount" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
+        <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="2"  Content="Status" VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed"/>
 
 
 
-        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="0"     Grid.ColumnSpan="3"     Click="Travel_Update_Click" />
-        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="3"     Grid.ColumnSpan="3"     Click="Fuel_Update_Click"/>
-        <Button Content="Update" HorizontalAlignment="Center"   VerticalAlignment="Center"    Grid.Row="2" Grid.Column="6"    Grid.ColumnSpan="3"    Click="Status_Update_Click" />
+        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="0"      Click="Travel_Update_Click" />
+        <Button Content="Update" HorizontalAlignment="Center"  VerticalAlignment="Center"     Grid.Row="2" Grid.Column="1"      Click="Fuel_Update_Click"/>
+        <Button Content="Update" HorizontalAlignment="Center"   VerticalAlignment="Center"    Grid.Row="2" Grid.Column="2"    Click="Status_Update_Click" />
 
 
 

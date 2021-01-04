@@ -36,6 +36,10 @@ namespace Wpf.Mangager.Information
             BLApi.IBL bl;
             bl = BLApi.Factory.GetBL("1");
             LineListB.DataContext = infoBus.LineList;
+            if(infoBus.LineList == null)
+            {
+                information.Visibility = Visibility.Collapsed;
+            }
         }
 
 

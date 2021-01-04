@@ -133,10 +133,21 @@ namespace Wpf.Mangager.Presentation
             ab.Show();
             
         }
+        private void Location_Click(object sender, RoutedEventArgs e) //aaa
+        {
+
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            var ab = new map(tempStop.Longitude,tempStop.Latitude);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        
     }
 }

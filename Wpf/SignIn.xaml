@@ -51,12 +51,12 @@
             </StackPanel>
 
 
-            <TextBox                       Grid.Row="0"  Text="user name:"    HorizontalAlignment="Left" VerticalAlignment="Center"       FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red" />
-            <TextBox Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" BorderThickness="0" Grid.Column="1" Grid.ColumnSpan="2"   Width="410"  TextChanged="userNameTxtBox_TextChanged"/>
+            <TextBox    CaretBrush="#FF6C6C6C" BorderThickness="0"                   Grid.Row="0"  Text="user name:"    HorizontalAlignment="Left" VerticalAlignment="Center"       FontSize="35" FontFamily="Arial Black" Background="Transparent"  Foreground="Red" />
+            <TextBox CaretBrush="#FF6C6C6C" BorderThickness="1" Name="userNameTxtBox" Grid.Row="0" Background="CadetBlue"                          HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" Grid.Column="1" Grid.ColumnSpan="2"   Width="410"  TextChanged="userNameTxtBox_TextChanged"/>
 
 
             <TextBox  Grid.Row="1"   Text="password:"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black" Background="Transparent" BorderThickness="0" Foreground="Red"/>
-            <PasswordBox  Name="PasswordContent" KeyDown="txtPassword_KeyDown"  Background="CadetBlue" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="3" PasswordChar="•"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black"  Width="410">
+            <PasswordBox BorderThickness="1" Name="PasswordContent" KeyDown="txtPassword_KeyDown"  Background="CadetBlue" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="3" PasswordChar="•"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="35" FontFamily="Arial Black"  Width="410">
 
 
             </PasswordBox>
