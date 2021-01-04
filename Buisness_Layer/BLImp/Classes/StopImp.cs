@@ -92,9 +92,9 @@ namespace BLImp
                 throw new BODOStopBadIdException("cant delete This Stop Name", ex); 
             }
 
-            var stop = RequestStop(stop1 => stop1.StopCode == code);
-            var myList = GetAllLineStations(lineStation => lineStation.Code == code).ToList();
-            var lineList = GetAllLinesByStopCode(code).ToList();
+        public void updateNumberInLine(Line line, long code,int increase)
+        {
+            //ooo
             bool found = false;
             foreach (LineStation lineStation in line.Stops)
             {
