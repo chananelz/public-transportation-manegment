@@ -89,8 +89,9 @@ namespace BLImp
             catch (DO.DOStopException ex)
             {
 
-                throw new BODOStopBadIdException("cant delete This Stop Name", ex); 
+                throw new BODOStopBadIdException("cant delete This Stop Name", ex);
             }
+        }
 
         public void updateNumberInLine(Line line, long code,int increase)
         {
