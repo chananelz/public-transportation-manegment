@@ -55,34 +55,34 @@
                                 <Label Grid.Row ="0" Content="License Number:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
                                 <Label Grid.Row ="1" Content="{Binding LicenseNumber}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground="Red"  Background="Transparent"/>
                             </Grid>
-                            <Button Name="information"  Grid.Column="1"     Content="information"  Foreground ="Red" Width="200"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+                            <Button Name="information"  Grid.Column="1"   Foreground ="Red" Width="100"    Height="100"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/Newinformation.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="update"   Grid.Column="2"     Content="Update"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="update_Click" HorizontalAlignment="Right">
+                            <Button Name="update"   Grid.Column="2" Foreground ="Red" Width="100"    Height="100"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="update_Click" HorizontalAlignment="Right">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new update.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="travel"   Grid.Column="2" Visibility="{Binding Show}"  Grid.Row="1"   Content="startDrive"   Foreground ="Red" Width="180"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="startDrive_Click" HorizontalAlignment="Right">
+                            <Button Name="travel"   Grid.Column="2" Visibility="{Binding Show}"  Grid.Row="1"   Foreground ="Red" Width="100"    Height="100"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="startDrive_Click" HorizontalAlignment="Right">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new start drive.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="refule"   Grid.Column="3"     Content="refule"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0"                   Click="Refule_Click" HorizontalAlignment="Right">
+                            <Button Name="refule"   Grid.Column="3"    Foreground ="Red" Width="100"    Height="100"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0"                   Click="Refule_Click" HorizontalAlignment="Right">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new refuling.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="treatment"   Grid.Column="3"   Grid.Row="1"  Content="treatment"   Foreground ="Red" Width="200"    Height="30"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Treatment_Click" HorizontalAlignment="Right">
+                            <Button Name="treatment"   Grid.Column="3"   Grid.Row="1"  Foreground ="Red" Width="100"    Height="100"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Treatment_Click" HorizontalAlignment="Right">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="myImages/Button.png"/>
+                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new tretment.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Height="30" Content="delete"  Foreground ="Red" Width="200"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="Delete_Click">
+                            <Button Grid.Row="1" Grid.Column="1"  Height="100"   Foreground ="Red" Width="100"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="Delete_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="myImages/delete.png"/>
+                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new delete.png"/>
                                 </Button.Background>
                             </Button>
                         </Grid>
