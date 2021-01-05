@@ -59,6 +59,25 @@
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
+       
+
+        <Button  Grid.Column="2" HorizontalAlignment="Right" Height="25"  Grid.Row="1" VerticalAlignment="Center" Width="39" Click="Info_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button  Grid.Column="1" HorizontalAlignment="Right" Height="25"  Grid.Row="1" VerticalAlignment="Center" Width="39" Click="Info_Click2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button  Grid.Column="0" HorizontalAlignment="Right" Height="25"  Grid.Row="1" VerticalAlignment="Center" Width="39" Click="Info_Click3">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
 
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>

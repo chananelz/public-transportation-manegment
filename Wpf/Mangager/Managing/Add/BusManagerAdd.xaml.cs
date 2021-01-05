@@ -484,6 +484,26 @@ namespace Wpf.Mangager.Managing.Add.myImages
         {
             MessageBox.Show(" status format" + "\n" + "-  Click: 0 for a traveling,\n-  Click:  1 for a ready for drive, \n-  Click: 2 for a treating,  \n - Click: 3 for a refuling", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        private void Info_Click2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Enter a number between 0-1200 that indicates the amount of fuel", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Info_Click3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Enter a number above 0 that indicates the amount of kilometers traveled by the bus", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Info_Click4(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Enter day month year with '/' between the input ", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Info_Click5(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("If the year of license date is after 2018 enter 8-digit number \n else enter 7-digit number ", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }
 

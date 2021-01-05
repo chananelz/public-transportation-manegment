@@ -98,11 +98,39 @@
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
-        <Button Content="Button" Grid.Column="14" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click">
+        
+        <Button  Grid.Column="14" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
             </Button.Background>
         </Button>
+
+        <Button Grid.Column="11" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click2">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button  Grid.Column="8" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click3">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button  Grid.Column="5" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click4">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
+        
+        <Button  Grid.Column="2" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click5">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
+
+
+
 
 
 
