@@ -121,9 +121,6 @@
     <Compile Include="Mangager\Managing\Add\StopManagerAdd.xaml.cs">
       <DependentUpon>StopManagerAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Mangager\Managing\Update\AddStopToLine.xaml.cs">
-      <DependentUpon>AddStopToLine.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Mangager\OptionsForDriver.xaml.cs">
       <DependentUpon>OptionsForDriver.xaml</DependentUpon>
     </Compile>
@@ -290,10 +287,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\Managing\Add\StopManagerAdd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Mangager\Managing\Update\AddStopToLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

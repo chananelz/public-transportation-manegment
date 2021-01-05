@@ -36,6 +36,14 @@
         <Label Content="All Line:"     Name="line"           Grid.Column="0" Grid.Row="1"    Background="Transparent"    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Arial Black" BorderThickness="0" Foreground="Red" />
 
         <ComboBox VerticalAlignment="Center" BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="LineListS"  FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1"   HorizontalAlignment="Stretch"  MaxDropDownHeight="150" FontSize="15"   >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Number}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+            
         </ComboBox>
 
         <Grid x:Name="stopInfo"  Grid.Row ="2" Grid.Column="1" Grid.RowSpan="3">
