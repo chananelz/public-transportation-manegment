@@ -257,7 +257,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     {
                         valid.GoodLicense(result,licenseDate);
                     }
-                    catch (BO.BOBusException)
+                    catch (BO.BOBadBusIdException)
                     {
                         MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox0.Clear();
