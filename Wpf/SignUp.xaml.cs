@@ -125,7 +125,7 @@ namespace Wpf
             {
                 MessageBox.Show(ex.Message); 
             }
-            new SignIn("USER").Show();
+            new SignIn("PASSENGER").Show();
             this.Close();
         }
 

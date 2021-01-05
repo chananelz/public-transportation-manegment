@@ -251,6 +251,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     MyTextBox0.Clear();
                     return;
                 }
+                try
+                {
+                    valid.GoodLicenseDigits(result);
+                }
+                catch (BO.BOBadBusIdException)
+                {
+                    MessageBox.Show("amount of digits not enough!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox0.Clear();
+                    return;
+                }
                 if (input1)
                 {
                     try
@@ -317,18 +327,19 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             if (int.TryParse(stDay, out day) && int.TryParse(stMonth, out month) && int.TryParse(stYear, out year))
             {
-                licenseDate = new DateTime(year,month,day);
+               
                 try
                 {
                     valid.GoodTimeformat(day, month, year);
+                    licenseDate = new DateTime(year, month, day);
                 }
-                 catch 
+                catch 
                 {
                     MessageBox.Show("Wrong date format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox1.Clear();
                     return;
                 }
-                if(input0)
+                if (input0)
                 {
                     try
                     {
@@ -411,13 +422,23 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     valid.GoodPositiveflout(result);
                 }
-                catch (BO.BOBusException)
+                catch (BO.BOBusException ex)
                 {
-                    MessageBox.Show("negative number", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox3.Clear();
                     return;
                 }
-               
+                try
+                {
+                    valid.GoodFuel(result);
+                }
+                catch (BO.BOBusException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox3.Clear();
+                    return;
+                }
+
                 if ( amount != 5)
                 {
                     fuel = result;
