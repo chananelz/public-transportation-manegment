@@ -245,9 +245,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {                   
                     valid.GoodPositiveLicenseNumber(result);
                 }
-                catch (BO.BOBusException)
+                catch (BO.BOBusException ex)
                 {
-                    MessageBox.Show("Wrong LicenseNumber format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Wrong LicenseNumber format" + "   " + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox0.Clear();
                     return;
                 }
@@ -257,9 +257,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     {
                         valid.GoodLicense(result,licenseDate);
                     }
-                    catch (BO.BOBadBusIdException)
+                    catch (BO.BOBadBusIdException ex)
                     {
-                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox0.Clear();
                     }
                 }
@@ -334,9 +334,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     {
                         valid.GoodLicense(licenseNumber,licenseDate);
                     }
-                    catch(BO.BOBadBusIdException)
+                    catch(BO.BOBadBusIdException ex)
                     {
-                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox1.Clear();
                     }
                 }
@@ -374,9 +374,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     valid.GoodPositiveflout(result);
                 }
-                catch (BO.BOBusException)
+                catch (BO.BOBusException ex)
                 {
-                    MessageBox.Show("negative number", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("negative number" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox2.Clear();
                     return;
                 }
@@ -411,9 +411,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     valid.GoodPositiveflout(result);
                 }
-                catch (BO.BOBusException)
+                catch (BO.BOBusException ex)
                 {
-                    MessageBox.Show("negative number", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("negative number" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox3.Clear();
                     return;
                 }

@@ -131,7 +131,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             catch (BO.BODOBadLineIdException ex)
             {
-                MessageBox.Show(ex.Message + ex.InnerException.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message  , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 worker.RunWorkerAsync(3);
                 return;
             }

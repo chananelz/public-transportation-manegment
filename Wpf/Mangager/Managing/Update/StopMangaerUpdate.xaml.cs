@@ -131,7 +131,7 @@ namespace Wpf.Mangager.Managing
             }
             catch (BO.BODOStopBadIdException ex)
             {
-                MessageBox.Show(ex.Message + ex.InnerException.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox0.Clear();
                 return;
             }

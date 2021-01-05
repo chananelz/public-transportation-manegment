@@ -314,7 +314,7 @@ namespace Wpf.Mangager.Managing.Add
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
-                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox2.Clear();
                     return;
                 }
