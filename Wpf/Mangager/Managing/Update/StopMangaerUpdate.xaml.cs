@@ -103,30 +103,13 @@ namespace Wpf.Mangager.Managing
         private void Name_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox0.Text;
-            //try
-            //{
-            //    BLImp.Validator.GetGoodString(textRange);
-            //}
-            //catch (ArgumentNullException ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    return;
-            //}
+          
             name = textRange;
             try
             {
                 bl.UpdateStopName(name, managingStop.StopCode);
                 MessageBox.Show("input submited" + textRange +  "      to exit click X");
-                foreach (Window w in Application.Current.Windows)
-                {
-                    if (w.Name == "PresentationStops")
-                    {
-                        w.Close();
-                    }
-                }
-                new PresentationStops().Show();
-
-                this.Close();
+               
                 MyTextBox0.Clear();
             }
             catch (BO.BODOStopBadIdException ex)
@@ -143,16 +126,7 @@ namespace Wpf.Mangager.Managing
             double result = 0;
             if (double.TryParse(textRange, out result))
             {
-                //try
-                //{
-                //    BLImp.Validator.GetGoodLongitude(result);
-                //}
-                //catch (ArgumentOutOfRangeException ex)
-                //{
-                //    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
-                //    MyTextBox1.Clear();
-                //    return;
-                //}
+             
                 longitude = result;
                 try
                 {
@@ -211,7 +185,15 @@ namespace Wpf.Mangager.Managing
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w.Name == "PresentationStops")
+                {
+                    w.Close();
+                }
+            }
             new PresentationStops().Show();
+
             this.Close();
         }
     }

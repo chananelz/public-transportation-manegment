@@ -37,8 +37,11 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}"/>
+                        
                         <TextBlock Text="{Binding NumberInLine}"/>
+                        <TextBlock Text="  "/>
+                        <TextBlock Text="{Binding Name}"/>
+                        
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -49,7 +52,6 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding LicenseNumber}"/>
-                        <TextBlock Text="{Binding FormalDepartureTime}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

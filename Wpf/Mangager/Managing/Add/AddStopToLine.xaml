@@ -34,12 +34,22 @@
 
 
 
-        <ComboBox Name="number_in_lines" BorderThickness="0" ItemsSource="{Binding}" Background="Brown"  FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center" Width="200"  SelectionChanged="NumberInLine_SelectionChanged" MaxDropDownHeight="150" FontSize="15"/>
-        <ComboBox Name="lines" BorderThickness="0" ItemsSource="{Binding}" Background="Brown"  FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center"  SelectionChanged="Line_SelectionChanged" Width="200" MaxDropDownHeight="150" FontSize="15"/>
+        <ComboBox Name="number_in_lines" BorderThickness="0" ItemsSource="{Binding}" Background="Gray"  FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center" Width="200"  SelectionChanged="NumberInLine_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+            
+        </ComboBox>
+        <ComboBox Name="lines" BorderThickness="0" ItemsSource="{Binding}" Background="Gray"  FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center"  SelectionChanged="Line_SelectionChanged" Width="200" MaxDropDownHeight="150" FontSize="15">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding StopName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
 
 
-        <Button x:Name="submit" Grid.Row="2" Grid.ColumnSpan="2" Click="Button_Click" Visibility="Collapsed">
+            <Button x:Name="submit" Grid.Row="2" Grid.ColumnSpan="2" Click="Button_Click" Visibility="Collapsed">
             submit
         </Button>
 

@@ -27,6 +27,7 @@ namespace Wpf.Mangager.Managing
 
         long number;
         string area;
+        int numberInLine = 0;
         List<BO.Stop> stopListInput = new List<BO.Stop>();
 
         BO.Line managingLine;
@@ -38,15 +39,14 @@ namespace Wpf.Mangager.Managing
             managingLine = new BO.Line();
             managingLine = line;
             bl = BLApi.Factory.GetBL("1");
-            StopListComboBox.ItemsSource = bl.GetAllStops().ToList();
-            StopListListBox.ItemsSource = stopListInput;
+            stopsList.ItemsSource = bl.GetAllStops().ToList();
         }
 
 
 
 
 
- 
+
 
 
         //private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
@@ -81,45 +81,36 @@ namespace Wpf.Mangager.Managing
         }
 
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Line_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tempStop = (BO.Stop)stopsList.SelectedItem;
+            for (int i = 1; i <= managingLine.Stops.Count() + 1; i++)
+            {
+                number_in_lines.Items.Add(i);
+            }
+        }
 
-     
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NumberInLine_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            numberInLine = (int)number_in_lines.SelectedItem;
 
-       
+            submit.Visibility = Visibility.Visible;
+        }
 
-        //private void Number_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string textRange = MyTextBox0.Text;
-        //    long result = 0;
-        //    if (long.TryParse(textRange, out result) && result > 0)
-        //    {
-        //        number = result;
-        //        try
-        //        {
-        //            bl.UpdateLineNumber(result, managingLine.Id);  
-        //            MessageBox.Show("input submited   " + result+ "  click on X to exit");
-        //            foreach (Window w in Application.Current.Windows)
-        //            {
-        //                if (w.Name == "PresentationLines1")
-        //                {
-        //                    w.Close();
-        //                }
-        //            }
-        //            new PresentationLines().Show();
-        //            this.Topmost = true;
 
-        //            MyTextBox0.Clear();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("wrong input!!!!");
-        //        MyTextBox0.Clear();
-        //    }
-        //}
+
+
+
         private void Area_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
@@ -127,17 +118,8 @@ namespace Wpf.Mangager.Managing
             try
             {
                 bl.UpdateLineArea(area, managingLine.Id);
-                MessageBox.Show("input submited" + area +"  click on X to exit");
-                foreach (Window w in Application.Current.Windows)
-                {
-                    if (w.Name == "PresentationLines")
-                    {
-                        w.Close();
-                    }
-                }
-                new PresentationLines().Show();
+                MessageBox.Show("input submited" + area + "  click on X to exit");
 
-                this.Close();
                 MyTextBox1.Clear();
             }
             catch (Exception ex)
@@ -146,81 +128,70 @@ namespace Wpf.Mangager.Managing
                 MyTextBox1.Clear();
             }
         }
-        private void StopList_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (stopListInput.Count == 0)
-                {
-                    MessageBox.Show("please add at least one stop");
-                    return;
-                }
-                bl.UpdateLineStations(stopListInput, managingLine.Id);
-                
-                MessageBox.Show("input updated successfully!"+  "  click on X to exit");
-                foreach (Window w in Application.Current.Windows)
-                {
-                    if (w.Name == "PresentationLines")
-                    {
-                        w.Close();
-                    }
-                }
-                new PresentationLines().Show();
+        //private void StopList_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (stopListInput.Count == 0)
+        //        {
+        //            MessageBox.Show("please add at least one stop");
+        //            return;
+        //        }
+        //        bl.AddStopInLine(managingLine.Id, tempStop.StopCode, numberInLine);
 
-                this.Close();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //        MessageBox.Show("input updated successfully!"+  "  click on X to exit");
+
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
 
         private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            new OptionsForDriver().Show();
-            this.Close();
+
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+
+
+        private void AddStopToLine_Click(object sender, RoutedEventArgs e)
         {
-            new StopManagerAdd().Show();
-            this.Close();
-        }
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            Button a = (Button)sender;
-            tempStop = (BO.Stop)a.DataContext;
-            stopListInput.Remove(tempStop);
-            StopListListBox.Items.Refresh();
+            try
+            {
+
+                bl.AddStopInLine(managingLine.Id, tempStop.StopCode, numberInLine);
+
+                MessageBox.Show("input updated successfully!" + "  click on X to exit");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w.Name == "PresentationLines1")
+                {
+                    w.Close();
+                }
+            }
             new PresentationLines().Show();
+
             this.Close();
         }
-        private void StopList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            BO.Stop tempStop = (BO.Stop)StopListComboBox.SelectedItem;
-            stopListInput.Add(tempStop);
-            StopListListBox.Items.Refresh();
-        }
+
         private void OnClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void lineList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-
-        private void information_Click(object sender, RoutedEventArgs e)
-        {
-            Button a = (Button)sender;
-            tempStop = (BO.Stop)a.DataContext;
-            new StopInfo(tempStop).Show();
-        }
 
     }
 }
