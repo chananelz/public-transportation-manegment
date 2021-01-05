@@ -40,7 +40,7 @@ namespace Wpf
         BLApi.IBL bl;
 
         /// <summary>
-        /// constractor
+        /// constractor of the window
         /// </summary>
         public SignUp()
         {

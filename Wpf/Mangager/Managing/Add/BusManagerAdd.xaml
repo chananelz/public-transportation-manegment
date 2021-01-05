@@ -98,6 +98,11 @@
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
+        <Button Content="Button" Grid.Column="14" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Button.Background>
+        </Button>
 
 
 

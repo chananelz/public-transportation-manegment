@@ -450,7 +450,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 }
                 catch (BO.BOBusException)
                 {
-                    MessageBox.Show("Wrong status format" + "\n" + "-  Click: 1 for a passenger,\n-  Click:  2 for a driver, \n-  Click: 3 for a CEO", " Operation Failure " , MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Wrong status format" + "\n" + "-  Click: 0 for a traveling,\n-  Click:  1 for a ready for drive, \n-  Click: 2 for a treating,  \n - Click: 3 for a refuling", " Operation Failure " , MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox4.Clear();
                     return;
                 }
@@ -478,6 +478,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Info_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(" status format" + "\n" + "-  Click: 0 for a traveling,\n-  Click:  1 for a ready for drive, \n-  Click: 2 for a treating,  \n - Click: 3 for a refuling", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

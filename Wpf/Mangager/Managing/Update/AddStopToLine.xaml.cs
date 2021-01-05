@@ -19,6 +19,9 @@ namespace Wpf.Mangager.Managing.Update
     /// </summary>
     public partial class AddStopToLine : Window
     {
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public AddStopToLine()
         {
             InitializeComponent();

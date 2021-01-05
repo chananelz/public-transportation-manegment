@@ -26,8 +26,9 @@ namespace Wpf.Mangager.Information
         public BO.Line tempLine;
 
 
-
-
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public BusInfo(BO.Bus infoBus)
         {
             InitializeComponent();
@@ -43,22 +44,42 @@ namespace Wpf.Mangager.Information
         }
 
 
-
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new PresentationBusses().Show();
             this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void information_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -69,7 +90,11 @@ namespace Wpf.Mangager.Information
             ab.Show();
             
         }
-
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LineListB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

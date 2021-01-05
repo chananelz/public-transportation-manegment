@@ -25,6 +25,10 @@ namespace Wpf.Mangager.Managing.Add
         BO.Stop managingStop = new BO.Stop();
         int numberInLine = 0;
         BLApi.IBL bl;
+
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public AddStopToLine(BO.Stop stop)
         {
             InitializeComponent();
@@ -34,6 +38,11 @@ namespace Wpf.Mangager.Managing.Add
             lines.DataContext = bl.GetAllLines();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Line_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             managingLine = (BO.Line)lines.SelectedItem;
@@ -42,6 +51,12 @@ namespace Wpf.Mangager.Managing.Add
                 number_in_lines.Items.Add(i);
             }
         }
+
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NumberInLine_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             numberInLine = (int)number_in_lines.SelectedItem;
@@ -49,6 +64,11 @@ namespace Wpf.Mangager.Managing.Add
             submit.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             bl.AddStopInLine(managingLine.Id, managingStop.StopCode, numberInLine);

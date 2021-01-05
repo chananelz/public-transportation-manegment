@@ -22,7 +22,9 @@ namespace Wpf.Mangager.Information
     /// </summary>
     public partial class StopInfo : Window
     {
-
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public StopInfo(BO.Stop infoStop)
         {
             InitializeComponent();
@@ -32,24 +34,44 @@ namespace Wpf.Mangager.Information
             LineListS.ItemsSource = /*bl.GetAllLinesByStopCode(infoStop.StopCode).ToList()*/infoStop.Lines;
         }
 
-        
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new PresentationStops().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LineListS_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

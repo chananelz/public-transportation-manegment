@@ -43,7 +43,9 @@ namespace Wpf.Mangager.Managing.Add
 
 
 
-
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public StopManagerAdd()
         {
             InitializeComponent();
@@ -143,15 +145,11 @@ namespace Wpf.Mangager.Managing.Add
         }
 
 
-        
-
-
-       
-
-
-
-
-
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -172,7 +170,11 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
-
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -188,6 +190,11 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -203,14 +210,12 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
-      
-
-       
-
-
-
-
-
+        
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Name_Click(object sender, RoutedEventArgs e)
         {
 
@@ -247,7 +252,12 @@ namespace Wpf.Mangager.Managing.Add
                 MyTextBox2.Clear();
             }
         }
-     
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Longitude_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
@@ -286,6 +296,12 @@ namespace Wpf.Mangager.Managing.Add
                 MyTextBox1.Clear();
             }
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox2.Text;
@@ -325,6 +341,12 @@ namespace Wpf.Mangager.Managing.Add
                 MyTextBox2.Clear();
             }
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

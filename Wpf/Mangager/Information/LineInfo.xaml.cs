@@ -22,7 +22,9 @@ namespace Wpf.Mangager.Information
     /// </summary>
     public partial class LineInfo : Window
     {
-
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public LineInfo(BO.Line infoLine)
         {
             InitializeComponent();
@@ -41,24 +43,44 @@ namespace Wpf.Mangager.Information
             BusesList.ItemsSource = infoLine.Buses;
         }
 
- 
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new PresentationLines().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

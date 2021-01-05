@@ -48,7 +48,9 @@ namespace Wpf.Mangager.Managing.Add
         public BO.Stop tempStop;
 
 
-
+        /// <summary>
+        /// constractor of the window
+        /// </summary>
         public LineManagerAdd()
         {
             InitializeComponent();
@@ -148,9 +150,13 @@ namespace Wpf.Mangager.Managing.Add
 
 
 
-       
 
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -166,6 +172,11 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -181,7 +192,11 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
-
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -198,6 +213,11 @@ namespace Wpf.Mangager.Managing.Add
         }
 
 
+        /// <summary>
+        /// Defines actions to be performed when the user enters input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Number_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox0.Text;
@@ -235,6 +255,12 @@ namespace Wpf.Mangager.Managing.Add
                 MessageBox.Show("wrong input!!!!");
             }
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Area_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
@@ -260,6 +286,12 @@ namespace Wpf.Mangager.Managing.Add
             }
 
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StopList_Click(object sender, RoutedEventArgs e)
         {
            
@@ -287,17 +319,33 @@ namespace Wpf.Mangager.Managing.Add
         }
 
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
             new OptionsForDriver().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             new StopManagerAdd().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -305,26 +353,55 @@ namespace Wpf.Mangager.Managing.Add
             stopListInput.Remove(tempStop);
             StopListListBox.Items.Refresh();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StopList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             BO.Stop tempStop = (BO.Stop)StopListComboBox.SelectedItem;
             stopListInput.Add(tempStop);
             StopListListBox.Items.Refresh();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClick(object sender, RoutedEventArgs e)
         {
 
         }
 
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lineList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void information_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -332,6 +409,12 @@ namespace Wpf.Mangager.Managing.Add
             new StopInfo(tempStop).Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
