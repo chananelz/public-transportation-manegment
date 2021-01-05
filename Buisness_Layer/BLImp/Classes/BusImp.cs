@@ -42,6 +42,18 @@ namespace BLImp
             }
             try
             {
+                valid.GoodLicenseDigits(licenseNumber);
+            }
+            catch (BOBadBusIdException ex)
+            {
+                if (!foundException)
+                {
+                    exception += ex.Message;
+                    foundException = true;
+                }
+            }
+            try
+            {
                 valid.GoodFuel(fuel);
             }
             catch (BOBusException ex)
@@ -80,9 +92,9 @@ namespace BLImp
             catch (DO.DOBadBusIdException ex)
             {
 
-                throw new BODOBadBusIdException("cant create this bus" , ex);
+                throw new BODOBadBusIdException("cant create this bus", ex);
             }
-          
+
         }
         public Bus RequestBus(Predicate<Bus> pr)
         {
@@ -93,9 +105,9 @@ namespace BLImp
             catch (DO.DOBusException ex)
             {
 
-                throw  new BODOBadBusIdException("can't find this bus", ex) ;
+                throw new BODOBadBusIdException("can't find this bus", ex);
             }
-            
+
         }
 
         public void UpdateBusKM(float kM, long licenseNumber)
@@ -117,7 +129,7 @@ namespace BLImp
             catch (DO.DOBadBusIdException ex)
             {
 
-                throw new BODOBadBusIdException("",ex);
+                throw new BODOBadBusIdException("", ex);
             }
         }
 
@@ -196,9 +208,9 @@ namespace BLImp
             return dal.GetAllBusses().Select(bus => bus.GetPropertiesFrom<BO.Bus, DO.Bus>()).Where(b => pr(b));
         }
         public IEnumerable<Bus> GetAllBussesReadyForDrive()
-        { 
+        {
             return GetAllBusses(bus => bus.Status == BO.status.READY_FOR_DRIVE);
         }
-        
+
     }
 }

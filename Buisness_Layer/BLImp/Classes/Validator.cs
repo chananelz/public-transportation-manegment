@@ -58,6 +58,14 @@ namespace BLImp
 
         }
 
+        public void GoodLicenseDigits(long licenseNumber)
+        {
+            if ((licenseNumber >= 1000000 && licenseNumber < 10000000 ) || (licenseNumber >= 10000000 && licenseNumber < 100000000))
+                return;
+            throw new BOBadBusIdException(licenseNumber, "license number and year don't match!");
+
+        }
+
         public  void GoodTimeformat(int day, int month, int year)//check this 1200
         {
             if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1950)

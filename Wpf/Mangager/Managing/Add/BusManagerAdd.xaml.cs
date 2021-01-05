@@ -245,9 +245,19 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {                   
                     valid.GoodPositiveLicenseNumber(result);
                 }
-                catch (BO.BOBusException ex)
+                catch (BO.BOBusException)
                 {
-                    MessageBox.Show("Wrong LicenseNumber format" + "   " + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Wrong LicenseNumber format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox0.Clear();
+                    return;
+                }
+                try
+                {
+                    valid.GoodLicenseDigits(result);
+                }
+                catch (BO.BOBadBusIdException)
+                {
+                    MessageBox.Show("amount of digits not enough!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox0.Clear();
                     return;
                 }
@@ -257,9 +267,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     {
                         valid.GoodLicense(result,licenseDate);
                     }
-                    catch (BO.BOBadBusIdException ex)
+                    catch (BO.BOBadBusIdException)
                     {
-                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox0.Clear();
                     }
                 }
@@ -317,26 +327,27 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             if (int.TryParse(stDay, out day) && int.TryParse(stMonth, out month) && int.TryParse(stYear, out year))
             {
-                licenseDate = new DateTime(year,month,day);
+               
                 try
                 {
                     valid.GoodTimeformat(day, month, year);
+                    licenseDate = new DateTime(year, month, day);
                 }
-                 catch 
+                catch 
                 {
                     MessageBox.Show("Wrong date format", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox1.Clear();
                     return;
                 }
-                if(input0)
+                if (input0)
                 {
                     try
                     {
                         valid.GoodLicense(licenseNumber,licenseDate);
                     }
-                    catch(BO.BOBadBusIdException ex)
+                    catch(BO.BOBadBusIdException)
                     {
-                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                         MyTextBox1.Clear();
                     }
                 }
@@ -374,9 +385,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     valid.GoodPositiveflout(result);
                 }
-                catch (BO.BOBusException ex)
+                catch (BO.BOBusException)
                 {
-                    MessageBox.Show("negative number" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("negative number", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox2.Clear();
                     return;
                 }
@@ -413,11 +424,21 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 }
                 catch (BO.BOBusException ex)
                 {
-                    MessageBox.Show("negative number" + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox3.Clear();
                     return;
                 }
-               
+                try
+                {
+                    valid.GoodFuel(result);
+                }
+                catch (BO.BOBusException ex)
+                {
+                    MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MyTextBox3.Clear();
+                    return;
+                }
+
                 if ( amount != 5)
                 {
                     fuel = result;
