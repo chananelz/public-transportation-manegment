@@ -858,6 +858,23 @@
     <Resource Include="Mangager\Presentation\myImages\lineLocation.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\new delete.png" />
+    <Resource Include="Mangager\threading\myImages\new information.png" />
+    <Resource Include="Mangager\threading\myImages\new refuling.png" />
+    <Resource Include="Mangager\threading\myImages\new start drive.png" />
+    <Resource Include="Mangager\threading\myImages\new tretment.png" />
+    <Resource Include="Mangager\threading\myImages\new update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\Newinformation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\Presentation\new Sequential stop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mangager\threading\myImages\new Sequential stop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Passenger\myImages\map.png" />
   </ItemGroup>
   <ItemGroup>
