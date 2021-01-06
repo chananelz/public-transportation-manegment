@@ -99,7 +99,7 @@
             </Button.Background>
         </Button>
         
-        <Button  Grid.Column="14" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click">
+        <Button  Grid.Column="14" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click" RenderTransformOrigin="0.512,0.5">
             <Button.Background>
                 <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
             </Button.Background>

@@ -29,10 +29,7 @@ namespace DL
                     DataSource.LineList.Add(line);
                 else if (ex.Message == "line is not valid!!")
                 {
-                    var t = from line1 in DataSource.LineList
-                            where (line1.Id == line.Id)
-                            select line1;
-                    t.ToList().First().Valid = true;
+                    DataSource.LineList.Find(line1 => line1.Number == line.Number).Valid = true;
                 }
                 return;
             }

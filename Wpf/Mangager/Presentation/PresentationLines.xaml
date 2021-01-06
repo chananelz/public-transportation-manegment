@@ -40,46 +40,71 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Image Grid.Column="0" Source="myImages/busForPresentation.png" Opacity="0.2" Height="80"/>
-                            <Grid Grid.Column="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Label Grid.Row ="0" Content="Line Number:"      FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Foreground="Red"  Background="Transparent"/>
-                                <Label Grid.Row ="1" Content="{Binding Number}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground="Red"  Background="Transparent"/>
-                            </Grid>
-                            <Button Name="information"  Grid.Column="1"       Foreground ="Red" Width="100"    Height="100"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
+
+                            <Label Grid.Column="0" Grid.ColumnSpan="2" Width="1000" Content="{Binding Number}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"    Foreground="Red"  Background="Transparent"/>
+
+
+
+                            <Button Name="information"  Grid.Column="2"       Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/Newinformation.png"/>
+                                    <ImageBrush ImageSource="myImages/Newinformation.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="management"   Grid.Column="2"     Foreground ="Red" Width="100"    Height="100"   FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
+                            
+                            <TextBlock Grid.Column="3" Width="100"/>
+
+                            <Button Name="management"   Grid.Column="4"     Foreground ="Red"    FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new update.png"/>
+                                    <ImageBrush ImageSource="myImages/new update.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Name="StartTravel"   Grid.Column="0"   Grid.Row="1"    Foreground ="Red"    FontSize="15"    Width="100"    Height="100" FontFamily="Arial Black"  BorderThickness="0" Click="StartTravel_Click" HorizontalAlignment="Stretch">
+
+                            <TextBlock Grid.Column="5" Width="100"/>
+
+                            <Button    Grid.Column="6"      Foreground ="Red"  VerticalAlignment="Center"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new start drive.png"/>
+                                    <ImageBrush ImageSource="myImages/new delete.png"/>
                                 </Button.Background>
                             </Button>
-                         
-                            <Button Grid.Row="1" Grid.Column="1"   Height="100" Width="100" Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="lineLocation_Click">
+                            <TextBlock Grid.Column="7" Width="100"/>
+
+
+                            <Button Name="StartTravel"   Grid.Column="8"     Foreground ="Red"    FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="StartTravel_Click" HorizontalAlignment="Stretch">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="myImages/new start drive.png"/>
+                                </Button.Background>
+                            </Button>
+
+                            <TextBlock Grid.Column="9" Width="100"/>
+
+
+                            <Button Grid.Row="1" Grid.Column="10"    Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="lineLocation_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/lineLocation.png"/>
                                 </Button.Background>
                             </Button>
-                            <Button Grid.Row="1" Grid.Column="3"  Height="100" Width="100" Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="SeqStopInfo_Click">
+                            
+                            <TextBlock Grid.Column="11" Width="100"/>
+
+                            <Button Grid.Row="1" Grid.Column="12" Height="50" Width="50"  Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="SeqStopInfo_Click">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/new Sequential stop.jpg"/>
+                                    <ImageBrush ImageSource="myImages/seqStopInf.png"/>
                                 </Button.Background>
                             </Button>
+
+
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

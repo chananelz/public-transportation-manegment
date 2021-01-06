@@ -32,10 +32,7 @@ namespace DL
                     DataSource.StopList.Add(stop);
                 else if (ex.Message == "stop is not valid!!")
                 {
-                    var t = from stopInput in DataSource.StopList
-                            where (stopInput.StopCode == stop.StopCode)
-                            select stopInput;
-                    t.ToList().First().Valid = true;
+                    DataSource.StopList.Find(stopInput => stopInput.StopCode == stop.StopCode).Valid = true;
                 }
               
                 return;

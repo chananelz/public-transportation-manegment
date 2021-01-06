@@ -187,6 +187,15 @@ namespace BLImp
             try
             {
                 dal.DeleteBus(licenseNumber);
+                var a = (from busTravel in GetAllBusTravels()
+                        where busTravel.LicenseNumber == licenseNumber
+                        select busTravel).ToList();
+                foreach(BusTravel bT in (from busTravel in GetAllBusTravels()
+                                         where busTravel.LicenseNumber == licenseNumber
+                                         select busTravel).ToList())
+                {
+                    DeleteBusTravel(bT.Id);
+                }
             }
             catch (DO.DOBadBusIdException ex)
             {
@@ -196,7 +205,14 @@ namespace BLImp
         }
         public Bus GetBus(long licenseNumber)
         {
-            return dal.GetBus(licenseNumber).GetPropertiesFrom<BO.Bus, DO.Bus>();
+            try
+            {
+                return dal.GetBus(licenseNumber).GetPropertiesFrom<BO.Bus, DO.Bus>();
+            }
+            catch(DO.DOBadBusIdException ex)
+            {
+                throw new BODOBadBusIdException(ex.Message, ex);
+            }
         }
 
         public IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null)

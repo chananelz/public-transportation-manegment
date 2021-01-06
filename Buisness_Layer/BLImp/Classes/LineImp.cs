@@ -223,7 +223,7 @@ namespace BLImp
         public IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number)
         {
 
-            return GetAllBusTravels().Where(busT => exist(busT, number));
+            return GetAllBusTravels().Where(busT => exist(busT, number) && busT.Valid);
 
         }
 

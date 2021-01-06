@@ -49,27 +49,27 @@ namespace DS
         #region Bus_Travel //++
         static void initBusTravelList()
         {
-            #region Bus_Travel # 1
-            BusTravelList.Add(new BusTravel()
-            {
-                Valid = true,
-                Id = Configuration.Bus_TravelCounter,
-                LicenseNumber = 1000000,
-                LineId = 10,
-                FormalDepartureTime = new DateTime(2020, 12, 1, 06, 00, 0),
-                RealDepartureTime = new DateTime(2020, 12, 1, 06, 05, 0),
-                LastPassedStop = 570,
-                LastPassedStopTime = new DateTime(2020, 12, 1, 06, 05, 0),
-                NextStopTime = new DateTime(2020, 12, 1, 06, 8, 30),
-                DriverId = User_Name[0]
-            });
-            #endregion
+            //#region Bus_Travel # 1
+            //BusTravelList.Add(new BusTravel()
+            //{
+            //    Valid = false,
+            //    Id = Configuration.Bus_TravelCounter,
+            //    LicenseNumber = 1000000,
+            //    LineId = 10,
+            //    FormalDepartureTime = new DateTime(2020, 12, 1, 06, 00, 0),
+            //    RealDepartureTime = new DateTime(2020, 12, 1, 06, 05, 0),
+            //    LastPassedStop = 570,
+            //    LastPassedStopTime = new DateTime(2020, 12, 1, 06, 05, 0),
+            //    NextStopTime = new DateTime(2020, 12, 1, 06, 8, 30),
+            //    DriverId = User_Name[0]
+            //});
+            //#endregion
 
             #region Bus_Travel # 2
 
             BusTravelList.Add(new BusTravel()
             {
-                Valid = true,
+                Valid = false,
                 Id = Configuration.Bus_TravelCounter,
                 LicenseNumber = 1000001,
                 LineId = 10,

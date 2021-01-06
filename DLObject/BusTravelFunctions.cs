@@ -30,10 +30,7 @@ namespace DL
                     DataSource.BusTravelList.Add(busTravel);
                 else if (ex.Message == "busTravel is not valid!!")
                 {
-                    var t = from busTravelInput in DataSource.BusTravelList
-                            where (busTravelInput.Id == busTravel.Id)
-                            select busTravel;
-                    t.ToList().First().Valid = true;
+                    DataSource.BusTravelList.Find(busTravelInput => busTravelInput.Id == busTravel.Id).Valid = true;
                 }
                 return;
             }

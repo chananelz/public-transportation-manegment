@@ -29,10 +29,7 @@ namespace DL
                     DataSource.UserList.Add(user);
                 else if (ex.Message == "user is not valid!!")
                 {
-                    var t = from userInput in DataSource.UserList
-                            where (userInput.Password == user.Password)
-                            select user;
-                    t.ToList().First().Valid = true;
+                    DataSource.UserList.Find(userInput => userInput.Password == user.Password).Valid = true;
                 }
                 return;
             }

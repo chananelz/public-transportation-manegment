@@ -28,7 +28,7 @@ namespace DL
                     DataSource.SequentialStopInfoList.Add(sequentialStopInfo);
                 else if (ex.Message == "SequentialStopInfoList is not valid!!")
                 {
-                    GetSequentialStopInfo(sequentialStopInfo.StationCodeF, sequentialStopInfo.StationCodeS).Valid = true;
+                    DataSource.SequentialStopInfoList.Find(seqStopInf => seqStopInf.StationCodeF == sequentialStopInfo.StationCodeF && seqStopInf.StationCodeS == sequentialStopInfo.StationCodeS).Valid = true;
                 }
                 return;
             }

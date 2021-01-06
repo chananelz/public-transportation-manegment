@@ -122,8 +122,8 @@ namespace Wpf.Mangager.Managing.Add
             {
                 bl.CreateLine(number, area, stopListInput);
                 MessageBoxResult res = MessageBox.Show("Would you like to add another bus in the opposite direction??", "Verification", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (res == MessageBoxResult.No)
-                    return;
+                if (res == MessageBoxResult.No) ;
+
                 else
                 {
                     bl.CreateOppositeDirectionLine(number, area, stopListInput);
@@ -133,6 +133,7 @@ namespace Wpf.Mangager.Managing.Add
             {
                 MessageBox.Show(ex.Message  , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 worker.RunWorkerAsync(3);
+                amount = 0;
                 return;
             }
             MessageBox.Show("line added!");

@@ -22,9 +22,10 @@ namespace DL
         public void CreateBus(Bus bus)
         {
             bus.Valid = true;
+            Bus a = new Bus();
             try
             {
-                GetBus(bus.LicenseNumber);
+                a = GetBus(bus.LicenseNumber);
             }
             catch(DOBadBusIdException ex)                                             //try "BusException" and check if it work.
             {
@@ -32,10 +33,7 @@ namespace DL
                     DataSource.BusesList.Add(bus);
                 else if (ex.Message == "bus is not valid!!")
                 {
-                    var t = from busInput in DataSource.BusesList
-                            where (busInput.LicenseNumber == bus.LicenseNumber)
-                            select bus;
-                    t.ToList().First().Valid = true;
+                    DataSource.BusesList.Find(bus1 => bus1.LicenseNumber == bus.LicenseNumber).Valid = true;
                 }
                 return;
             }

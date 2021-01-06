@@ -74,7 +74,7 @@ namespace Wpf
 
         private void Map3_Click(object sender, RoutedEventArgs e)
         {
-            var ab = new map3();
+            var ab = new map4();
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();

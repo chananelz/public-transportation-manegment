@@ -115,22 +115,41 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
             try
             {
-                bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
+                bl.GetBus(licenseNumber);
             }
-            catch(BO.BOBusException ex)
+            catch(BO.BODOBadBusIdException ex) 
             {
-                MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
-                worker.RunWorkerAsync(5);
-                return;
+                if (ex.Message == "bus is not valid!!")
+                {
+                    MessageBoxResult res = MessageBox.Show("LicenseNumber already exists Would you like to validate it??", "Verification", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (res == MessageBoxResult.No) 
+                        return;
+                    else
+                        bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
+
+                }
+                else
+                {
+                    try
+                    {
+                        bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
+                    }
+                    catch(BO.BODOBadBusIdException ex1)
+                    {
+                        MessageBox.Show(ex1.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        worker.RunWorkerAsync(5);
+                        return;
+                    }
+                }
             }
 
-            catch (BO.BODOBadBusIdException ex)
-            {
-                MessageBox.Show(ex.Message);
-                new PresentationBusses().Show();
-                this.Close();
-                return;
-            }
+            //catch (BO.BODOBadBusIdException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    new PresentationBusses().Show();
+            //    this.Close();
+            //    return;
+            //}
             MessageBox.Show("bus added!");
             foreach (Window w in Application.Current.Windows)
             {
