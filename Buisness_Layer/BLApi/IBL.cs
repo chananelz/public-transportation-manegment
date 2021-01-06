@@ -93,6 +93,9 @@ namespace BLApi
         long GetIdByNumber(long number);
         IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number);
 
+        IEnumerable<IEnumerable<Line>> GetAllLineGroupByArea();
+        IEnumerable<string> GetAllAreas();
+
         //IEnumerable<Line> GetAllValidLines();
         //IEnumerable<Line> GetAllUnValidLines();
         //IEnumerable<stop> GetAllStopInSpecificLine();

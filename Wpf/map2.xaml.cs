@@ -36,7 +36,6 @@ namespace Wpf
             MapPolyline polyline = new MapPolyline();
             polyline.Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Red);
             polyline.StrokeThickness = 5;
-            polyline.Opacity = 0.2;
             polyline.Locations = new LocationCollection() ;
             foreach (BO.Stop stop in bl.GetAllStopsByLineNumber(lineNumber))
             {

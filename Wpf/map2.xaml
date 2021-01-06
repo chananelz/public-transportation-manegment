@@ -10,9 +10,6 @@
          WindowStartupLocation="CenterScreen">
     <Grid x:Name="LayoutRoot" Background="White">
         <m:Map x:Name="myMap" CredentialsProvider="Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi" Center="31.8822308,35.2385864" ZoomLevel="14">
-            <!--<m:MapPolyline Stroke="Blue" StrokeThickness="5" 
-                 Locations="32.184448,34.870766 31.705791,35.200657 31.801447,34.643497 32.699635,35.303547" 
-                 Opacity="0.7"/>-->
         </m:Map>
     </Grid>
 </Window>

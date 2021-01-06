@@ -254,6 +254,18 @@ namespace BLImp
             //ddd
             return dal.GetLine(id).GetPropertiesFrom<BO.Line, DO.Line>();
         }
+        public IEnumerable<IEnumerable<Line>> GetAllLineGroupByArea()
+        {
+            return from line in GetAllLines()
+                   group line by line.Area
+                   into list
+                   select list;
+        }
+        public IEnumerable<string> GetAllAreas()
+        {
+            return (from line in GetAllLines()
+                    select line.Area).Distinct();
+        }
 
     }
 }

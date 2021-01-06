@@ -72,6 +72,13 @@ namespace Wpf
             this.Close();
         }
 
-       
+        private void Map3_Click(object sender, RoutedEventArgs e)
+        {
+            var ab = new map3();
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+
+        }
     }
 }

@@ -6,29 +6,21 @@
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
-        Title="map3" Height="450" Width="800">
-    <Grid x:Name="LayoutRoot" Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="35" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        Title="map3" Height="450" Width="800"
+                WindowStartupLocation="CenterScreen">
 
-        <m:Map x:Name="MapWithPolygon" Grid.RowSpan="2"
-                  Center="37.14814, -119.64424" ZoomLevel="6"
-                  Mode="Road" 
-                  CredentialsProvider="Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi" 
-                >
-            <m:MapLayer x:Name="NewPolygonLayer">
-                <TextBlock x:Name="txtDescription" Margin="5">
-                         Click on the map to create the polygon points
-                </TextBlock>
-
-                <!--<Button x:Name="btnCreatePolygon" 
-                        HorizontalAlignment="Left" VerticalAlignment="Top" Tag="false"
-                        Click="btnCreatePolygon_Click" Height="25" Width="100" Margin="310 0 0 0 ">
-                    <TextBlock x:Name="txtButton">Create Polygon</TextBlock>
-                </Button>-->
-            </m:MapLayer>
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <m:Map x:Name="myMap" CredentialsProvider="Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi" Center="31.8822308,35.2385864" ZoomLevel="14">
         </m:Map>
+        <ComboBox Name="areaList" BorderThickness="0" ItemsSource="{Binding}" Background="Gray"  FlowDirection="LeftToRight" Grid.Column="1" VerticalAlignment= "Top"   HorizontalAlignment="Stretch"  SelectionChanged="Area_SelectionChanged"  FontSize="15"  >
+
+        </ComboBox>
+        <Grid.Background>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
     </Grid>
 </Window>
