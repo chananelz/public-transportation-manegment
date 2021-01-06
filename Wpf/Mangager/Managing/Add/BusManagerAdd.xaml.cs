@@ -71,7 +71,6 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
 
 
-
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
         {
 
