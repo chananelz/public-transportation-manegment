@@ -19,6 +19,9 @@ namespace Wpf.CEO.CEOS
     /// </summary>
     public partial class PresentationCEO : Window
     {
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public PresentationCEO()
         {
             InitializeComponent();

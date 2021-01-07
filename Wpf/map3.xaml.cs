@@ -28,6 +28,9 @@ namespace Wpf
         BLApi.IBL bl;
         long lineNumber;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public map3()
         {
             InitializeComponent();
@@ -43,6 +46,11 @@ namespace Wpf
                 .FirstOrDefault(p => Color.AreClose((Color)p.GetValue(null), col));
             return colorProperty != null ? colorProperty.Name : "unnamed color";
         }
+
+        /// <summary>
+        /// add new lines on the map
+        /// </summary>
+        /// <param name="area"></param>
         void addNewPolyline(string area)
         {
             MapPolyline polyline;
@@ -95,6 +103,11 @@ namespace Wpf
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Area_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             myMap.Children.Clear();

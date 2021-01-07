@@ -33,6 +33,9 @@ namespace Wpf.Mangager.threading
         public BO.Bus tempBus = new BO.Bus();
         BLApi.IBL bl;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public StartTravel(BO.Bus mBus)
         {
             InitializeComponent();
@@ -41,6 +44,11 @@ namespace Wpf.Mangager.threading
             lineListBox.ItemsSource = bl.GetAllLines().ToList();
             DriverListBox.ItemsSource = bl.GetAllUsers(user => user.Permission == BO.authority.Driver).ToList();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void information_Click(object sender, RoutedEventArgs e)
         {
             BLApi.IBL bl;
@@ -49,17 +57,33 @@ namespace Wpf.Mangager.threading
             tempLine = (BO.Line)a.DataContext;
             new LineInfo(tempLine).Show();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void informationUser_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("didn't get to this yet!");
         }
-     
-        
-       
+
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartTravel_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -82,17 +106,32 @@ namespace Wpf.Mangager.threading
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void current(object sender, RoutedEventArgs e)
         {
             //foreach(CheckBox check in )
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lineListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             tempLine = (BO.Line)lineListBox.SelectedItem;
             lineLabel.DataContext = tempLine;
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DriverListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             tempDriver = (BO.User)DriverListBox.SelectedItem;

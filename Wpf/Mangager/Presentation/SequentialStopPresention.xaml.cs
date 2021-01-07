@@ -30,6 +30,9 @@ namespace Wpf.Mangager.Presentation
         int fIndex = -1;
         int sIndex = -1;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public SequentialStopPresention()
         {
             InitializeComponent();
@@ -47,7 +50,9 @@ namespace Wpf.Mangager.Presentation
         BLApi.IBL bl;
 
 
-
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public SequentialStopPresention(BO.Line mLine)
         {
             InitializeComponent();
@@ -60,7 +65,9 @@ namespace Wpf.Mangager.Presentation
         }
 
 
-
+        /// <summary>
+        /// This function initializes the control called - ProgressBar.
+        /// </summary>
         public void ProgressBar()
         {
             worker = new BackgroundWorker();
@@ -77,7 +84,11 @@ namespace Wpf.Mangager.Presentation
 
 
 
-
+        /// <summary>
+        /// This function manages the progress of the ProgressBar control according to the input from the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
         {
 
@@ -98,7 +109,11 @@ namespace Wpf.Mangager.Presentation
             }
         }
 
-
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
@@ -120,7 +135,11 @@ namespace Wpf.Mangager.Presentation
         }
 
 
-
+        /// <summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             //if (e.Cancelled)
@@ -153,11 +172,22 @@ namespace Wpf.Mangager.Presentation
 
             //this.Close();
         }
+
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Distance_Click(object sender, RoutedEventArgs e)
         {
             string textRange = distance_Binding.Text;
@@ -165,13 +195,19 @@ namespace Wpf.Mangager.Presentation
             if (double.TryParse(textRange, out result))
             {
                 bl.UpdateSequentialStopInfoDistance(tempStopA.Code, tempStopB.Code, result);
-                MessageBox.Show("input submited " + result);
+                MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
                 throw new Exception("not double!!");
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TravelTime_Click(object sender, RoutedEventArgs e)
         {
             string textRange = distance_Binding.Text;
@@ -179,13 +215,19 @@ namespace Wpf.Mangager.Presentation
             if (TimeSpan.TryParse(textRange, out result))
             {
                 bl.UpdateSequentialStopInfoTravelTime(tempStopA.Code, tempStopB.Code, result);
-                MessageBox.Show("input submited " + result);
+                MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
                 throw new Exception("not double!!");
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stopListBoxA_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             tempStopA = (BO.LineStation)stopListBoxA.SelectedItem;
@@ -202,6 +244,11 @@ namespace Wpf.Mangager.Presentation
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stopListBoxB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             tempStopB = (BO.LineStation)stopListBoxB.SelectedItem;

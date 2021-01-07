@@ -26,11 +26,19 @@ namespace Wpf.CEO
 
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
+
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public OptionsForCEO()
         {
             InitializeComponent();
             busFunc();
         }
+
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
         private void busFunc()
         {
             place = movingBus.Margin.Left;
@@ -39,6 +47,12 @@ namespace Wpf.CEO
             gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
             gameTimer.Start();
         }
+
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -47,34 +61,67 @@ namespace Wpf.CEO
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bus_Click(object sender, RoutedEventArgs e)
         {
             new PresentationUser().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void line_Click(object sender, RoutedEventArgs e)
         {
             new PresentationDriver().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stop_Click(object sender, RoutedEventArgs e)
         {
             new PresentationStops().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

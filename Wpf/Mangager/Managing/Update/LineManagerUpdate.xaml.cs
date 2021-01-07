@@ -33,6 +33,9 @@ namespace Wpf.Mangager.Managing
         BO.Line managingLine;
         BO.Stop tempStop;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public LineManager(BO.Line line)
         {
             InitializeComponent();
@@ -64,6 +67,13 @@ namespace Wpf.Mangager.Managing
         //        }
         //    }
         //}
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -74,7 +84,7 @@ namespace Wpf.Mangager.Managing
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
             }
@@ -110,7 +120,11 @@ namespace Wpf.Mangager.Managing
 
 
 
-
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Area_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
@@ -124,7 +138,7 @@ namespace Wpf.Mangager.Managing
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                 MyTextBox1.Clear();
             }
         }
@@ -155,7 +169,11 @@ namespace Wpf.Mangager.Managing
         }
 
 
-
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddStopToLine_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -168,9 +186,14 @@ namespace Wpf.Mangager.Managing
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -186,6 +209,11 @@ namespace Wpf.Mangager.Managing
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClick(object sender, RoutedEventArgs e)
         {
 

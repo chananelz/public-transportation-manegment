@@ -42,9 +42,12 @@ namespace dotNet5781_03_B_6077_5711
         {
             InitializeComponent();
             ProgressBar();
-           
+
         }
 
+        /// <summary>
+        /// This function initializes the control called - ProgressBar.
+        /// </summary>
         public void ProgressBar()
         {
             worker = new BackgroundWorker();
@@ -54,18 +57,23 @@ namespace dotNet5781_03_B_6077_5711
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             if (worker.IsBusy != true)
-                worker.RunWorkerAsync(12); 
+                worker.RunWorkerAsync(12);
         }
 
 
 
 
+        /// <summary>
+        /// This function manages the progress of the ProgressBar control according to the input from the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
 
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
         {
 
-            if(worker.CancellationPending)
+            if (worker.CancellationPending)
             {
                 e.Cancel = true;
                 worker.ReportProgress(0);
@@ -77,23 +85,33 @@ namespace dotNet5781_03_B_6077_5711
                 while (amount != 7)
                 {
                     System.Threading.Thread.Sleep(500);
-                    worker.ReportProgress(amount * 200 / (length+1));
+                    worker.ReportProgress(amount * 200 / (length + 1));
                 }
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
 
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            
+
             int progress = e.ProgressPercentage;
-        
+
             resultLabel.Content = (progress + "%");
             resultProgressBar.Value = progress;
         }
 
 
-
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
@@ -142,9 +160,9 @@ namespace dotNet5781_03_B_6077_5711
                 catch (SuperBusException exception)
                 {
                     MessageBox.Show(exception.Message);
-                 
+
                 }
-             
+
             }
         }
         /// <summary>
@@ -187,7 +205,7 @@ namespace dotNet5781_03_B_6077_5711
                     MessageBox.Show(exception.Message);
 
                 }
-                
+
             }
         }
         /// <summary>
@@ -286,13 +304,13 @@ namespace dotNet5781_03_B_6077_5711
                     amount++;
                     inputBus.m_licenseNum = result;
                     if (amount != 6)
-                        MessageBox.Show("input submited" + result);
+                        MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else
-            
+
             {
-               // MessageBox.Show("wrong input!!!!");
+                // MessageBox.Show("wrong input!!!!");
                 throw new SuperBusException("wrong input!!!!");
             }
         }
@@ -313,7 +331,7 @@ namespace dotNet5781_03_B_6077_5711
                     amount++;
                     inputBus.m_yearStart = result;
                     if (amount != 6)
-                        MessageBox.Show("input submited" + result);
+                        MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else
@@ -339,7 +357,7 @@ namespace dotNet5781_03_B_6077_5711
                     amount++;
                     inputBus.m_sum_Tr = result;
                     if (amount != 6)
-                        MessageBox.Show("input submited" + result);
+                        MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else
@@ -369,7 +387,7 @@ namespace dotNet5781_03_B_6077_5711
             stInput = new TextRange(MyTextBox3.Document.ContentStart, MyTextBox3.Document.ContentEnd).Text;
             string[] inputValues = stInput.Split('/');
 
-            if (inputValues.Length != 3  )
+            if (inputValues.Length != 3)
             {
                 throw new SuperBusException("wrong input!!!!");
             }
@@ -378,24 +396,25 @@ namespace dotNet5781_03_B_6077_5711
             stMonth = inputValues[1];
             stYear = inputValues[2];
 
-            
-           
+
+
 
             if (int.TryParse(stDay, out day) && int.TryParse(stMonth, out month) && int.TryParse(stYear, out year))
             {
-                DateTime temp =  new DateTime(year, month, day);
+                DateTime temp = new DateTime(year, month, day);
                 if (!input_3)
                 {
                     input_3 = true;
                     amount++;
                     inputBus.m_time_Treat = temp;
-                   
-                   
-                    
+
+
+
                     if (amount != 6)
-                        MessageBox.Show("input submited" + stInput);
+                        MessageBox.Show("input submited  " + stInput + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 }
-                
+
             }
             else
             {
@@ -419,7 +438,7 @@ namespace dotNet5781_03_B_6077_5711
                     amount++;
                     inputBus.m_sum_Tr_Treat = result;
                     if (amount != 6)
-                        MessageBox.Show("input submited" + result);
+                        MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else
@@ -445,7 +464,7 @@ namespace dotNet5781_03_B_6077_5711
                     inputBus.m_fuel = result;
                     if (amount != 6)
                     {
-                        MessageBox.Show("input submited" + result);
+                        MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
             }
@@ -470,9 +489,9 @@ namespace dotNet5781_03_B_6077_5711
                 {
                     input_6 = true;
                     amount++;
-                    inputBus.m_BusLine = (int) result;
+                    inputBus.m_BusLine = (int)result;
                     if (amount != 6)
-                        MessageBox.Show("input submited" + result);
+                        MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else
@@ -510,10 +529,10 @@ namespace dotNet5781_03_B_6077_5711
 
                 }
             }
-              
+
         }
     }
 
-        
-    
+
+
 }

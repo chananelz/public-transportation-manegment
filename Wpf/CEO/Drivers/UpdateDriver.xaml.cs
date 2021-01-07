@@ -19,6 +19,9 @@ namespace Wpf.CEO.Drivers
     /// </summary>
     public partial class UpdateDriver : Window
     {
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public UpdateDriver()
         {
             InitializeComponent();

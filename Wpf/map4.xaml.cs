@@ -24,6 +24,9 @@ namespace Wpf
     {
         string BingMapsKey = "Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi";
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public map4()
         {
             InitializeComponent();

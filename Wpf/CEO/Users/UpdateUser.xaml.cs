@@ -19,6 +19,9 @@ namespace Wpf.CEO.Users
     /// </summary>
     public partial class UpdateUser : Window
     {
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public UpdateUser()
         {
             InitializeComponent();

@@ -30,7 +30,9 @@ namespace Wpf.CEO.Drivers
         BLApi.IBL bl;
         public BO.User tempUser;
 
-
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public PresentationDriver()
         {
             InitializeComponent();
@@ -40,6 +42,9 @@ namespace Wpf.CEO.Drivers
 
         }
 
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
         private void busFunc()
         {
             place = movingBus.Margin.Left;
@@ -49,6 +54,11 @@ namespace Wpf.CEO.Drivers
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -61,6 +71,11 @@ namespace Wpf.CEO.Drivers
         {
 
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void information_Click(object sender, RoutedEventArgs e)
         {
             //Button a = (Button)sender;
@@ -68,6 +83,11 @@ namespace Wpf.CEO.Drivers
             //new LineInfo(tempUser).Show();
             //this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             //Button a = (Button)sender;
@@ -75,17 +95,32 @@ namespace Wpf.CEO.Drivers
             //new LineManager(tempLine).Show();
             //this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClick(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new OptionsForCEO().Show();
@@ -96,15 +131,30 @@ namespace Wpf.CEO.Drivers
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             //new LineManagerAdd().Show();
             //this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -115,7 +165,7 @@ namespace Wpf.CEO.Drivers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             new PresentationDriver().Show();
             this.Close();

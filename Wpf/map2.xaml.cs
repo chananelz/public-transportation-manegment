@@ -24,6 +24,9 @@ namespace Wpf
         BLApi.IBL bl;
         long lineNumber;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public map2(long lineNumberInput)
         {
             InitializeComponent();
@@ -31,6 +34,10 @@ namespace Wpf
             bl = BLApi.Factory.GetBL("1");
             addNewPolyline();
         }
+
+        /// <summary>
+        /// Initializes the lines on the map
+        /// </summary>
         void addNewPolyline()
         {
             MapPolyline polyline = new MapPolyline();

@@ -31,6 +31,10 @@ namespace Wpf.Mangager.Presentation
         DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Bus tempBus;
+
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public PresentationBusses()
         {
             InitializeComponent();
@@ -48,6 +52,9 @@ namespace Wpf.Mangager.Presentation
             busFunc();
         }
 
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
         private void busFunc()
         {
 
@@ -58,6 +65,11 @@ namespace Wpf.Mangager.Presentation
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -67,6 +79,11 @@ namespace Wpf.Mangager.Presentation
         }
 
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void information_Click(object sender, RoutedEventArgs e)
         {
 
@@ -77,6 +94,12 @@ namespace Wpf.Mangager.Presentation
             ab.Width = 600;
             ab.Show();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void update_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -87,28 +110,53 @@ namespace Wpf.Mangager.Presentation
             ab.Show();
 
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClick(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new OptionsForDriver().Show();
             this.Close();
         }
 
+        // <summary>
+        /// Defines actions to be performed when the user select box frome the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, RoutedEventArgs e)
         {
 
@@ -120,10 +168,22 @@ namespace Wpf.Mangager.Presentation
             ab.Width = 600;
             ab.Show();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -132,6 +192,12 @@ namespace Wpf.Mangager.Presentation
             new PresentationBusses().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Refule_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -140,6 +206,12 @@ namespace Wpf.Mangager.Presentation
             new PresentationBusses().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Treatment_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -149,6 +221,11 @@ namespace Wpf.Mangager.Presentation
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startDrive_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;

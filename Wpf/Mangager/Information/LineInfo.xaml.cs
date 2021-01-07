@@ -37,7 +37,7 @@ namespace Wpf.Mangager.Information
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             StopList.ItemsSource = infoLine.Stops;
             BusesList.ItemsSource = infoLine.Buses;
