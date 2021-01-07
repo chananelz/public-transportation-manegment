@@ -159,11 +159,11 @@ namespace DO
 
         public class DOBadUserIdException : Exception
         {
-            public long ID;
-            public DOBadUserIdException(long id) : base() => ID = id;
-            public DOBadUserIdException(long id, string message) : base(message) => ID = id;
-            public DOBadUserIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
-            public override string ToString() => base.ToString() + $", DOBad User id: {ID}";
+            public string Password;
+            public DOBadUserIdException(string password) : base() => Password = password;
+            public DOBadUserIdException(string password, string message) : base(message) => Password = password;
+            public DOBadUserIdException(string password, string message, Exception innerException) : base(message, innerException) => Password = password;
+            public override string ToString() => base.ToString() + $", DOBad User Password: {Password}";
         }
 
         public class DOBadUserTravelIdException : Exception
@@ -174,5 +174,20 @@ namespace DO
             public DOBadUserTravelIdException(long id, string message, Exception innerException) : base(message, innerException) => ID = id;
             public override string ToString() => base.ToString() + $", DOBad UserTravel id: {ID}";
         }
+
+    public class XMLFileLoadCreateException : Exception
+    {
+        public string xmlFilePath;
+        public XMLFileLoadCreateException(string xmlPath) : base() { xmlFilePath = xmlPath; }
+        public XMLFileLoadCreateException(string xmlPath, string message) :
+            base(message)
+        { xmlFilePath = xmlPath; }
+        public XMLFileLoadCreateException(string xmlPath, string message, Exception innerException) :
+            base(message, innerException)
+        { xmlFilePath = xmlPath; }
+
+        public override string ToString() => base.ToString() + $", fail to load or create xml file: {xmlFilePath}";
+    }
+
 }
 
