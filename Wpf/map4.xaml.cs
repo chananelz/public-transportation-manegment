@@ -37,8 +37,10 @@ namespace Wpf
             //Create REST Services geocode request using Locations API
             string geocodeRequest = "http://dev.virtualearth.net/REST/v1/Locations/" + addressQuery + "?o=xml&key=" + BingMapsKey;
 
-            //Make the request and get the response
+            //Make the request and get the response                                          
             XmlDocument geocodeResponse = GetXmlResponse(geocodeRequest);
+
+
 
             return (geocodeResponse);
         }
@@ -103,6 +105,44 @@ namespace Wpf
         }
 
 
+
+        private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                try
+                {
+                    Search_Click(sender, e);
+                }
+                catch
+                {
+                    MessageBox.Show("something wrong happened please try again", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+            }
+        }
+
+
+        private void MapWithPushpins_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // Disables the default mouse double-click action.
+            e.Handled = true;
+
+            // Determin the location to place the pushpin at on the map.
+
+            //Get the mouse click coordinates
+            Point mousePosition = e.GetPosition(this);
+            //Convert the mouse coordinates to a locatoin on the map
+            Location pinLocation = myMap.ViewportPointToLocation(mousePosition);
+
+            // The pushpin to add to the map.
+            Pushpin pin = new Pushpin();
+            pin.Location = pinLocation;
+
+            // Adds the pushpin to the map.
+            myMap.Children.Add(pin);
+        }
+
         //Search for POI elements when the Search button is clicked
         private void Search_Click(object sender, RoutedEventArgs e)
         {
@@ -115,6 +155,8 @@ namespace Wpf
             //Find and display points of interest near the specified location
             FindByText(searchResponse);
         }
+
+
 
     }
 }

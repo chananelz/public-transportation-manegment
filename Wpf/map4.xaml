@@ -32,7 +32,8 @@
         </Grid.RowDefinitions>
 
         <Canvas Name="SearchParameters" Grid.Row="0"  Margin="0,0,36,0">
-            <TextBox x:Name="SearchNearBy" Background="Blue" Width="200"/>
+
+            <TextBox x:Name="SearchNearBy" CaretBrush="#FF6C6C6C" KeyDown="MyTextBox0_KeyDown" Background="LightBlue" BorderThickness="1"  Foreground="Black" Width="200" Canvas.Left="120" Canvas.Top="50"/>
             <Button Click="Search_Click" Width="100" Height="24" Grid.ColumnSpan="2" Margin="0,77,251,39" HorizontalAlignment="Right" Canvas.Left="319" Canvas.Top="-25">Search</Button>
         </Canvas>
 
@@ -40,9 +41,14 @@
         <StackPanel Grid.Row="1"
                >
             <m:Map Visibility="Visible" x:Name="myMap"
+                              MouseDoubleClick="MapWithPushpins_MouseDoubleClick"
                CredentialsProvider="Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi"  Height="300" Width="300" />
             <Label Name="myMapLabel" Visibility="Hidden" HorizontalAlignment="Center" >Use + and - to zoom in and out</Label>
         </StackPanel>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="myImages/green_background.png"/>
+        </Grid.Background>
 
     </Grid>
 </Window>
