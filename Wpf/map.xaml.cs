@@ -24,6 +24,10 @@ namespace Wpf
     {
         double longitude;
         double latitude;
+
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public map(double longitudeInput, double latitudeInput)
         {
             InitializeComponent();
@@ -35,6 +39,10 @@ namespace Wpf
             showLoc();
 
         }
+
+        /// <summary>
+        /// show Location
+        /// </summary>
         private void showLoc()
         {
 

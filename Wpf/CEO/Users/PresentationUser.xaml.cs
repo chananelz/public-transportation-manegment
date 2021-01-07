@@ -25,7 +25,9 @@ namespace Wpf.CEO.Users
         BLApi.IBL bl;
         public BO.User tempUser;
 
-
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public PresentationUser()
         {
             InitializeComponent();
@@ -35,6 +37,9 @@ namespace Wpf.CEO.Users
 
         }
 
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
         private void busFunc()
         {
             place = movingBus.Margin.Left;
@@ -44,6 +49,11 @@ namespace Wpf.CEO.Users
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -52,10 +62,20 @@ namespace Wpf.CEO.Users
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
+        /// <summary>
+        /// Defines actions to be performed when the user select box frome the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void information_Click(object sender, RoutedEventArgs e)
         {
             //Button a = (Button)sender;
@@ -63,6 +83,11 @@ namespace Wpf.CEO.Users
             //new LineInfo(tempUser).Show();
             //this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Update_Click(object sender, RoutedEventArgs e)
         {
             //Button a = (Button)sender;
@@ -70,36 +95,73 @@ namespace Wpf.CEO.Users
             //new LineManager(tempLine).Show();
             //this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClick(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new OptionsForCEO().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when the user select box frome the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lineList_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             //new LineManagerAdd().Show();
             //this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             Button a = (Button)sender;
@@ -110,7 +172,7 @@ namespace Wpf.CEO.Users
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             new PresentationUser().Show();
             this.Close();

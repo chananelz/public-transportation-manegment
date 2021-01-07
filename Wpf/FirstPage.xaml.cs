@@ -26,6 +26,9 @@ namespace Wpf
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public FirstPage()
         {
             InitializeComponent();
@@ -33,6 +36,9 @@ namespace Wpf
 
         }
 
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
         private void busFunc()
         {
             place = movingBus.Margin.Left;
@@ -42,6 +48,12 @@ namespace Wpf
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -50,28 +62,54 @@ namespace Wpf
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void user_Click(object sender, RoutedEventArgs e)
         {
             new SignIn("PASSENGER").Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void driver_Click(object sender, RoutedEventArgs e)
         {
             new SignIn("DRIVER").Show();
             this.Close();
         }
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ceo_Click(object sender, RoutedEventArgs e)
         {
             new SignIn("CEO").Show();
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Map3_Click(object sender, RoutedEventArgs e)
         {
             var ab = new map4();

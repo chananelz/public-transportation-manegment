@@ -33,6 +33,10 @@ namespace Wpf
         DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         string Status = "";
+
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public SignIn(string status)
         {
             Status = status;
@@ -51,7 +55,9 @@ namespace Wpf
             busFunc();
 
         }
-
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
 
         private void busFunc()
         {
@@ -62,6 +68,11 @@ namespace Wpf
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -70,6 +81,11 @@ namespace Wpf
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void submit_Click(object sender, RoutedEventArgs e)
         {
             string password = PasswordContent.Password;
@@ -94,24 +110,35 @@ namespace Wpf
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                 new SignIn(Status).Show();
                 this.Close();
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+       
         private void ShowPassword_Checked_Password(object sender, RoutedEventArgs e)
         {
             passwordTxtBox.Text = PasswordContent.Password;
@@ -125,22 +152,44 @@ namespace Wpf
             passwordTxtBox.Visibility = Visibility.Collapsed;
             PasswordContent.Visibility = Visibility.Visible;
         }
+
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
             new SignUp().Show();
             this.Close();
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
                 submit_Click(sender, e);
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void userNameTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 

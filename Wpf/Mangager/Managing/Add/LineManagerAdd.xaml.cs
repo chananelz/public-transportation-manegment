@@ -60,7 +60,9 @@ namespace Wpf.Mangager.Managing.Add
             StopListListBox.ItemsSource = stopListInput;
         }
 
-
+        /// <summary>
+        /// This function initializes the control called - ProgressBar.
+        /// </summary>
         public void ProgressBar()
         {
             worker = new BackgroundWorker();
@@ -76,6 +78,11 @@ namespace Wpf.Mangager.Managing.Add
 
 
 
+        /// <summary>
+        /// This function manages the progress of the ProgressBar control according to the input from the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
 
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
@@ -98,6 +105,12 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
 
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -109,12 +122,16 @@ namespace Wpf.Mangager.Managing.Add
         }
 
 
-
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
             {
-                MessageBox.Show("work cancelled");
+                MessageBox.Show("work cancelled", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             
@@ -136,7 +153,7 @@ namespace Wpf.Mangager.Managing.Add
                 amount = 0;
                 return;
             }
-            MessageBox.Show("line added!");
+            MessageBox.Show("line added!", "input", MessageBoxButton.OK, MessageBoxImage.Information);
             foreach (Window w in Application.Current.Windows)
             {
                 if (w.Name == "PresentationLines1")
@@ -240,7 +257,7 @@ namespace Wpf.Mangager.Managing.Add
                 {
 
                     number = result;
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + textRange + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     NumberLabel.Content = result;
                     MyTextBox0.Clear();
                     if (!input0)
@@ -253,7 +270,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "input", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -270,7 +287,9 @@ namespace Wpf.Mangager.Managing.Add
             {
 
                 area = textRange;
-                MessageBox.Show("input submited" + textRange);
+                
+                MessageBox.Show("input submited  " + textRange + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 AreaLabel.Content = area;
                 MyTextBox1.Clear();
                 if (!input1)
@@ -282,7 +301,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                
             }
 
@@ -304,7 +323,7 @@ namespace Wpf.Mangager.Managing.Add
                 }
                 else
                 {
-                    MessageBox.Show("input submited");
+                    MessageBox.Show("input submited  "  + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     if (!input2)
                     {
                         input2 = true;
@@ -314,7 +333,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "input", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
         }

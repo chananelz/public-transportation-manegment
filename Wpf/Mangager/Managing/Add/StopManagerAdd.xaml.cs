@@ -55,7 +55,9 @@ namespace Wpf.Mangager.Managing.Add
 
         }
 
-
+        /// <summary>
+        /// This function initializes the control called - ProgressBar.
+        /// </summary>
         public void ProgressBar()
         {
             worker = new BackgroundWorker();
@@ -72,6 +74,11 @@ namespace Wpf.Mangager.Managing.Add
 
 
 
+        /// <summary>
+        /// This function manages the progress of the ProgressBar control according to the input from the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
 
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
@@ -94,6 +101,12 @@ namespace Wpf.Mangager.Managing.Add
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
 
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -106,11 +119,16 @@ namespace Wpf.Mangager.Managing.Add
 
 
 
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
             {
-                MessageBox.Show("work cancelled");
+                MessageBox.Show("work cancelled", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 
@@ -236,7 +254,7 @@ namespace Wpf.Mangager.Managing.Add
                 }
                 amount++;
                 stopName = textRange;
-                MessageBox.Show("input submited" + textRange);
+                MessageBox.Show("input submited  " + textRange + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 NameLabel.Content = stopName;
                 MyTextBox0.Clear();
                 if (!input0)
@@ -248,7 +266,7 @@ namespace Wpf.Mangager.Managing.Add
 
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox2.Clear();
             }
         }
@@ -279,7 +297,7 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     amount++;
                     longitude = result;
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     LongitudeLabel.Content = result;
                     MyTextBox1.Clear();
                     if (!input1)
@@ -292,7 +310,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox1.Clear();
             }
         }
@@ -324,7 +342,7 @@ namespace Wpf.Mangager.Managing.Add
                 {
                     amount++;
                     latitude = result;
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     LatitudeLabel.Content = result;
                     MyTextBox2.Clear();
                     if (!input2)
@@ -337,7 +355,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox2.Clear();
             }
         }

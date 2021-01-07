@@ -33,7 +33,9 @@ namespace Wpf.Mangager.Managing
         BLImp.Validator valid = new Validator();
 
 
-
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public BusManager(BO.Bus bus)
         {
             InitializeComponent();
@@ -42,15 +44,23 @@ namespace Wpf.Mangager.Managing
             bl = BLApi.Factory.GetBL("1");
         }
 
-      
 
 
 
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
         { }
 
-
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -61,12 +71,17 @@ namespace Wpf.Mangager.Managing
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -77,11 +92,17 @@ namespace Wpf.Mangager.Managing
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -92,21 +113,36 @@ namespace Wpf.Mangager.Managing
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         { }
 
-       
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox_TextChanged_2(object sender, TextChangedEventArgs e)
         {
            
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Travel_Update_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox0.Text;
@@ -117,22 +153,28 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateBusKM(kM, managingBus.LicenseNumber);
-                    MessageBox.Show("input submited " + result +  "          click X to return bus page");
-                   
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                     MyTextBox0.Clear();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                     MyTextBox0.Clear();
                 }
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox1.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Fuel_Update_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
@@ -143,23 +185,29 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateBusFuel(fuel, managingBus.LicenseNumber);
-                    MessageBox.Show("input submited " + result + "        click X to return bus page");
-                   
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                     MyTextBox1.Clear();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                     MyTextBox1.Clear();
                 }
 
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox1.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Status_Update_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox2.Text;
@@ -181,13 +229,13 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateBusStatus(statusInput, managingBus.LicenseNumber);
-                    MessageBox.Show("input submited " + result + "        click X to return bus page");
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     MyTextBox2.Clear();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                     MyTextBox2.Clear();
                 }
 
@@ -195,10 +243,16 @@ namespace Wpf.Mangager.Managing
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox2.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window w in Application.Current.Windows)
@@ -213,16 +267,31 @@ namespace Wpf.Mangager.Managing
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(" status format" + "\n" + "-  Click: 0 for a traveling,\n-  Click:  1 for a ready for drive, \n-  Click: 2 for a treating,  \n - Click: 3 for a refuling", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click2(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Enter a number between 0-1200 that indicates the amount of fuel", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click3(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Enter a number above 0 that indicates the amount of kilometers traveled by the bus", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);

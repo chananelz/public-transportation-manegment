@@ -34,6 +34,9 @@ namespace Wpf.Mangager.Managing
 
         BLApi.IBL bl;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public StopMangaer(BO.Stop stop)
         {
             InitializeComponent();
@@ -42,12 +45,16 @@ namespace Wpf.Mangager.Managing
             bl = BLApi.Factory.GetBL("1");
         }
 
-       
-
-   
 
 
 
+
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -64,6 +71,11 @@ namespace Wpf.Mangager.Managing
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -80,6 +92,11 @@ namespace Wpf.Mangager.Managing
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -99,7 +116,11 @@ namespace Wpf.Mangager.Managing
 
 
 
-     
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Name_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox0.Text;
@@ -108,8 +129,8 @@ namespace Wpf.Mangager.Managing
             try
             {
                 bl.UpdateStopName(name, managingStop.StopCode);
-                MessageBox.Show("input submited" + textRange +  "      to exit click X");
-               
+                MessageBox.Show("input submited" + textRange + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 MyTextBox0.Clear();
             }
             catch (BO.BODOStopBadIdException ex)
@@ -119,7 +140,12 @@ namespace Wpf.Mangager.Managing
                 return;
             }
         }
-       
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Longitude_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
@@ -131,7 +157,8 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateStopLongitude(result, managingStop.StopCode);
-                    MessageBox.Show("input submited" + result + "   to exit click X");
+                    MessageBox.Show("input submited" + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                     MyTextBox1.Clear();
                 }
                 catch (BO.BODOStopBadIdException ex)
@@ -143,10 +170,16 @@ namespace Wpf.Mangager.Managing
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox1.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Latitude_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox2.Text;
@@ -167,7 +200,7 @@ namespace Wpf.Mangager.Managing
                 try
                 {
                     bl.UpdateStopLatitude(result, managingStop.StopCode);
-                    MessageBox.Show("input submited" + result +"   to exit click X");
+                    MessageBox.Show("input submited" + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     MyTextBox2.Clear();
                 }
                 catch (BO.BODOStopBadIdException ex)
@@ -179,10 +212,16 @@ namespace Wpf.Mangager.Managing
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox2.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window w in Application.Current.Windows)

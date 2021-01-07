@@ -109,12 +109,16 @@ namespace Wpf
         }
 
 
-
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
             {
-                MessageBox.Show("work cancelled");
+                MessageBox.Show("work cancelled", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             try
@@ -123,13 +127,15 @@ namespace Wpf
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message); 
+                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information); 
             }
             new SignIn("PASSENGER").Show();
             this.Close();
         }
 
-
+        /// <summary>
+        ///Initializes the moving bus at the bottom of the screen
+        /// </summary>
         private void busFunc()
         {
             place = movingBus.Margin.Left;
@@ -139,6 +145,11 @@ namespace Wpf
             gameTimer.Start();
         }
 
+        /// <summary>
+        /// Defines the movement of the moving bus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -147,12 +158,22 @@ namespace Wpf
                 movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void home_Click(object sender, RoutedEventArgs e)
         {
             new FirstPage().Show();
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
             new PresentationBusses().Show();
@@ -160,7 +181,11 @@ namespace Wpf
         }
 
 
-
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox_TextChanged_0(object sender, TextChangedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
@@ -172,12 +197,17 @@ namespace Wpf
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
@@ -189,14 +219,18 @@ namespace Wpf
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
             }
         }
 
-        
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Name_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox0.Document.ContentStart, MyTextBox0.Document.ContentEnd);
@@ -210,16 +244,23 @@ namespace Wpf
                 amount++;
                 var li = textRange.Text.Split('\r');
                 name = li[0];
-                MessageBox.Show("input submited" + textRange.Text);
+                MessageBox.Show("input submited" + textRange.Text + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+                
+
                 MyTextBox0.Document.Blocks.Clear();
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox0.Document.Blocks.Clear();
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Password_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(MyTextBox1.Document.ContentStart, MyTextBox1.Document.ContentEnd);
@@ -233,16 +274,21 @@ namespace Wpf
                 amount++;
                 var li = textRange.Text.Split('\r');
                 password = li[0];
-                MessageBox.Show("input submited" + textRange.Text);
+                MessageBox.Show("input submited" + textRange.Text + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 MyTextBox1.Document.Blocks.Clear();
             }
             else
             {
-                MessageBox.Show("wrong input!!!!");
+                MessageBox.Show("wrong input!!!!", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 MyTextBox1.Document.Blocks.Clear();
             }
 
         }
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

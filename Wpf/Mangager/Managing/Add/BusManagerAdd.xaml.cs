@@ -45,6 +45,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
         BLApi.IBL bl;
 
+        /// <summary>
+        /// Initializes the current window in all existing objects 
+        /// </summary>
         public BusManagerAdd()
         {
             InitializeComponent();
@@ -55,6 +58,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
             bl = BLApi.Factory.GetBL("1");
         }
 
+        /// <summary>
+        /// This function initializes the control called - ProgressBar.
+        /// </summary>
         public void ProgressBar()
         {
             worker = new BackgroundWorker();
@@ -69,6 +75,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
 
 
+        /// <summary>
+        /// This function manages the progress of the ProgressBar control according to the input from the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
 
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
@@ -91,6 +102,12 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
 
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -102,12 +119,16 @@ namespace Wpf.Mangager.Managing.Add.myImages
         }
 
 
-
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
             {
-                MessageBox.Show("work cancelled");
+                MessageBox.Show("work cancelled", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
           
@@ -163,11 +184,15 @@ namespace Wpf.Mangager.Managing.Add.myImages
         }
 
 
-      
-
-    
 
 
+
+
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -185,6 +210,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
         }
 
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -201,6 +231,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -217,6 +252,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox3_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -233,6 +273,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the process of receiving and checking the input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyTextBox4_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -251,8 +296,12 @@ namespace Wpf.Mangager.Managing.Add.myImages
 
 
 
-       
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LicenseNumber_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox0.Text;
@@ -296,7 +345,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (amount != 5)
                 {
                     licenseNumber = result;
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     LicenseNumberLabel.Content = result;
                     MyTextBox0.Clear();
                     if (!input0)
@@ -314,6 +363,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LicenseDate_Click(object sender, RoutedEventArgs e)
         {
 
@@ -374,7 +428,9 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     DateTime temp = new DateTime(year, month, day);
                     licenseDate = temp;
-                    MessageBox.Show("input submited" + stInput);
+                   
+                    MessageBox.Show("input submited  " + stInput + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
                     DateTimeLabel.Content = temp;
                     MyTextBox1.Clear();
                     if (!input1)
@@ -393,6 +449,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
             }
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Travel_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox2.Text;
@@ -412,7 +473,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 
                 if (amount != 5)
                 {
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     KMLabel.Content = result;
                     kM = result;
                     MyTextBox2.Clear();
@@ -430,6 +491,11 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 MyTextBox2.Clear();
             }
         }
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Fuel_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox3.Text;
@@ -460,7 +526,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if ( amount != 5)
                 {
                     fuel = result;
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     FuelLabel.Content = result;
                     MyTextBox3.Clear();
                     if (!input3)
@@ -477,6 +543,12 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 MyTextBox3.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Status_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox4.Text;
@@ -497,7 +569,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 if (amount != 5)
                 {
                     statusInput = result;
-                    MessageBox.Show("input submited" + result);
+                    MessageBox.Show("input submited  " + result + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     StatusLabel.Content = result; 
                     MyTextBox4.Clear();
                     if (!input4)
@@ -514,31 +586,62 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 MyTextBox4.Clear();
             }
         }
+
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(" status format" + "\n" + "-  Click: 0 for a traveling,\n-  Click:  1 for a ready for drive, \n-  Click: 2 for a treating,  \n - Click: 3 for a refuling", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click2(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Enter a number between 0-1200 that indicates the amount of fuel", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click3(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Enter a number above 0 that indicates the amount of kilometers traveled by the bus", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click4(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Enter day month year with '/' between the input ", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// This function is responsible for the series of actions that will be performed when this button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Info_Click5(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("If the year of license date is after 2018 enter 8-digit number \n else enter 7-digit number ", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
