@@ -21,6 +21,7 @@ namespace DL
         /// <param name="bus">the bus you want to add</param>
         public void CreateBus(Bus bus)
         {
+            DL.Initialize ab = new DL.Initialize();
             bus.Valid = true;
             Bus a = new Bus();
             try

@@ -67,6 +67,10 @@
       <Project>{d46f36de-f9fb-4058-b98b-7564c3846778}</Project>
       <Name>DalApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DLXml\DLXml.csproj">
+      <Project>{1201e1f1-4208-4359-b229-efddeb371e9e}</Project>
+      <Name>DLXml</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DS\DS.csproj">
       <Project>{e953a618-3057-4f29-a08f-8b801636ac7b}</Project>
       <Name>DS</Name>

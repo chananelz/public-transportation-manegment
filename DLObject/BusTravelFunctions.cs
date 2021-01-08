@@ -18,6 +18,7 @@ namespace DL
         /// <param name="busTravel">bus travel to be added to the database</param>
         public void CreateBusTravel(BusTravel busTravel)
         {
+
             busTravel.Valid = true;
             busTravel.Id = Configuration.Bus_TravelCounter;
             try

@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace DL
 {
-    class XMLTools
+    public class XMLTools
     {
         static string dir = @"xml\";
         static XMLTools()
@@ -53,21 +53,30 @@ namespace DL
         }
         #endregion
 
-        #region SaveLoadWithXMLSerializer
-        public static void SaveListToXMLSerializer<T>(List<T> list, string filePath)
+
+        public static void saveListToXML<T>(List<T> list, string path)
         {
-            try
-            {
-                FileStream file = new FileStream(dir + filePath, FileMode.Create);
-                XmlSerializer x = new XmlSerializer(list.GetType());
-                x.Serialize(file, list);
-                file.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new DO.XMLFileLoadCreateException(filePath, $"fail to create xml file: {filePath}", ex);
-            }
+            XmlSerializer x = new XmlSerializer(list.GetType());
+            FileStream fs = new FileStream(path, FileMode.Create);
+            x.Serialize(fs, list);
         }
+
+
+        #region SaveLoadWithXMLSerializer
+        //public static void savelisttoxmlserializer<t>(list<t> list, string filepath)
+        //{
+        //    try
+        //    {
+        //        filestream file = new filestream(dir + filepath, filemode.create);
+        //        xmlserializer x = new xmlserializer(list.gettype());
+        //        x.serialize(file, list);
+        //        file.close();
+        //    }
+        //    catch (exception ex)
+        //    {
+        //        throw new do.xmlfileloadcreateexception(filepath, $"fail to create xml file: {filepath}", ex);
+        //    }
+        //}
         public static List<T> LoadListFromXMLSerializer<T>(string filePath)
         {
             try
