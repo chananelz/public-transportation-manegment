@@ -447,9 +447,15 @@ namespace DL
         #endregion
 
         #region User
-
+        public enum authority
+        {
+            Passenger,
+            Driver,
+            CEO
+        }
         public User GetUser(string password)
         {
+
             XElement userRootElem = XMLTools.LoadListFromXMLElement(usersPath);
 
             User myUser = (from temUser in userRootElem.Elements()
@@ -458,8 +464,8 @@ namespace DL
                                   {
                                       Valid = bool.Parse(temUser.Element("Valid").Value),
                                       UserName = temUser.Element("UserName").Value,
-                                      Password = temUser.Element("Password").Value
-                                      // Permission = 
+                                      Password = temUser.Element("Password").Value,
+                                       Permission = (DO.authority)authority.Parse(typeof(authority), temUser.Element("Permission").Value)
 
                                   }
                                   ).FirstOrDefault();
