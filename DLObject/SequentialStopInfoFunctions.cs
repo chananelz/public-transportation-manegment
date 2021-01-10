@@ -32,7 +32,7 @@ namespace DL
                 }
                 return;
             }
-            throw new Exception("bus already exists!!!");
+            throw new Exception("Sequential stop already exists!!!");
         }
         /// <summary>
         /// request a SequentialStopInfo according to a predicate

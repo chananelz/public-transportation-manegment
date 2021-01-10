@@ -45,9 +45,9 @@ namespace DL
                     where (lineDeparture.Id == id)
                     select lineDeparture;
             if (t.ToList().Count == 0)
-                throw new Exception("no bus with such license number!!");
+                throw new Exception("no LineDeparture with such license number!!");
             if (!t.First().Valid)
-                throw new Exception("bus is not valid!!");
+                throw new Exception("LineDeparture is not valid!!");
 
             return t.ToList().First();
         }
@@ -62,7 +62,7 @@ namespace DL
             GetLineDeparture(id, time_Start).Frequency = frequency;
         }
         /// <summary>
-        /// update time_Start in database
+        /// update time_End in database
         /// </summary>
         /// <param name="id"></param>
         /// <param name="time_Start"></param>
