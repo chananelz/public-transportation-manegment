@@ -90,7 +90,7 @@ namespace Wpf.CEO
         /// <param name="e"></param>
         private void stop_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationStops().Show();
+            new PresentationStops("DRIVER").Show();
             this.Close();
         }
 

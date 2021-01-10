@@ -178,7 +178,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                     w.Close();
                 }
             }
-            new PresentationBusses().Show();
+            new PresentationBusses("DRIVER").Show();
 
             this.Close();
         }

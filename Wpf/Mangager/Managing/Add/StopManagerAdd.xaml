@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:local="clr-namespace:Wpf.Mangager.Managing.Add"
         mc:Ignorable="d"
         Title="StopManagerAdd" Height="450" Width="800"
@@ -38,6 +39,11 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
 
         </Grid.ColumnDefinitions>
 
@@ -57,9 +63,9 @@
         <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Longitude_Click" />
         <Button Content="Submit" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"  Click="Latitude_Click"/>
 
-        <Label Name = "NameLabel" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center"        />
-        <Label Name = "LongitudeLabel" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"     />
-        <Label Name = "LatitudeLabel" HorizontalAlignment="Center" Grid.Row="3"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"       />
+        <Label Name = "NameLabel" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="4"  VerticalAlignment="Center"        />
+        <Label Name = "LongitudeLabel" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center"     />
+        <Label Name = "LatitudeLabel" HorizontalAlignment="Center" Grid.Row="2"  Grid.Column="8" Grid.ColumnSpan="4" VerticalAlignment="Center"       />
 
 
         <ProgressBar Name ="resultProgressBar" HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Stretch" Grid.ColumnSpan="12"/>
@@ -81,10 +87,29 @@
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
+        <Grid Grid.Column="12" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
 
 
 
-     
+                <TextBox x:Name="SearchNearBy" Grid.Column="0" Height="24" CaretBrush="#FF6C6C6C" KeyDown="Search_KeyDown"  Background="LightBlue" BorderThickness="1"  Foreground="Black"   />
+            <Button Click="Search_Click" Width="100" Grid.Column="1" Height="24" Grid.ColumnSpan="2" HorizontalAlignment="Right">Search</Button>
+            <StackPanel Grid.Row="1"
+               >
+                <m:Map Visibility="Visible" x:Name="myMap"
+                              MouseDoubleClick="MapWithPushpins_MouseDoubleClick"
+               CredentialsProvider="Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi"  Height="300" Width="300" />
+                <Label Name="myMapLabel" Visibility="Hidden" HorizontalAlignment="Center" >Use + and - to zoom in and out</Label>
+            </StackPanel>
+
+         
+
+        </Grid>
+
+
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>

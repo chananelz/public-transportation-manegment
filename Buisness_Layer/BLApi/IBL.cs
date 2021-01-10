@@ -98,6 +98,10 @@ namespace BLApi
         IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number);
 
         IEnumerable<IEnumerable<Line>> GetAllLineGroupByArea();
+        IEnumerable<Line> GetAllLinesDriving();
+        IEnumerable<Line> GetAllLinesNotDriving();
+
+
         IEnumerable<string> GetAllAreas();
 
         //IEnumerable<Line> GetAllValidLines();

@@ -207,7 +207,7 @@ namespace Wpf.Mangager.Managing
                     w.Close();
                 }
             }
-            new PresentationLines().Show();
+            new PresentationLines("DRIVER").Show();
 
             this.Close();
         }

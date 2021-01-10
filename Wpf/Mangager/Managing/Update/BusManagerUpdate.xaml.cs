@@ -262,7 +262,7 @@ namespace Wpf.Mangager.Managing
                     w.Close();
                 }
             }
-            new PresentationBusses().Show();
+            new PresentationBusses("DRIVER").Show();
 
             this.Close();
         }

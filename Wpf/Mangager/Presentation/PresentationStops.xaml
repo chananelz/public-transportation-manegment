@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="PresentationStops" Height="450" Width="800"
         Background="Transparent"
-        x:Name="PresentatinStops1"
+        x:Name="PresentationStops1"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage">
         <Grid.Effect>
@@ -67,7 +67,7 @@
 
                             <TextBlock Grid.Column="5" Width="50"/>
 
-                            <Button Name="management"   Grid.Column="6"     Foreground ="Red"    FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
+                            <Button Name="management"   Grid.Column="6"     Foreground ="Red"    FontSize="15" Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"   FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new update.png"/>
                                 </Button.Background>
@@ -77,7 +77,7 @@
 
 
 
-                            <Button    Grid.Column="8"      Foreground ="Red"  VerticalAlignment="Center"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
+                            <Button    Grid.Column="8"      Foreground ="Red"  VerticalAlignment="Center" Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new delete.png"/>
                                 </Button.Background>
@@ -86,7 +86,7 @@
 
 
 
-                            <Button Grid.Column="10"    Foreground ="Red"  Width="50" Height="50"   FontSize="15"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   FontFamily="Arial Black"   BorderThickness="0"   Click="AddStopToLine_Click">
+                            <Button Grid.Column="10"    Foreground ="Red"  Width="50" Height="50"   FontSize="15"  Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   FontFamily="Arial Black"   BorderThickness="0"   Click="AddStopToLine_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/222.png"/>
                                 </Button.Background>

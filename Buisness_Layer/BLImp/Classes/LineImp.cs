@@ -267,5 +267,19 @@ namespace BLImp
                     select line.Area).Distinct();
         }
 
+
+        public IEnumerable<Line> GetAllLinesDriving()
+        {
+            return from line in GetAllLines()
+                   where line.Buses.Count() != 0
+                   select line;
+        }
+        public IEnumerable<Line> GetAllLinesNotDriving()
+        {
+            return from line in GetAllLines()
+                   where line.Buses.Count() == 0
+                   select line;
+        }
+
     }
 }

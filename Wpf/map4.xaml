@@ -1,5 +1,4 @@
-﻿
-<Window x:Class="Wpf.map4"
+﻿<Window x:Class="Wpf.map4"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +6,7 @@
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
          Title="map4" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
-    
+
     <Window.Resources>
         <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="FontWeight" Value="Bold"/>
@@ -27,17 +26,21 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="115"/>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
+     
 
-        <Canvas Name="SearchParameters" Grid.Row="0"  Margin="0,0,36,0">
 
-            <TextBox x:Name="SearchNearBy" CaretBrush="#FF6C6C6C" KeyDown="MyTextBox0_KeyDown" Background="LightBlue" BorderThickness="1"  Foreground="Black" Width="200" Canvas.Left="120" Canvas.Top="50"/>
-            <Button Click="Search_Click" Width="100" Height="24" Grid.ColumnSpan="2" Margin="0,77,251,39" HorizontalAlignment="Right" Canvas.Left="319" Canvas.Top="-25">Search</Button>
-        </Canvas>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SearchNearBy" Grid.Column="0" Height="24" CaretBrush="#FF6C6C6C" KeyDown="MyTextBox0_KeyDown"  Background="LightBlue" BorderThickness="1"  Foreground="Black"   />
+            <Button Click="Search_Click" Width="100" Grid.Column="1" Height="24" Grid.ColumnSpan="2" HorizontalAlignment="Right">Search</Button>
+        </Grid>
 
-      
         <StackPanel Grid.Row="1"
                >
             <m:Map Visibility="Visible" x:Name="myMap"
