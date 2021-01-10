@@ -132,7 +132,10 @@ namespace Wpf
             e.Handled = true;
 
             // Determin the location to place the pushpin at on the map.
-
+            Location a = (Location)sender;
+            var t = a.Longitude;
+            var s = a.Latitude;
+            
             //Get the mouse click coordinates
             Point mousePosition = e.GetPosition(this);
             //Convert the mouse coordinates to a locatoin on the map

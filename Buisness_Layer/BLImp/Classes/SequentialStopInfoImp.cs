@@ -120,12 +120,13 @@ namespace BLImp
             long fid = 0;
             long sid = 0;
             bool foundFirst = false;
-            double sum = 0;
+            double sum = -1;
             foreach (LineStation ls in lineStations)
             {
                 if (!foundFirst && ls.Code == firstCode)
                 {
                     fid = firstCode;
+                    sum = 0;
                     foundFirst = true;
                 }
                 else if (foundFirst)

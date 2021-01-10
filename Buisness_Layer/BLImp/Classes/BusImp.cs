@@ -227,6 +227,20 @@ namespace BLImp
         {
             return GetAllBusses(bus => bus.Status == BO.status.READY_FOR_DRIVE);
         }
+        public IEnumerable<Bus> GetAllBussesTraveling()
+        {
+            return GetAllBusses(bus => bus.Status == BO.status.TRAVELING);
+        }
+        public IEnumerable<Bus> GetAllBussesFueling()
+        {
+            return GetAllBusses(bus => bus.Status == BO.status.REFULING);
+
+        }
+        public IEnumerable<Bus> GetAllBussesTreating()
+        {
+            return GetAllBusses(bus => bus.Status == BO.status.TREATING);
+
+        }
 
     }
 }
