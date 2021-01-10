@@ -10,6 +10,7 @@ namespace BLApi
 {
     public interface IBL
     {
+        #region Bus
         void CreateBus(long licenseNumber, DateTime dateTime, float kM, float Fuel, int statusInput);
         Bus RequestBus(Predicate<Bus> pr);
         void UpdateBusKM(float kM, long licenseNumber);
@@ -22,7 +23,11 @@ namespace BLApi
         IEnumerable<Bus> GetAllBussesFueling();
         IEnumerable<Bus> GetAllBussesTreating();
 
+        Line GetLineByLicenseNumber(long licenseNumber);
         Bus GetBus(long licenseNumber);
+        #endregion
+
+
         //IEnumerable<Bus> GetAllValidBuses();
         //IEnumerable<Bus> GetAllUnValidBuses();
         //IEnumerable<Bus> GetAllTravelingBuses();
@@ -34,8 +39,7 @@ namespace BLApi
 
 
 
-
-
+        #region BusTravel
         void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId);
         BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
         void UpdateFormalDepartureTime(DateTime formalDepartureTime, long id);
@@ -47,7 +51,9 @@ namespace BLApi
         void DeleteBusTravel(long id);
         IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         IEnumerable<Line> GetAllLinesByLicenseNumber(long licenseNumber);
-        Line GetLineByLicenseNumber(long licenseNumber);
+        #endregion
+
+
         //IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         //IEnumerable<BusTravel> GetAllValidBusTravels();
         //IEnumerable<BusTravel> GetAllUnValidBusTravels();
@@ -57,22 +63,15 @@ namespace BLApi
         //long GetTimeUntilSpecificStop(int id);
 
 
-
-
-
-
-
-
-
-
-
-
-
+        #region LineDeparture
         void CreateLineDeparture(long id, DateTime time_Start, int frequency, DateTime timeEnd);
         LineDeparture RequestLineDeparture(Predicate<LineDeparture> pr);
         void UpdateLineDepartureFrequency(long id, DateTime time_Start, int frequency);
         void UpdateLineDepartureTime_End(long id, DateTime time_Start, DateTime time_End);
         void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency, long id);
+        #endregion
+
+
         //void UpdateLineDepartureFrequency(long id, DateTime Time_Start);
         //void UpdateLineDepartureTime_End(DateTime time_Start, DateTime timeEnd, int frequency);
 
@@ -84,6 +83,8 @@ namespace BLApi
 
 
 
+
+        #region Line
         void CreateLine(long number, string area, List<Stop> stopList);
         void CreateOppositeDirectionLine(long number, string area, List<Stop> stopList);
         Line RequestLine(Predicate<Line> pr = null);  //check this...
@@ -97,12 +98,17 @@ namespace BLApi
         long GetIdByNumber(long number);
         IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number);
 
+        Line GetLine(long id);
+
         IEnumerable<IEnumerable<Line>> GetAllLineGroupByArea();
         IEnumerable<Line> GetAllLinesDriving();
         IEnumerable<Line> GetAllLinesNotDriving();
-
-
         IEnumerable<string> GetAllAreas();
+        #endregion
+
+
+
+
 
         //IEnumerable<Line> GetAllValidLines();
         //IEnumerable<Line> GetAllUnValidLines();
@@ -114,6 +120,7 @@ namespace BLApi
 
 
 
+        #region LineStation
         void CreateLineStation(long lineId, long numberInLine, long code);
         LineStation RequestLineStation(Predicate<LineStation> pr = null);
         void UpdateLineStationNumberInLine(long numberInLine, long code, long lineId);
@@ -122,9 +129,12 @@ namespace BLApi
 
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
         void UpdateLineStations(List<Stop> stopLines, long id);
-        Line GetLine(long id);//qq
+
         LineStation GetLineStation(long code, long lineId, long numberInLine);//aaa
-        void AddStopInLine(long lineId, long code, long numberInLine);//can't win!
+
+        #endregion
+
+
         //IEnumerable<LineStation> GetAllValidLineStations();
         //IEnumerable<LineStation> GetAllUnValidLineStation();
         //int GetAllUnValidLineStation();
@@ -134,8 +144,7 @@ namespace BLApi
 
 
 
-
-
+        #region SequentialStopInfo
         void CreateSequentialStopInfo(long stationCodeF, long stationCodeS);
         SequentialStopInfo RequestSequentialStopInfo(Predicate<SequentialStopInfo> pr);
         void UpdateSequentialStopInfoDistance(long firstId, long secondId, double distance);
@@ -146,15 +155,15 @@ namespace BLApi
         IEnumerable<SequentialStopInfo> GetAllSequentialStopsInfo(Predicate<SequentialStopInfo> pr = null);
         TimeSpan TravelTimeCalculate(long lineId, long fStop, long sStop);
         double DistanceCalculate(long lineId, long fStop, long lStop);
+        #endregion
+
+
         //IEnumerable<SequentialStopInfo> GetAllValidSequentialStopInfo();
         //IEnumerable<SequentialStopInfo> GetAllUnValidSequentialStopInfo();
 
 
 
-
-
-
-
+        #region Stop
         void CreateStop(double latitude, double longitude, string stopName);
         Stop GetStop(long code);
         Stop RequestStop(Predicate<Stop> pr = null);
@@ -166,6 +175,10 @@ namespace BLApi
         string GetNameByStopCode(long code);
         IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number);
         Line GetBestRoute(long fid, long sid);
+        void AddStopInLine(long lineId, long code, long numberInLine);//can't win!
+       
+        #endregion
+
 
         //IEnumerable<Stop> GetAllValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();
@@ -176,8 +189,7 @@ namespace BLApi
 
 
 
-
-
+        #region User
         void CreateUser(string userName, string password, int permission);
         User RequestUser(Predicate<User> pr = null);
         void UpdateName(string name, string nameId);
@@ -187,6 +199,9 @@ namespace BLApi
         User Authinticate(string username, string password, authority au);
         IEnumerable<User> GetAllDrivers();
         IEnumerable<User> GetAllPassengers();
+        #endregion
+
+
         //IEnumerable<User> GetAllValidUsers();
         //IEnumerable<User> GetAllUnValidUsers();
         //IEnumerable<User> GetAllUnValidManager();
@@ -195,12 +210,14 @@ namespace BLApi
 
 
 
-
-
+        #region UserTravel
         void CreateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
         UserTravel RequestUserTravel(long id);
         void UpdateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
         void DeleteUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
+        #endregion
+
+
 
         //IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();
