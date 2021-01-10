@@ -41,7 +41,10 @@ namespace BO
         }
 
         public string Show { get => show; set => show = value; }
+        public string NOT_VISIBLE_FOR_PASSENGER { get => NOT_VISIBLE_FOR_PASSENGER_PRIVATE; set => NOT_VISIBLE_FOR_PASSENGER_PRIVATE = value; }
 
+
+        private string NOT_VISIBLE_FOR_PASSENGER_PRIVATE;
         private string show;
 
         public Bus()//not implemented

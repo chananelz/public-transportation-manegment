@@ -67,7 +67,7 @@ namespace Wpf.Passenger
         /// <param name="e"></param>
         private void bus_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationBusses().Show();
+            new PresentationBusses("PASSENGER").Show();
             this.Close();
         }
 
@@ -78,7 +78,7 @@ namespace Wpf.Passenger
         /// <param name="e"></param>
         private void line_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationLines().Show();
+            new PresentationLines("PASSENGER").Show();
             this.Close();
         }
 
@@ -89,7 +89,7 @@ namespace Wpf.Passenger
         /// <param name="e"></param>ה
         private void stop_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationStops().Show();
+            new PresentationStops("PASSENGER").Show();
             this.Close();
         }
         /// <summary>

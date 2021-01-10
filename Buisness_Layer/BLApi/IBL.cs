@@ -18,6 +18,10 @@ namespace BLApi
         void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses(Predicate<Bus> pr = null);
         IEnumerable<Bus> GetAllBussesReadyForDrive();
+        IEnumerable<Bus> GetAllBussesTraveling();
+        IEnumerable<Bus> GetAllBussesFueling();
+        IEnumerable<Bus> GetAllBussesTreating();
+
         Bus GetBus(long licenseNumber);
         //IEnumerable<Bus> GetAllValidBuses();
         //IEnumerable<Bus> GetAllUnValidBuses();
@@ -94,6 +98,10 @@ namespace BLApi
         IEnumerable<BusTravel> GetAllBusseseByLineNumber(long number);
 
         IEnumerable<IEnumerable<Line>> GetAllLineGroupByArea();
+        IEnumerable<Line> GetAllLinesDriving();
+        IEnumerable<Line> GetAllLinesNotDriving();
+
+
         IEnumerable<string> GetAllAreas();
 
         //IEnumerable<Line> GetAllValidLines();
@@ -157,6 +165,7 @@ namespace BLApi
         IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null);
         string GetNameByStopCode(long code);
         IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number);
+        Line GetBestRoute(long fid, long sid);
 
         //IEnumerable<Stop> GetAllValidStop();
         //IEnumerable<Stop> GetAllUnValidStop();

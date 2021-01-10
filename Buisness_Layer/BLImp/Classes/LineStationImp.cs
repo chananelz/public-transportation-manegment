@@ -115,6 +115,36 @@ namespace BLImp
         }
         public void DeleteLineStation(long code, long lineId,long numberInLine)
         {
+            var allLineStatoins = GetAllLineStations(line => line.LineId == lineId).ToList();
+            long codeBefore = -1;
+            long codeAfter = -1;
+            int counter = 0;
+            foreach (LineStation lineStation in allLineStatoins)
+            {
+                if(lineStation.NumberInLine < numberInLine)
+                    codeBefore = lineStation.Code;
+                if (lineStation.NumberInLine > numberInLine)
+                {
+
+                    if(counter == 0)
+                    {
+                        codeAfter = lineStation.Code;
+                        counter++;
+                    }
+                    UpdateLineStationNumberInLine(lineStation.NumberInLine - 1, lineStation.LineId, lineStation.Code);
+                }
+            }
+            if(codeBefore != -1 && codeAfter != -1)
+            {
+                try
+                {
+                    CreateSequentialStopInfo(codeBefore, codeAfter);
+                }
+                catch
+                {
+
+                }
+            }
             dal.DeleteLineStation(lineId, code, numberInLine);
         }
         public IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null)
@@ -134,6 +164,28 @@ namespace BLImp
         }
 
 
+
+
+        public Line GetBestRoute(long fid, long sid)
+        {
+            double bestDistance = -1;
+            double tempDistance = -1;
+            Line ret = new Line();
+            foreach(Line line in GetAllLines())
+            {
+                tempDistance = DistanceCalculate(line.Number, fid, sid);
+                if (tempDistance != -1 && tempDistance < bestDistance)
+                {
+                    bestDistance = tempDistance;
+                    ret = line;
+                }
+            }
+            if (bestDistance != -1)
+                return ret;
+            else
+                throw new Exception("no such route!!");
+            
+        }
 
     }
 }

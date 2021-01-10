@@ -33,18 +33,9 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Button x:Name ="information"  Grid.Column="1"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="myImages/information.png"/>
-                                </Button.Background>
-                            </Button>
-                            <Label Grid.Row ="1" Grid.Column ="3" Content="{Binding LicenseNumber}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"   Foreground= "Orange"  Background="Transparent"/>
+                            
+                           
+                            <Label Grid.Row ="1" Grid.Column ="3" Content="{Binding LicenseNumber}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"   Foreground= "Red"  Background="Transparent"/>
 
                         </Grid>
                     </DataTemplate>
@@ -53,32 +44,14 @@
         </Grid>
 
         <Grid Name="DriverGrid" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" RenderTransformOrigin="0.5,0.5" >
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.581"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
+          
             <ListBox Name="DriverListBox"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" SelectionChanged="DriverListBox_SelectionChanged" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                           
-                            <Button x:Name ="information"  Grid.Column="1"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="informationUser_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="myImages/information.png"/>
-                                </Button.Background>
-                            </Button>
+                          
 
-                            <Label Grid.Row ="1"  Content="{Binding UserName}" Grid.Column="3" FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Orange"  Background="Transparent"/>
+                            <Label Grid.Row ="1"  Content="{Binding UserName}" Grid.Column="3" FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Red"  Background="Transparent"/>
 
                         </Grid>
                     </DataTemplate>

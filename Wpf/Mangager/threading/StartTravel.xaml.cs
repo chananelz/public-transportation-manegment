@@ -101,7 +101,7 @@ namespace Wpf.Mangager.threading
             }
             bl.UpdateBusStatus(0, tempBus.LicenseNumber);
             MessageBox.Show("bus started the travel successfully");
-            new PresentationBusses().Show();
+            new PresentationBusses("DRIVER").Show();
 
             this.Close();
         }

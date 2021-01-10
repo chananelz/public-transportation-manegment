@@ -18,6 +18,7 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -31,7 +32,13 @@
                 <ImageBrush ImageSource="myImages/ADD.png"/>
             </Button.Background>
         </Button>
-        <Grid Name="BusGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
+
+
+
+        <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="busOptions" FlowDirection="LeftToRight" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment= "Center"     SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
+
+        </ComboBox>
+        <Grid Name="BusGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
             <ListBox Name="busList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0" Button.Click="OnClick" Background="Transparent" SelectionChanged="busList_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -66,7 +73,7 @@
                             
                             <TextBlock Grid.Column="3" Width="100"/>
 
-                            <Button Name="update"   Grid.Column="4" Foreground ="Red"    FontSize="15" VerticalAlignment="Center"  HorizontalAlignment="Center"   FontFamily="Arial Black"  BorderThickness="0" Click="update_Click">
+                            <Button Name="update"   Grid.Column="4" Foreground ="Red"  Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  FontSize="15" VerticalAlignment="Center"  HorizontalAlignment="Center"   FontFamily="Arial Black"  BorderThickness="0" Click="update_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new update.png"/>
                                 </Button.Background>
@@ -74,7 +81,7 @@
                             <TextBlock Grid.Column="5" Width="100"/>
 
 
-                            <Button    Grid.Column="6"      Foreground ="Red"  VerticalAlignment="Center"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
+                            <Button    Grid.Column="6"      Foreground ="Red"  VerticalAlignment="Center" Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}" HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new delete.png"/>
                                 </Button.Background>
@@ -82,7 +89,7 @@
                             <TextBlock Grid.Column="7" Width="100"/>
 
 
-                            <Button Name="refule"   Grid.Column="8"   Foreground ="Red"   FontSize="15" VerticalAlignment="Center"  HorizontalAlignment="Center"   FontFamily="Arial Black"  BorderThickness="0"                   Click="Refule_Click"  >
+                            <Button Name="refule"   Grid.Column="8"   Foreground ="Red" Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  FontSize="15" VerticalAlignment="Center"  HorizontalAlignment="Center"   FontFamily="Arial Black"  BorderThickness="0"                   Click="Refule_Click"  >
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new refuling.png"/>
                                 </Button.Background>
@@ -90,7 +97,7 @@
                             <TextBlock Grid.Column="9" Width="100"/>
 
 
-                            <Button Name="treatment"   Grid.Column="10"     Foreground ="Red"   VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Treatment_Click">
+                            <Button Name="treatment"   Grid.Column="10"   Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"   Foreground ="Red"   VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Treatment_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new tretment.png"/>
                                 </Button.Background>
@@ -111,13 +118,13 @@
             </ListBox>
         </Grid>
 
-        <Button Grid.Row="2" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="3" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/home.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="2" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="3" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
             </Button.Background>
@@ -130,8 +137,8 @@
         </Button>
 
 
-        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="3" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
+        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>

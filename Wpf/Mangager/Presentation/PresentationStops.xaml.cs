@@ -15,6 +15,9 @@ using Wpf.Mangager.Information;
 using Wpf.Mangager.Managing;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
+using Wpf.Passenger;
+using Wpf.CEO;
+
 
 namespace Wpf.Mangager.Presentation
 {
@@ -27,15 +30,31 @@ namespace Wpf.Mangager.Presentation
         DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Stop tempStop;
+        public IEnumerable<BO.Stop> a;
+
+        string au;
+
 
         /// <summary>
         /// Initializes the current window in all existing objects 
         /// </summary>
-        public PresentationStops()
+        public PresentationStops(string auInput)
         {
             InitializeComponent();
             bl = BLApi.Factory.GetBL("1");
-            stopList.ItemsSource = bl.GetAllStops().ToList();
+
+            a = bl.GetAllStops().ToList();
+
+            au = auInput;
+
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Stop stop in a)
+                {
+                    stop.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                }
+            }
+            stopList.ItemsSource = a;
             busFunc();
         }
 
@@ -134,7 +153,12 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new OptionsForDriver().Show();
+            if (au == "DRIVER")
+                new OptionsForDriver().Show();
+            else if (au == "PASSENGER")
+                new OptionsForPassenger().Show();
+            else
+                new OptionsForCEO().Show();
             this.Close();
         }
 
@@ -178,7 +202,7 @@ namespace Wpf.Mangager.Presentation
             {
                 MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            new PresentationStops().Show();
+            new PresentationStops(au).Show();
             this.Close();
         }
 

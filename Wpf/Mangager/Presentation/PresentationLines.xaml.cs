@@ -16,6 +16,9 @@ using Wpf.Mangager.Managing;
 using System.Windows.Threading;
 using Wpf.Mangager.Managing.Add;
 using Wpf.Mangager.threading;
+using Wpf.Passenger;
+using Wpf.CEO;
+
 
 
 namespace Wpf.Mangager.Presentation
@@ -29,16 +32,40 @@ namespace Wpf.Mangager.Presentation
         DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Line tempLine;
+        public IEnumerable<BO.Line> a;
+        string au;
+
+
 
         /// <summary>
         /// Initializes the current window in all existing objects 
         /// </summary>
-        public PresentationLines()
+        public PresentationLines(string auInput)
         {
             InitializeComponent();
             bl = BLApi.Factory.GetBL("1");
-            lineList.ItemsSource = bl.GetAllLines().ToList();
+            a = bl.GetAllLines().ToList();
+
+            au = auInput;
+
+
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Line line in a)
+                {
+                    line.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                }
+            }
+
+            lineList.ItemsSource = a;
+
+
+
             busFunc();
+
+
+            lineOptions.Items.Add("TRAVELING");
+            lineOptions.Items.Add("NOT_TRAVELING");
 
         }
 
@@ -137,7 +164,12 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new OptionsForDriver().Show();
+            if (au == "DRIVER")
+                new OptionsForDriver().Show();
+            else if (au == "PASSENGER")
+                new OptionsForPassenger().Show();
+            else
+                new OptionsForCEO().Show();
             this.Close();
         }
 
@@ -207,7 +239,7 @@ namespace Wpf.Mangager.Presentation
             {
                 MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            new PresentationLines().Show();
+            new PresentationLines(au).Show();
             this.Close();
         }
 
@@ -239,6 +271,29 @@ namespace Wpf.Mangager.Presentation
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
+        }
+
+        private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (lineOptions.SelectedItem as string)
+            {
+                case "TRAVELING":
+                    a = bl.GetAllLinesDriving().ToList();
+                    break;
+                case "NOT_TRAVELING":
+                    a = bl.GetAllLinesNotDriving().ToList();
+                    break;
+            }
+
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Line line in a)
+                {
+                    line.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                }
+            }
+
+            lineList.ItemsSource = a;
         }
     }
 }

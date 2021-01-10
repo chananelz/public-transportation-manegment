@@ -18,6 +18,7 @@
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="10*"/>
@@ -26,12 +27,20 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+
+
+
         <Button Grid.Row="0" Grid.Column="0" Height="60" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/ADD.png"/>
             </Button.Background>
         </Button>
-        <Grid Name="BusGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
+
+        <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="lineOptions" FlowDirection="LeftToRight" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment= "Center"     SelectionChanged="busList_SelectionChanged" MaxDropDownHeight="150" FontSize="15"/>
+
+
+        <Grid Name="BusGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
             <ListBox Name="lineList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0" Button.Click="OnClick" Background="Transparent" SelectionChanged="lineList_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -62,10 +71,10 @@
                                     <ImageBrush ImageSource="myImages/Newinformation.png"/>
                                 </Button.Background>
                             </Button>
-                            
+
                             <TextBlock Grid.Column="3" Width="100"/>
 
-                            <Button Name="management"   Grid.Column="4"     Foreground ="Red"    FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
+                            <Button Name="management"   Grid.Column="4"     Foreground ="Red"   Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new update.png"/>
                                 </Button.Background>
@@ -73,7 +82,7 @@
 
                             <TextBlock Grid.Column="5" Width="100"/>
 
-                            <Button    Grid.Column="6"      Foreground ="Red"  VerticalAlignment="Center"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
+                            <Button    Grid.Column="6"      Foreground ="Red"  VerticalAlignment="Center"  Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}" HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new delete.png"/>
                                 </Button.Background>
@@ -81,7 +90,7 @@
                             <TextBlock Grid.Column="7" Width="100"/>
 
 
-                            <Button Name="StartTravel"   Grid.Column="8"     Foreground ="Red"    FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="StartTravel_Click" HorizontalAlignment="Stretch">
+                            <Button Name="StartTravel"   Grid.Column="8"     Foreground ="Red"    FontSize="15"   Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  FontFamily="Arial Black"  BorderThickness="0" Click="StartTravel_Click" HorizontalAlignment="Stretch">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new start drive.png"/>
                                 </Button.Background>
@@ -90,15 +99,15 @@
                             <TextBlock Grid.Column="9" Width="100"/>
 
 
-                            <Button Grid.Row="1" Grid.Column="10"    Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="lineLocation_Click">
+                            <Button Grid.Row="1" Grid.Column="10"    Foreground ="Red"     FontSize="15"  Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  FontFamily="Arial Black"   BorderThickness="0"   Click="lineLocation_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/lineLocation.png"/>
                                 </Button.Background>
                             </Button>
-                            
+
                             <TextBlock Grid.Column="11" Width="100"/>
 
-                            <Button Grid.Row="1" Grid.Column="12" Height="50" Width="50"  Foreground ="Red"     FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="SeqStopInfo_Click">
+                            <Button Grid.Row="1" Grid.Column="12" Height="50" Width="50"  Foreground ="Red"      FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="SeqStopInfo_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/seqStopInf.png"/>
                                 </Button.Background>
@@ -110,19 +119,19 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
-        <Button Grid.Row="2" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="3" Grid.Column="0" Click="home_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/home.png"/>
             </Button.Background>
         </Button>
 
-        <Button Grid.Row="2" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
+        <Button Grid.Row="3" Grid.Column="1" Click="back_Click" HorizontalAlignment="Center" Width="60" BorderThickness="0">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/goBack.png"/>
             </Button.Background>
         </Button>
-        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="3" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="4" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
+        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="4" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
 
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="11" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>

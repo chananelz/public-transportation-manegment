@@ -17,6 +17,14 @@ namespace BO
         public long FirstStop { get; set; }
         public long LastStop { get; set; }
 
+
+
+        public string NOT_VISIBLE_FOR_PASSENGER { get => NOT_VISIBLE_FOR_PASSENGER_PRIVATE; set => NOT_VISIBLE_FOR_PASSENGER_PRIVATE = value; }
+        private string NOT_VISIBLE_FOR_PASSENGER_PRIVATE;
+
+
+
+
         private List<BO.LineStation> stops;
         public List<BO.LineStation> Stops
         {

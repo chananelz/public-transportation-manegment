@@ -17,6 +17,13 @@ using Wpf.Mangager.threading;
 using System.Windows.Threading;
 using BLApi;
 using Wpf.Mangager.Managing.Add.myImages;
+using System.Xml;
+using System.Net;
+using Microsoft.Maps.MapControl.WPF;
+using Microsoft.Maps.MapControl.WPF.Design;
+using Wpf.Passenger;
+using Wpf.CEO;
+
 
 // 
 
@@ -31,21 +38,42 @@ namespace Wpf.Mangager.Presentation
         DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Bus tempBus;
+        public IEnumerable<BO.Bus> a;
+        string au;
 
         /// <summary>
         /// Initializes the current window in all existing objects 
         /// </summary>
-        public PresentationBusses()
+        public PresentationBusses(string auInput)
         {
             InitializeComponent();
             bl = BLApi.Factory.GetBL("1");
-            var a = bl.GetAllBusses().ToList();
+            a = bl.GetAllBusses().ToList();
+            busOptions.Items.Add("TRAVELING");
+            busOptions.Items.Add("READY_FOR_DRIVE");
+            busOptions.Items.Add("TREATING");
+            busOptions.Items.Add("REFULING");
+
+            au = auInput;
+
             foreach (BO.Bus bus in a)
             {
                 if (bus.Status == BO.status.READY_FOR_DRIVE)
                     bus.Show = "Visible";
                 else bus.Show = "Collapsed";
             }
+
+            if(au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in a)
+                {
+                    bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    bus.Show = "Collapsed";
+                }
+            }
+
+
+           
 
             busList.ItemsSource = a;
             // stackPanel.DataContext = busList.ItemsSource;
@@ -138,7 +166,12 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new OptionsForDriver().Show();
+            if (au == "DRIVER")
+                new OptionsForDriver().Show();
+            else if (au == "PASSENGER")
+                new OptionsForPassenger().Show();
+            else
+                new OptionsForCEO().Show();
             this.Close();
         }
 
@@ -149,6 +182,36 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            switch(busOptions.SelectedItem as string)
+            {
+                case "TRAVELING":
+                    a = bl.GetAllBussesTraveling().ToList();
+                    break;
+                case "READY_FOR_DRIVE":
+                    a = bl.GetAllBussesReadyForDrive().ToList();
+                    break;
+                case "TREATING":
+                    a = bl.GetAllBussesTreating().ToList();
+                    break;
+                case "REFULING":
+                    a = bl.GetAllBussesFueling().ToList();
+                    break;
+            }
+            foreach (BO.Bus bus in a)
+            {
+                if (bus.Status == BO.status.READY_FOR_DRIVE)
+                    bus.Show = "Visible";
+                else bus.Show = "Collapsed";
+            }
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in a)
+                {
+                    bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    bus.Show = "Collapsed";
+                }
+            }
+            busList.ItemsSource = a;
 
         }
 
@@ -189,7 +252,7 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.DeleteBus(tempBus.LicenseNumber);
-            new PresentationBusses().Show();
+            new PresentationBusses(au).Show();
             this.Close();
         }
 
@@ -203,7 +266,7 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);
-            new PresentationBusses().Show();
+            new PresentationBusses(au).Show();
             this.Close();
         }
 
@@ -217,7 +280,7 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);//not implemented
-            new PresentationBusses().Show();
+            new PresentationBusses(au).Show();
             this.Close();
         }
 
@@ -235,5 +298,6 @@ namespace Wpf.Mangager.Presentation
             ab.Width = 600;
             ab.Show();
         }
+
     }
 }

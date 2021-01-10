@@ -33,18 +33,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                                                      <Button x:Name ="information"  Grid.Column="1"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="information_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="myImages/information.png"/>
-                                </Button.Background>
-                            </Button>
-                            <Label Grid.Row ="1" Grid.Column ="3" Content="{Binding Number}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"   Foreground= "Orange"  Background="Transparent"/>
+                           
+                            <Label Grid.Row ="1" Grid.Column ="3" Content="{Binding Number}"  FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"   Foreground= "Red"  Background="Transparent"/>
                             
                         </Grid>
                     </DataTemplate>
@@ -65,19 +55,8 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Button x:Name ="information"  Grid.Column="1"    Foreground ="Red" Width="20"    Height="30"    FontSize="15"   FontFamily="Arial Black"   BorderThickness="0"   Click="informationUser_Click">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="myImages/information.png"/>
-                                </Button.Background>
-                            </Button>
-
+                           
+                         
                             <Label Grid.Row ="1"  Content="{Binding UserName}" Grid.Column="3" FontSize="15"    FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Center"    Foreground= "Red"  Background="Transparent"/>
                            
                         </Grid>

@@ -23,11 +23,13 @@ namespace Wpf
     public partial class map4 : Window
     {
         string BingMapsKey = "Jb9C8vgYnBRCqVeUq5be~8bRjVc66rCX4vuQTZkFFkw~An7hiz1GJMcbO7tJM7zejKU_slrteIlKbjgDQskBXFVjchjEQ3x7brCnLqEPw6Pi";
+        BO.Stop stop = new BO.Stop();
+
 
         /// <summary>
         /// Initializes the current window in all existing objects 
         /// </summary>
-        public map4()
+        public map4(ref BO.Stop stop)
         {
             InitializeComponent();
         }
@@ -134,16 +136,13 @@ namespace Wpf
             // Determin the location to place the pushpin at on the map.
 
             //Get the mouse click coordinates
-            Point mousePosition = e.GetPosition(this);
+            Point mousePosition = e.GetPosition(myMap);
             //Convert the mouse coordinates to a locatoin on the map
             Location pinLocation = myMap.ViewportPointToLocation(mousePosition);
 
-            // The pushpin to add to the map.
-            Pushpin pin = new Pushpin();
-            pin.Location = pinLocation;
+            stop.Latitude = pinLocation.Latitude;
+            stop.Longitude = pinLocation.Longitude;
 
-            // Adds the pushpin to the map.
-            myMap.Children.Add(pin);
         }
 
         //Search for POI elements when the Search button is clicked

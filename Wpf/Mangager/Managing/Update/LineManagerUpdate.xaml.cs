@@ -28,9 +28,10 @@ namespace Wpf.Mangager.Managing
         long number;
         string area;
         int numberInLine = 0;
-        List<BO.Stop> stopListInput = new List<BO.Stop>();
+        //List<BO.Stop> stopListInput = new List<BO.Stop>();
 
         BO.Line managingLine;
+        BO.LineStation tempStation;
         BO.Stop tempStop;
 
         /// <summary>
@@ -42,7 +43,9 @@ namespace Wpf.Mangager.Managing
             managingLine = new BO.Line();
             managingLine = line;
             bl = BLApi.Factory.GetBL("1");
-            stopsList.ItemsSource = bl.GetAllStops().ToList();
+            var managingStops = bl.GetAllStops();
+            allStopsList.ItemsSource = managingStops;
+            stopsList.ItemsSource = managingLine.Stops;
         }
 
 
@@ -98,7 +101,7 @@ namespace Wpf.Mangager.Managing
         /// <param name="e"></param>
         private void Line_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            tempStop = (BO.Stop)stopsList.SelectedItem;
+            tempStop = (BO.Stop)allStopsList.SelectedItem;
             for (int i = 1; i <= managingLine.Stops.Count() + 1; i++)
             {
                 number_in_lines.Items.Add(i);
@@ -179,7 +182,7 @@ namespace Wpf.Mangager.Managing
             try
             {
 
-                bl.AddStopInLine(managingLine.Id, tempStop.StopCode, numberInLine);
+                bl.AddStopInLine(managingLine.Id, tempStation.Code, numberInLine);
 
                 MessageBox.Show("input updated successfully!" + "  click on X to exit");
 
@@ -204,7 +207,7 @@ namespace Wpf.Mangager.Managing
                     w.Close();
                 }
             }
-            new PresentationLines().Show();
+            new PresentationLines("DRIVER").Show();
 
             this.Close();
         }
@@ -220,6 +223,23 @@ namespace Wpf.Mangager.Managing
         }
 
 
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button a = (Button)sender;
+            tempStation = (BO.LineStation)a.DataContext;
+            bl.DeleteLineStation(tempStation.Code, managingLine.Id, tempStation.NumberInLine);
+            stopsList.ItemsSource = managingLine.Stops;
+            stopsList.Items.Refresh();
+        }
 
+        private void lineList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tempStation = (BO.LineStation)stopsList.SelectedItem;
+        }
     }
 }

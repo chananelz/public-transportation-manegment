@@ -62,7 +62,7 @@ namespace Wpf.Mangager.Information
         /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationBusses().Show();
+            new PresentationBusses("DRIVER").Show();
             this.Close();
         }
         /// <summary>

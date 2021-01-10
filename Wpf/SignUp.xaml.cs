@@ -176,7 +176,7 @@ namespace Wpf
         /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new PresentationBusses().Show();
+            new SignIn("PASSENGER").Show();
             this.Close();
         }
 

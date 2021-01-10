@@ -18,6 +18,11 @@ namespace BO
 
         public string Address { get; set; }
 
+
+        public string NOT_VISIBLE_FOR_PASSENGER { get => NOT_VISIBLE_FOR_PASSENGER_PRIVATE; set => NOT_VISIBLE_FOR_PASSENGER_PRIVATE = value; }
+        private string NOT_VISIBLE_FOR_PASSENGER_PRIVATE;
+
+
         private List<Line> lines;
         public List<Line> Lines
         {

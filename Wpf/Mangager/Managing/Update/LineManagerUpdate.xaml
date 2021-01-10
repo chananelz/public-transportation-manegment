@@ -49,6 +49,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
@@ -65,19 +66,50 @@
             <ComboBox Name="number_in_lines" BorderThickness="0" ItemsSource="{Binding}" Background="Gray"  FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center" Width="200"  SelectionChanged="NumberInLine_SelectionChanged" MaxDropDownHeight="150" FontSize="15">
 
             </ComboBox>
-            <ComboBox Name="stopsList" BorderThickness="0" ItemsSource="{Binding}" Background="Gray"  FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center"  SelectionChanged="Line_SelectionChanged" Width="200" MaxDropDownHeight="150" FontSize="15">
+            <ComboBox Name="allStopsList" BorderThickness="0" ItemsSource="{Binding}" Background="Gray"  FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Top"   HorizontalAlignment="Center"  SelectionChanged="Line_SelectionChanged" Width="200" MaxDropDownHeight="150" FontSize="15">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="4*"/>
+                            </Grid.RowDefinitions>
                             <TextBlock Text="{Binding StopName}"/>
-                        </StackPanel>
+                           
+                        </Grid>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
 
 
-            <Button x:Name="submit" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Click="AddStopToLine_Click" Visibility="Collapsed">
+
+
+            <Grid Name="BusGrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
+                <ListBox Name="stopsList"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0" Button.Click="OnClick" Background="Transparent" SelectionChanged="lineList_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="4*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Name}"/>
+                                <Button Grid.Row="1" Grid.Column="1"  Height="15" Content="delete"  Foreground ="Red" Width="100"     FontSize="10"   FontFamily="Arial Black"   BorderThickness="0"   Click="Delete_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="myImages/delete.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </Grid>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+
+
+
+            <Button x:Name="submit" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Click="AddStopToLine_Click" Visibility="Collapsed">
                 update
             </Button>
 
