@@ -16,6 +16,7 @@ using System.Windows.Threading;
 using System.ComponentModel;
 using BLApi;
 using BLImp;
+//aa
 
 
 namespace Wpf.Mangager.Managing.Add.myImages

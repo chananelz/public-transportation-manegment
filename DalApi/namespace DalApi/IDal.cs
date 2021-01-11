@@ -108,10 +108,10 @@ namespace DalApi
         #region UserTravel
 
         void CreateUserTravel(UserTravel user_Travel);
-        UserTravel RequestUserTravel(long Id);  //check this...
-        void UpdateUserTravel(UserTravel user_Travel);
-        void DeleteUserTravel(UserTravel user_Travel);
-        IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
+        UserTravel RequestUserTravel(Predicate<UserTravel> pr = null);  //check this...
+        void DeleteUserTravel(long id);
+        UserTravel GetUserTravel(long id);
+        IEnumerable<UserTravel> GetAllUserTravels();
         #endregion
 
 

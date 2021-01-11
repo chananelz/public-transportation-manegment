@@ -10,7 +10,7 @@ namespace BO
     {
         public bool Valid { get; set; }
         public string UserName { get; set; }
-        public int LineNumber { get; set; }
+        public long LineNumber { get; set; }
         public DateTime OnStopTime { get; set; }
         public DateTime OffStopTime { get; set; }
 
@@ -19,7 +19,7 @@ namespace BO
         {
 
         }
-        public UserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime)
+        public UserTravel(string userName, long lineNumber, DateTime onStopTime, DateTime offStopTime)
         {
             Valid = true;
             UserName = userName;

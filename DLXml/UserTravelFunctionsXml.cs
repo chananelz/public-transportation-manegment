@@ -26,41 +26,29 @@ namespace DL
             XMLTools.SaveListToXMLSerializer(UserTravelList, userTravelPath);
         }
 
+
+
+
         /// <summary>
         /// request a UserTravel according to a predicate
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public UserTravel RequestUserTravel(long Id)
+        public UserTravel RequestUserTravel(Predicate<UserTravel> pr = null)
         {
             List<UserTravel> UserTravelList = XMLTools.LoadListFromXMLSerializer<UserTravel>(userTravelPath);
-            return UserTravelList.Find(l => l.LineId == Id);
+            return UserTravelList.Find(l => pr(l));
         }
 
-        /// <summary>
-        /// update userTravel in database
-        /// </summary>
-        /// <param name="userTravel"></param>
-        public void UpdateUserTravel(UserTravel userTravel)
-        {
-            int indLine;
-            List<UserTravel> UserTravelList = XMLTools.LoadListFromXMLSerializer<UserTravel>(userTravelPath);
 
-            indLine = UserTravelList.FindIndex(l => l.LineId == userTravel.LineId);
-            UserTravelList[indLine] = userTravel;
-            XMLTools.SaveListToXMLSerializer(UserTravelList, userTravelPath);
-
-        }
 
         /// <summary>
         /// sets user travel valid to false
         /// </summary>
         /// <param name="userTravel"></param>
-        public void DeleteUserTravel(UserTravel userTravel)
+        public void DeleteUserTravel(long id)
         {
-            List<UserTravel> UserTravelList = XMLTools.LoadListFromXMLSerializer<UserTravel>(userTravelPath);
-            UserTravelList.Remove(userTravel);
-            XMLTools.SaveListToXMLSerializer(UserTravelList, userTravelPath);
+           
         }
 
         /// <summary>
@@ -68,15 +56,23 @@ namespace DL
         /// </summary>
         /// <param name="pr"></param>
         /// <returns></returns>
-        public IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null)
+        public IEnumerable<UserTravel> GetAllUserTravels()
         {
-            List<UserTravel> UserTravelList = XMLTools.LoadListFromXMLSerializer<UserTravel>(userTravelPath);
-            if (pr == null)
-                return UserTravelList;
-            else
-                return from b in UserTravelList
-                       where (pr(b))
-                       select b;
+            return null;
+        }
+
+
+
+
+
+
+
+
+
+
+        public UserTravel GetUserTravel(long id)
+        {
+            return null;
         }
 
 

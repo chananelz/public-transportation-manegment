@@ -136,5 +136,11 @@ namespace BLImp
         {
             return GetAllUsers(user => user.Permission == authority.Passenger);
         }
+
+
+        public User GetUser(string nameId)
+        {
+            return dal.GetUser(nameId).GetPropertiesFrom<BO.User, DO.User>();
+        }
     }
 }

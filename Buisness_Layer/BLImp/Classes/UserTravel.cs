@@ -17,30 +17,121 @@ namespace BLImp
 {
     public partial class BL : IBL
     {
-        public void CreateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime)
+        public void CreateUserTravel(string userName, long lineNumber, DateTime onStopTime, DateTime offStopTime)
         {
+            string exception = "";
+            bool foundException = false;
+            try
+            {
+                //userName
+            }
+            catch (BOBadBusIdException ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            try
+            {
+                //validate lineNumber
+            }
+            catch (BOBadBusIdException ex)
+            {
+                if (!foundException)
+                {
+                    exception += ex.Message;
+                    foundException = true;
+                }
+            }
+            try
+            {
+                //onStopTime
+            }
+            catch (BOBadBusIdException ex)
+            {
+                if (!foundException)
+                {
+                    exception += ex.Message;
+                    foundException = true;
+                }
+            }
+            try
+            {
+                //OffStopTime
+            }
+            catch (BOBusException ex)
+            {
+                exception += ex.Message;
+                foundException = true;
+            }
+            if (foundException)
+                throw new BOBusException("There is something wrong with your input." + "Please Check these things :\n" + exception);  //להוסיף את האינפוט שלו עם דולר
+
             UserTravel userTravelBO = new UserTravel(userName, lineNumber, onStopTime, offStopTime);
             DO.UserTravel userTravelDO = userTravelBO.GetPropertiesFrom<DO.UserTravel, BO.UserTravel>();
-            dal.CreateUserTravel(userTravelDO);
+            try
+            {
+                dal.CreateUserTravel(userTravelDO);
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+
+                throw new BODOBadBusIdException("cant create this userTravel", ex);
+            }
+
+
+
         }
-        public UserTravel RequestUserTravel(long id)
+        public UserTravel RequestUserTravel(Predicate<UserTravel> pr = null)
         {
-            DO.UserTravel userTravelDo = new DO.UserTravel();
-            userTravelDo = dal.RequestUserTravel(id);
-            BO.UserTravel userTravelBo = userTravelDo.GetPropertiesFrom<BO.UserTravel, DO.UserTravel>();
-            return userTravelBo;
+            try
+            {
+                return dal.RequestUserTravel(user => pr(user.GetPropertiesFrom<BO.UserTravel, DO.UserTravel>())).GetPropertiesFrom<BO.UserTravel, DO.UserTravel>();
+            }
+            catch (DO.DOBusException ex)
+            {
+
+                throw new BODOBadBusIdException("can't find this bus", ex);
+            }
         }
-        public void UpdateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime)
+        public void DeleteUserTravel(long id)
         {
-            UserTravel userTravelBO = new UserTravel(userName, lineNumber, onStopTime, offStopTime);
-            DO.UserTravel userTravelDO = userTravelBO.GetPropertiesFrom<DO.UserTravel, BO.UserTravel>();
-            dal.UpdateUserTravel(userTravelDO);
+           
+            dal.DeleteUserTravel(id);
         }
-        public void DeleteUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime)
+
+
+        public IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null)
         {
-            UserTravel userTravelBO = new UserTravel(userName, lineNumber, onStopTime, offStopTime);
-            DO.UserTravel userTravelDO = userTravelBO.GetPropertiesFrom<DO.UserTravel, BO.UserTravel>();
-            dal.DeleteUserTravel(userTravelDO);
+            if (pr == null)
+            {
+                return dal.GetAllUserTravels().Select(userTravel => userTravel.GetPropertiesFrom<BO.UserTravel, DO.UserTravel>()).ToList(); ;
+            }
+            return dal.GetAllUserTravels().Select(bus => bus.GetPropertiesFrom<BO.UserTravel, DO.UserTravel>()).Where(b => pr(b));
         }
+        public IEnumerable<UserTravel> GetAllDriverTravel()
+        {
+            return GetAllUserTravels(userTravel => GetUser(userTravel.UserName).Permission == authority.Driver);
+        }
+        public IEnumerable<UserTravel> GetAllPassengersTravel()
+        {
+            return GetAllUserTravels(userTravel => GetUser(userTravel.UserName).Permission == authority.Passenger);
+        }
+
+
+
+
+        public UserTravel GetUserTravel(long id)
+        {
+            try
+            {
+                return dal.GetUserTravel(id).GetPropertiesFrom<BO.UserTravel, DO.UserTravel>();
+            }
+            catch (DO.DOBadBusIdException ex)
+            {
+                throw new BODOBadBusIdException(ex.Message, ex);
+            }
+        }
+
+
     }
 }

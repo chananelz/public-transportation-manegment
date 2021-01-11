@@ -240,4 +240,16 @@
     <NextStopTime>2020-12-21T17:08:30</NextStopTime>
     <DriverId>Elijah</DriverId>
   </BusTravel>
+  <BusTravel>
+    <Valid>true</Valid>
+    <Id>21</Id>
+    <LicenseNumber>1000026</LicenseNumber>
+    <LineId>10</LineId>
+    <FormalDepartureTime>0001-01-01T00:00:00</FormalDepartureTime>
+    <RealDepartureTime>0001-01-01T00:00:00</RealDepartureTime>
+    <LastPassedStop>0</LastPassedStop>
+    <LastPassedStopTime>0001-01-01T00:00:00</LastPassedStopTime>
+    <NextStopTime>2021-01-11T20:26:41.0728261+02:00</NextStopTime>
+    <DriverId>Evelyn</DriverId>
+  </BusTravel>
 </ArrayOfBusTravel>

@@ -17,48 +17,95 @@ namespace DL
         /// <param name="userTravel"></param>
         public void CreateUserTravel(UserTravel userTravel)
         {
-            DataSource.UserTravelList.Add(userTravel);
+            userTravel.Valid = true;
+            UserTravel a = new UserTravel();
+            try
+            {
+                a = GetUserTravel(userTravel.IdTravel);
+            }
+            catch (DOBadBusIdException ex)
+            {
+                if (ex.Message == "no userTravel with such license number!!")
+                    DataSource.UserTravelList.Add(userTravel);
+                else if (ex.Message == "bus is not valid!!")
+                {
+                    DataSource.UserTravelList.Add(userTravel);
+                }
+                return;
+            }
+            throw new DOBadBusIdException(userTravel.IdTravel, "userTravel already exists!!!");
         }
+
+
+
+        /// <summary>
+        /// Get User Travel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public UserTravel GetUserTravel(long id)
+        {
+            var t = from userTravel in DataSource.UserTravelList
+                    where (userTravel.IdTravel == id)
+                    select userTravel;
+            if (t.ToList().Count == 0)
+                throw new DOBadBusIdException(id, "no userTravel with such license number!!");
+            if (!t.First().Valid)
+                throw new DOBadBusIdException(id, "userTravel is not valid!!");
+            return t.ToList().First();
+        }
+
+
+
         /// <summary>
         /// request a UserTravel according to a predicate
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public UserTravel RequestUserTravel(long Id)
+        public UserTravel RequestUserTravel(Predicate<UserTravel> pr = null)
         {
-            return DataSource.UserTravelList.Find(l => l.LineId == Id);
+
+            UserTravel ret = DataSource.UserTravelList.Find(userTravel => pr(userTravel));
+            if (ret == null)
+                throw new DOBusException("no userTravel that meets these conditions!");
+            if (ret.Valid == false)
+                throw new DOBusException("userTravel that meets these conditions is not valid");
+            return ret.GetPropertiesFrom<UserTravel, UserTravel>();
         }
-        /// <summary>
-        /// update userTravel in database
-        /// </summary>
-        /// <param name="userTravel"></param>
-        public void UpdateUserTravel(UserTravel userTravel)
-        {
-            int indLine;
-            indLine = DataSource.UserTravelList.FindIndex(l => l.LineId == userTravel.LineId);
-            DataSource.UserTravelList[indLine] = userTravel;
-        }
+
+
+
+
+     
+
+  
         /// <summary>
         /// sets user travel valid to false
         /// </summary>
         /// <param name="userTravel"></param>
-        public void DeleteUserTravel(UserTravel userTravel)
+        public void DeleteUserTravel(long id)
         {
-            DataSource.UserTravelList.Remove(userTravel);
+            GetUserTravel(id).Valid = false;
         }
+
+
         /// <summary>
         /// gets all user travels according to predicate
         /// </summary>
         /// <param name="pr"></param>
         /// <returns></returns>
-        public IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null)
+        public IEnumerable<UserTravel> GetAllUserTravels()
         {
-            if (pr == null)
-                return DataSource.UserTravelList;
-            else
-                return from b in DataSource.UserTravelList
-                   where (pr(b))
-                   select b;
+           
+
+            var cloneList = new List<UserTravel>();
+            foreach (UserTravel userTravel in DataSource.UserTravelList)
+            {
+                if (userTravel.Valid == true)
+                    cloneList.Add(userTravel.GetPropertiesFrom<UserTravel, UserTravel>());
+            }
+            return cloneList;
         }
+
     }
 }

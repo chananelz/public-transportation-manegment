@@ -42,7 +42,7 @@ namespace Wpf.Mangager.threading
             tempBus = mBus;
             bl = BLApi.Factory.GetBL("1");
             lineListBox.ItemsSource = bl.GetAllLines().ToList();
-            DriverListBox.ItemsSource = bl.GetAllUsers(user => user.Permission == BO.authority.Driver).ToList();
+            DriverListBox.ItemsSource = bl.GetAllDriverTravel().ToList();
         }
         /// <summary>
         /// Defines actions to be performed when a  button is pressed
