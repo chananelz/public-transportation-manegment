@@ -12,7 +12,7 @@ namespace BLImp
     {
         public void Initialize(TimeSpan time)
         {
-            foreach(BusTravel busTravel in GetAllBusTravels())
+            foreach (BusTravel busTravel in GetAllBusTravels())
             {
                 DeleteBusTravel(busTravel.Id);
             }
@@ -20,8 +20,8 @@ namespace BLImp
             {
                 DeleteUserTravel(userTravel.ID);
             }
-            var a = GetAllLineDeparture(); 
-            foreach(LineDeparture lineDeparture in a)
+            var a = GetAllLineDeparture();
+            foreach (LineDeparture lineDeparture in a)
             {
                 var line = GetLine(lineDeparture.Id);
                 var timeLine = TravelTimeCalculate(line.Number, line.FirstStop, line.LastStop);
@@ -31,18 +31,20 @@ namespace BLImp
                 dateTime.AddMonths(DateTime.Now.Month);
                 dateTime.AddDays(DateTime.Now.Day);
                 var timeSpanTimeStart = new TimeSpan(timeStart.Hour, timeStart.Minute, timeStart.Second);
-                while(timeStart < lineDeparture.TimeEnd)
+                while (timeStart < lineDeparture.TimeEnd)
                 {
-                    if(timeSpanTimeStart + timeLine > time && timeSpanTimeStart < time)
+                    if (timeSpanTimeStart + timeLine > time && timeSpanTimeStart < time)
                     {
                         Bus bus = GetAllBussesReadyForDrive().First();
                         User user = GetAllDrivers().First();
                         UpdateBusStatus(0, bus.LicenseNumber);
-                        CreateBusTravel(bus.LicenseNumber, lineDeparture.Id, timeStart,dateTime + timeSpanTimeStart, GetStationByTime(timeSpanTimeStart, bus.LicenseNumber).Code,dateTime + GetPassedStopTime(time,bus.LicenseNumber),dateTime +GetNextStopTime(time,bus.LicenseNumber), user.UserName);
+                        CreateBusTravel(bus.LicenseNumber, lineDeparture.Id, timeStart, dateTime + timeSpanTimeStart, GetStationByTime(timeSpanTimeStart, bus.LicenseNumber).Code, dateTime + GetPassedStopTime(time, bus.LicenseNumber), dateTime + GetNextStopTime(time, bus.LicenseNumber), user.UserName);
                     }
                     timeStart += new TimeSpan((lineDeparture.TimeEnd - lineDeparture.Time_Start).Ticks / lineDeparture.Frequency);
                 }
-          
+
+            }
         }
     }
 }
+
