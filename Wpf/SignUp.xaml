@@ -42,24 +42,12 @@
         <Label Opacity="0.8" Foreground="Black" Background="LightBlue"   HorizontalAlignment="Stretch"  Grid.Row="0" Grid.Column="1"  Content="Password"       VerticalAlignment="Center"  FontSize="18" FontFamily="Bernard MT Condensed" />
 
 
-        <Label  Foreground="Red"    HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="1" Content="Passwords criteria:&#10;Length: 8 - 15&#10;Digits: 0-9&#10;Punctuation letters: !@#...&#10;Upper case letters: A B...&#10;Lower case leters: a b..."     VerticalAlignment="Stretch"  FontSize="14" FontFamily="Bernard MT Condensed" >
-            <Label.Background>
-                <ImageBrush ImageSource="myImages/busListBackground.png" Opacity="0.3"/>
-            </Label.Background>
-        </Label>
-        <Label  Foreground="Red"    HorizontalAlignment="Stretch"  Grid.Row="2" Grid.Column="0" Content="User Name must be unique"     VerticalAlignment="Stretch"  FontSize="14" FontFamily="Bernard MT Condensed" >
-            <Label.Background>
-                <ImageBrush ImageSource="myImages/busListBackground.png" Opacity="0.3"/>
-            </Label.Background>
-        </Label>
-
-
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
-        
+
         <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"  Click="Name_Click" />
         <Button Content="Submit" HorizontalAlignment="Center"   Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center"  Click="Password_Click"/>
 
@@ -85,6 +73,16 @@
 
         <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="350,0,0,0" />
         <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+        <Button x:Name="InfoName" Grid.Column="1" HorizontalAlignment="Right" Height="19"  Grid.Row="1" VerticalAlignment="Center" Width="40" Click="Info_Click_1">
+            <Button.Background>
+                <ImageBrush ImageSource="Mangager/Presentation/myImages/Newinformation.png"/>
+            </Button.Background>
+        </Button>
+        <Button  HorizontalAlignment="Right" Height="22"  Grid.Row="1" VerticalAlignment="Center" Width="40" Click="password_Click_1">
+            <Button.Background>
+                <ImageBrush ImageSource="Mangager/threading/myImages/Newinformation.png"/>
+            </Button.Background>
+        </Button>
 
 
         <Grid.Background>

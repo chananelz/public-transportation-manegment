@@ -21,7 +21,8 @@ namespace DL
             user.Valid = true;
             try
             {
-                GetUser(user.Password);
+                // GetUser(user.Password);
+                GetUser(user.UserName);
             }
             catch (Exception ex)
             {

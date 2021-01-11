@@ -110,7 +110,7 @@ namespace Wpf
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(ex.Message , "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                 new SignIn(Status).Show();
                 this.Close();
             }

@@ -21,14 +21,14 @@ namespace DL
         /// <param name="bus">the bus you want to add</param>
         public void CreateBus(Bus bus)
         {
-            DL.Initialize ab = new DL.Initialize();
+            //DL.Initialize ab = new DL.Initialize();
             bus.Valid = true;
             Bus a = new Bus();
             try
             {
                 a = GetBus(bus.LicenseNumber);
             }
-            catch(DOBadBusIdException ex)                                             //try "BusException" and check if it work.
+            catch(DOBadBusIdException ex)                                         
             {
                 if (ex.Message == "no bus with such license number!!")
                     DataSource.BusesList.Add(bus);

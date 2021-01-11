@@ -49,8 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusFunctionsXml.cs" />
+    <Compile Include="BusTravelFunctionsXml.cs" />
+    <Compile Include="UserTravelFunctionsXml.cs" />
+    <Compile Include="UserFunctionsXml.cs" />
+    <Compile Include="StopFunctionsXml.cs" />
+    <Compile Include="SequentialStopInfoFunctionsXml.cs" />
     <Compile Include="DLXML.cs" />
-    <Compile Include="Initialize.cs" />
+    <Compile Include="LineDepartureFunctionsXml.cs" />
+    <Compile Include="LineFunctionsXml.cs" />
+    <Compile Include="LineStationsFunctionsXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLTools.cs" />
   </ItemGroup>

@@ -10,7 +10,7 @@ namespace DalApi
     public interface IDal
     {
 
-
+        #region Bus
         void CreateBus(Bus bus);
         Bus RequestBus(Predicate<Bus> pr = null);
         void UpdateBusKM(float kM, long licenseNumber);
@@ -20,9 +20,9 @@ namespace DalApi
         Bus GetBus(long licenseNumber);
         void DeleteBus(long licenseNumber);
         IEnumerable<Bus> GetAllBusses();
+        #endregion
 
-
-
+        #region BusTravel
         void CreateBusTravel(BusTravel busTravel);
         BusTravel GetBusTravel(long id);
         BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
@@ -35,9 +35,9 @@ namespace DalApi
         void DeleteBusTravel(long id);
         IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
 
+        #endregion
 
-
-
+        #region Line
         void CreateLine(Line line);
         void CreateOppositeDirectionLine(Line line);
         Line RequestLine(Predicate<Line> pr = null);  //check this...
@@ -48,28 +48,29 @@ namespace DalApi
         Line GetLine(long id);
         void DeleteLine(long id);
         IEnumerable<Line> GetAllLines();
+        #endregion
 
-
+        #region LineDeparture
         void CreateLineDeparture(LineDeparture lineDeparture);
         LineDeparture RequestLineDeparture(Predicate<LineDeparture> pr = null);  //check this...
         LineDeparture GetLineDeparture(long id, DateTime time_Start);
         void UpdateLineDepartureFrequency(long id, DateTime time_Start, int frequency);
-        void UpdateLineDepartureTime_End(long id, DateTime time_Start , DateTime time_End);
+        void UpdateLineDepartureTime_End(long id, DateTime time_Start, DateTime time_End);
         void DeleteLineDeparture(long id, DateTime time_Start);
         IEnumerable<LineDeparture> GetAllLineDepartures(Predicate<LineDeparture> pr = null);
+        #endregion
 
-
+        #region LineStation
 
         void CreateLineStation(LineStation lineStation);
         LineStation RequestLineStation(Predicate<LineStation> pr = null);
-        void UpdateLineStationNumberInLine(long numberInLine, long code,long lineId);
-        void DeleteLineStation(long code, long lineId,long numberInLine);
-        LineStation GetLineStation(long code, long lineId,long numberInLine);
+        void UpdateLineStationNumberInLine(long numberInLine, long code, long lineId);
+        void DeleteLineStation(long code, long lineId, long numberInLine);
+        LineStation GetLineStation(long code, long lineId, long numberInLine);
         IEnumerable<LineStation> GetAllLineStations(Predicate<LineStation> pr = null);
+        #endregion
 
-
-
-
+        #region SequentialStopInfo
         void CreateSequentialStopInfo(SequentialStopInfo sequentialStopInfo);
         SequentialStopInfo RequestSequentialStopInfo(Predicate<SequentialStopInfo> pr);
         void UpdateSequentialStopInfoDistance(long firstId, long secondId, double distance);
@@ -78,9 +79,9 @@ namespace DalApi
         IEnumerable<SequentialStopInfo> GetAllSequentialStopInfo();
         SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode);
 
+        #endregion
 
-
-
+        #region Stop
         void CreateStop(Stop stop);
         Stop RequestStop(Predicate<Stop> pr = null);
         void UpdateStopName(string name, long licenseNumber);
@@ -89,10 +90,9 @@ namespace DalApi
         Stop GetStop(long code);
         void DeleteStop(long code);
         IEnumerable<Stop> GetAllStops();
+        #endregion
 
-
-
-
+        #region User
 
         void CreateUser(User user);
         User RequestUser(Predicate<User> pr = null);
@@ -103,11 +103,18 @@ namespace DalApi
         IEnumerable<User> GetAllUsers();
 
 
+        #endregion
+
+        #region UserTravel
 
         void CreateUserTravel(UserTravel user_Travel);
         UserTravel RequestUserTravel(long Id);  //check this...
         void UpdateUserTravel(UserTravel user_Travel);
         void DeleteUserTravel(UserTravel user_Travel);
         IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
+        #endregion
+
+
+
     }
 }
