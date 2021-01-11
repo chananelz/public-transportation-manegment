@@ -11,7 +11,7 @@
         
                 WindowStartupLocation="CenterScreen">
     <Grid Name="BusManagerAddPage">
-        
+
         <Grid.Effect>
             <DropShadowEffect BlurRadius="30"
                               ShadowDepth="2"
@@ -24,7 +24,7 @@
             <RowDefinition Height="20*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
-           
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -92,13 +92,13 @@
 
 
 
-     
+
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="14" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
-        
+
         <Button  Grid.Column="14" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click" RenderTransformOrigin="0.512,0.5">
             <Button.Background>
                 <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
@@ -122,14 +122,32 @@
                 <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
             </Button.Background>
         </Button>
-        
+
         <Button  Grid.Column="2" HorizontalAlignment="Right" Height="20" Grid.Row="1" VerticalAlignment="Center" Width="27" Click="Info_Click5">
             <Button.Background>
                 <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
             </Button.Background>
         </Button>
+        <!--<Calendar Name="MyCalendar" Grid.ColumnSpan="2" Grid.Column="5" HorizontalAlignment="Left" Height="50" Width="50" Grid.Row="2" VerticalAlignment="Stretch" SelectionMode="SingleRange" SelectedDatesChanged="Calendar_SelectedDatesChanged">
+            <Calendar.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/threading/myImages/information.png"/>
+            </Calendar.Background>-->
+        
+
+        <!--</Calendar>-->
 
 
+
+        <!--<Calendar
+             Name="MyCalendar"
+            HorizontalAlignment="Left"
+            Margin="10,10,0,0"
+            VerticalAlignment="Top"
+            SelectedDatesChanged="Calendar_SelectedDatesChanged">
+            <Calendar.Background>
+                <ImageBrush ImageSource="/Wpf;component/Mangager/Presentation/myImages/newCalendar.png"/>
+            </Calendar.Background>
+        </Calendar>-->
 
 
 
@@ -137,6 +155,6 @@
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
-        
+
     </Grid>
 </Window>

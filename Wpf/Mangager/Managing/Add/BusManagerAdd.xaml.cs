@@ -646,6 +646,50 @@ namespace Wpf.Mangager.Managing.Add.myImages
         {
             MessageBox.Show("If the year of license date is after 2018 enter 8-digit number \n else enter 7-digit number ", " Information ", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        //private void Calendar_SelectedDatesChanged(object sender, RoutedEventArgs e)
+        //{
+        //    var calendar = sender as Calendar;
+        //    if (calendar.SelectedDate.HasValue)
+        //    {
+
+        //        DateTime date = calendar.SelectedDate.Value;
+        //        this.Title = date.ToShortDateString();
+        //    }
+
+        //    DateTime myDate = MyCalendar.SelectedDate.Value;
+
+        //    int year = myDate.Year;
+        //    int day = myDate.Day;
+        //    int month = myDate.Month;
+
+        //    licenseDate = new DateTime(year, month, day);
+        //    try
+        //    {
+        //        valid.GoodLicense(licenseNumber, licenseDate);
+        //    }
+        //    catch (BO.BOBadBusIdException)
+        //    {
+        //        MessageBox.Show("licesne and date time don't match until 2018 7 digits from then and on 8 digits", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        MyTextBox1.Clear();
+        //    }
+        //    if (amount != 5)
+        //    {
+        //        DateTime temp = new DateTime(year, month, day);
+        //        licenseDate = temp;
+
+        //        MessageBox.Show("input submited  " + myDate.ToString() + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        //        if (!input1)
+        //        {
+        //            input1 = true;
+        //            amount++;
+
+        //        }
+        //    }
+
+        //}
+     
     }
 }
 

@@ -294,6 +294,15 @@ namespace Wpf
             this.Close();
         }
 
+        private void Info_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("User Name must be unique", "information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void password_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Passwords criteria: \n Length: 8 - 15 \n Digits: 0-9 \n Punctuation letters: !@#... \n Upper case letters: A B... \n Lower case leters: a b...", "information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 
 }

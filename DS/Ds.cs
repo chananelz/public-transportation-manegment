@@ -78,7 +78,7 @@ namespace DS
                 LastPassedStop = 570,
                 LastPassedStopTime = new DateTime(2020, 12, 2, 06, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 2, 06, 38, 35),
-                DriverId = User_Name[1]
+                DriverId = "Bradley Reiter"
             });
 
             #endregion
@@ -95,7 +95,7 @@ namespace DS
                 LastPassedStop = 570,
                 LastPassedStopTime = new DateTime(2020, 3, 20, 07, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 3, 07, 8, 30),
-                DriverId = User_Name[2]
+                DriverId = "Johnny Schneider"
             });
             #endregion
 
@@ -111,7 +111,7 @@ namespace DS
                 LastPassedStop = 579,
                 LastPassedStopTime = new DateTime(2020, 12, 4, 06, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 4, 06, 8, 30),
-                DriverId = User_Name[3]
+                DriverId = "Bobby Maier"
             });
             #endregion
 
@@ -127,7 +127,8 @@ namespace DS
                 LastPassedStop = 579,
                 LastPassedStopTime = new DateTime(2020, 12, 5, 06, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 20, 5, 38, 35),
-                DriverId = User_Name[4]
+                DriverId = "Philip Schwarz"
+
             });
             #endregion
 
@@ -143,7 +144,7 @@ namespace DS
                 LastPassedStop = 579,
                 LastPassedStopTime = new DateTime(2020, 12, 6, 07, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 6, 07, 8, 30),
-                DriverId = User_Name[5]
+                DriverId = "Louis Weber"
             });
             #endregion
 
@@ -159,7 +160,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 7, 06, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 7, 06, 8, 30),
-                DriverId = User_Name[6]
+                DriverId = "Russell Winkler"
             });
             #endregion
 
@@ -175,7 +176,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 8, 06, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 8, 06, 38, 35),
-                DriverId = User_Name[7]
+                DriverId = "Vincent Schmid"
             });
             #endregion
 
@@ -191,7 +192,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 9, 07, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 9, 07, 8, 30),
-                DriverId = User_Name[0]
+                DriverId = "Randy Fischer"
             });
             #endregion
 
@@ -207,7 +208,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 10, 06, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 10, 06, 8, 30),
-                DriverId = User_Name[1]
+                DriverId = "Eugene 	Eder"
             });
             #endregion
 
@@ -224,7 +225,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 11, 06, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 11, 06, 38, 35),
-                DriverId = User_Name[2]
+                DriverId = "Roy Fuchs"
             });
             #endregion
 
@@ -240,7 +241,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 12, 07, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 12, 07, 8, 30),
-                DriverId = User_Name[3]
+                DriverId = "Ralph Berger"
             });
             #endregion
 
@@ -256,7 +257,7 @@ namespace DS
                 LastPassedStop = 570,
                 LastPassedStopTime = new DateTime(2020, 12, 13, 16, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 13, 16, 8, 30),
-                DriverId = User_Name[4]
+                DriverId = "Wayne Leitner"
             });
             #endregion
 
@@ -273,7 +274,7 @@ namespace DS
                 LastPassedStop = 570,
                 LastPassedStopTime = new DateTime(2020, 12, 14, 16, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 14, 16, 38, 35),
-                DriverId = User_Name[5]
+                DriverId = "Logan Hofer"
             });
 
             #endregion
@@ -290,7 +291,7 @@ namespace DS
                 LastPassedStop = 570,
                 LastPassedStopTime = new DateTime(2020, 12, 15, 17, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 15, 17, 8, 30),
-                DriverId = User_Name[6]
+                DriverId = "Juan Mayer"
             });
             #endregion
 
@@ -306,7 +307,7 @@ namespace DS
                 LastPassedStop = 579,
                 LastPassedStopTime = new DateTime(2020, 12, 16, 16, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 16, 16, 8, 30),
-                DriverId = User_Name[7]
+                DriverId = "Alan Moser"
             });
             #endregion
 
@@ -322,7 +323,7 @@ namespace DS
                 LastPassedStop = 579,
                 LastPassedStopTime = new DateTime(2020, 12, 17, 16, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 17, 16, 38, 35),
-                DriverId = User_Name[0]
+                DriverId = "Gabriel Steiner"
             });
             #endregion
 
@@ -338,7 +339,7 @@ namespace DS
                 LastPassedStop = 579,
                 LastPassedStopTime = new DateTime(2020, 12, 18, 17, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 18, 17, 8, 30),
-                DriverId = User_Name[1]
+                DriverId = "Willie Pichler"
             });
             #endregion
 
@@ -354,7 +355,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 19, 16, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 19, 16, 8, 30),
-                DriverId = User_Name[2]
+                DriverId = "Bruce Wagner"
             });
             #endregion
 
@@ -370,7 +371,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 20, 16, 35, 0),
                 NextStopTime = new DateTime(2020, 12, 20, 16, 38, 35),
-                DriverId = User_Name[3]
+                DriverId = "Dylan Huber"
             });
             #endregion
 
@@ -386,7 +387,7 @@ namespace DS
                 LastPassedStop = 585,
                 LastPassedStopTime = new DateTime(2020, 12, 21, 17, 05, 0),
                 NextStopTime = new DateTime(2020, 12, 21, 17, 8, 30),
-                DriverId = User_Name[4]
+                DriverId = "Albert Gruber"
             });
             #endregion
 
@@ -1396,6 +1397,9 @@ namespace DS
 
         static void initUserList()
         {
+
+
+            #region temp
             #region User #0 //temp erase it!
             UserList.Add(new User()
             {
@@ -1424,6 +1428,10 @@ namespace DS
                 Permission = authority.Driver
             });
             #endregion
+            #endregion
+
+
+            #region Passenger
 
             #region User #1
             UserList.Add(new User()
@@ -1524,13 +1532,116 @@ namespace DS
                 Permission = authority.Passenger
             });
             #endregion
+            #endregion
+
+
+            #region Driver
+            #region User #1
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Bradley Reiter",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #2
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Johnny Schneider",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #3
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Bobby Maier",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #4
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Philip Schwarz",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #5
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Louis Weber",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #6
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Russell Winkler",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #7
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Vincent Schmid",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #8
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Randy Fischer",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #9
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Eugene Eder",
+                Permission = authority.Driver
+            });
+            #endregion
+
+            #region User #10
+            UserList.Add(new User()
+            {
+                Password = "123123",
+                Valid = true,
+                UserName = "Roy Fuchs",
+                Permission = authority.Driver
+            });
+            #endregion
 
             #region User #11
             UserList.Add(new User()
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[10],
+                UserName = "Ralph Berger",
                 Permission = authority.Driver
             });
             #endregion
@@ -1540,7 +1651,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[11],
+                UserName = "Wayne Leitner",
                 Permission = authority.Driver
             });
             #endregion
@@ -1550,7 +1661,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[12],
+                UserName = "Logan Hofer",
                 Permission = authority.Driver
             });
             #endregion
@@ -1560,7 +1671,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[13],
+                UserName = "Juan Mayer",
                 Permission = authority.Driver
             });
             #endregion
@@ -1570,7 +1681,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[14],
+                UserName = "Alan Moser",
                 Permission = authority.Driver
             });
             #endregion
@@ -1580,7 +1691,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[15],
+                UserName = "Gabriel Steiner",
                 Permission = authority.Driver
             });
             #endregion
@@ -1590,7 +1701,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[16],
+                UserName = "Willie Pichler",
                 Permission = authority.Driver
             });
             #endregion
@@ -1600,7 +1711,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[17],
+                UserName = "Bruce Wagner",
                 Permission = authority.Driver
             });
             #endregion
@@ -1610,7 +1721,7 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[18],
+                UserName = "Dylan Huber",
                 Permission = authority.Driver
             });
             #endregion
@@ -1620,10 +1731,13 @@ namespace DS
             {
                 Password = "123123",
                 Valid = true,
-                UserName = User_Name[19],
+                UserName = "Albert Gruber",
                 Permission = authority.Driver
             });
             #endregion
+            #endregion
+
+            #region CEO
             #region User #21
             UserList.Add(new User()
             {
@@ -1633,9 +1747,15 @@ namespace DS
                 Permission = authority.CEO
             });
             #endregion
+            #endregion
+
+
+
+
 
         }
         #endregion
+
 
         #region initLineStation //++
         static void initLineStationList()
