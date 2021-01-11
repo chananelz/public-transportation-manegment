@@ -27,6 +27,8 @@ namespace Wpf
         private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
         BackgroundWorker worker;
+        BLApi.IBL bl;
+
 
 
         /// <summary>
@@ -41,6 +43,7 @@ namespace Wpf
             worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
+            bl = BLApi.Factory.GetBL("1");
             busFunc();
             TimeSpan ts = new TimeSpan(0,0,0);
             TimeSpan toAdd = new TimeSpan(0,30,0);
@@ -75,6 +78,7 @@ namespace Wpf
                 while(true)
                 {
                     System.Threading.Thread.Sleep(1000);
+                    bl.Initialize((TimeSpan)TimeList.SelectedItem);
                 }
             }
         }

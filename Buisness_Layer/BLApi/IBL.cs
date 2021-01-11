@@ -127,7 +127,7 @@ namespace BLApi
         /// <param name="lastPassedStopTime"></param>
         /// <param name="nextStopTime"></param>
         /// <param name="driverId"></param>
-        void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId);
+        void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, long lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId);
 
         /// <summary>
         /// find specific BusTravel 
@@ -198,6 +198,9 @@ namespace BLApi
         /// <param name="licenseNumber"></param>
         /// <returns></returns>
         IEnumerable<Line> GetAllLinesByLicenseNumber(long licenseNumber);
+        IEnumerable<LineStation> GetAllLineStationsByLicenseNumber(long licenseNumber);
+
+        BusTravel GetBusTravel(long licenseNumber);
         #endregion
 
 
@@ -251,6 +254,13 @@ namespace BLApi
         /// <param name="frequency"></param>
         /// <param name="id"></param>
         void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency, long id);
+        /// <summary>
+        /// get all line departures
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        IEnumerable<LineDeparture> GetAllLineDeparture(Predicate<LineDeparture> pr);
+
         #endregion
 
 
@@ -456,6 +466,10 @@ namespace BLApi
         /// <param name="numberInLine"></param>
         /// <returns></returns>
         LineStation GetLineStation(long code, long lineId, long numberInLine);//aaa
+
+        LineStation GetStationByTime(TimeSpan time, long busTravelId);
+        TimeSpan GetPassedStopTime(TimeSpan time, long busTravelId);
+        TimeSpan GetNextStopTime(TimeSpan time, long busTravelId);
 
         #endregion
 
@@ -774,7 +788,7 @@ namespace BLApi
 
 
 
-
+        void Initialize(TimeSpan time);
 
 
 

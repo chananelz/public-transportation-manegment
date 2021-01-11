@@ -12,7 +12,7 @@ namespace BLImp
     public partial class BL : IBL
     {
 
-        public void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, int lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId)
+        public void CreateBusTravel(long licenseNumber, long lineId, DateTime formalDepartureTime, DateTime realDepartureTime, long lastPassedStop, DateTime lastPassedStopTime, DateTime nextStopTime, string driverId)
         {
             string exception = "";
             bool foundException = false;
@@ -144,5 +144,15 @@ namespace BLImp
                      select GetLine(busTravel.LineId)).First();
         }
 
+
+        public BusTravel GetBusTravel(long licenseNumber)
+        {
+            return dal.GetBusTravel(licenseNumber).GetPropertiesFrom<BO.BusTravel, DO.BusTravel>();
+        }
+
+        public IEnumerable<LineStation> GetAllLineStationsByLicenseNumber(long licenseNumber)
+        {
+            return GetAllLineStations(lineS => lineS.LineId == GetBus(licenseNumber).LineList.Id);
+        }
     }
 }

@@ -85,13 +85,14 @@ namespace BLImp
     
             return myList;
         }
-        //public IEnumerable<LineDeparture> GetAllLineDeparture(Predicate<LineDeparture> pr)
-        //{
-        //    if (pr == null)
-        //    {
-        //        return dal.GetAllLineDepartures().Select(lineDepartures => lineDepartures.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>()).ToList(); ;
-        //    }
-        //    return dal.GetAllLineStations().Select(line => line.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>()).Where(b => pr(b));
-        //}
+
+        public IEnumerable<LineDeparture> GetAllLineDeparture(Predicate<LineDeparture> pr = null)
+        {
+            if (pr == null)
+            {
+                return dal.GetAllLineDepartures().Select(lineDepartures => lineDepartures.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>()).ToList(); ;
+            }
+            return dal.GetAllLineDepartures().Select(lineDepartures => lineDepartures.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>()).Where(b => pr(b));
+        }
     }
 }
