@@ -49,21 +49,21 @@ namespace DS
         #region Bus_Travel //++
         static void initBusTravelList()
         {
-            //#region Bus_Travel # 1
-            //BusTravelList.Add(new BusTravel()
-            //{
-            //    Valid = false,
-            //    Id = Configuration.Bus_TravelCounter,
-            //    LicenseNumber = 1000000,
-            //    LineId = 10,
-            //    FormalDepartureTime = new DateTime(2020, 12, 1, 06, 00, 0),
-            //    RealDepartureTime = new DateTime(2020, 12, 1, 06, 05, 0),
-            //    LastPassedStop = 570,
-            //    LastPassedStopTime = new DateTime(2020, 12, 1, 06, 05, 0),
-            //    NextStopTime = new DateTime(2020, 12, 1, 06, 8, 30),
-            //    DriverId = User_Name[0]
-            //});
-            //#endregion
+            #region Bus_Travel # 1
+            BusTravelList.Add(new BusTravel()
+            {
+                Valid = false,
+                Id = Configuration.Bus_TravelCounter,
+                LicenseNumber = 1000021,
+                LineId = 10,
+                FormalDepartureTime = new DateTime(2020, 12, 1, 06, 00, 0),
+                RealDepartureTime = new DateTime(2020, 12, 1, 06, 05, 0),
+                LastPassedStop = 570,
+                LastPassedStopTime = new DateTime(2020, 12, 1, 06, 05, 0),
+                NextStopTime = new DateTime(2020, 12, 1, 06, 8, 30),
+                DriverId = User_Name[0]
+            });
+            #endregion
 
             #region Bus_Travel # 2
 
@@ -3363,7 +3363,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 5,
+                Frequency = 3,
                 Id = 10,
                 Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
                 Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3376,10 +3376,10 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 6,
-                Id = 10,
-                Time_Start = new DateTime(2020, 12, 20, 10, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 14, 00, 0)
+                Frequency = 3,
+                Id = 13,
+                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
+                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3388,10 +3388,10 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 7,
-                Id = 10,
-                Time_Start = new DateTime(2020, 12, 20, 14, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 22, 0, 0)
+                Frequency = 3,
+                Id = 14,
+                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
+                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3401,8 +3401,8 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 5,
-                Id = 11,
+                Frequency = 3,
+                Id = 19,
                 Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
                 Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
 
@@ -3413,10 +3413,10 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 6,
-                Id = 11,
-                Time_Start = new DateTime(2020, 12, 20, 10, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 14, 00, 0)
+                Frequency = 3,
+                Id = 18,
+                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
+                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3425,10 +3425,10 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 7,
-                Id = 11,
-                Time_Start = new DateTime(2020, 12, 20, 14, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 22, 0, 0)
+                Frequency = 3,
+                Id = 17,
+                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
+                Time_End = new DateTime(2020, 12, 20, 10, 0, 0)
 
             });
 
@@ -3438,8 +3438,8 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 5,
-                Id = 12,
+                Frequency = 3,
+                Id = 15,
                 Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
                 Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
 
@@ -3450,27 +3450,14 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 6,
-                Id = 12,
-                Time_Start = new DateTime(2020, 12, 20, 10, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 14, 00, 0)
+                Frequency = 3,
+                Id = 14,
+                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
+                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
 
             #endregion
-
-            #region LineDeparture # 9
-            LineDepartureList.Add(new LineDeparture()
-            {
-                Valid = true,
-                Frequency = 7,
-                Id = 12,
-                Time_Start = new DateTime(2020, 12, 20, 14, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 22, 0, 0)
-
-            });
-            #endregion
-
          
         }
         #endregion 
