@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<ArrayOfLine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Line>
+    <Valid>true</Valid>
+    <Id>10</Id>
+    <Number>143</Number>
+    <Area>Benjamin East</Area>
+    <FirstStop>570</FirstStop>
+    <LastStop>555</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>11</Id>
+    <Number>142</Number>
+    <Area>Benjamin North</Area>
+    <FirstStop>579</FirstStop>
+    <LastStop>598</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>12</Id>
+    <Number>145</Number>
+    <Area>Benjamin East</Area>
+    <FirstStop>585</FirstStop>
+    <LastStop>570</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>13</Id>
+    <Number>144</Number>
+    <Area>Benjamin East</Area>
+    <FirstStop>585</FirstStop>
+    <LastStop>555</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>14</Id>
+    <Number>148</Number>
+    <Area>Benjamin Southeast</Area>
+    <FirstStop>585</FirstStop>
+    <LastStop>580</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>15</Id>
+    <Number>472</Number>
+    <Area>Benjamin North</Area>
+    <FirstStop>598</FirstStop>
+    <LastStop>570</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>16</Id>
+    <Number>141</Number>
+    <Area>Benjamin North</Area>
+    <FirstStop>598</FirstStop>
+    <LastStop>580</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>17</Id>
+    <Number>442</Number>
+    <Area>Benjamin Southeast</Area>
+    <FirstStop>570</FirstStop>
+    <LastStop>580</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>18</Id>
+    <Number>433</Number>
+    <Area>Benjamin North</Area>
+    <FirstStop>598</FirstStop>
+    <LastStop>595</LastStop>
+  </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>19</Id>
+    <Number>456</Number>
+    <Area>Benjamin East</Area>
+    <FirstStop>570</FirstStop>
+    <LastStop>578</LastStop>
+  </Line>
+</ArrayOfLine>
