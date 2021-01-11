@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<ArrayOfStop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>555</StopCode>
+    <Latitude>31.8822308</Latitude>
+    <Longitude>35.2385864</Longitude>
+    <StopName>Tel Tsion Terminal</StopName>
+    <Address>Tel Zion Terminal Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>556</StopCode>
+    <Latitude>31.8813897</Latitude>
+    <Longitude>35.2381133</Longitude>
+    <StopName>Ahavat Israel D</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>557</StopCode>
+    <Latitude>31.8809719</Latitude>
+    <Longitude>35.2382622</Longitude>
+    <StopName>Ahavat Israel B</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>558</StopCode>
+    <Latitude>31.8800756</Latitude>
+    <Longitude>35.2386322</Longitude>
+    <StopName>Ahavat Israel/Minhat Aharon</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>559</StopCode>
+    <Latitude>31.8791467</Latitude>
+    <Longitude>35.2381019</Longitude>
+    <StopName>Ahavat Israel G</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>560</StopCode>
+    <Latitude>31.8789331</Latitude>
+    <Longitude>35.2380067</Longitude>
+    <StopName>Club/Ahavat Israel</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>561</StopCode>
+    <Latitude>31.877615</Latitude>
+    <Longitude>35.2373886</Longitude>
+    <StopName>Ahavat Israel A</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>562</StopCode>
+    <Latitude>31.8775711</Latitude>
+    <Longitude>35.2381517</Longitude>
+    <StopName>Ahavat Israel Vav</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>563</StopCode>
+    <Latitude>31.8793372</Latitude>
+    <Longitude>35.2399406</Longitude>
+    <StopName>Ahavat Israel/Kehilat Ya'akov</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>564</StopCode>
+    <Latitude>31.8805753</Latitude>
+    <Longitude>35.2407075</Longitude>
+    <StopName>Ahavat Israel/Ma'alot HaHokhma</StopName>
+    <Address>Tel Zion Ahavat Israel Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>565</StopCode>
+    <Latitude>31.8783017</Latitude>
+    <Longitude>35.2398606</Longitude>
+    <StopName>Makor Baruch/Ahavat Israel</StopName>
+    <Address>Tel Zion Makor Baruch Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>566</StopCode>
+    <Latitude>31.8771917</Latitude>
+    <Longitude>35.2401275</Longitude>
+    <StopName>Makor Baruch 4</StopName>
+    <Address>Tel Zion Makor Baruch Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>567</StopCode>
+    <Latitude>31.8768444</Latitude>
+    <Longitude>35.2398147</Longitude>
+    <StopName>Makor Baruch 3</StopName>
+    <Address>Tel Zion Makor Baruch Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>568</StopCode>
+    <Latitude>31.8768006</Latitude>
+    <Longitude>35.2391167</Longitude>
+    <StopName>Makor Baruch 2</StopName>
+    <Address>Tel Zion Makor Baruch Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>569</StopCode>
+    <Latitude>31.8782464</Latitude>
+    <Longitude>35.2398644</Longitude>
+    <StopName>Makor Baruch/Ahavat Israel</StopName>
+    <Address>Tel Zion Makor Baruch Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>570</StopCode>
+    <Latitude>31.8845539</Latitude>
+    <Longitude>35.2412986</Longitude>
+    <StopName>Caravans Quarter</StopName>
+    <Address>Kokhav Ya'akov Caravans Quarter</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>571</StopCode>
+    <Latitude>31.8797475</Latitude>
+    <Longitude>35.2430458</Longitude>
+    <StopName>Kokhav Ya'akov Road/Simhat Olam</StopName>
+    <Address>Kochav Yaakov Simchat Olam Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>572</StopCode>
+    <Latitude>31.87965</Latitude>
+    <Longitude>35.2438775</Longitude>
+    <StopName>Simhat Olam/Or Hadash</StopName>
+    <Address>Kochav Yaakov Simchat Olam Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>573</StopCode>
+    <Latitude>31.8798886</Latitude>
+    <Longitude>35.2443925</Longitude>
+    <StopName>Simhat Olam/Abir Ya'akov Boulevard</StopName>
+    <Address>Kochav Yaakov Simchat Olam Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>574</StopCode>
+    <Latitude>31.8797817</Latitude>
+    <Longitude>35.2452964</Longitude>
+    <StopName>Abir Ya'akov/Avne Hefets</StopName>
+    <Address>Kochav Yaakov Avne Hefets Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>575</StopCode>
+    <Latitude>31.8800658</Latitude>
+    <Longitude>35.2469825</Longitude>
+    <StopName>Mishkenot Haro'im/Avne Hefets</StopName>
+    <Address>Kochav Yaakov Avne Hefets Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>576</StopCode>
+    <Latitude>31.87916</Latitude>
+    <Longitude>35.2480431</Longitude>
+    <StopName>Mishkenot Haro'im/Shalom River</StopName>
+    <Address>Kochav Yaakov Shalom River Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>577</StopCode>
+    <Latitude>31.8783397</Latitude>
+    <Longitude>35.2478256</Longitude>
+    <StopName>Abir Ya'akov/Ma'ayane HaYeshua</StopName>
+    <Address>Kochav Yaakov Ma'ayane HaYeshua Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>578</StopCode>
+    <Latitude>31.8771572</Latitude>
+    <Longitude>35.247055</Longitude>
+    <StopName>Kokhav Ya'akov Road</StopName>
+    <Address>Kochav Yaakov</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>579</StopCode>
+    <Latitude>31.8729</Latitude>
+    <Longitude>35.2593497</Longitude>
+    <StopName>Gas Station/Kokhav Ya'akov</StopName>
+    <Address>Kochav Yaakov</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>580</StopCode>
+    <Latitude>31.8962994</Latitude>
+    <Longitude>35.2248383</Longitude>
+    <StopName>Psagot Center</StopName>
+    <Address>Psagot Nevo Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>581</StopCode>
+    <Latitude>31.8987694</Latitude>
+    <Longitude>35.2253494</Longitude>
+    <StopName>Mateh Binyamin Regional Council</StopName>
+    <Address>Mateh Binyamin Regional Council</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>582</StopCode>
+    <Latitude>31.9012108</Latitude>
+    <Longitude>35.2226714</Longitude>
+    <StopName>Psagot/Ashkubiyot</StopName>
+    <Address>Psagot Ashkubiyot Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>583</StopCode>
+    <Latitude>31.9029294</Latitude>
+    <Longitude>35.2231369</Longitude>
+    <StopName>Psagot Exit</StopName>
+    <Address>Psagot Ashkubiyot Street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>584</StopCode>
+    <Latitude>31.8648664</Latitude>
+    <Longitude>35.2619172</Longitude>
+    <StopName>Sha'ar Binyamin Terminal/Alighting</StopName>
+    <Address>Sha'ar Binyamin hamasger</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>585</StopCode>
+    <Latitude>31.8649083</Latitude>
+    <Longitude>35.2614058</Longitude>
+    <StopName>Sha'ar Binyamin Industrial Zone</StopName>
+    <Address>Sha'ar Binyamin hamasger street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>586</StopCode>
+    <Latitude>31.8648853</Latitude>
+    <Longitude>35.2616844</Longitude>
+    <StopName>Sha'ar Binyamin Terminal/Boarding</StopName>
+    <Address>Sha'ar Binyamin hamasger street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>587</StopCode>
+    <Latitude>31.8530006</Latitude>
+    <Longitude>35.2663078</Longitude>
+    <StopName>Adam Boulevard/437</StopName>
+    <Address>Adam Boulevard street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>588</StopCode>
+    <Latitude>31.8521136</Latitude>
+    <Longitude>35.2673186</Longitude>
+    <StopName>Adam Boulevard/Savyon</StopName>
+    <Address>Adam Boulevard street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>589</StopCode>
+    <Latitude>31.8520547</Latitude>
+    <Longitude>35.2698669</Longitude>
+    <StopName>Adam Blvd/Bosmat</StopName>
+    <Address>Adam Bosmat street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>590</StopCode>
+    <Latitude>31.8519325</Latitude>
+    <Longitude>35.2725144</Longitude>
+    <StopName>Adam Boulevard/Harduf Hanehalim</StopName>
+    <Address>Adam Bosmat street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>591</StopCode>
+    <Latitude>31.8510208</Latitude>
+    <Longitude>35.2729722</Longitude>
+    <StopName>Harduf Hanehalim/Kalanit</StopName>
+    <Address>Adam Harduf street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>592</StopCode>
+    <Latitude>31.8497486</Latitude>
+    <Longitude>35.2730256</Longitude>
+    <StopName>Harduf Hanehalim/Karkum</StopName>
+    <Address>Adam Harduf street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>593</StopCode>
+    <Latitude>31.8489703</Latitude>
+    <Longitude>35.2725297</Longitude>
+    <StopName>Harduf Hanehalim/Rakefet</StopName>
+    <Address>Adam Harduf street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>594</StopCode>
+    <Latitude>31.8479175</Latitude>
+    <Longitude>35.2716408</Longitude>
+    <StopName>Harduf Hanehalim/Yasmin</StopName>
+    <Address>Adam Harduf street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>595</StopCode>
+    <Latitude>31.8472539</Latitude>
+    <Longitude>35.273445</Longitude>
+    <StopName>Yasmin/Parag</StopName>
+    <Address>Adam Yasmin street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>596</StopCode>
+    <Latitude>31.8480281</Latitude>
+    <Longitude>35.2762222</Longitude>
+    <StopName>Parag/Irus</StopName>
+    <Address>Adam Parag street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>597</StopCode>
+    <Latitude>31.8477858</Latitude>
+    <Longitude>35.2784881</Longitude>
+    <StopName>Levona/Vered</StopName>
+    <Address>Adam Levona street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>598</StopCode>
+    <Latitude>31.8481883</Latitude>
+    <Longitude>35.2804489</Longitude>
+    <StopName>Levona</StopName>
+    <Address>Adam Levona street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>599</StopCode>
+    <Latitude>31.8497275</Latitude>
+    <Longitude>35.28162</Longitude>
+    <StopName>Levona/Adam Blvd</StopName>
+    <Address>Adam Levona street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>600</StopCode>
+    <Latitude>31.8511658</Latitude>
+    <Longitude>35.2778244</Longitude>
+    <StopName>Adam Boulevard</StopName>
+    <Address>Adam Boulevard street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>601</StopCode>
+    <Latitude>31.8504886</Latitude>
+    <Longitude>35.2796783</Longitude>
+    <StopName>Adam Boulevard/Levona</StopName>
+    <Address>Adam Boulevard street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>602</StopCode>
+    <Latitude>31.8501014</Latitude>
+    <Longitude>35.2775497</Longitude>
+    <StopName>Kalanit/Nurit</StopName>
+    <Address>Adam Kalanit street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>603</StopCode>
+    <Latitude>31.8488981</Latitude>
+    <Longitude>35.2781067</Longitude>
+    <StopName>Synagogue/HaLilakh</StopName>
+    <Address>Adam Synagogue street</Address>
+  </Stop>
+  <Stop>
+    <Valid>true</Valid>
+    <StopCode>604</StopCode>
+    <Latitude>31.8487453</Latitude>
+    <Longitude>35.2781181</Longitude>
+    <StopName>Yasmin/Kalanit</StopName>
+    <Address>Adam Yasmin street</Address>
+  </Stop>
+</ArrayOfStop>

@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<ArrayOfSequentialStopInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>570</StationCodeF>
+    <StationCodeS>571</StationCodeS>
+    <Distance>587</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>571</StationCodeF>
+    <StationCodeS>572</StationCodeS>
+    <Distance>87</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>572</StationCodeF>
+    <StationCodeS>573</StationCodeS>
+    <Distance>55</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>573</StationCodeF>
+    <StationCodeS>574</StationCodeS>
+    <Distance>86</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>574</StationCodeF>
+    <StationCodeS>575</StationCodeS>
+    <Distance>162</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>575</StationCodeF>
+    <StationCodeS>576</StationCodeS>
+    <Distance>142</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>576</StationCodeF>
+    <StationCodeS>577</StationCodeS>
+    <Distance>93</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>577</StationCodeF>
+    <StationCodeS>578</StationCodeS>
+    <Distance>152</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>578</StationCodeF>
+    <StationCodeS>555</StationCodeS>
+    <Distance>979</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>579</StationCodeF>
+    <StationCodeS>580</StationCodeS>
+    <Distance>2297</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>580</StationCodeF>
+    <StationCodeS>581</StationCodeS>
+    <Distance>137</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>581</StationCodeF>
+    <StationCodeS>582</StationCodeS>
+    <Distance>241</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>582</StationCodeF>
+    <StationCodeS>583</StationCodeS>
+    <Distance>251</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>583</StationCodeF>
+    <StationCodeS>584</StationCodeS>
+    <Distance>248</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>584</StationCodeF>
+    <StationCodeS>585</StationCodeS>
+    <Distance>98</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>585</StationCodeF>
+    <StationCodeS>586</StationCodeS>
+    <Distance>80</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>586</StationCodeF>
+    <StationCodeS>587</StationCodeS>
+    <Distance>57</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>587</StationCodeF>
+    <StationCodeS>598</StationCodeS>
+    <Distance>824</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>585</StationCodeF>
+    <StationCodeS>578</StationCodeS>
+    <Distance>201</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>578</StationCodeF>
+    <StationCodeS>577</StationCodeS>
+    <Distance>152</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>577</StationCodeF>
+    <StationCodeS>576</StationCodeS>
+    <Distance>93</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>576</StationCodeF>
+    <StationCodeS>574</StationCodeS>
+    <Distance>86</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>574</StationCodeF>
+    <StationCodeS>573</StationCodeS>
+    <Distance>87</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>573</StationCodeF>
+    <StationCodeS>572</StationCodeS>
+    <Distance>55</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>572</StationCodeF>
+    <StationCodeS>571</StationCodeS>
+    <Distance>87</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>571</StationCodeF>
+    <StationCodeS>569</StationCodeS>
+    <Distance>702</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>569</StationCodeF>
+    <StationCodeS>570</StationCodeS>
+    <Distance>154</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>585</StationCodeF>
+    <StationCodeS>564</StationCodeS>
+    <Distance>753</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>564</StationCodeF>
+    <StationCodeS>563</StationCodeS>
+    <Distance>917</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>563</StationCodeF>
+    <StationCodeS>562</StationCodeS>
+    <Distance>72</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>562</StationCodeF>
+    <StationCodeS>561</StationCodeS>
+    <Distance>158</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>561</StationCodeF>
+    <StationCodeS>560</StationCodeS>
+    <Distance>26</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>true</Valid>
+    <StationCodeF>560</StationCodeF>
+    <StationCodeS>559</StationCodeS>
+    <Distance>115</Distance>
+    <AverageTime />
+    <TravelTime />
+  </SequentialStopInfo>
+</ArrayOfSequentialStopInfo>
