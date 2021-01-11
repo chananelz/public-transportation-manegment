@@ -124,6 +124,7 @@ namespace Wpf.CEO
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
     }
