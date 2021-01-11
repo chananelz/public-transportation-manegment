@@ -107,6 +107,7 @@ namespace DL
         /// </summary>
         /// <param name="pr"></param>
         /// <returns></returns>
+       
         public User RequestUser(Predicate<DO.User> pr = null)
         {
             XElement userRootElem = XMLTools.LoadListFromXMLElement(usersPath);
@@ -157,6 +158,7 @@ namespace DL
         /// sets a user id valid to false
         /// </summary>
         /// <param name="nameId"></param>
+        /// 
         public void DeleteUser(string nameId)
         {
             XElement userRootElem = XMLTools.LoadListFromXMLElement(usersPath);
@@ -230,6 +232,8 @@ namespace DL
         //           select u1;
         //}
 
+
+
         public IEnumerable<User> GetAllUsers()
         {
             List<User> BusesList = XMLTools.LoadListFromXMLSerializer<User>(usersPath);
@@ -242,8 +246,11 @@ namespace DL
                     temList.Add(user);
             }
             return temList;
-
         }
+
+
+
+
 
 
 

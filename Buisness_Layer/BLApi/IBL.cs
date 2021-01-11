@@ -263,9 +263,6 @@ namespace BLApi
         //IEnumerable<LineDeparture> GetAllUnValidLineDeparture();
 
 
-
-
-
         #region Line
         /// <summary>
         /// create new line
@@ -719,6 +716,7 @@ namespace BLApi
         /// </summary>
         /// <returns></returns>
         IEnumerable<User> GetAllPassengers();
+        User GetUser(string nameId);
         #endregion
 
 
@@ -738,23 +736,24 @@ namespace BLApi
         /// <param name="lineNumber"></param>
         /// <param name="onStopTime"></param>
         /// <param name="offStopTime"></param>
-        void CreateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
+        void CreateUserTravel(string userName, long lineNumber, DateTime onStopTime, DateTime offStopTime);
 
         /// <summary>
         /// request specific user travel
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        UserTravel RequestUserTravel(long id);
+        UserTravel RequestUserTravel(Predicate<UserTravel> pr = null);
 
-        /// <summary>
-        /// update - user travel
-        /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="lineNumber"></param>
-        /// <param name="onStopTime"></param>
-        /// <param name="offStopTime"></param>
-        void UpdateUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
+           /// <summary>
+           /// get UserTravel
+           /// </summary>
+           /// <param name="id"></param>
+           /// <returns></returns>
+        UserTravel GetUserTravel(long id);
+
+
+       
 
         /// <summary>
         /// delete specific user travel
@@ -763,12 +762,22 @@ namespace BLApi
         /// <param name="lineNumber"></param>
         /// <param name="onStopTime"></param>
         /// <param name="offStopTime"></param>
-        void DeleteUserTravel(string userName, int lineNumber, DateTime onStopTime, DateTime offStopTime);
+        void DeleteUserTravel(long id);
         #endregion
+        IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
+        IEnumerable<UserTravel> GetAllDriverTravel();
+        IEnumerable<UserTravel> GetAllPassengersTravel();
 
 
 
-        //IEnumerable<UserTravel> GetAllUserTravels(Predicate<UserTravel> pr = null);
+
+
+
+
+
+
+
+
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();
         //IEnumerable<UserTravel> GetAllValidUserTravels();
         //long GeTimeUntilArrival();

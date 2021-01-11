@@ -11,7 +11,7 @@ namespace DO
         public bool Valid { get; set; }
         public long IdTravel { get; set; }
         public string UserName { get; set; }
-        public int LineId { get; set; }
+        public long LineId { get; set; }
         public int OnStopId { get; set; }
         public DateTime OnStopTime { get; set; }
         public int OffStopId { get; set; }
