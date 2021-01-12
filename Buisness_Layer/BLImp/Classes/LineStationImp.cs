@@ -67,7 +67,7 @@ namespace BLImp
             DO.LineStation lineStationDO = lineStationBO.GetPropertiesFrom<DO.LineStation, BO.LineStation>();
             lineStationDO.Valid = true;
             dal.CreateLineStation(lineStationDO);
-           
+
         }
         public LineStation RequestLineStation(Predicate<LineStation> pr = null)
         {
@@ -113,7 +113,7 @@ namespace BLImp
                 throw new Exception(exception);
             dal.UpdateLineStationNumberInLine(numberInLine, code, lineId);
         }
-        public void DeleteLineStation(long code, long lineId,long numberInLine)
+        public void DeleteLineStation(long code, long lineId, long numberInLine)
         {
             var allLineStatoins = GetAllLineStations(line => line.LineId == lineId).ToList();
             long codeBefore = -1;
@@ -121,12 +121,12 @@ namespace BLImp
             int counter = 0;
             foreach (LineStation lineStation in allLineStatoins)
             {
-                if(lineStation.NumberInLine < numberInLine)
+                if (lineStation.NumberInLine < numberInLine)
                     codeBefore = lineStation.Code;
                 if (lineStation.NumberInLine > numberInLine)
                 {
 
-                    if(counter == 0)
+                    if (counter == 0)
                     {
                         codeAfter = lineStation.Code;
                         counter++;
@@ -134,7 +134,7 @@ namespace BLImp
                     UpdateLineStationNumberInLine(lineStation.NumberInLine - 1, lineStation.LineId, lineStation.Code);
                 }
             }
-            if(codeBefore != -1 && codeAfter != -1)
+            if (codeBefore != -1 && codeAfter != -1)
             {
                 try
                 {
@@ -171,7 +171,7 @@ namespace BLImp
             double bestDistance = -1;
             double tempDistance = -1;
             Line ret = new Line();
-            foreach(Line line in GetAllLines())
+            foreach (Line line in GetAllLines())
             {
                 tempDistance = DistanceCalculate(line.Number, fid, sid);
                 if (tempDistance != -1 && tempDistance < bestDistance)
@@ -184,8 +184,68 @@ namespace BLImp
                 return ret;
             else
                 throw new Exception("no such route!!");
-            
+
         }
 
+        /// <summary>
+        /// if line is currently driving return linestation in current time
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="lineId"></param>
+        /// <returns></returns>
+        public LineStation GetStationByTime(TimeSpan check,TimeSpan time, long lineId)
+        {
+            LineStation ret = new LineStation();
+            Line currentLine = GetLine(lineId);
+            foreach (LineStation lineStation in GetAllLineStationsByLineNumber(currentLine.Number))
+            {
+                check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
+                if (check > time)
+                    return ret;
+                ret = lineStation;
+            }
+            return null;
+        }
+
+
+
+
+        public TimeSpan GetPassedStopTime(TimeSpan check,TimeSpan time, long busTravelId)
+        {
+            BusTravel currentBusTravel = GetBusTravel(busTravelId);
+            Line currentLine = GetLine(currentBusTravel.LineId);
+            TimeSpan temp = new TimeSpan();
+            foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
+            {
+                check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
+                if (check > time)
+                    return (time - temp);
+                temp = check;
+            }
+            return new TimeSpan();
+        }
+
+
+
+
+
+        public TimeSpan GetNextStopTime(TimeSpan check,TimeSpan time, long busTravelId)
+        {
+            BusTravel currentBusTravel = GetBusTravel(busTravelId);
+            Line currentLine = GetLine(currentBusTravel.LineId);
+            foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
+            {
+                check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
+                if (check > time)
+                    return (check - time);
+            }
+            return new TimeSpan();
+        }
     }
 }
+
+
+
+
+
+

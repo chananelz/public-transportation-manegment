@@ -43,9 +43,8 @@ namespace dotNet5781_03_B_6077_5711
                 valid_Bus_List.currentDisplayBusLine.refuling.WorkerReportsProgress = true;
                 valid_Bus_List.currentDisplayBusLine.refuling.WorkerSupportsCancellation = true;
             }
-           
-           
         }
+
         /// <summary>
         ///  Start up the "report progress" Function
         /// </summary>
@@ -53,7 +52,6 @@ namespace dotNet5781_03_B_6077_5711
         /// <param name="e"></param>
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
         {
-
             var bw = sender as BackgroundWorker;
             for (int i = 1; i <= 12; i++)
             {

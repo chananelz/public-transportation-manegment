@@ -62,12 +62,11 @@
     <Compile Include="BLImp\Classes\StopImp.cs" />
     <Compile Include="BLImp\Classes\UserImp.cs" />
     <Compile Include="BLImp\Classes\UserTravel.cs" />
-    <Compile Include="BLImp\Threads\MovingBus.cs" />
+    <Compile Include="BLImp\Threads\Init.cs" />
     <Compile Include="BO\Bus.cs" />
     <Compile Include="BO\BusTravel.cs" />
+    <Compile Include="BO\DigitalScreen.cs" />
     <Compile Include="BO\Exceptions.cs" />
-    <Compile Include="BO\Limited\LimitedBus.cs" />
-    <Compile Include="BO\Limited\LimitedStop.cs" />
     <Compile Include="BO\Line.cs" />
     <Compile Include="BO\LineDeparture.cs" />
     <Compile Include="BO\LineStation.cs" />

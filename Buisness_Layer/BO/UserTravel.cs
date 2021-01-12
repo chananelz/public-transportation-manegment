@@ -9,6 +9,7 @@ namespace BO
     public class UserTravel
     {
         public bool Valid { get; set; }
+        public long ID { get; set; }
         public string UserName { get; set; }
         public long LineNumber { get; set; }
         public DateTime OnStopTime { get; set; }
