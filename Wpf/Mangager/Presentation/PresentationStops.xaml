@@ -50,6 +50,7 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
+                                
 
 
                                 <ColumnDefinition Width="*" />
@@ -99,6 +100,15 @@
                                     <ImageBrush ImageSource="myImages/map.png"/>
                                 </Button.Background>
                             </Button>
+                            <TextBlock Grid.Column="13" Width="50"/>
+
+                            <Button  Grid.Column="14"   Foreground ="Red"    FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center"   FontFamily="Arial Black"   BorderThickness="0"  Click="board_click" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="myImages/new board.png"/>
+                                </Button.Background>
+                            </Button>
+                            
+                           
 
 
 

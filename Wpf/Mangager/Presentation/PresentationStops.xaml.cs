@@ -239,6 +239,18 @@ namespace Wpf.Mangager.Presentation
             ab.Show();
         }
 
+        private void board_click(object sender, RoutedEventArgs e) //aaa
+        {
+
+            Button a = (Button)sender;
+            tempStop = (BO.Stop)a.DataContext;
+            var ab = new map(tempStop.Longitude, tempStop.Latitude);
+            ab.Height = 300;
+            ab.Width = 600;
+            ab.Show();
+        }
+       
+
         /// <summary>
         /// This function is responsible for the series of actions that will be performed when this button is clicked
         /// </summary>
