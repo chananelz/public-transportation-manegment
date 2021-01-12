@@ -201,8 +201,9 @@ namespace BLApi
         IEnumerable<LineStation> GetAllLineStationsByLicenseNumber(long licenseNumber);
 
         BusTravel GetBusTravel(long licenseNumber);
+        BusTravel FindBusTravelWithLineNumberAndDepartureTime(long lineId,DateTime formalDepartureTime);
         #endregion
-
+        
 
         //IEnumerable<BusTravel> GetAllBusTravels(Predicate<BusTravel> pr = null);
         //IEnumerable<BusTravel> GetAllValidBusTravels();
@@ -467,9 +468,9 @@ namespace BLApi
         /// <returns></returns>
         LineStation GetLineStation(long code, long lineId, long numberInLine);//aaa
 
-        LineStation GetStationByTime(TimeSpan time, long busTravelId);
-        TimeSpan GetPassedStopTime(TimeSpan time, long busTravelId);
-        TimeSpan GetNextStopTime(TimeSpan time, long busTravelId);
+        //LineStation GetStationByTime(TimeSpan time, long busTravelId);
+        //TimeSpan GetPassedStopTime(TimeSpan time, long busTravelId);
+        //TimeSpan GetNextStopTime(TimeSpan time, long busTravelId);
 
         #endregion
 
@@ -767,6 +768,9 @@ namespace BLApi
         UserTravel GetUserTravel(long id);
 
 
+        UserTravel GetDriverTravel(long lineNumber, DateTime formalDepartureTime);
+
+
        
 
         /// <summary>
@@ -788,8 +792,7 @@ namespace BLApi
 
 
 
-        void Initialize(TimeSpan time);
-
+        void Initialize(object sender,TimeSpan timeSpan);
 
 
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();

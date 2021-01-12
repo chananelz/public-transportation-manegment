@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.ComponentModel;
 using BLApi;
+using System.Diagnostics;
+using System.Threading;
 
 //netanchan
 
@@ -28,6 +30,7 @@ namespace Wpf
         DispatcherTimer gameTimer = new DispatcherTimer();
         BackgroundWorker worker;
         BLApi.IBL bl;
+        TimeSpan timeSpan = new TimeSpan();
 
 
 
@@ -46,27 +49,25 @@ namespace Wpf
             bl = BLApi.Factory.GetBL("1");
             busFunc();
             TimeSpan ts = new TimeSpan(0,0,0);
-            TimeSpan toAdd = new TimeSpan(0,30,0);
-            for (int i = 0; i< 48; i ++)
+            TimeSpan toAdd = new TimeSpan(0,5,0);
+            for (int i = 0; i< 48*5; i ++)
             {
                 TimeList.Items.Add(ts);
                 ts = ts.Add(toAdd);
-            }
+            } 
         }
 
 
 
-
+        #region background worker simulation
         /// <summary>
         /// This function manages the progress of the ProgressBar control according to the input from the user
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-
         private void Worker_DoWor(object sender, DoWorkEventArgs e)
         {
-
+           
             if (worker.CancellationPending)
             {
                 e.Cancel = true;
@@ -74,12 +75,8 @@ namespace Wpf
             }
             else
             {
-                int length = (int)e.Argument;
-                while(true)
-                {
-                    System.Threading.Thread.Sleep(1000);
-                    bl.Initialize((TimeSpan)TimeList.SelectedItem);
-                }
+
+                bl.Initialize(sender,timeSpan);
             }
         }
 
@@ -90,8 +87,6 @@ namespace Wpf
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
@@ -112,10 +107,19 @@ namespace Wpf
             }
         }
 
+        /// <summary>
+        /// start simulation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (worker.IsBusy != true)
+                worker.CancelAsync();
+            worker.RunWorkerAsync(5);
+        }
 
-
-
-
+        #endregion
 
 
 
@@ -148,12 +152,14 @@ namespace Wpf
             gameTimer.Start();
         }
 
+
+
+
         /// <summary>
         /// Defines the movement of the moving bus
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void gameTimerEvent(object sender, EventArgs e)
         {
             if (movingBus.Margin.Left >= -600)
@@ -183,6 +189,7 @@ namespace Wpf
             new SignIn("DRIVER").Show();
             this.Close();
         }
+
         /// <summary>
         /// Defines actions to be performed when a  button is pressed
         /// </summary>
@@ -220,15 +227,11 @@ namespace Wpf
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (worker.IsBusy != true)
-                worker.RunWorkerAsync(5);
-        }
+       
 
         private void TimeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            timeSpan = (TimeSpan)TimeList.SelectedItem;
         }
     }
 }

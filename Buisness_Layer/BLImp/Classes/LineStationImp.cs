@@ -193,13 +193,11 @@ namespace BLImp
         /// <param name="time"></param>
         /// <param name="lineId"></param>
         /// <returns></returns>
-        public LineStation GetStationByTime(TimeSpan time, long busTravelId)
+        public LineStation GetStationByTime(TimeSpan check,TimeSpan time, long lineId)
         {
             LineStation ret = new LineStation();
-            BusTravel currentBusTravel = GetBusTravel(busTravelId);
-            Line currentLine = GetLine(currentBusTravel.LineId);
-            TimeSpan check = new TimeSpan();
-            foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
+            Line currentLine = GetLine(lineId);
+            foreach (LineStation lineStation in GetAllLineStationsByLineNumber(currentLine.Number))
             {
                 check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
                 if (check > time)
@@ -212,11 +210,10 @@ namespace BLImp
 
 
 
-        public TimeSpan GetPassedStopTime(TimeSpan time, long busTravelId)
+        public TimeSpan GetPassedStopTime(TimeSpan check,TimeSpan time, long busTravelId)
         {
             BusTravel currentBusTravel = GetBusTravel(busTravelId);
             Line currentLine = GetLine(currentBusTravel.LineId);
-            TimeSpan check = new TimeSpan();
             TimeSpan temp = new TimeSpan();
             foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
             {
@@ -232,11 +229,10 @@ namespace BLImp
 
 
 
-        public TimeSpan GetNextStopTime(TimeSpan time, long busTravelId)
+        public TimeSpan GetNextStopTime(TimeSpan check,TimeSpan time, long busTravelId)
         {
             BusTravel currentBusTravel = GetBusTravel(busTravelId);
             Line currentLine = GetLine(currentBusTravel.LineId);
-            TimeSpan check = new TimeSpan();
             foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
             {
                 check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);

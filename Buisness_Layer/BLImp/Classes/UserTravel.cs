@@ -133,5 +133,10 @@ namespace BLImp
         }
 
 
+        public UserTravel GetDriverTravel(long lineNumber, DateTime formalDepartureTime)
+        {
+            return RequestUserTravel(userTravel => userTravel.LineNumber == lineNumber && userTravel.OnStopTime == formalDepartureTime);
+        }
+
     }
 }

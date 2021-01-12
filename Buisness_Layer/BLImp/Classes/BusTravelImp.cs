@@ -154,5 +154,14 @@ namespace BLImp
         {
             return GetAllLineStations(lineS => lineS.LineId == GetBus(licenseNumber).LineList.Id);
         }
+
+
+
+        
+
+        public BusTravel FindBusTravelWithLineNumberAndDepartureTime(long lineId, DateTime formalDepartureTime)
+        {
+            return RequestBusTravel(busTravel => busTravel.LineId == lineId && busTravel.FormalDepartureTime == formalDepartureTime);
+        }
     }
 }
