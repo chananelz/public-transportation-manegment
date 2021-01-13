@@ -244,7 +244,7 @@ namespace Wpf.Mangager.Presentation
 
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
-            var ab = new map(tempStop.Longitude, tempStop.Latitude);
+            var ab = new board(tempStop);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();

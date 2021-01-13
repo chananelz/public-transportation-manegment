@@ -19,9 +19,10 @@ namespace Wpf.Mangager.Presentation
     /// </summary>
     public partial class board : Window
     {
-        public board()
+        public board(BO.Stop myStope)
         {
             InitializeComponent();
+            LineListS.ItemsSource = myStope.Lines;
         }
     }
 }
