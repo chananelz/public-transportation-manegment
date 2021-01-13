@@ -116,7 +116,8 @@
         <Label Content="X :" HorizontalAlignment="Left" Margin="567,32,0,0" Grid.Row="2" FontSize="20" Background="Blue" VerticalAlignment="Top" Width="45" Height="35"/>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="614,32,0,0" Grid.Row="2" TextWrapping="Wrap" Background="LightBlue" Text="" VerticalAlignment="Top" Width="110"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="855,152,-181.667,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name ="watchTime"  HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightGray" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentTime, Mode=TwoWay}"  Height="40" Width="305"/>
+        <TextBox
+            x:Name ="watchTime"   HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightGray" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentTime, Mode=TwoWay}"  Height="40" Width="305"/>
 
 
         <Grid.Background>

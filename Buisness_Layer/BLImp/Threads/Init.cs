@@ -109,7 +109,7 @@ namespace BLImp
 
             TimeSpan timeFrequency = new TimeSpan((custom.LD.TimeEnd - custom.LD.TimeStart).Ticks / custom.LD.Frequency);
 
-            while (GetCurrentTime() < timeSpanTimeEnd)
+           while (GetCurrentTime() < timeSpanTimeEnd)
             {
                 for (; counterProgress < custom.LD.Frequency; counterProgress++)
                 {
@@ -143,7 +143,7 @@ namespace BLImp
                 for (int i = lowerBound; i < counterProgress; i++)
                 {
                     BusTravel bt = FindBusTravelWithLineNumberAndDepartureTime(line.Id, timeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i));
-                    System.Threading.Thread.Sleep(5000);
+                    System.Threading.Thread.Sleep(1000);
                     bwDigital.ReportProgress(lowerBound + 1, new DigitalScreen(bt,GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(),line.Id),GetCurrentTime()));
                 }
             }

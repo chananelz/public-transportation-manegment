@@ -27,7 +27,7 @@ namespace Wpf
     public partial class FirstPage : Window
     {
         private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+        //DispatcherTimer gameTimer = new DispatcherTimer();
         BackgroundWorker worker;
         BLApi.IBL bl;
         TimeSpan timeSpan = new TimeSpan();
@@ -40,6 +40,7 @@ namespace Wpf
         public FirstPage()
         {
             InitializeComponent();
+            
             worker = new BackgroundWorker();
             worker.DoWork += Worker_DoWor;
             worker.ProgressChanged += Worker_ProgressChanged;
@@ -47,7 +48,7 @@ namespace Wpf
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             bl = BLApi.Factory.GetBL("1");
-            busFunc();
+            //busFunc();
             TimeSpan ts = new TimeSpan(0,0,0);
             TimeSpan toAdd = new TimeSpan(0,5,0);
             for (int i = 0; i< 48*5; i ++)
@@ -79,8 +80,11 @@ namespace Wpf
                 bl.Initialize(sender,timeSpan);
                 while(true)
                 {
-                    System.Threading.Thread.Sleep(100000);
                 }
+                //while(true)
+                //{
+                //    System.Threading.Thread.Sleep(100000);
+                //}
             }
         }
 
@@ -94,15 +98,19 @@ namespace Wpf
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             BO.DigitalScreen digitalScreen = e.UserState as BO.DigitalScreen;
-            //watchTime.Text = digitalScreen.CurrentTime.ToString();
 
-            foreach (Window w in Application.Current.Windows)
-            {
-                if (w.Name == "FirstPageF")
-                {
-                    watchTime.DataContext = digitalScreen;
-                }
-            }
+
+
+            TimeSpan t = digitalScreen.CurrentTime;
+            watchTime.Text = t.ToString();
+
+
+
+            //ThreadPool.QueueUserWorkItem((o) =>
+            //{
+            //    Dispatcher.Invoke((Action)(() => watchTime.DataContext = digitalScreen));
+            //});
+            System.Threading.Thread.Sleep(5000);
         }
 
 
@@ -152,33 +160,33 @@ namespace Wpf
 
 
 
-        /// <summary>
-        ///Initializes the moving bus at the bottom of the screen
-        /// </summary>
-        private void busFunc()
-        {
-            place = movingBus.Margin.Left;
-            FirstPage1.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
+        ///// <summary>
+        /////Initializes the moving bus at the bottom of the screen
+        ///// </summary>
+        //private void busFunc()
+        //{
+        //    place = movingBus.Margin.Left;
+        //    FirstPage1.Focus();
+        //    gameTimer.Tick += gameTimerEvent;
+        //    gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
+        //    gameTimer.Start();
+        //}
 
 
 
 
-        /// <summary>
-        /// Defines the movement of the moving bus
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
+        ///// <summary>
+        ///// Defines the movement of the moving bus
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void gameTimerEvent(object sender, EventArgs e)
+        //{
+        //    if (movingBus.Margin.Left >= -600)
+        //        movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
+        //    else
+        //        movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
+        //}
 
         /// <summary>
         /// Defines actions to be performed when a  button is pressed
@@ -210,7 +218,6 @@ namespace Wpf
         private void ceo_Click(object sender, RoutedEventArgs e)
         {
             new SignIn("CEO").Show();
-            this.Close();
         }
 
         /// <summary>
@@ -221,7 +228,7 @@ namespace Wpf
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
+            //gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 
