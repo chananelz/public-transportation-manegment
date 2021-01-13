@@ -79,7 +79,7 @@ namespace DL
             List<LineDeparture> LineDepartureList = XMLTools.LoadListFromXMLSerializer<LineDeparture>(lineDeparturesPath);
 
             GetLineDeparture(id, time_Start); // בודק אם קיים אוטובוס כזה אם לא זורק חריגות
-            LineDepartureList.Find(p => (p.Id == id) && (p.Time_Start == time_Start)).Frequency = frequency;
+            LineDepartureList.Find(p => (p.Id == id) && (p.TimeStart == time_Start)).Frequency = frequency;
             XMLTools.SaveListToXMLSerializer(LineDepartureList, lineDeparturesPath);
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace DL
             List<LineDeparture> LineDepartureList = XMLTools.LoadListFromXMLSerializer<LineDeparture>(lineDeparturesPath);
 
             GetLineDeparture(id, time_Start); // בודק אם קיים אוטובוס כזה אם לא זורק חריגות
-            LineDepartureList.Find(p => (p.Id == id) && (p.Time_Start == time_Start)).Time_End = time_End;
+            LineDepartureList.Find(p => (p.Id == id) && (p.TimeStart == time_Start)).TimeEnd = time_End;
             XMLTools.SaveListToXMLSerializer(LineDepartureList, lineDeparturesPath);
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace DL
             List<LineDeparture> LineDepartureList = XMLTools.LoadListFromXMLSerializer<LineDeparture>(lineDeparturesPath);
 
             GetLineDeparture(id, time_Start); // בודק אם קיים אוטובוס כזה אם לא זורק חריגות
-            LineDepartureList.Find(p => (p.Id == id) && (p.Time_Start == time_Start)).Valid = false;
+            LineDepartureList.Find(p => (p.Id == id) && (p.TimeStart == time_Start)).Valid = false;
             XMLTools.SaveListToXMLSerializer(LineDepartureList, lineDeparturesPath);
         }
 

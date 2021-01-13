@@ -89,8 +89,7 @@ namespace Wpf
         /// <param name="e"></param>
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-
-          
+            BO.DigitalScreen digitalScreen = sender as BO.DigitalScreen;
         }
 
 

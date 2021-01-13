@@ -3365,8 +3365,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 10,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
 
@@ -3378,8 +3378,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 13,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3390,8 +3390,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 14,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3403,8 +3403,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 19,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3415,8 +3415,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 18,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3427,8 +3427,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 17,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 0, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 0, 0)
 
             });
 
@@ -3440,8 +3440,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 15,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
             #endregion
@@ -3452,8 +3452,8 @@ namespace DS
                 Valid = true,
                 Frequency = 3,
                 Id = 14,
-                Time_Start = new DateTime(2020, 12, 20, 06, 00, 0),
-                Time_End = new DateTime(2020, 12, 20, 10, 00, 0)
+                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
+                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
 
             });
 

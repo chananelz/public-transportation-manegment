@@ -11,7 +11,7 @@ namespace BLImp
 {
     public partial class BL : IBL
     {
-        public void CreateLineDeparture(long id, DateTime time_Start, int frequency, DateTime timeEnd)
+        public void CreateLineDeparture(long id, DateTime timeStart, int frequency, DateTime timeEnd)
         {
             string exception = "";
             bool foundException = false;
@@ -38,7 +38,7 @@ namespace BLImp
 
             try
             {
-                valid.GoodDate(time_Start, timeEnd);
+                valid.GoodDate(timeStart, timeEnd);
             }
             catch (Exception ex)
             {
@@ -49,21 +49,21 @@ namespace BLImp
             if (foundException)
                 throw new Exception(exception);
 
-            LineDeparture lineDepartureBO = new LineDeparture(time_Start, timeEnd, frequency, id);
+            LineDeparture lineDepartureBO = new LineDeparture(timeStart, timeEnd, frequency, id);
             DO.LineDeparture lineDepartureDO = lineDepartureBO.GetPropertiesFrom<DO.LineDeparture, BO.LineDeparture>();
             dal.CreateLineDeparture(lineDepartureDO);
         }
 
-        public void UpdateLineDepartureFrequency(long id, DateTime time_Start, int frequency)
+        public void UpdateLineDepartureFrequency(long id, DateTime timeStart, int frequency)
         {
             valid.GoodPositiveInt(frequency);
-            dal.UpdateLineDepartureFrequency(id, time_Start, frequency);
+            dal.UpdateLineDepartureFrequency(id, timeStart, frequency);
         }
 
-        public void UpdateLineDepartureTime_End(long id, DateTime time_Start, DateTime time_End) 
+        public void UpdateLineDepartureTime_End(long id, DateTime timeStart, DateTime timeEnd) 
         {
-            valid.GoodDate(time_Start, time_End);
-            dal.UpdateLineDepartureTime_End(id, time_Start, time_End);
+            valid.GoodDate(timeStart, timeEnd);
+            dal.UpdateLineDepartureTime_End(id, timeStart, timeEnd);
         }
 
 
@@ -74,9 +74,9 @@ namespace BLImp
             return dal.RequestLineDeparture(lineDeparture => pr(lineDeparture.GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>())).GetPropertiesFrom<BO.LineDeparture, DO.LineDeparture>();
         }
 
-        public void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency, long id)
+        public void DeleteLineDeparture(DateTime timeStart, DateTime timeEnd, int frequency, long id)
         {
-            dal.DeleteLineDeparture(id, time_Start);
+            dal.DeleteLineDeparture(id, timeStart);
         }
 
         public IEnumerable<Line> GetAllLineById(long id)

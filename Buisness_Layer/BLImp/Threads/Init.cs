@@ -37,7 +37,6 @@ namespace BLImp
             startTime = timeSpan;
 
             stopWatch.Start();
-            BackgroundWorker bw = new BackgroundWorker();
 
             var allBusTravels = GetAllBusTravels();
             var allBusses = GetAllBusses();
@@ -60,6 +59,7 @@ namespace BLImp
             }
             foreach (LineDeparture lineDeparture in allLineDepartures)
             {
+                BackgroundWorker bw = new BackgroundWorker();
                 bw.DoWork += DoWorkLine;
                 var custumClass = new CustomClass(bw, lineDeparture);
                 bw.RunWorkerAsync(custumClass);
@@ -84,18 +84,18 @@ namespace BLImp
 
         private void DoWorkLine(object sender, DoWorkEventArgs e)
         {
-            var custom = sender as CustomClass;
+            var custom = e.Argument as CustomClass;
 
             var line = GetLine(custom.LD.Id);
             var timeLine = TravelTimeCalculate(line.Number, line.FirstStop, line.LastStop);
 
             BackgroundWorker bwDigital = custom.BW as BackgroundWorker;
 
-            var timeStart = custom.LD.Time_Start;
+            var timeStart = custom.LD.TimeStart;
             var timeSpanTimeStart = new TimeSpan(timeStart.Hour, timeStart.Minute, timeStart.Second);
 
             var timeEnd = custom.LD.TimeEnd;
-            var timeSpanTimeEnd = new TimeSpan(timeEnd.Hour, timeEnd.Minute, timeEnd.Second);
+            var timeSpanTimeEnd = new TimeSpan(timeEnd.TimeOfDay.Hours, timeEnd.TimeOfDay.Minutes, timeEnd.TimeOfDay.Seconds);
 
             var dateTime = new DateTime(timeStart.Year, timeStart.Month, timeStart.Day);
 
@@ -103,7 +103,7 @@ namespace BLImp
             int counterProgress = 0;
             int lowerBound = 0;
 
-            TimeSpan timeFrequency = new TimeSpan((custom.LD.TimeEnd - custom.LD.Time_Start).Ticks / custom.LD.Frequency);
+            TimeSpan timeFrequency = new TimeSpan((custom.LD.TimeEnd - custom.LD.TimeStart).Ticks / custom.LD.Frequency);
 
             while (GetCurrentTime() < timeSpanTimeEnd)
             {
@@ -114,7 +114,7 @@ namespace BLImp
                         Bus bus = GetAllBussesReadyForDrive().First();
                         User user = GetAllDrivers().First();
                         UpdateBusStatus(0, bus.LicenseNumber);
-                        CreateBusTravel(bus.LicenseNumber, custom.LD.Id, dateTime + timeSpanTimeStart+ TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), bus.LicenseNumber).Code, dateTime + GetPassedStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), bus.LicenseNumber), dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), bus.LicenseNumber), user.UserName);
+                        CreateBusTravel(bus.LicenseNumber, custom.LD.Id, dateTime + timeSpanTimeStart+ TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), line.Id).Code, dateTime + GetPassedStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), bus.LicenseNumber), dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), bus.LicenseNumber), user.UserName);
                         CreateUserTravel(user.UserName, line.Number, dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress) + timeLine);
                     }
                     else
@@ -138,7 +138,7 @@ namespace BLImp
                 for (int i = lowerBound; i < counterProgress; i++)
                 {
                     BusTravel bt = FindBusTravelWithLineNumberAndDepartureTime(line.Id, timeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i));
-                    //bwDigital.ReportProgress(lowerBound, new DigitalScreen());
+                    bwDigital.ReportProgress(lowerBound, new DigitalScreen(bt,GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(),line.Id)));
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace BLImp
         /// <param name="e"></param>
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //bwPl.ReportProgress(,)
+            bwPl.ReportProgress(e.ProgressPercentage,sender);
         }
 
 

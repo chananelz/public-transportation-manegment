@@ -187,6 +187,9 @@ namespace BLImp
 
         }
 
+
+
+
         /// <summary>
         /// if line is currently driving return linestation in current time
         /// </summary>
@@ -199,10 +202,12 @@ namespace BLImp
             Line currentLine = GetLine(lineId);
             foreach (LineStation lineStation in GetAllLineStationsByLineNumber(currentLine.Number))
             {
-                check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
-                if (check > time)
-                    return ret;
-                ret = lineStation;
+                if (currentLine.FirstStop != lineStation.Code)
+                {
+                    if (check + TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code) > time)
+                        return ret;
+                    ret = lineStation;
+                }
             }
             return null;
         }

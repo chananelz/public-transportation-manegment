@@ -69,7 +69,7 @@ namespace DL
         /// <param name="time_End"></param>
         public void UpdateLineDepartureTime_End(long id, DateTime time_Start , DateTime time_End)//++
         {
-            GetLineDeparture(id, time_Start).Time_End = time_End;
+            GetLineDeparture(id, time_Start).TimeEnd = time_End;
         }
         /// <summary>
         /// delete line departure in database acording to id and timestart

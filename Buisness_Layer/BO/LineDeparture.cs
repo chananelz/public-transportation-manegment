@@ -10,24 +10,24 @@ namespace BO
     {
         public bool Valid { get; set; }
         public long Id { get; set; }
-        public DateTime Time_Start { get; set; }
+        public DateTime TimeStart { get; set; }
         public DateTime TimeEnd { get; set; }
         public int Frequency { get; set; }
         public LineDeparture()//not implemented
         {
 
         }
-        public LineDeparture(DateTime time_Start, DateTime timeEnd, int frequency, long id)
+        public LineDeparture(DateTime timeStart, DateTime timeEnd, int frequency, long id)
         {
             Valid = true;
             Id = id;
-            Time_Start = time_Start;
-            TimeEnd = time_Start;
+            TimeStart = timeStart;
+            TimeEnd = timeEnd;
             Frequency = frequency;
         }
         public override string ToString()
         {
-            return "time start: " + Time_Start + "frequency: " + Frequency + "valid" + Valid + "time end: " + TimeEnd + "valid" + Valid + "time end: " + TimeEnd + "id " + Id;
+            return "time start: " + TimeStart + "frequency: " + Frequency + "valid" + Valid + "time end: " + TimeEnd + "valid" + Valid + "time end: " + TimeEnd + "id " + Id;
         }
         public static string ConvertToString(bool[,] matrix) { return ""; }// not implemented
         public static bool[,] ConvertFromSring(string matrix) { return new bool[1, 1]; }//not implemented

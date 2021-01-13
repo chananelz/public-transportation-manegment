@@ -219,10 +219,10 @@ namespace BLApi
         /// create new line departure
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="time_Start"></param>
+        /// <param name="timeStart"></param>
         /// <param name="frequency"></param>
         /// <param name="timeEnd"></param>
-        void CreateLineDeparture(long id, DateTime time_Start, int frequency, DateTime timeEnd);
+        void CreateLineDeparture(long id, DateTime timeStart, int frequency, DateTime timeEnd);
 
         /// <summary>
         /// request specific line departure
@@ -235,26 +235,26 @@ namespace BLApi
         /// update specific line departure frequency
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="time_Start"></param>
+        /// <param name="timeStart"></param>
         /// <param name="frequency"></param>
-        void UpdateLineDepartureFrequency(long id, DateTime time_Start, int frequency);
+        void UpdateLineDepartureFrequency(long id, DateTime timeStart, int frequency);
 
         /// <summary>
         /// update specific line departure time end
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="time_Start"></param>
-        /// <param name="time_End"></param>
-        void UpdateLineDepartureTime_End(long id, DateTime time_Start, DateTime time_End);
+        /// <param name="timeStart"></param>
+        /// <param name="timeEnd"></param>
+        void UpdateLineDepartureTime_End(long id, DateTime timeStart, DateTime timeEnd);
 
         /// <summary>
         /// delete specific line departure
         /// </summary>
-        /// <param name="time_Start"></param>
+        /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="frequency"></param>
         /// <param name="id"></param>
-        void DeleteLineDeparture(DateTime time_Start, DateTime timeEnd, int frequency, long id);
+        void DeleteLineDeparture(DateTime timeStart, DateTime timeEnd, int frequency, long id);
         /// <summary>
         /// get all line departures
         /// </summary>
@@ -265,8 +265,8 @@ namespace BLApi
         #endregion
 
 
-        //void UpdateLineDepartureFrequency(long id, DateTime Time_Start);
-        //void UpdateLineDepartureTime_End(DateTime time_Start, DateTime timeEnd, int frequency);
+        //void UpdateLineDepartureFrequency(long id, DateTime timeStart);
+        //void UpdateLineDepartureTime_End(DateTime timeStart, DateTime timeEnd, int frequency);
 
         //IEnumerable<LineDeparture> GetAllLineDeparture(Predicate<LineDeparture> pr = null);
         //IEnumerable<LineDeparture> GetAllLineDepartures(Predicate<LineDeparture> pr = null);
@@ -468,9 +468,9 @@ namespace BLApi
         /// <returns></returns>
         LineStation GetLineStation(long code, long lineId, long numberInLine);//aaa
 
-        //LineStation GetStationByTime(TimeSpan time, long busTravelId);
-        //TimeSpan GetPassedStopTime(TimeSpan time, long busTravelId);
-        //TimeSpan GetNextStopTime(TimeSpan time, long busTravelId);
+        LineStation GetStationByTime(TimeSpan check,TimeSpan time, long busTravelId);
+        TimeSpan GetPassedStopTime(TimeSpan check,TimeSpan time, long busTravelId);
+        TimeSpan GetNextStopTime(TimeSpan check, TimeSpan time, long busTravelId);
 
         #endregion
 

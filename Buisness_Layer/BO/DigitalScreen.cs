@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BO
 {
-    class DigitalScreen
+    public class DigitalScreen
     {
-        BusTravel CurrentBusTravel { get; set; }
-        LineStation CurrentLineStation { get; set; }
+        public BusTravel CurrentBusTravel { get; set; }
+        public LineStation CurrentLineStation { get; set; }
         public DigitalScreen(BusTravel currentBusTravel, LineStation currentLineStation)
         {
             CurrentBusTravel = currentBusTravel;
