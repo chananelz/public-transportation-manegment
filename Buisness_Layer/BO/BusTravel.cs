@@ -28,10 +28,10 @@ namespace BO
             Valid = true;
             LineId = lineId;
             LicenseNumber = licenseNumber;
-            DateTime FormalDepartureTime = formalDepartureTime;
-            DateTime RealDepartureTime = realDepartureTime;
+            FormalDepartureTime = formalDepartureTime;
+            RealDepartureTime = realDepartureTime;
             LastPassedStop = lastPassedStop;
-            DateTime LastPassedStopTime = lastPassedStopTime;
+            LastPassedStopTime = lastPassedStopTime;
             NextStopTime = nextStopTime;
             DriverId = driverId;
         }

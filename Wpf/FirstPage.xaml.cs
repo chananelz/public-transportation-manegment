@@ -77,6 +77,10 @@ namespace Wpf
             {
 
                 bl.Initialize(sender,timeSpan);
+                while(true)
+                {
+                    System.Threading.Thread.Sleep(100000);
+                }
             }
         }
 
@@ -89,7 +93,16 @@ namespace Wpf
         /// <param name="e"></param>
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            BO.DigitalScreen digitalScreen = sender as BO.DigitalScreen;
+            BO.DigitalScreen digitalScreen = e.UserState as BO.DigitalScreen;
+            //watchTime.Text = digitalScreen.CurrentTime.ToString();
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w.Name == "FirstPageF")
+                {
+                    watchTime.DataContext = digitalScreen;
+                }
+            }
         }
 
 

@@ -10,10 +10,12 @@ namespace BO
     {
         public BusTravel CurrentBusTravel { get; set; }
         public LineStation CurrentLineStation { get; set; }
-        public DigitalScreen(BusTravel currentBusTravel, LineStation currentLineStation)
+        public TimeSpan CurrentTime { get; set; }
+        public DigitalScreen(BusTravel currentBusTravel, LineStation currentLineStation,TimeSpan currentTime)
         {
             CurrentBusTravel = currentBusTravel;
             CurrentLineStation = currentLineStation;
+            CurrentTime = currentTime;
         }
     }
 }
