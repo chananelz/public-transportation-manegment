@@ -19,7 +19,8 @@
       
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
@@ -36,19 +37,14 @@
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Number}"/>
+                            <TextBlock Text="    "/>
+                            <TextBlock x:Name="lastStop" Text="{Binding LastStop}"/>
+
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-
             </ListBox>
 
-            <!--<ListBox.>-->
-                <!--<DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Number}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.>-->
 
         </Grid>
 
