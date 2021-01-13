@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
         Title="FirstPage" Height="450" Width="800"
+                x:Name="FirstPageF"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Grid Name="FirstPage1">
@@ -22,8 +23,7 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Label Content="Welcome to Netanel and Chananel's " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
-        <Label Content="Bus system:"               HorizontalAlignment="Center" VerticalAlignment="top"    Grid.Row="1" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
+        <Label Content="Bus system: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
 
         <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="TimeList" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Bottom"     SelectionChanged="TimeList_SelectionChanged" MaxDropDownHeight="150" FontSize="15"/>
 
@@ -98,7 +98,7 @@
                 </Button.Background>
 
             </Button>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="635,0,0,26.667" Grid.Row="1" VerticalAlignment="Bottom" Width="75" Click="Button_Click_1"/>
+            <Button Content="Start" HorizontalAlignment="Left" Margin="725,0,0,1" VerticalAlignment="Bottom" Width="68" Click="Button_Click_1" Height="37"/>
         </Grid>
 
         <Image x:Name="movingBus"   Grid.Row="3" Width="50" Source="myImages/Bus.png"                        Margin="740,0,0,0"/>
@@ -113,6 +113,11 @@
                 <ImageBrush ImageSource="myImages/map.png"/>
             </Button.Background>
         </Button>
+        <Label Content="X :" HorizontalAlignment="Left" Margin="567,32,0,0" Grid.Row="2" FontSize="20" Background="Blue" VerticalAlignment="Top" Width="45" Height="35"/>
+        <TextBox HorizontalAlignment="Left" Height="35" Margin="614,32,0,0" Grid.Row="2" TextWrapping="Wrap" Background="LightBlue" Text="" VerticalAlignment="Top" Width="110"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="855,152,-181.667,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name ="watchTime"  HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightGray" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentTime, Mode=TwoWay}"  Height="40" Width="305"/>
+
 
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>

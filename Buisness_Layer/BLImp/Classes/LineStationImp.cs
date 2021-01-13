@@ -204,7 +204,7 @@ namespace BLImp
             {
                 if (currentLine.FirstStop != lineStation.Code)
                 {
-                    if (check + TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code) > time)
+                    if (check + TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, lineStation.Code) > time)
                         return ret;
                     ret = lineStation;
                 }
@@ -215,14 +215,14 @@ namespace BLImp
 
 
 
-        public TimeSpan GetPassedStopTime(TimeSpan check,TimeSpan time, long busTravelId)
+        public TimeSpan GetPassedStopTime(TimeSpan check,TimeSpan time, long lineId)
         {
-            BusTravel currentBusTravel = GetBusTravel(busTravelId);
-            Line currentLine = GetLine(currentBusTravel.LineId);
+            LineStation ret = new LineStation();
+            Line currentLine = GetLine(lineId);
             TimeSpan temp = new TimeSpan();
-            foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
+            foreach (LineStation lineStation in GetAllLineStationsByLineNumber(currentLine.Number))
             {
-                check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
+                check += TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, lineStation.Code);
                 if (check > time)
                     return (time - temp);
                 temp = check;
@@ -234,13 +234,13 @@ namespace BLImp
 
 
 
-        public TimeSpan GetNextStopTime(TimeSpan check,TimeSpan time, long busTravelId)
+        public TimeSpan GetNextStopTime(TimeSpan check,TimeSpan time, long lineId)
         {
-            BusTravel currentBusTravel = GetBusTravel(busTravelId);
-            Line currentLine = GetLine(currentBusTravel.LineId);
-            foreach (LineStation lineStation in GetAllLineStationsByLicenseNumber(currentBusTravel.LicenseNumber))
+            LineStation ret = new LineStation();
+            Line currentLine = GetLine(lineId);
+            foreach (LineStation lineStation in GetAllLineStationsByLineNumber(currentLine.Number))
             {
-                check += TravelTimeCalculate(currentLine.Id, currentLine.FirstStop, lineStation.Code);
+                check += TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, lineStation.Code);
                 if (check > time)
                     return (check - time);
             }
