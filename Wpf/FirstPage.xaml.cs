@@ -110,7 +110,7 @@ namespace Wpf
             //{
             //    Dispatcher.Invoke((Action)(() => watchTime.DataContext = digitalScreen));
             //});
-            System.Threading.Thread.Sleep(5000);
+            //System.Threading.Thread.Sleep(5000);
         }
 
 

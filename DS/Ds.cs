@@ -398,7 +398,7 @@ namespace DS
 
 
         #region initBus //++
-       
+
         static void initBusesList()
         {
 
@@ -1923,7 +1923,7 @@ namespace DS
             });
             #endregion
 
-           
+
             #region LineStation #17
             LineStationList.Add(new LineStation()
             {
@@ -3346,11 +3346,364 @@ namespace DS
                 Valid = true,
                 StationCodeF = 560,
                 StationCodeS = 559,
-                Distance = 115,
-                TravelTime = new TimeSpan(0, 1, 17)
+                Distance = 26,
+                TravelTime = new TimeSpan(0, 1, 01)
             });
             #endregion
 
+            #region initSequential #34
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 558,
+                StationCodeS = 557,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #35
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 557,
+                StationCodeS = 555,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #36
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 585,
+                StationCodeS = 584,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #37
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 584,
+                StationCodeS = 586,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #38
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 586,
+                StationCodeS = 577,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #39
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 577,
+                StationCodeS = 579,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #40
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 579,
+                StationCodeS = 578,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #41
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 578,
+                StationCodeS = 583,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #42
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 583,
+                StationCodeS = 582,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #43
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 582,
+                StationCodeS = 581,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #44
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 581,
+                StationCodeS = 580,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #45
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 598,
+                StationCodeS = 578,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #46
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 598,
+                StationCodeS = 590,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #47
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 590,
+                StationCodeS = 591,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #48
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 591,
+                StationCodeS = 592,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #49
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 592,
+                StationCodeS = 593,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #50
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 593,
+                StationCodeS = 594,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #51
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 594,
+                StationCodeS = 583,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #52
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 583,
+                StationCodeS = 582,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #53
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 582,
+                StationCodeS = 581,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #54
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 581,
+                StationCodeS = 580,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #55
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 570,
+                StationCodeS = 574,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #56
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 569,
+                StationCodeS = 583,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #57
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 598,
+                StationCodeS = 580,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #58
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 580,
+                StationCodeS = 588,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #59
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 588,
+                StationCodeS = 589,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #60
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 589,
+                StationCodeS = 590,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #61
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 594,
+                StationCodeS = 595,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #62
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 570,
+                StationCodeS = 577,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #63
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 570,
+                StationCodeS = 578,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #64
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 559,
+                StationCodeS = 558,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+            #endregion
+
+            #region initSequential #64
+            SequentialStopInfoList.Add(new SequentialStopInfo()
+            {
+                Valid = true,
+                StationCodeF = 569,
+                StationCodeS = 577,
+                Distance = 100,
+                TravelTime = new TimeSpan(0, 1, 05)
+            });
+
+
+            #endregion
 
         }
         #endregion
@@ -3458,7 +3811,7 @@ namespace DS
             });
 
             #endregion
-         
+
         }
         #endregion 
 
