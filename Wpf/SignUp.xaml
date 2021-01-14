@@ -71,8 +71,6 @@
         </Button>
 
 
-        <Image x:Name="movingBus"   Grid.Column="1"  Grid.Row="6" Width="50" Source="myImages/Bus.png" Margin="350,0,0,0" />
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="6" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
         <Button x:Name="InfoName" Grid.Column="1" HorizontalAlignment="Right" Height="19"  Grid.Row="1" VerticalAlignment="Center" Width="40" Click="Info_Click_1">
             <Button.Background>
                 <ImageBrush ImageSource="Mangager/Presentation/myImages/Newinformation.png"/>

@@ -45,7 +45,6 @@ namespace Wpf
         public SignUp()
         {
             InitializeComponent();
-            busFunc();
             ProgressBar();
             bl = BLApi.Factory.GetBL("1");
         }
@@ -136,27 +135,7 @@ namespace Wpf
         /// <summary>
         ///Initializes the moving bus at the bottom of the screen
         /// </summary>
-        private void busFunc()
-        {
-            place = movingBus.Margin.Left;
-            SignUpPage.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
-        }
 
-        /// <summary>
-        /// Defines the movement of the moving bus
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -600)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
 
         /// <summary>
         /// This function is responsible for the series of actions that will be performed when this button is clicked

@@ -71,8 +71,7 @@
             </Button.Background>
         </Button>
 
-        <Image x:Name="movingBus"   Grid.Column="1"   Grid.Row="3" Width="50" Source="myImages/Bus.png" Margin="343.333,0,0,0"/>
-        <Image x:Name="stopSign"    Grid.Column="0"   Grid.Row="3" Width="50" Source="myImages/stop_sign-removebg-preview.png" HorizontalAlignment="Left" />
+      
 
 
         <Grid.Background>
