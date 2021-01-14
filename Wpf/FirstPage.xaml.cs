@@ -32,7 +32,7 @@ namespace Wpf
         BLApi.IBL bl;
         TimeSpan timeSpan = new TimeSpan();
 
-
+        int speedInput = 1;
 
         /// <summary>
         /// Initializes the current window in all existing objects 
@@ -77,7 +77,7 @@ namespace Wpf
             else
             {
 
-                bl.Initialize(sender,timeSpan);
+                bl.Initialize(sender,timeSpan,speedInput);
                 while(true)
                 {
                 }
@@ -136,6 +136,7 @@ namespace Wpf
         {
             if (worker.IsBusy != true)
                 worker.CancelAsync();
+            int.TryParse(speedTextBox.Text,out speedInput);
             worker.RunWorkerAsync(5);
         }
 
@@ -196,7 +197,6 @@ namespace Wpf
         private void user_Click(object sender, RoutedEventArgs e)
         {
             new SignIn("PASSENGER").Show();
-            this.Close();
         }
 
         /// <summary>
@@ -207,7 +207,6 @@ namespace Wpf
         private void driver_Click(object sender, RoutedEventArgs e)
         {
             new SignIn("DRIVER").Show();
-            this.Close();
         }
 
         /// <summary>

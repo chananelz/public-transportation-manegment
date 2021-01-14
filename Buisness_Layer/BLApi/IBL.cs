@@ -792,7 +792,7 @@ namespace BLApi
 
 
 
-        void Initialize(object sender,TimeSpan timeSpan);
+        void Initialize(object sender,TimeSpan timeSpan, int speedInput);
 
 
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();
