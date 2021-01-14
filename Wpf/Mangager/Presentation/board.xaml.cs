@@ -23,6 +23,7 @@ namespace Wpf.Mangager.Presentation
         {
             InitializeComponent();
             LineListS.ItemsSource = myStope.Lines;
+
         }
     }
 }
