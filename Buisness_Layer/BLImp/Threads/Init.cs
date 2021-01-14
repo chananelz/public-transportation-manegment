@@ -19,6 +19,8 @@ namespace BLImp
         TimeSpan startTime = new TimeSpan();
         BackgroundWorker bwPl = new BackgroundWorker();
         Stopwatch stopWatch = new Stopwatch();
+        int speed;
+
 
         public class CustomClass
         {
@@ -32,12 +34,32 @@ namespace BLImp
         }
 
 
-        public void Initialize(object sender, TimeSpan timeSpan)
+        public void Initialize(object sender, TimeSpan timeSpan, int speedInput)
         {
             bwPl = sender as BackgroundWorker;
             startTime = timeSpan;
 
             stopWatch.Start();
+
+
+            speed = speedInput;
+
+
+            BackgroundWorker update = new BackgroundWorker();
+            update.DoWork += DoWorkLineUpdate;
+            update.ProgressChanged += Worker_ProgressChangedUpdate;
+            update.RunWorkerCompleted += Worker_RunWorkerCompletedUpdate;
+            update.WorkerReportsProgress = true;
+            update.WorkerSupportsCancellation = true;
+            update.RunWorkerAsync();
+
+
+
+
+
+
+
+
 
             var allBusTravels = GetAllBusTravels();
             var allBusses = GetAllBusses();
@@ -68,13 +90,14 @@ namespace BLImp
                 bw.WorkerSupportsCancellation = true;
                 var custumClass = new CustomClass(bw, lineDeparture);
                 bw.RunWorkerAsync(custumClass);
+                break;
             }
         }
 
 
         private TimeSpan GetCurrentTime()
         {
-            TimeSpan realTime = new TimeSpan(stopWatch.ElapsedTicks);
+            TimeSpan realTime = new TimeSpan(stopWatch.ElapsedTicks * speed);
             realTime += startTime;
             while (realTime.Hours >= 24)
                 realTime.Add(new TimeSpan(-24, 0, 0));
@@ -90,12 +113,10 @@ namespace BLImp
         private void DoWorkLine(object sender, DoWorkEventArgs e)
         {
             var custom = e.Argument as CustomClass;
-            Console.WriteLine(custom.LD.Id);
 
 
             var line = GetLine(custom.LD.Id);
             var timeLine = TravelTimeCalculate(line.Number, line.FirstStop, line.LastStop);
-            Console.WriteLine(timeLine);
 
             BackgroundWorker bwDigital = custom.BW as BackgroundWorker;
 
@@ -112,14 +133,12 @@ namespace BLImp
             int lowerBound = 0;
 
             TimeSpan timeFrequency = new TimeSpan((custom.LD.TimeEnd - custom.LD.TimeStart).Ticks / custom.LD.Frequency);
-            Console.WriteLine("from here");
 
             while (GetCurrentTime() < timeSpanTimeEnd)
             {
-                Console.WriteLine(custom.LD.Id);
                 for (; counterProgress < custom.LD.Frequency; counterProgress++)
                 {
-                    if (timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress) + timeLine > GetCurrentTime() && timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress) < GetCurrentTime())
+                    if (GetCurrentTime() > timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress) && GetCurrentTime() < timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress) + timeLine)
                     {
                         Bus bus = GetAllBussesReadyForDrive().First();
                         User user = GetAllDrivers().First();
@@ -127,7 +146,7 @@ namespace BLImp
                         CreateBusTravel(bus.LicenseNumber, custom.LD.Id, dateTime + timeSpanTimeStart+ TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), line.Id).Code, dateTime + GetPassedStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), line.Id), dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress),GetCurrentTime(), line.Id), user.UserName);
                         CreateUserTravel(user.UserName, line.Number, dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), dateTime + timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress) + timeLine);
                     }
-                    else
+                    else if(GetCurrentTime() < timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress))
                         break;
                 }
                 var aaa = GetAllBusTravels();
@@ -149,7 +168,7 @@ namespace BLImp
                 for (int i = lowerBound; i < counterProgress; i++)
                 {
                     BusTravel bt = FindBusTravelWithLineNumberAndDepartureTime(line.Id, timeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i));
-                    bwDigital.ReportProgress(lowerBound + 1, new DigitalScreen(bt,GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(),line.Id),GetCurrentTime()));
+                    //bwDigital.ReportProgress(lowerBound + 1, new DigitalScreen(bt,GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(),line.Id),GetCurrentTime()));
                 }
                 Thread.Sleep(500);
             }
@@ -163,7 +182,7 @@ namespace BLImp
         /// <param name="e"></param>
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            bwPl.ReportProgress(e.ProgressPercentage,e.UserState);
+            //bwPl.ReportProgress(e.ProgressPercentage,e.UserState);
         }
 
 
@@ -173,6 +192,60 @@ namespace BLImp
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void DoWorkLineUpdate(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                bwPl.ReportProgress(1, new DigitalScreen(null, null, GetCurrentTime()));
+                Thread.Sleep(1000);
+            }
+        }
+
+
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Worker_ProgressChangedUpdate(object sender, ProgressChangedEventArgs e)
+        {
+        }
+
+
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Worker_RunWorkerCompletedUpdate(object sender, RunWorkerCompletedEventArgs e)
         {
 
         }
