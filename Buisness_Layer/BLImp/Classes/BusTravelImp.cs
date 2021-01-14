@@ -93,7 +93,7 @@ namespace BLImp
             valid.TimeAfter(dal.GetBusTravel(id).FormalDepartureTime, realDepartureTime, "formalDepartureTime", "RealDepartureTime");
             dal.UpdateRealDepartureTime(realDepartureTime, id);
         }
-        public void UpdateLastPassedStop(int lastPassedStop, long id)
+        public void UpdateLastPassedStop(long lastPassedStop, long id)
         {
             valid.GoodInt(lastPassedStop);
             dal.UpdateLastPassedStop(lastPassedStop, id);

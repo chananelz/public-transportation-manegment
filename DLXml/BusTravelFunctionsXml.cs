@@ -145,7 +145,7 @@ namespace DL
             XMLTools.SaveListToXMLSerializer(BusTravelList, busTravelsPath);
         }
 
-        public void UpdateLastPassedStop(int lastPassedStop, long id)
+        public void UpdateLastPassedStop(long lastPassedStop, long id)
         {
             List<BusTravel> BusTravelList = XMLTools.LoadListFromXMLSerializer<BusTravel>(busTravelsPath);
 

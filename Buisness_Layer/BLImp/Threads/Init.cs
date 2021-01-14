@@ -168,7 +168,9 @@ namespace BLImp
                 for (int i = lowerBound; i < counterProgress; i++)
                 {
                     BusTravel bt = FindBusTravelWithLineNumberAndDepartureTime(line.Id, timeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i));
-                    //bwDigital.ReportProgress(lowerBound + 1, new DigitalScreen(bt,GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(),line.Id),GetCurrentTime()));
+                    UpdateLastPassedStop((GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetCurrentTime(), line.Id).Code), bt.Id);
+                    UpdateNextStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetCurrentTime(), line.Id),bt.Id);
+                    UpdateLastPassedStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetCurrentTime(), line.Id), bt.Id);
                 }
                 Thread.Sleep(500);
             }

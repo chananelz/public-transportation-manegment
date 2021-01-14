@@ -91,7 +91,7 @@ namespace DL
         /// </summary>
         /// <param name="lastPassedStop">lastPassedStop to be updated</param>
         /// <param name="id">id of bus travel</param>
-        public void UpdateLastPassedStop(int lastPassedStop, long id)
+        public void UpdateLastPassedStop(long lastPassedStop, long id)
         {
             GetBusTravel(id).LastPassedStop = lastPassedStop;
         }

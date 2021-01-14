@@ -28,7 +28,7 @@ namespace DalApi
         BusTravel RequestBusTravel(Predicate<BusTravel> pr = null);
         void UpdateFormalDepartureTime(DateTime formalDepartureTime, long id);
         void UpdateRealDepartureTime(DateTime realDepartureTime, long id);
-        void UpdateLastPassedStop(int lastPassedStop, long id);
+        void UpdateLastPassedStop(long lastPassedStop, long id);
         void UpdateLastPassedStopTime(DateTime lastPassedStopTime, long id);
         void UpdateNextStopTime(DateTime nextStopTime, long id);
         void UpdateDriverId(string driverId, long id);

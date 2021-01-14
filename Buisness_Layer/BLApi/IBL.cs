@@ -155,7 +155,7 @@ namespace BLApi
         /// </summary>
         /// <param name="lastPassedStop"></param>
         /// <param name="id"></param>
-        void UpdateLastPassedStop(int lastPassedStop, long id);
+        void UpdateLastPassedStop(long lastPassedStop, long id);
 
         /// <summary>
         /// update next stop time
