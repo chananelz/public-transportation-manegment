@@ -44,7 +44,7 @@ namespace DL
         {
             SequentialStopInfo ret = DataSource.SequentialStopInfoList.Find(seqStop => pr(seqStop));
             if (ret == null)
-                throw new Exception("no seqStop that meets these conditions!");
+                    throw new Exception("no seqStop that meets these conditions!" + pr.ToString());
             if (ret.Valid == false)
                 throw new Exception("seqStop that meets these conditions is not valid");
             return ret.GetPropertiesFrom<SequentialStopInfo, SequentialStopInfo>();
@@ -87,14 +87,14 @@ namespace DL
         }
         public SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode)
         {
-            var t = from seqStop in DataSource.SequentialStopInfoList
-                    where (seqStop.StationCodeF == fCode && seqStop.StationCodeS == sCode)
-                    select seqStop;
-            if (t.ToList().Count == 0)
-                throw new Exception("no SequentialStopInfo with such license number!!");
-            if (!t.First().Valid)
-                throw new Exception("SequentialStopInfoList is not valid!!");
-            return t.ToList().First();
+            //var t = from seqStop in DataSource.SequentialStopInfoList
+            //        where (seqStop.StationCodeF == fCode && seqStop.StationCodeS == sCode)
+            //        select seqStop;
+            //if (t.ToList().Count == 0)
+            //    throw new Exception("no SequentialStopInfo with such license number!!");
+            //if (!t.First().Valid)
+            //    throw new Exception("SequentialStopInfoList is not valid!!");
+            return RequestSequentialStopInfo(seqStop =>  seqStop.StationCodeF == fCode && seqStop.StationCodeS == sCode);
         }
     }
 }

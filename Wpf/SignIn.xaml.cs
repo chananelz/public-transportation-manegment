@@ -134,7 +134,7 @@ namespace Wpf
         /// <param name="e"></param>
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            new FirstPage().Show();
+            //new FirstPage().Show();
             this.Close();
         }
 
