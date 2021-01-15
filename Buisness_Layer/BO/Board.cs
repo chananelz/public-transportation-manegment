@@ -7,7 +7,7 @@ using BLApi;
 
 namespace BO
 {
-    public class Board
+    public class Board:EventArgs
     {
         private long number;
         public long Number { get; }
@@ -19,7 +19,7 @@ namespace BO
             get
             {
                 var bl = Factory.GetBL("1");
-                lastStop  =  bl.GetStop(bl.GetLine(bl.GetIdByNumber(number)).LastStop).Address;
+                lastStop  =  bl.GetStop(bl.GetLine(bl.GetIdByNumber(Number)).LastStop).Address;
                 return lastStop;
             }
         }

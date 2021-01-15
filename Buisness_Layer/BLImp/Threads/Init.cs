@@ -173,6 +173,7 @@ namespace BLImp
                     UpdateLastPassedStop((GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(), line.Id).Code), bt.Id);
                     UpdateNextStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(), line.Id),bt.Id);
                     UpdateLastPassedStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(), line.Id), bt.Id);
+
                 }
                 Thread.Sleep(500);
             }

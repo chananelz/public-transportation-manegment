@@ -76,7 +76,7 @@
         </Grid>
 
         <Grid Name="BoardList" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" >
-            <ListBox Name="boardList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" SelectionChanged="busList_SelectionChanged">
+            <ListBox Name="boardList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

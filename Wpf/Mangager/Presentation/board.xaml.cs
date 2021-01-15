@@ -26,64 +26,44 @@ namespace Wpf.Mangager.Presentation
     {
         BO.Stop stop = new BO.Stop();
 
+        public static BO.Board nothing = null;//have to send a sender!!!!! and is always null
+
+        public static event EventHandler<BO.Board> BoardChanged;
+
+
+        private static void UpdateBoard(long number, long stopCode)
+        {
+            BoardChanged?.Invoke(nothing, new BO.Board(number,stopCode));
+        }
+
 
         public board(BO.Stop myStop)
         {
             InitializeComponent();
             stop = myStop;
-            LineListS.ItemsSource = myStop.Lines;
-            boardList.ItemsSource = stop.Boards;
-
-
-
-            BackgroundWorker update = new BackgroundWorker();
-            update.DoWork += DoWorkLineUpdate;
-            update.ProgressChanged += Worker_ProgressChangedUpdate;
-            update.RunWorkerCompleted += Worker_RunWorkerCompletedUpdate;
-            update.WorkerReportsProgress = true;
-            update.WorkerSupportsCancellation = true;
-            update.RunWorkerAsync();
-            Thread.Sleep(1000);
+            LineListS.DataContext = myStop.Lines;
+            boardList.DataContext = stop.Boards;
+            board.BoardChanged += changeText;
         }
 
 
-
-
-
-        private void DoWorkLineUpdate(object sender, DoWorkEventArgs e)
+        private void changeText(object sender, BO.Board args)
         {
-            while (true)
-            {
-                Thread.Sleep(1000);
-                LineListS.ItemsSource = stop.Lines;
-                boardList.ItemsSource = stop.Boards;
-            }
+            //foreach(var a in boardList.Items)
+            //{
+            //    if((a as BO.Board).Number == args.Number)
+                    
+            //}
+            //boardList.DataContext = args. as ;
         }
 
 
-        /// <summary>
-        /// This function is responsible for the changes derived from the control progress
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Worker_ProgressChangedUpdate(object sender, ProgressChangedEventArgs e)
+        private void UpdateBoardList()
         {
+            //stop.Boards
         }
 
 
-        ///<summary>
-        /// This function is responsible for the activities that are activated at the end of the process
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Worker_RunWorkerCompletedUpdate(object sender, RunWorkerCompletedEventArgs e)
-        {
 
-        }
-
-        private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
