@@ -19,16 +19,30 @@
       
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>
-        <Label Content="static panel &#xD;&#xA;of the station" HorizontalAlignment="Left" Height="79" VerticalAlignment="Stretch" Width="301" Grid.Row="0" Grid.Column="0" Foreground ="Red" FontSize="28" FontFamily="Arial Black"/>
-        <Label Content="dynamic panel &#xD;&#xA;of the station" HorizontalAlignment="Left" Height="90"  VerticalAlignment="Stretch" Width="469" Grid.Row="0" Grid.Column="1" Foreground ="Red" FontSize="28" FontFamily="Arial Black" />
+      
+        
+        <Label Content="Lines" HorizontalAlignment="Center"  VerticalAlignment="Center"    Grid.Row="0" Grid.Column="0" Foreground ="Red" FontSize="18" FontFamily="Arial Black"/>
+
+
+
+
+        <Label Content="Number"                               HorizontalAlignment="Center"   VerticalAlignment="Center"  Grid.Row="0" Grid.Column="1" Foreground ="Red" FontSize="18" FontFamily="Arial Black" />
+        <Label Content="Last Stop"                            HorizontalAlignment="Center"   VerticalAlignment="Center"  Grid.Row="0" Grid.Column="2" Foreground ="Red" FontSize="18" FontFamily="Arial Black" />
+        <Label Content="Arrival"                              HorizontalAlignment="Center"   VerticalAlignment="Center"  Grid.Row="0" Grid.Column="3" Foreground ="Red" FontSize="18" FontFamily="Arial Black" />
+
+
+
+
+
 
         <Grid Name="staticPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" >
            
@@ -48,12 +62,37 @@
 
         </Grid>
 
-        <Grid Name="dynamicPanel"   Grid.Row="1"  Grid.Column="1">
-            <ListBox HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+        <Grid Name="Information"   Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+           
 
         </Grid>
 
-
+        <Grid Name="BoardList" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" >
+            <ListBox Name="boardList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent" SelectionChanged="busList_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"      Content = "{Binding Number}"  />
+                            <Label Grid.Column="1"      Content = "{Binding LastStop}" />
+                            <Label Grid.Column="2"      Content = "{Binding Arrival}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
 
 
 

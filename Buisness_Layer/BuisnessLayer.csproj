@@ -63,6 +63,7 @@
     <Compile Include="BLImp\Classes\UserImp.cs" />
     <Compile Include="BLImp\Classes\UserTravel.cs" />
     <Compile Include="BLImp\Threads\Init.cs" />
+    <Compile Include="BO\Board.cs" />
     <Compile Include="BO\Bus.cs" />
     <Compile Include="BO\BusTravel.cs" />
     <Compile Include="BO\DigitalScreen.cs" />

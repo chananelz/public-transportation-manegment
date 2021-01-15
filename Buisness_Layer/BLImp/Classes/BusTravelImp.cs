@@ -163,5 +163,22 @@ namespace BLImp
         {
             return RequestBusTravel(busTravel => busTravel.LineId == lineId && busTravel.FormalDepartureTime == formalDepartureTime);
         }
+
+
+
+        public TimeSpan GetArrivalTime(long stopCode, long lineId)
+        {
+            var currentLine = GetLine(lineId);
+            TimeSpan time = TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, stopCode);
+            var lineBusses = currentLine.Buses;
+            var a  = (from bus in lineBusses
+                      let t = time -( 
+                    TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, bus.LastPassedStop)                                   //time until stop
+                    + new TimeSpan(bus.LastPassedStopTime.Hour,bus.LastPassedStopTime.Minute,bus.LastPassedStopTime.Second)) //time from last stop until where bus is now
+            where t < time
+            orderby t
+            select t).ToList();
+            return a.FirstOrDefault();
+        }
     }
 }

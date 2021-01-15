@@ -200,7 +200,8 @@ namespace BLImp
         {
             LineStation ret = new LineStation();
             Line currentLine = GetLine(lineId);
-            foreach (LineStation lineStation in GetAllLineStationsByLineNumber(currentLine.Number))
+            var stations = GetAllLineStationsByLineNumber(currentLine.Number);
+            foreach (LineStation lineStation in stations)
             {
                 if (currentLine.FirstStop != lineStation.Code)
                 {

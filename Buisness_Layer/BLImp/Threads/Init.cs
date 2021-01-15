@@ -126,8 +126,10 @@ namespace BLImp
             var timeEnd = custom.LD.TimeEnd;
             var timeSpanTimeEnd = new TimeSpan(timeEnd.TimeOfDay.Hours, timeEnd.TimeOfDay.Minutes, timeEnd.TimeOfDay.Seconds);
 
-            var dateTime = new DateTime(timeStart.Year, timeStart.Month, timeStart.Day);
+            DateTime dateTime;
 
+            DateTime.TryParse(timeStart.Year + "/" + timeStart.Month + "/" + timeStart.Day + " " + 0 + ":" + 0 + ":" + 0, out dateTime);
+            
 
             int counterProgress = 0;
             int lowerBound = 0;
@@ -168,9 +170,9 @@ namespace BLImp
                 for (int i = lowerBound; i < counterProgress; i++)
                 {
                     BusTravel bt = FindBusTravelWithLineNumberAndDepartureTime(line.Id, timeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i));
-                    UpdateLastPassedStop((GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetCurrentTime(), line.Id).Code), bt.Id);
-                    UpdateNextStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetCurrentTime(), line.Id),bt.Id);
-                    UpdateLastPassedStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * counterProgress), GetCurrentTime(), line.Id), bt.Id);
+                    UpdateLastPassedStop((GetStationByTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(), line.Id).Code), bt.Id);
+                    UpdateNextStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(), line.Id),bt.Id);
+                    UpdateLastPassedStopTime(dateTime + GetNextStopTime(timeSpanTimeStart + TimeSpan.FromTicks(timeFrequency.Ticks * i), GetCurrentTime(), line.Id), bt.Id);
                 }
                 Thread.Sleep(500);
             }

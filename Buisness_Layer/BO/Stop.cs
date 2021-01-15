@@ -32,6 +32,19 @@ namespace BO
             }
         }
 
+        private List<Board> boards;
+        public List<Board> Boards
+        {
+            get
+            {
+                return (from line in this.Lines
+                        let b = new Board(line.Number, StopCode)
+                        orderby b.Arrival
+                        select b).ToList();
+
+            }
+        }
+
 
 
         //private IEnumerable<Line> lines;

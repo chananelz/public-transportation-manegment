@@ -211,7 +211,7 @@ namespace BLImp
         public IEnumerable<LineStation> GetAllLineStationsByLineNumber(long number)
         {
             long lineId = GetIdByNumber(number);
-           return GetAllLineStations(lineStation => lineStation.LineId == lineId && lineStation.Valid == true).ToList(); 
+           return GetAllLineStations(lineStation =>  lineStation.LineId == lineId && lineStation.Valid == true).ToList(); 
         }
 
         public IEnumerable<Line> GetAllLineByLineNumber(long number)

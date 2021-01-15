@@ -794,6 +794,9 @@ namespace BLApi
 
         void Initialize(object sender,TimeSpan timeSpan, int speedInput);
 
+        TimeSpan GetArrivalTime(long stopCode, long lineId);
+
+
 
         //IEnumerable<UserTravel> GetAllUnValidUserTravels();
         //IEnumerable<UserTravel> GetAllValidUserTravels();

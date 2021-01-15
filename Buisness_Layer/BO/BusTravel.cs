@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLApi;
 
 namespace BO
 {
@@ -18,6 +19,17 @@ namespace BO
         public DateTime LastPassedStopTime { get; set; }
         public DateTime NextStopTime { get; set; }
         public string DriverId { get; set; }
+
+
+
+
+        private long number;
+
+        public long Number
+        {
+            get { return BLApi.Factory.GetBL("1").GetLine(LineId).Number; }
+        }
+
 
         public BusTravel()//not implemented
         {
