@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf"
         mc:Ignorable="d"
-        Title="FirstPage" Height="450" Width="800"
+        Title="FirstPage" Height="650" Width="1000"
                 x:Name="FirstPageF"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
@@ -17,15 +17,20 @@
                               Color="Gray"/>
         </Grid.Effect>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="50*"/>
             <RowDefinition Height="10*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Bus system: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black"/>
 
-        <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="TimeList" FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="1" VerticalAlignment= "Bottom"     SelectionChanged="TimeList_SelectionChanged" MaxDropDownHeight="150" FontSize="15"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Label Content="Bus system: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black" Margin="388,0,387.333,40"/>
+
+        <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="TimeList" FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Center"      SelectionChanged="TimeList_SelectionChanged" MaxDropDownHeight="150" FontSize="15" Margin="420,0,0.333,48"/>
 
 
         <Grid Grid.Row="2">
@@ -98,28 +103,38 @@
                 </Button.Background>
 
             </Button>
-            <Button Content="Start" HorizontalAlignment="Left" Margin="725,0,0,1" VerticalAlignment="Bottom" Width="68" Click="Button_Click_1" Height="37"/>
-            <Button Content="Stop" HorizontalAlignment="Left" Margin="725,0,0,25.667" VerticalAlignment="Bottom" Width="68" Click="Button_Click_2" Height="37" Grid.Row="1"/>
+                    </Grid>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="myImages/הורדה.jpg" />
+            <TextBox
+            x:Name ="watchTime" FontFamily="Arial Black" Foreground="Red" FontSize="25"  HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CurrentTime, Mode=TwoWay}" />
+
         </Grid>
-
-
         <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.RowSpan="2" VerticalAlignment="Top" Width="50" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/close.png"/>
             </Button.Background>
         </Button>
-        <Button BorderThickness="0" HorizontalAlignment="Left" Margin="55,42,0,0" Grid.Row="2" VerticalAlignment="Top" Width="155" Height="120" Click="Map3_Click">
+        <Button BorderThickness="0" HorizontalAlignment="Left" Margin="770,25,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="Map3_Click">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/map.png"/>
             </Button.Background>
         </Button>
-        <Label Content="X :" HorizontalAlignment="Left" Margin="567,32,0,0" Grid.Row="2" FontSize="20" Background="Blue" VerticalAlignment="Top" Width="45" Height="35"/>
-        <TextBox Name="speedTextBox" HorizontalAlignment="Left" Height="35" Margin="614,32,0,0" Grid.Row="2" TextWrapping="Wrap" Background="LightBlue" Text="" VerticalAlignment="Top" Width="110"/>
+        <Label Content="speed" HorizontalAlignment="Left" Margin="73,112.333,0,0" FontSize="20" Background="Blue" VerticalAlignment="Top" Width="73" Height="35" Grid.Row="1"/>
+        <TextBox Name="speedTextBox" HorizontalAlignment="Left" Height="35" Margin="147,111.333,0,0" Grid.Row="1" TextWrapping="Wrap" Background="LightBlue" Text="" VerticalAlignment="Top" Width="110"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="855,152,-181.667,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox
-            x:Name ="watchTime"   HorizontalAlignment="Center" VerticalAlignment="Top" Background="LightGray" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentTime, Mode=TwoWay}"  Height="40" Width="305"/>
+        <Button Content="Start" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Click="Button_Click_1" Height="23"/>
+        <Button Content="Stop"  Grid.Row="1" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="68" Click="Button_Click_2" Height="23" Margin="0,121.333,662.333,121.667"/>
 
 
+        <Label Content="Time: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" FontSize="30" Foreground="LightGreen" FontFamily="Arial Black" Margin="632,0,251.333,175.667"/>
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>
         </Grid.Background>

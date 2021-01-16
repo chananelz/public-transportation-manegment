@@ -936,6 +936,12 @@
   <ItemGroup>
     <Resource Include="Mangager\Presentation\myImages\new board.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="myImages\circle-aeshetic-galaxy-tumblr-background-circle-115629365541evualogvm-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="myImages\הורדה.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
