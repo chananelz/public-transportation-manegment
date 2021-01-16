@@ -100,12 +100,12 @@ namespace BLImp
         }
         public void UpdateLastPassedStopTime(DateTime lastPassesStopTime, long id)
         {
-            valid.TimeAfter(lastPassesStopTime, dal.GetBusTravel(id).NextStopTime, "lastPassesStopTime", "nextStopTime");
+            //valid.TimeAfter(lastPassesStopTime, dal.GetBusTravel(id).NextStopTime, "lastPassesStopTime", "nextStopTime");
             dal.UpdateLastPassedStopTime(lastPassesStopTime, id);
         }
         public void UpdateNextStopTime(DateTime nextStopTime, long id)
         {
-            valid.TimeAfter(dal.GetBusTravel(id).LastPassedStopTime, nextStopTime, "lastPassedStop", "nextStopTime");
+            //valid.TimeAfter(dal.GetBusTravel(id).LastPassedStopTime, nextStopTime, "lastPassedStop", "nextStopTime");
             dal.UpdateNextStopTime(nextStopTime, id);
         }
         public void UpdateDriverId(string driverId, long id)

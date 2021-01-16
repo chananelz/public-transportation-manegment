@@ -14,9 +14,44 @@ namespace DO
         public long LineId { get; set; }
         public DateTime FormalDepartureTime { get; set; }
         public DateTime RealDepartureTime { get; set; }
-        public long LastPassedStop { get; set; }
-        public DateTime LastPassedStopTime { get; set; }
-        public DateTime NextStopTime { get; set; }
+
+
+
+
+
+
+
+
+
+
+        public long LastPassedStop
+        { 
+            get; 
+            set; 
+        }
+        public DateTime LastPassedStopTime
+        { 
+            get; 
+            set;
+        }
+        public DateTime NextStopTime 
+        {
+            get; 
+            set;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         public string DriverId { get; set; }
         public BusTravel()//not implemented
         {

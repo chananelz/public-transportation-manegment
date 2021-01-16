@@ -31,6 +31,7 @@ namespace Wpf
         BackgroundWorker worker;
         BLApi.IBL bl;
         TimeSpan timeSpan = new TimeSpan();
+        bool finish = false;
 
         int speedInput = 1;
 
@@ -78,7 +79,7 @@ namespace Wpf
             {
 
                 bl.Initialize(sender,timeSpan,speedInput);
-                while(true)
+                while(!finish)
                 {
                 }
                 //while(true)
@@ -134,10 +135,12 @@ namespace Wpf
         /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (worker.IsBusy != true)
-                worker.CancelAsync();
+
+            finish = true;
+
             int.TryParse(speedTextBox.Text,out speedInput);
             worker.RunWorkerAsync(5);
+            finish = false;
         }
 
         #endregion

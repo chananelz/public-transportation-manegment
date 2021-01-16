@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf.Mangager.Presentation"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
+                x:Name="BoardWindow"
+        Loaded="Window_Loaded"
         Title="board" Height="450" Width="800">
     <Grid Name="FirstPage">
         <Grid.Effect>
@@ -74,6 +77,14 @@
            
 
         </Grid>
+
+
+
+        <Button BorderThickness="0" HorizontalAlignment="Right" Height="50" Grid.Column="11" VerticalAlignment="Top" Width="50" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="myImages/close.png"/>
+            </Button.Background>
+        </Button>
 
         <Grid Name="BoardList" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" >
             <ListBox Name="boardList"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding}" BorderThickness="0"  Background="Transparent">

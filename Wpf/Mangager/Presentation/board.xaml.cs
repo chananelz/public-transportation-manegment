@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Threading;
+using System.Diagnostics;
+using System.Threading;
 
 
 
@@ -24,8 +26,9 @@ namespace Wpf.Mangager.Presentation
     /// </summary>
     public partial class board : Window
     {
+        BackgroundWorker update;
         BO.Stop stop = new BO.Stop();
-
+        bool finish = false;
         public static BO.Board nothing = null;//have to send a sender!!!!! and is always null
 
         public static event EventHandler<BO.Board> BoardChanged;
@@ -39,31 +42,99 @@ namespace Wpf.Mangager.Presentation
 
         public board(BO.Stop myStop)
         {
-            InitializeComponent();
             stop = myStop;
+            InitializeComponent();
             LineListS.DataContext = myStop.Lines;
-            boardList.DataContext = stop.Boards;
+            boardList.DataContext = (from line in stop.Lines
+                                    let b = new BO.Board(line.Number, stop.StopCode)
+                                    where b.Arrival > new TimeSpan(0)
+                                    orderby b.Arrival
+                                    select b).ToList();
             board.BoardChanged += changeText;
+            UpdateBoardList();
+          
+            
+            
+            update = new BackgroundWorker();
+            update.DoWork += DoWorkLineUpdate;
+            update.ProgressChanged += Worker_ProgressChangedUpdate;
+            update.RunWorkerCompleted += Worker_RunWorkerCompletedUpdate;
+            update.WorkerReportsProgress = true;
+            update.WorkerSupportsCancellation = true;
+            update.RunWorkerAsync();
         }
 
 
         private void changeText(object sender, BO.Board args)
         {
-            //foreach(var a in boardList.Items)
-            //{
-            //    if((a as BO.Board).Number == args.Number)
-                    
-            //}
-            //boardList.DataContext = args. as ;
+           
         }
 
 
         private void UpdateBoardList()
         {
-            //stop.Boards
+          
         }
 
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Stopwatch stopWatch = new Stopwatch();
+            //stopWatch.Start();
+            //while (stopWatch.Elapsed < new TimeSpan(0, 0, 10)) ;
+            //new board(stop).Show();
+            //this.Close();
+        }
+
+
+        private void DoWorkLineUpdate(object sender, DoWorkEventArgs e)
+        {
+
+            Thread.Sleep(1000);
+        }
+
+
+        /// <summary>
+        /// This function is responsible for the changes derived from the control progress
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Worker_ProgressChangedUpdate(object sender, ProgressChangedEventArgs e)
+        {
+        }
+
+
+        ///<summary>
+        /// This function is responsible for the activities that are activated at the end of the process
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Worker_RunWorkerCompletedUpdate(object sender, RunWorkerCompletedEventArgs e)
+        {
+            update.CancelAsync();
+            if (!finish)
+            {
+                var ab = new board(stop);
+                ab.Height = 300;
+                ab.Width = 600;
+                ab.Show();
+                this.Close();
+            }
+        }
+
+
+
+        /// <summary>
+        /// Defines actions to be performed when a  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            update.CancelAsync();
+            finish = true;
+            this.Close();
+        }
 
     }
 }
