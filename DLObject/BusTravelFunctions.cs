@@ -16,22 +16,34 @@ namespace DL
         /// adds a new bus in travel to database
         /// </summary>
         /// <param name="busTravel">bus travel to be added to the database</param>
+        
+
+
+
+        ///    לשנות ב               xml!!!!!!!!!!!!!!!
+
+
         public void CreateBusTravel(BusTravel busTravel)
         {
 
             busTravel.Valid = true;
-            busTravel.Id = Configuration.Bus_TravelCounter;
+            //busTravel.Id = Configuration.Bus_TravelCounter;
             try
             {
-                GetBusTravel(busTravel.Id);
+                //GetBusTravel(busTravel.Id);
+                var id = RequestBusTravel(bt => bt.FormalDepartureTime == busTravel.FormalDepartureTime && bt.LineId == busTravel.LineId).Id;
             }
             catch (Exception ex)
             {
-                if (ex.Message == "no busTravel with such Id!!")
-                    DataSource.BusTravelList.Add(busTravel);
-                else if (ex.Message == "busTravel is not valid!!")
+                if (ex.Message == "no busTravel that meets these conditions!")
                 {
-                    DataSource.BusTravelList.Find(busTravelInput => busTravelInput.Id == busTravel.Id).Valid = true;
+                    busTravel.Id = Configuration.Bus_TravelCounter;
+                    DataSource.BusTravelList.Add(busTravel);
+                }
+                else if (ex.Message == "busTravel that meets these conditions is not valid")
+                {
+                    var a = DataSource.BusTravelList.Find(bt => bt.FormalDepartureTime == busTravel.FormalDepartureTime && bt.LineId == busTravel.LineId);
+                    a.Valid = true;
                 }
                 return;
             }

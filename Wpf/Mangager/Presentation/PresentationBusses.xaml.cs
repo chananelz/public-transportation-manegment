@@ -73,11 +73,12 @@ namespace Wpf.Mangager.Presentation
             }
 
 
-           
 
-            busList.ItemsSource = a;
+            busList.DataContext = a;
 
         }
+
+
 
      
         /// <summary>
@@ -184,7 +185,7 @@ namespace Wpf.Mangager.Presentation
                     bus.Show = "Collapsed";
                 }
             }
-            busList.ItemsSource = a;
+            busList.DataContext = a;
 
         }
 

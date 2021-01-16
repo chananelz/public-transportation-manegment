@@ -31,7 +31,6 @@ namespace Wpf
         BackgroundWorker worker;
         BLApi.IBL bl;
         TimeSpan timeSpan = new TimeSpan();
-        bool finish = false;
 
         int speedInput = 1;
 
@@ -79,9 +78,10 @@ namespace Wpf
             {
 
                 bl.Initialize(sender,timeSpan,speedInput);
-                while(!finish)
+                while(!worker.CancellationPending)
                 {
                 }
+                e.Cancel = true;
                 //while(true)
                 //{
                 //    System.Threading.Thread.Sleep(100000);
@@ -125,6 +125,7 @@ namespace Wpf
             if (e.Cancelled)
             {
                 MessageBox.Show("work cancelled", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                watchTime.Clear();
             }
         }
 
@@ -135,13 +136,27 @@ namespace Wpf
         /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-            finish = true;
-
-            int.TryParse(speedTextBox.Text,out speedInput);
+            if (worker.IsBusy)
+            {
+                MessageBox.Show("press stop first!");
+                return;
+            }
+            int.TryParse(speedTextBox.Text, out speedInput);
             worker.RunWorkerAsync(5);
-            finish = false;
         }
+
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (worker.IsBusy)
+            {
+                worker.CancelAsync();
+                return;
+            }
+           
+        }
+
+       
 
         #endregion
 
@@ -254,5 +269,7 @@ namespace Wpf
         {
             timeSpan = (TimeSpan)TimeList.SelectedItem;
         }
+
+       
     }
 }

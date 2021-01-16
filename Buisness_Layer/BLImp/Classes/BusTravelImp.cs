@@ -169,9 +169,14 @@ namespace BLImp
         public TimeSpan GetArrivalTime(long stopCode, long lineId)
         {
             var currentLine = GetLine(lineId);
-            TimeSpan time = TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, stopCode);
+            //var times = (from ls in GetAllLineStations(ls => ls.Code == stopCode)
+            //            let time = TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, stopCode)
+            //            where time > new TimeSpan(0)
+            //            select time).ToList();
+            var time = TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, stopCode);
             var lineBusses = currentLine.Buses;
             var a  = (from bus in lineBusses
+                      //from time in times
                       let t = time -( 
                     TravelTimeCalculate(currentLine.Number, currentLine.FirstStop, bus.LastPassedStop)                                   //time until stop
                     + new TimeSpan(bus.LastPassedStopTime.Hour,bus.LastPassedStopTime.Minute,bus.LastPassedStopTime.Second)) //time from last stop until where bus is now
