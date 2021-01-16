@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Diagnostics;
 using System.Threading;
+using BLApi;
 
 
 
@@ -26,6 +27,10 @@ namespace Wpf.Mangager.Presentation
     /// </summary>
     public partial class board : Window
     {
+        List<BO.Board> toPrintL = new List<BO.Board>();
+      
+      
+
         BackgroundWorker update;
         BO.Stop stop = new BO.Stop();
         bool finish = false;
@@ -42,9 +47,16 @@ namespace Wpf.Mangager.Presentation
 
         public board(BO.Stop myStop)
         {
+         
             stop = myStop;
             InitializeComponent();
-            LineListS.DataContext = myStop.Lines;
+            foreach (var num in myStop.Lines)
+            {
+                toPrintL.Add(new BO.Board(num.Number, 555));
+                
+            }
+           
+            LineListS.DataContext = toPrintL;
             boardList.DataContext = (from line in stop.Lines
                                     let b = new BO.Board(line.Number, stop.StopCode)
                                     where b.Arrival > new TimeSpan(0)

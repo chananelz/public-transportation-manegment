@@ -103,7 +103,7 @@ namespace Wpf
 
 
             TimeSpan t = digitalScreen.CurrentTime;
-            watchTime.Text = t.ToString();
+            watchTime.Text = t.ToString().Substring(0,8);
 
 
 
