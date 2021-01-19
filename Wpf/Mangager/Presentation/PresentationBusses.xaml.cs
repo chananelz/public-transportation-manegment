@@ -227,8 +227,8 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.DeleteBus(tempBus.LicenseNumber);
-            new PresentationBusses(au).Show();
-            this.Close();
+            busList.DataContext = bl.GetAllBusses().ToList();
+            busList.Items.Refresh();
         }
 
         /// <summary>
