@@ -31,13 +31,13 @@ namespace Wpf.Mangager.Presentation
         bool finish = false;
         public static BO.Board nothing = null;//have to send a sender!!!!! and is always null
 
-        public static event EventHandler<BO.Board> BoardChanged;
+        //public static event EventHandler<BO.Board> BoardChanged;
 
 
-        private static void UpdateBoard(long number, long stopCode)
-        {
-            BoardChanged?.Invoke(nothing, new BO.Board(number,stopCode));
-        }
+        //private static void UpdateBoard(long number, long stopCode)
+        //{
+        //    BoardChanged?.Invoke(nothing, new BO.Board(number,stopCode));
+        //}
 
 
         public board(BO.Stop myStop)
@@ -50,7 +50,7 @@ namespace Wpf.Mangager.Presentation
                                     where b.Arrival > new TimeSpan(0)
                                     orderby b.Arrival
                                     select b).ToList();
-            board.BoardChanged += changeText;
+            //board.BoardChanged += changeText;
             UpdateBoardList();
           
             
@@ -90,7 +90,11 @@ namespace Wpf.Mangager.Presentation
         private void DoWorkLineUpdate(object sender, DoWorkEventArgs e)
         {
 
-            Thread.Sleep(1000);
+            while(!finish)
+            {
+                update.ReportProgress(1, e);
+                Thread.Sleep(1000);
+            }
         }
 
 
@@ -101,6 +105,7 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Worker_ProgressChangedUpdate(object sender, ProgressChangedEventArgs e)
         {
+            boardList.Items.Refresh();
         }
 
 
