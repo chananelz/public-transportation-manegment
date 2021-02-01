@@ -54,6 +54,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyImages", "MyImages", "{F4
 		Wpf\Mangager\Managing\MyImages\stop_sign-removebg-preview.png = Wpf\Mangager\Managing\MyImages\stop_sign-removebg-preview.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67B754B6-12AF-4BAA-8132-4E141DFC2A4E}"
+	ProjectSection(SolutionItems) = preProject
+		bin\Debug\xml\BusesXml.xml = bin\Debug\xml\BusesXml.xml
+		bin\Debug\xml\BusTravelXml.xml = bin\Debug\xml\BusTravelXml.xml
+		bin\Debug\config.xml = bin\Debug\config.xml
+		bin\Debug\xml\LineDepartureXml.xml = bin\Debug\xml\LineDepartureXml.xml
+		bin\Debug\xml\LineStationXml.xml = bin\Debug\xml\LineStationXml.xml
+		bin\Debug\xml\LineXml.xml = bin\Debug\xml\LineXml.xml
+		bin\Debug\xml\SequentialStopInfoXml.xml = bin\Debug\xml\SequentialStopInfoXml.xml
+		bin\Debug\xml\StopXml.xml = bin\Debug\xml\StopXml.xml
+		bin\Debug\xml\UserTravelXml.xml = bin\Debug\xml\UserTravelXml.xml
+		bin\Debug\xml\UserXml.xml = bin\Debug\xml\UserXml.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +139,7 @@ Global
 		{091B0353-FFC2-41E5-8EC2-EB35BB2E9FA9} = {9706B326-DA36-4809-B9CC-95FB6AAE4806}
 		{1201E1F1-4208-4359-B229-EFDDEB371E9E} = {9706B326-DA36-4809-B9CC-95FB6AAE4806}
 		{E953A618-3057-4F29-A08F-8B801636AC7B} = {1F41DEC9-D3AE-47EF-AC96-AD9328E32E79}
+		{67B754B6-12AF-4BAA-8132-4E141DFC2A4E} = {3B198755-5965-446F-9A16-25E4C451AF3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AA85A13-2AB4-440C-B9AE-14781D7411C8}
