@@ -220,27 +220,6 @@ namespace BLImp
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void DoWorkLineUpdate(object sender, DoWorkEventArgs e)
         {
             while (bwPl.IsBusy)
