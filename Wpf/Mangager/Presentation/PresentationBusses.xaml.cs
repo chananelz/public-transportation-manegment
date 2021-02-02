@@ -81,25 +81,6 @@ namespace Wpf.Mangager.Presentation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /// <summary>
         /// Defines actions to be performed when a  button is pressed
         /// </summary>

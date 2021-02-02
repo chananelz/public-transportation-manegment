@@ -83,7 +83,7 @@ namespace BLImp
 
         public void GoodPositiveStatus(int result)
         {
-            if (result > 0 && result <= 3)
+            if (result >= 0 && result <= 3)
                 return;
             throw new BO.BOBusException("number negative!!!");
         }
