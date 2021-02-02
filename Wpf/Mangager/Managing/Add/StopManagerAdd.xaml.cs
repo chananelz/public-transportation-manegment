@@ -258,7 +258,6 @@ namespace Wpf.Mangager.Managing.Add
                     MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                amount++;
                 stopName = textRange;
                 MessageBox.Show("input submited  " + textRange + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                 NameLabel.Content = stopName;

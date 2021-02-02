@@ -64,6 +64,10 @@ namespace Wpf.Mangager.Presentation
             }
             stopList.ItemsSource = a;
 
+
+
+
+
         }
 
 
@@ -212,14 +216,14 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void AddStopToLine_Click(object sender, RoutedEventArgs e) //aaa
         {
-            
+
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
             var ab = new AddStopToLine(tempStop);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
-            
+
         }
 
         /// <summary>
@@ -232,7 +236,7 @@ namespace Wpf.Mangager.Presentation
 
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
-            var ab = new map(tempStop.Longitude,tempStop.Latitude);
+            var ab = new map(tempStop.Longitude, tempStop.Latitude);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
@@ -257,7 +261,7 @@ namespace Wpf.Mangager.Presentation
             ab.Width = 600;
             ab.Show();
         }
-       
+
 
         /// <summary>
         /// This function is responsible for the series of actions that will be performed when this button is clicked
@@ -268,7 +272,8 @@ namespace Wpf.Mangager.Presentation
         {
             this.Close();
         }
-
-        
     }
+     
+	
+	
 }

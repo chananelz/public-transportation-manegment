@@ -219,7 +219,6 @@ namespace Wpf.Mangager.Presentation
 
 
             Button a = (Button)sender;
-            tempBus = (BO.Bus)a.DataContext;
             var ab = new BusManagerAdd();
             ab.Height = 300;
             ab.Width = 600;

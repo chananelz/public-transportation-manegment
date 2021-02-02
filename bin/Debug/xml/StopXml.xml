@@ -402,9 +402,23 @@
   </Stop>
   <Stop>
     <Valid>false</Valid>
-    <StopCode>0</StopCode>
+    <StopCode>272</StopCode>
     <Latitude>0</Latitude>
     <Longitude>35</Longitude>
-    <StopName>kbh</StopName>
+    <StopName>erw</StopName>
+  </Stop>
+  <Stop>
+    <Valid>false</Valid>
+    <StopCode>41</StopCode>
+    <Latitude>32</Latitude>
+    <Longitude>35</Longitude>
+    <StopName>rewrew</StopName>
+  </Stop>
+  <Stop>
+    <Valid>false</Valid>
+    <StopCode>431</StopCode>
+    <Latitude>32</Latitude>
+    <Longitude>35</Longitude>
+    <StopName>rerere</StopName>
   </Stop>
 </ArrayOfStop>

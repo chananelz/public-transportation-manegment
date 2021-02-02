@@ -12,17 +12,17 @@
     <Valid>true</Valid>
     <LicenseNumber>1000002</LicenseNumber>
     <LicenseDate>2020-02-02T00:00:00</LicenseDate>
-    <KM>212.588043</KM>
-    <Fuel>37.0909271</Fuel>
-    <Status>READY_FOR_DRIVE</Status>
+    <KM>123</KM>
+    <Fuel>123</Fuel>
+    <Status>TREATING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000003</LicenseNumber>
     <LicenseDate>2020-02-03T00:00:00</LicenseDate>
     <KM>349.211731</KM>
-    <Fuel>397.2275</Fuel>
-    <Status>READY_FOR_DRIVE</Status>
+    <Fuel>0</Fuel>
+    <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
@@ -237,7 +237,7 @@
     <LicenseNumber>1000030</LicenseNumber>
     <LicenseDate>2020-03-26T00:00:00</LicenseDate>
     <KM>900.3873</KM>
-    <Fuel>898.292358</Fuel>
+    <Fuel>0</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
@@ -245,31 +245,15 @@
     <LicenseNumber>1000031</LicenseNumber>
     <LicenseDate>2020-03-27T00:00:00</LicenseDate>
     <KM>527.3017</KM>
-    <Fuel>269.9286</Fuel>
+    <Fuel>0</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
-    <Valid>false</Valid>
-    <LicenseNumber>1234567</LicenseNumber>
-    <LicenseDate>2010-10-22T00:00:00</LicenseDate>
-    <KM>55</KM>
+    <Valid>true</Valid>
+    <LicenseNumber>1212123</LicenseNumber>
+    <LicenseDate>2005-01-02T00:00:00</LicenseDate>
+    <KM>20</KM>
     <Fuel>44</Fuel>
-    <Status>TREATING</Status>
-  </Bus>
-  <Bus>
-    <Valid>false</Valid>
-    <LicenseNumber>1122334</LicenseNumber>
-    <LicenseDate>2013-02-02T00:00:00</LicenseDate>
-    <KM>55</KM>
-    <Fuel>55</Fuel>
-    <Status>TREATING</Status>
-  </Bus>
-  <Bus>
-    <Valid>false</Valid>
-    <LicenseNumber>7654321</LicenseNumber>
-    <LicenseDate>2011-02-02T00:00:00</LicenseDate>
-    <KM>100</KM>
-    <Fuel>100</Fuel>
-    <Status>REFULING</Status>
+    <Status>READY_FOR_DRIVE</Status>
   </Bus>
 </ArrayOfBus>

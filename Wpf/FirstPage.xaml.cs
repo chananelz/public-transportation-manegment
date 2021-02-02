@@ -178,7 +178,16 @@ namespace Wpf
         /// <param name="e"></param>
         private void user_Click(object sender, RoutedEventArgs e)
         {
-            new SignIn("PASSENGER").Show();
+            
+            try
+            {
+                new SignIn("PASSENGER").Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("something bad happened Please try again");
+            }
+
         }
 
         /// <summary>
@@ -188,7 +197,15 @@ namespace Wpf
         /// <param name="e"></param>
         private void driver_Click(object sender, RoutedEventArgs e)
         {
-            new SignIn("DRIVER").Show();
+
+            try
+            {
+                new SignIn("DRIVER").Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("something bad happened Please try again");
+            }
         }
 
         /// <summary>
@@ -198,7 +215,14 @@ namespace Wpf
         /// <param name="e"></param>
         private void ceo_Click(object sender, RoutedEventArgs e)
         {
-            new SignIn("CEO").Show();
+            try
+            {
+                new SignIn("CEO").Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("something bad happened Please try again");
+            }
         }
 
         /// <summary>
@@ -209,7 +233,15 @@ namespace Wpf
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+      
+            try
+            {
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("something bad happened Please try again");
+            }
         }
 
         /// <summary>
@@ -222,7 +254,15 @@ namespace Wpf
             var ab = new map3();
             ab.Height = 300;
             ab.Width = 600;
-            ab.Show();
+  
+            try
+            {
+                ab.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("something bad happened Please try again");
+            }
 
         }
 

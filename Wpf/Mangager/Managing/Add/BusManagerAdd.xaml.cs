@@ -144,7 +144,7 @@ namespace Wpf.Mangager.Managing.Add.myImages
                 {
                     MessageBoxResult res = MessageBox.Show("LicenseNumber already exists Would you like to validate it??", "Verification", MessageBoxButton.YesNo, MessageBoxImage.Question);
                     if (res == MessageBoxResult.No) 
-                        return;
+                        this.Close();
                     else
                         bl.CreateBus(licenseNumber, licenseDate, kM, fuel, statusInput);
 

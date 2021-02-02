@@ -16,7 +16,9 @@ namespace BLImp
     {
         public void CreateStop(double latitude, double longitude, string stopName)
         {
+            Random a = new Random();
             Stop stopBO = new Stop(latitude, longitude, stopName);
+            stopBO.StopCode = a.Next(0, 500);
             DO.Stop stopDO = stopBO.GetPropertiesFrom<DO.Stop, BO.Stop>();
             try
             {
