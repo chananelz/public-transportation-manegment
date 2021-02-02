@@ -71,6 +71,11 @@ namespace Wpf.Mangager.Managing.Add
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (managingLine.Id == 0)
+            {
+                this.Close();
+                return;
+            }
             bl.AddStopInLine(managingLine.Id, managingStop.StopCode, numberInLine);
             MessageBox.Show("stop to line added successfully");
             this.Close();
