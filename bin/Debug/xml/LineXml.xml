@@ -80,4 +80,12 @@
     <FirstStop>570</FirstStop>
     <LastStop>578</LastStop>
   </Line>
+  <Line>
+    <Valid>true</Valid>
+    <Id>20</Id>
+    <Number>88</Number>
+    <Area>dfb</Area>
+    <FirstStop>556</FirstStop>
+    <LastStop>567</LastStop>
+  </Line>
 </ArrayOfLine>

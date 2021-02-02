@@ -20,7 +20,7 @@ namespace DL
 
 
 
-        ///    לשנות ב               xml!!!!!!!!!!!!!!!
+        ///    לשנות ב               xml!!!!!!!!!!!!!!! //בוצע חננאל 2.2
 
 
         public void CreateBusTravel(BusTravel busTravel)

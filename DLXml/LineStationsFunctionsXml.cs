@@ -83,7 +83,7 @@ namespace DL
         public LineStation GetLineStation(long code, long lineId, long numberInLine)
         {
             List<LineStation> LineStationList = XMLTools.LoadListFromXMLSerializer<LineStation>(lineStationsPath);
-            GetLineStation(lineId, code, numberInLine);
+           // GetLineStation(lineId, code, numberInLine);
             LineStation t = LineStationList.Find(p => (p.Code == code) && (p.LineId == lineId));
             if (t == null)
                 throw new Exception("no such line!!");

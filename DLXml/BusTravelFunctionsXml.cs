@@ -21,15 +21,17 @@ namespace DL
             List<BusTravel> BusTravelList = XMLTools.LoadListFromXMLSerializer<BusTravel>(busTravelsPath);
 
             busTravel.Valid = true;
-            busTravel.Id = Configuration.Bus_TravelCounter + 20; //בקובץ אקסממל יש כבר 20 "אוטובוסים בנסיעה
+           // busTravel.Id = Configuration.Bus_TravelCounter + 20; //בקובץ אקסממל יש כבר 20 "אוטובוסים בנסיעה
             try
             {
-                GetBusTravel(busTravel.Id);
+              //  GetBusTravel(busTravel.Id);
+              var id = RequestBusTravel(bt => bt.FormalDepartureTime == busTravel.FormalDepartureTime && bt.LineId == busTravel.LineId).Id;
             }
             catch (Exception ex)
             {
                 if (ex.Message == "no busTravel with such Id!!")
                 {
+                    busTravel.Id = Configuration.Bus_TravelCounter;
                     BusTravelList.Add(busTravel);
                 }
                 else if (ex.Message == "busTravel is not valid!!")

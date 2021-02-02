@@ -38,7 +38,12 @@ namespace DalApi
             }
             string dlPackageName = dlPackage.PkgName;
             string dlNameSpace = dlPackage.NameSpace;
-            string dlClass = dlPackage.ClassName;
+            string dlClass = "DLXML";
+
+            if (dlPackageName == "DLObject")
+            {
+                dlClass = "DLObject"; 
+            }
 
             try // Load into CLR the dal implementation assembly according to dll file name (taken above)
             {

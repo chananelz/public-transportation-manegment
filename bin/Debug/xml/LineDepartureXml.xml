@@ -3,64 +3,57 @@
   <LineDeparture>
     <Valid>true</Valid>
     <Id>10</Id>
-    <Time_Start>2020-12-20T06:00:00</Time_Start>
-    <Frequency>5</Frequency>
-    <Time_End>2020-12-20T10:00:00</Time_End>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>10</Id>
-    <Time_Start>2020-12-20T10:00:00</Time_Start>
-    <Frequency>6</Frequency>
-    <Time_End>2020-12-20T14:00:00</Time_End>
+    <Id>13</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>10</Id>
-    <Time_Start>2020-12-20T14:00:00</Time_Start>
-    <Frequency>7</Frequency>
-    <Time_End>2020-12-20T22:00:00</Time_End>
+    <Id>14</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>11</Id>
-    <Time_Start>2020-12-20T06:00:00</Time_Start>
-    <Frequency>5</Frequency>
-    <Time_End>2020-12-20T10:00:00</Time_End>
+    <Id>19</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>11</Id>
-    <Time_Start>2020-12-20T10:00:00</Time_Start>
-    <Frequency>6</Frequency>
-    <Time_End>2020-12-20T14:00:00</Time_End>
+    <Id>18</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>11</Id>
-    <Time_Start>2020-12-20T14:00:00</Time_Start>
-    <Frequency>7</Frequency>
-    <Time_End>2020-12-20T22:00:00</Time_End>
+    <Id>17</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>12</Id>
-    <Time_Start>2020-12-20T06:00:00</Time_Start>
-    <Frequency>5</Frequency>
-    <Time_End>2020-12-20T10:00:00</Time_End>
+    <Id>15</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
   <LineDeparture>
     <Valid>true</Valid>
-    <Id>12</Id>
-    <Time_Start>2020-12-20T10:00:00</Time_Start>
-    <Frequency>6</Frequency>
-    <Time_End>2020-12-20T14:00:00</Time_End>
-  </LineDeparture>
-  <LineDeparture>
-    <Valid>true</Valid>
-    <Id>12</Id>
-    <Time_Start>2020-12-20T14:00:00</Time_Start>
-    <Frequency>7</Frequency>
-    <Time_End>2020-12-20T22:00:00</Time_End>
+    <Id>14</Id>
+    <TimeStart>2020-12-20T06:00:00</TimeStart>
+    <Frequency>3</Frequency>
+    <TimeEnd>2020-12-20T10:00:00</TimeEnd>
   </LineDeparture>
 </ArrayOfLineDeparture>

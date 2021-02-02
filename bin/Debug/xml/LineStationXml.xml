@@ -600,4 +600,16 @@
     <Code>578</Code>
     <NumberInLine>10</NumberInLine>
   </LineStation>
+  <LineStation>
+    <Valid>true</Valid>
+    <LineId>20</LineId>
+    <Code>556</Code>
+    <NumberInLine>1</NumberInLine>
+  </LineStation>
+  <LineStation>
+    <Valid>true</Valid>
+    <LineId>20</LineId>
+    <Code>567</Code>
+    <NumberInLine>2</NumberInLine>
+  </LineStation>
 </ArrayOfLineStation>

@@ -236,11 +236,11 @@ namespace DL
 
         public IEnumerable<User> GetAllUsers()
         {
-            List<User> BusesList = XMLTools.LoadListFromXMLSerializer<User>(usersPath);
-            XMLTools.SaveListToXMLSerializer(BusesList, usersPath);
+            List<User> UsersList = XMLTools.LoadListFromXMLSerializer<User>(usersPath);
+            //XMLTools.SaveListToXMLSerializer(BusesList, usersPath);
             var temList = new List<User>();
 
-            foreach (User user in BusesList)
+            foreach (User user in UsersList)
             {
                 if (user.Valid == true)
                     temList.Add(user);

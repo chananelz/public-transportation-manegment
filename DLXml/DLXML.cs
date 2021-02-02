@@ -29,7 +29,7 @@ namespace DL
         string lineDeparturesPath = @"LineDepartureXml.xml"; //XMLSerializer
         string lineStationsPath = @"LineStationXml.xml"; //XMLSerializer
         string linesPath = @"LineXml.xml"; //XMLSerializer
-        string sequentialStopInfoPath = @"SequentialStopInfoXml.xml"; //XMLSerializer
+        string sequentialStopInfoPath = @"SequentialStopInfoXml.xml"; //XElement
         string stopsPath = @"StopXml.xml"; //XMLSerializer
         string usersPath = @"UserXml.xml"; //XElement
         string userTravelPath = @"UserTravelXml.xml"; //XMLSerializer
