@@ -3784,17 +3784,7 @@ namespace DS
 
             #endregion
 
-            #region LineDeparture # 7
-            LineDepartureList.Add(new LineDeparture()
-            {
-                Valid = true,
-                Frequency = 16,
-                Id = 15,
-                TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
-                TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
-
-            });
-            #endregion
+         
 
             #region LineDeparture # 8
             LineDepartureList.Add(new LineDeparture()
