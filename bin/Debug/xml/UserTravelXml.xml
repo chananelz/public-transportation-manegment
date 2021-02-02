@@ -60,4 +60,14 @@
     <OffStopId>578</OffStopId>
     <OffStopTime>2020-01-12T06:26:57</OffStopTime>
   </UserTravel>
+  <UserTravel>
+    <Valid>true</Valid>
+    <IdTravel>0</IdTravel>
+    <UserName>b</UserName>
+    <LineId>0</LineId>
+    <OnStopId>0</OnStopId>
+    <OnStopTime>2020-12-20T06:00:00</OnStopTime>
+    <OffStopId>0</OffStopId>
+    <OffStopTime>2020-12-20T06:19:52</OffStopTime>
+  </UserTravel>
 </ArrayOfUserTravel>

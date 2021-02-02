@@ -114,6 +114,7 @@ namespace BLImp
             if (pr == null)
                 throw new Exception("can't request a line with no predicate");
             return dal.RequestLine(line => pr(line.GetPropertiesFrom<BO.Line, DO.Line>())).GetPropertiesFrom<BO.Line, DO.Line>();
+            
         }
         public Line RequestLineById(long id)
         {

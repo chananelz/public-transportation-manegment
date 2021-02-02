@@ -2,7 +2,7 @@
 <config>
   <dl>data</dl>
   <dl-packages>
-    <data>DLXml</data><!--DLObject-->
+    <data>DLObject</data><!--DLObject-->
     <xml namespace="DL" class="DLXML">DLXml</xml>
     <oracle namespace="DL_O" class="DLDbOracle">DLOracle</oracle>
   </dl-packages>
