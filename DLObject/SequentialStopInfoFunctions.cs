@@ -24,7 +24,7 @@ namespace DL
             }
             catch (Exception ex)
             {
-                if (ex.Message == "no SequentialStopInfo with such license number!!")
+                if (ex.Message == "no seqStop that meets these conditions!")
                     DataSource.SequentialStopInfoList.Add(sequentialStopInfo);
                 else if (ex.Message == "SequentialStopInfoList is not valid!!")
                 {
@@ -44,7 +44,7 @@ namespace DL
         {
             SequentialStopInfo ret = DataSource.SequentialStopInfoList.Find(seqStop => pr(seqStop));
             if (ret == null)
-                    throw new Exception("no seqStop that meets these conditions!" + pr.ToString());
+                    throw new Exception("no seqStop that meets these conditions!");
             if (ret.Valid == false)
                 throw new Exception("seqStop that meets these conditions is not valid");
             return ret.GetPropertiesFrom<SequentialStopInfo, SequentialStopInfo>();

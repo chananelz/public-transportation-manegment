@@ -117,6 +117,18 @@ namespace BLImp
             var line = GetLine(lineId);
             updateNumberInLine(line, code, 1);
             CreateLineStation(lineId, numberInLine, code);
+            for (int i = 0; i < line.Stops.Count -1 ; i++)
+            {
+                try
+                {
+                    GetSequentialStopInfo(line.Stops[i].Code, line.Stops[i + 1].Code);
+                }
+                catch (Exception)
+                {
+
+                   CreateSequentialStopInfo(line.Stops[i].Code, line.Stops[i + 1].Code);
+                }
+            }
         }
 
         public IEnumerable<Stop> GetAllStops(Predicate<Stop> pr = null)

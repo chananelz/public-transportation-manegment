@@ -38,7 +38,7 @@ namespace DL
                                  new XElement("TravelTime", XmlConvert.ToString(sequentialStopInfo.TravelTime)));
 
                     userRootElem.Add(sequentialStopInfoElem);
-                    XMLTools.SaveListToXMLElement(userRootElem, usersPath);
+                    XMLTools.SaveListToXMLElement(userRootElem, sequentialStopInfoPath);
                 }
                 else if (ex.Message == "SequentialStopInfoList is not valid!!")
                 {

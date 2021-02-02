@@ -41,6 +41,7 @@ namespace BO
         {
             Valid = true;
             StationCodeF = stationCodeF;
+            StationCodeS = stationCodeS;
             distance = distanceInput;
            
             TravelTime = new TimeSpan();
