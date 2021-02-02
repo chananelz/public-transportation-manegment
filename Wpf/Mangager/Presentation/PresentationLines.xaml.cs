@@ -53,9 +53,19 @@ namespace Wpf.Mangager.Presentation
             {
                 foreach (BO.Line line in a)
                 {
-                    line.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    line.Show = BO.status.REFULING;
                 }
             }
+            else
+            {
+                foreach (BO.Line line in a)
+                {
+                    line.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+
+
+
 
             lineList.ItemsSource = a;
 
@@ -70,7 +80,7 @@ namespace Wpf.Mangager.Presentation
         /// <summary>
         ///Initializes the moving bus at the bottom of the screen
         /// </summary>
-        
+
 
         /// <summary>
         /// Defines actions to be performed when the user select box frome the list
@@ -104,14 +114,14 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Button a = (Button)sender;
             tempLine = (BO.Line)a.DataContext;
             var ab = new LineManager(tempLine);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
-            
+
         }
 
         /// <summary>
@@ -254,25 +264,7 @@ namespace Wpf.Mangager.Presentation
 
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch (lineOptions.SelectedItem as string)
-            {
-                case "TRAVELING":
-                    a = bl.GetAllLinesDriving().ToList();
-                    break;
-                case "NOT_TRAVELING":
-                    a = bl.GetAllLinesNotDriving().ToList();
-                    break;
-            }
-
-            if (au == "PASSENGER")
-            {
-                foreach (BO.Line line in a)
-                {
-                    line.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
-                }
-            }
-
-            lineList.ItemsSource = a;
+            
         }
     }
 }

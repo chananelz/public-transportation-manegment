@@ -24,7 +24,6 @@ namespace Wpf
     {
 
 
-        private double place = 0;
         DispatcherTimer gameTimer = new DispatcherTimer();
         bool input0 = false;
         bool input1 = false;

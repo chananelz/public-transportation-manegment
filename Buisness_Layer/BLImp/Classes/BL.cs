@@ -11,10 +11,9 @@ namespace BLImp
     public partial class BL:IBL
     {
         Validator valid = new Validator();
-        public static IDal dal;
+        public static IDal dal =DalApi.Factory.GetDL();
         public BL()
         {
-            dal = DalApi.Factory.GetDL();
         }
     }
 }

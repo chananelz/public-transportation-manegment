@@ -3716,7 +3716,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 10,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3729,7 +3729,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 13,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3741,7 +3741,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 14,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3754,7 +3754,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 19,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3766,7 +3766,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 18,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3778,7 +3778,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 17,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 0, 0)
@@ -3791,7 +3791,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 15,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)
@@ -3803,7 +3803,7 @@ namespace DS
             LineDepartureList.Add(new LineDeparture()
             {
                 Valid = true,
-                Frequency = 3,
+                Frequency = 16,
                 Id = 14,
                 TimeStart = new DateTime(2020, 12, 20, 06, 00, 0),
                 TimeEnd = new DateTime(2020, 12, 20, 10, 00, 0)

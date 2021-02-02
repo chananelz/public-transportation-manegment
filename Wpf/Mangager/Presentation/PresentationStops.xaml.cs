@@ -51,7 +51,14 @@ namespace Wpf.Mangager.Presentation
             {
                 foreach (BO.Stop stop in a)
                 {
-                    stop.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    stop.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Stop stop in a)
+                {
+                    stop.Show = BO.status.READY_FOR_DRIVE;
                 }
             }
             stopList.ItemsSource = a;

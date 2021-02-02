@@ -15,12 +15,15 @@
                               ShadowDepth="2"
                               Direction="-90"
                               Color="Gray"/>
+            
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
 
             <RowDefinition Height="30*"/>
             <RowDefinition Height="30*"/>
+            <!--<RowDefinition Height="30*"/>-->
+
         </Grid.RowDefinitions>
 
 
@@ -103,7 +106,7 @@
                 </Button.Background>
 
             </Button>
-                    </Grid>
+        </Grid>
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -133,7 +136,10 @@
         <Button Content="Start" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Click="Button_Click_1" Height="23"/>
         <Button Content="Stop"  Grid.Row="1" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="68" Click="Button_Click_2" Height="23" Margin="0,121.333,662.333,121.667"/>
 
-
+        <!--<StackPanel Grid.Row="3">
+            <Button Click="videoStart" Content="play"/>
+            <MediaElement Margin="10,10,10.333,10" Name="myMedia"  LoadedBehavior="Manual"   Source="myImages/bcn_traffic00_preview.mp4" Height="143"  />
+        </StackPanel>-->
         <Label Content="Time: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" FontSize="30" Foreground="LightGreen" FontFamily="Arial Black" Margin="632,0,251.333,175.667"/>
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>

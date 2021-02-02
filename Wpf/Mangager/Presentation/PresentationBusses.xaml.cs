@@ -23,6 +23,7 @@ using Microsoft.Maps.MapControl.WPF;
 using Microsoft.Maps.MapControl.WPF.Design;
 using Wpf.Passenger;
 using Wpf.CEO;
+using System.Globalization;
 
 
 // 
@@ -56,19 +57,25 @@ namespace Wpf.Mangager.Presentation
 
             au = auInput;
 
-            foreach (BO.Bus bus in a)
-            {
-                if (bus.Status == BO.status.READY_FOR_DRIVE)
-                    bus.Show = "Visible";
-                else bus.Show = "Collapsed";
-            }
+            //foreach (BO.Bus bus in a)
+            //{
+            //    if (bus.Status == BO.status.READY_FOR_DRIVE)
+            //        bus.Show = "Visible";
+            //    else bus.Show = "Collapsed";
+            //}
 
-            if(au == "PASSENGER")
+            if (au == "PASSENGER")
             {
                 foreach (BO.Bus bus in a)
                 {
-                    bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
-                    bus.Show = "Collapsed";
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in a)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
                 }
             }
 
@@ -80,7 +87,27 @@ namespace Wpf.Mangager.Presentation
 
 
 
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
         /// Defines actions to be performed when a  button is pressed
         /// </summary>
@@ -156,36 +183,36 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch(busOptions.SelectedItem as string)
-            {
-                case "TRAVELING":
-                    a = bl.GetAllBussesTraveling().ToList();
-                    break;
-                case "READY_FOR_DRIVE":
-                    a = bl.GetAllBussesReadyForDrive().ToList();
-                    break;
-                case "TREATING":
-                    a = bl.GetAllBussesTreating().ToList();
-                    break;
-                case "REFULING":
-                    a = bl.GetAllBussesFueling().ToList();
-                    break;
-            }
-            foreach (BO.Bus bus in a)
-            {
-                if (bus.Status == BO.status.READY_FOR_DRIVE)
-                    bus.Show = "Visible";
-                else bus.Show = "Collapsed";
-            }
-            if (au == "PASSENGER")
-            {
-                foreach (BO.Bus bus in a)
-                {
-                    bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
-                    bus.Show = "Collapsed";
-                }
-            }
-            busList.DataContext = a;
+            //switch(busOptions.SelectedItem as string)
+            //{
+            //    case "TRAVELING":
+            //        a = bl.GetAllBussesTraveling().ToList();
+            //        break;
+            //    case "READY_FOR_DRIVE":
+            //        a = bl.GetAllBussesReadyForDrive().ToList();
+            //        break;
+            //    case "TREATING":
+            //        a = bl.GetAllBussesTreating().ToList();
+            //        break;
+            //    case "REFULING":
+            //        a = bl.GetAllBussesFueling().ToList();
+            //        break;
+            //}
+            //foreach (BO.Bus bus in a)
+            //{
+            //    if (bus.Status == BO.status.READY_FOR_DRIVE)
+            //        bus.Show = "Visible";
+            //    else bus.Show = "Collapsed";
+            //}
+            //if (au == "PASSENGER")
+            //{
+            //    foreach (BO.Bus bus in a)
+            //    {
+            //        bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+            //        bus.Show = "Collapsed";
+            //    }
+            //}
+            //busList.DataContext = a;
 
         }
 
@@ -274,5 +301,9 @@ namespace Wpf.Mangager.Presentation
             ab.Show();
         }
 
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

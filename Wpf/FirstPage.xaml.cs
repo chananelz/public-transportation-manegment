@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.ComponentModel;
+
 using BLApi;
 using System.Diagnostics;
 using System.Threading;
@@ -21,12 +22,14 @@ using System.Threading;
 
 namespace Wpf
 {
+
+    
+
     /// <summary>
     /// Interaction logic for FirstPage.xaml
     /// </summary>
     public partial class FirstPage : Window
     {
-        private double place = 0;
         //DispatcherTimer gameTimer = new DispatcherTimer();
         BackgroundWorker worker;
         BLApi.IBL bl;
@@ -34,13 +37,14 @@ namespace Wpf
 
         int speedInput = 1;
 
+
         /// <summary>
         /// Initializes the current window in all existing objects 
         /// </summary>
         public FirstPage()
         {
             InitializeComponent();
-            
+
             worker = new BackgroundWorker();
             worker.DoWork += Worker_DoWor;
             worker.ProgressChanged += Worker_ProgressChanged;
@@ -55,7 +59,8 @@ namespace Wpf
             {
                 TimeList.Items.Add(ts);
                 ts = ts.Add(toAdd);
-            } 
+            }
+            //myMedia.Play();
         }
 
 
@@ -270,6 +275,9 @@ namespace Wpf
             timeSpan = (TimeSpan)TimeList.SelectedItem;
         }
 
-       
+        private void videoStart(object sender, RoutedEventArgs e)
+        {
+            //myMedia.Play();
+        }
     }
 }
