@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ArrayOfBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Bus>
-    <Valid>false</Valid>
+    <Valid>true</Valid>
     <LicenseNumber>1000001</LicenseNumber>
     <LicenseDate>2020-02-01T00:00:00</LicenseDate>
     <KM>560.93335</KM>

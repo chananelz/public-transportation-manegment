@@ -50,6 +50,7 @@ namespace DL
         /// <returns></returns>
         public Line RequestLine(Predicate<Line> pr = null)
         {
+           string st= pr.ToString();   
             Line ret = DataSource.LineList.Find(line => pr(line));
             if (ret == null)
                 throw new DOLineException("no line that meets these conditions!");

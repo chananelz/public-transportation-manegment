@@ -2,7 +2,7 @@
 <config>
 	<dl>data</dl>
 	<dl-packages>
-		<data>DLObject</data>
+		<data>DLXml</data>
 		<!--DLObject-->
 		<!--DLXml-->
 		<xml namespace="DL" class="DLXML">DLXml</xml>

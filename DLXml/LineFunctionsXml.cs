@@ -75,6 +75,7 @@ namespace DL
         /// <returns></returns>
         public Line RequestLine(Predicate<Line> pr = null)
         {
+            Console.WriteLine(pr.ToString());
             List<Line> LineList = XMLTools.LoadListFromXMLSerializer<Line>(linesPath);
             Line ret = LineList.Find(line => pr(line));
             if (ret == null)
