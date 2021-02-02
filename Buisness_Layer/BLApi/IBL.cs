@@ -791,9 +791,20 @@ namespace BLApi
 
 
 
-
+        /// <summary>
+        /// Initialize the clock
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="timeSpan"></param>
+        /// <param name="speedInput"></param>
         void Initialize(object sender,TimeSpan timeSpan, int speedInput);
 
+        /// <summary>
+        /// get the cournt time
+        /// </summary>
+        /// <param name="stopCode"></param>
+        /// <param name="lineId"></param>
+        /// <returns></returns>
         TimeSpan GetArrivalTime(long stopCode, long lineId);
 
 

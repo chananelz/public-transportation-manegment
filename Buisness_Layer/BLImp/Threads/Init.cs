@@ -20,7 +20,9 @@ namespace BLImp
         Stopwatch stopWatch = new Stopwatch();
         int speed;
 
-
+        /// <summary>
+        /// this class need because of the threding
+        /// </summary>
         public class CustomClass
         {
             public object BW;
