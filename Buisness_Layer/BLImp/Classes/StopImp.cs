@@ -85,6 +85,7 @@ namespace BLImp
             try
             {
                 RequestStop(stop1 => stop1.StopCode == code);
+                dal.DeleteStop(code);
             }
             catch (DO.DOStopException ex)
             {

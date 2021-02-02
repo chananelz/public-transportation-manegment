@@ -73,7 +73,7 @@
     <DriverId>Louis Weber</DriverId>
   </BusTravel>
   <BusTravel>
-    <Valid>true</Valid>
+    <Valid>false</Valid>
     <Id>7</Id>
     <LicenseNumber>1000006</LicenseNumber>
     <LineId>12</LineId>
@@ -85,7 +85,7 @@
     <DriverId>Russell Winkler</DriverId>
   </BusTravel>
   <BusTravel>
-    <Valid>true</Valid>
+    <Valid>false</Valid>
     <Id>8</Id>
     <LicenseNumber>1000007</LicenseNumber>
     <LineId>12</LineId>
@@ -97,7 +97,7 @@
     <DriverId>Vincent Schmid</DriverId>
   </BusTravel>
   <BusTravel>
-    <Valid>true</Valid>
+    <Valid>false</Valid>
     <Id>9</Id>
     <LicenseNumber>1000008</LicenseNumber>
     <LineId>12</LineId>

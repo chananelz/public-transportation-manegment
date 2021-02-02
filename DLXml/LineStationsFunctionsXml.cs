@@ -53,7 +53,7 @@ namespace DL
         public void UpdateLineStationNumberInLine(long numberInLine, long code, long lineId) //?
         {
             List<LineStation> LineStationList = XMLTools.LoadListFromXMLSerializer<LineStation>(lineStationsPath);
-            GetLineStation(lineId, code, numberInLine);
+            GetLineStation(code, lineId, numberInLine);
             LineStationList.Find(p => (p.Code == code) && (p.LineId == lineId)).NumberInLine = numberInLine;
             XMLTools.SaveListToXMLSerializer(LineStationList, lineStationsPath);
 
@@ -67,8 +67,15 @@ namespace DL
         /// <param name="numberInLine"></param>
         public void DeleteLineStation(long code, long lineId, long numberInLine) //?
         {
+            long temp;
+            if (code < lineId)
+            {
+                temp = code;
+                code = lineId;
+                lineId = temp;
+            }
             List<LineStation> LineStationList = XMLTools.LoadListFromXMLSerializer<LineStation>(lineStationsPath);
-            GetLineStation(lineId, code, numberInLine);
+            GetLineStation(code, lineId, numberInLine);
             LineStationList.Find(p => (p.Code == code) && (p.LineId == lineId)).Valid = false;
             XMLTools.SaveListToXMLSerializer(LineStationList, lineStationsPath);
         }
@@ -82,6 +89,13 @@ namespace DL
         /// <returns></returns>
         public LineStation GetLineStation(long code, long lineId, long numberInLine)
         {
+            long temp;
+            if (code < lineId)
+            {
+                temp = code;
+                code = lineId;
+                lineId = temp;
+            }
             List<LineStation> LineStationList = XMLTools.LoadListFromXMLSerializer<LineStation>(lineStationsPath);
            // GetLineStation(lineId, code, numberInLine);
             LineStation t = LineStationList.Find(p => (p.Code == code) && (p.LineId == lineId));

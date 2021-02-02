@@ -22,7 +22,8 @@ namespace DL
         public void CreateLine(Line line)
         {
             List<Line> LineList = XMLTools.LoadListFromXMLSerializer<Line>(linesPath);
-            line.Id = Configuration.LineCounter + 10;//בקובץ אקסממל יש כבר 
+             //line.Id = Configuration.LineCounter + 10;//בקובץ אקסממל יש כבר 
+            line.Id = LineList.Count() + 11;
             try
             {
                 GetLineByNumber(line.Number);

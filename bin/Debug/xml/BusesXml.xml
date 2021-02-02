@@ -256,4 +256,20 @@
     <Fuel>44</Fuel>
     <Status>TREATING</Status>
   </Bus>
+  <Bus>
+    <Valid>false</Valid>
+    <LicenseNumber>1122334</LicenseNumber>
+    <LicenseDate>2013-02-02T00:00:00</LicenseDate>
+    <KM>55</KM>
+    <Fuel>55</Fuel>
+    <Status>TREATING</Status>
+  </Bus>
+  <Bus>
+    <Valid>false</Valid>
+    <LicenseNumber>7654321</LicenseNumber>
+    <LicenseDate>2011-02-02T00:00:00</LicenseDate>
+    <KM>100</KM>
+    <Fuel>100</Fuel>
+    <Status>REFULING</Status>
+  </Bus>
 </ArrayOfBus>

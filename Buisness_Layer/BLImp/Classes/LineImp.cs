@@ -172,7 +172,15 @@ namespace BLImp
             {
                 foreach (LineStation lineStation in GetAllLineStationsByLineNumber(RequestLine(line => line.Id == id).Number))
                 {
-                    DeleteLineStation(lineStation.Code, lineStation.LineId,lineStation.NumberInLine);
+                    try
+                    {
+                        DeleteLineStation(lineStation.Code, lineStation.LineId, lineStation.NumberInLine);
+                    }
+                    catch (Exception)
+                    {
+                        break;
+                    }
+                 
                 }
                 foreach (BusTravel busTravel in GetAllBusseseByLineNumber(RequestLine(line => line.Id == id).Number))
                 {

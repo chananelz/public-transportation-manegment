@@ -401,7 +401,7 @@
     <Address>Adam Yasmin street</Address>
   </Stop>
   <Stop>
-    <Valid>true</Valid>
+    <Valid>false</Valid>
     <StopCode>0</StopCode>
     <Latitude>0</Latitude>
     <Longitude>35</Longitude>
