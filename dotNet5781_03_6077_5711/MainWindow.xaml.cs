@@ -30,33 +30,18 @@ namespace dotNet5781_03_6077_5711
         private BusRoute currentDisplayBusLine;
         BusCollection myBusCollection = new BusCollection();
         private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
-            place = movingBus.Margin.Left;
-            Assignment_3_A.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromSeconds(0.5);
-            gameTimer.Start();
+            
+           
             List<BusStop> myUniqueStops = new List<BusStop>();
             Program_6077_5711_02.initializeBusRoute(ref myBusCollection, ref myUniqueStops);
             InitializeBusList(myBusCollection);
             this.DataContext = updateArea;
         }
 
-        /// <summary>
-        /// controll  a moving bus
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -148)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        }
+       
         /// <summary>
         /// initialize combo box with busses
         /// </summary>

@@ -23,6 +23,7 @@ using Microsoft.Maps.MapControl.WPF;
 using Microsoft.Maps.MapControl.WPF.Design;
 using Wpf.Passenger;
 using Wpf.CEO;
+using System.Globalization;
 
 
 // 
@@ -34,8 +35,6 @@ namespace Wpf.Mangager.Presentation
     /// </summary>
     public partial class PresentationBusses : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Bus tempBus;
         public IEnumerable<BO.Bus> a;
@@ -56,31 +55,51 @@ namespace Wpf.Mangager.Presentation
 
             au = auInput;
 
-            foreach (BO.Bus bus in a)
+            if (au == "PASSENGER")
             {
-                if (bus.Status == BO.status.READY_FOR_DRIVE)
-                    bus.Show = "Visible";
-                else bus.Show = "Collapsed";
+                AddButton.Visibility = Visibility.Collapsed;
+                foreach (BO.Bus bus in a)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
             }
-
-            if(au == "PASSENGER")
+            else
             {
                 foreach (BO.Bus bus in a)
                 {
-                    bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
-                    bus.Show = "Collapsed";
+                    bus.Show = BO.status.READY_FOR_DRIVE;
                 }
             }
 
 
-
+            DataContext = this;
             busList.DataContext = a;
 
         }
 
 
 
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
         /// Defines actions to be performed when a  button is pressed
         /// </summary>
@@ -156,7 +175,7 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch(busOptions.SelectedItem as string)
+            switch (busOptions.SelectedItem as string)
             {
                 case "TRAVELING":
                     a = bl.GetAllBussesTraveling().ToList();
@@ -171,18 +190,19 @@ namespace Wpf.Mangager.Presentation
                     a = bl.GetAllBussesFueling().ToList();
                     break;
             }
-            foreach (BO.Bus bus in a)
-            {
-                if (bus.Status == BO.status.READY_FOR_DRIVE)
-                    bus.Show = "Visible";
-                else bus.Show = "Collapsed";
-            }
+
             if (au == "PASSENGER")
             {
                 foreach (BO.Bus bus in a)
                 {
-                    bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
-                    bus.Show = "Collapsed";
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in a)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
                 }
             }
             busList.DataContext = a;
@@ -213,7 +233,6 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 
@@ -227,7 +246,22 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.DeleteBus(tempBus.LicenseNumber);
-            busList.DataContext = bl.GetAllBusses().ToList();
+            var aa = bl.GetAllBusses().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = aa;
             busList.Items.Refresh();
         }
 
@@ -241,8 +275,23 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);
-            new PresentationBusses(au).Show();
-            this.Close();
+            var aa = bl.GetAllBusses().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = aa;
+            busList.Items.Refresh();
         }
 
         /// <summary>
@@ -255,8 +304,23 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);//not implemented
-            new PresentationBusses(au).Show();
-            this.Close();
+            var aa = bl.GetAllBusses().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = aa;
+            busList.Items.Refresh();
         }
 
         /// <summary>
@@ -274,5 +338,9 @@ namespace Wpf.Mangager.Presentation
             ab.Show();
         }
 
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

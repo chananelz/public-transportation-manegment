@@ -24,8 +24,7 @@ namespace Wpf.CEO
     public partial class OptionsForCEO : Window
     {
 
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+       
 
         /// <summary>
         /// Initializes the current window in all existing objects 
@@ -104,7 +103,6 @@ namespace Wpf.CEO
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
     }

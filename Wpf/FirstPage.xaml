@@ -15,12 +15,15 @@
                               ShadowDepth="2"
                               Direction="-90"
                               Color="Gray"/>
+            
         </Grid.Effect>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
 
             <RowDefinition Height="30*"/>
             <RowDefinition Height="30*"/>
+            <!--<RowDefinition Height="30*"/>-->
+
         </Grid.RowDefinitions>
 
 
@@ -30,6 +33,8 @@
         </Grid.ColumnDefinitions>
         <Label Content="Bus system: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" FontSize="30" Foreground="#FF1A2C77" FontFamily="Arial Black" Margin="388,0,387.333,40"/>
 
+        
+        
         <ComboBox  BorderThickness="1" ItemsSource="{Binding}" Background="Gray" x:Name="TimeList" FlowDirection="LeftToRight" Grid.Row="1" VerticalAlignment= "Center"      SelectionChanged="TimeList_SelectionChanged" MaxDropDownHeight="150" FontSize="15" Margin="420,0,0.333,48"/>
 
 
@@ -103,7 +108,7 @@
                 </Button.Background>
 
             </Button>
-                    </Grid>
+        </Grid>
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -129,11 +134,13 @@
         </Button>
         <Label Content="speed" HorizontalAlignment="Left" Margin="73,112.333,0,0" FontSize="20" Background="Blue" VerticalAlignment="Top" Width="73" Height="35" Grid.Row="1"/>
         <TextBox Name="speedTextBox" HorizontalAlignment="Left" Height="35" Margin="147,111.333,0,0" Grid.Row="1" TextWrapping="Wrap" Background="LightBlue" Text="" VerticalAlignment="Top" Width="110"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="855,152,-181.667,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Button Content="Start" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="68" Click="Button_Click_1" Height="23"/>
         <Button Content="Stop"  Grid.Row="1" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="68" Click="Button_Click_2" Height="23" Margin="0,121.333,662.333,121.667"/>
 
-
+        <!--<StackPanel Grid.Row="3">
+            <Button Click="videoStart" Content="play"/>
+            <MediaElement Margin="10,10,10.333,10" Name="myMedia"  LoadedBehavior="Manual"   Source="myImages/bcn_traffic00_preview.mp4" Height="143"  />
+        </StackPanel>-->
         <Label Content="Time: " HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" FontSize="30" Foreground="LightGreen" FontFamily="Arial Black" Margin="632,0,251.333,175.667"/>
         <Grid.Background>
             <ImageBrush ImageSource="myImages/green_background.png"/>

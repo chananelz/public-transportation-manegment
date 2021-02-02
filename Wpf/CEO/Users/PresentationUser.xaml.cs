@@ -20,8 +20,7 @@ namespace Wpf.CEO.Users
     {
 
 
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+      
         BLApi.IBL bl;
         public BO.User tempUser;
 
@@ -129,7 +128,6 @@ namespace Wpf.CEO.Users
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 

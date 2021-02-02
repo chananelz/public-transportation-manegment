@@ -28,8 +28,6 @@ namespace Wpf.Mangager.Presentation
     /// </summary>
     public partial class PresentationLines : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Line tempLine;
         public IEnumerable<BO.Line> a;
@@ -51,11 +49,22 @@ namespace Wpf.Mangager.Presentation
 
             if (au == "PASSENGER")
             {
+                AddButton.Visibility = Visibility.Collapsed;
                 foreach (BO.Line line in a)
                 {
-                    line.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    line.Show = BO.status.REFULING;
                 }
             }
+            else
+            {
+                foreach (BO.Line line in a)
+                {
+                    line.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+
+
+
 
             lineList.ItemsSource = a;
 
@@ -70,7 +79,7 @@ namespace Wpf.Mangager.Presentation
         /// <summary>
         ///Initializes the moving bus at the bottom of the screen
         /// </summary>
-        
+
 
         /// <summary>
         /// Defines actions to be performed when the user select box frome the list
@@ -104,14 +113,14 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Button a = (Button)sender;
             tempLine = (BO.Line)a.DataContext;
             var ab = new LineManager(tempLine);
             ab.Height = 300;
             ab.Width = 600;
             ab.Show();
-            
+
         }
 
         /// <summary>
@@ -181,7 +190,6 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 
@@ -218,8 +226,33 @@ namespace Wpf.Mangager.Presentation
             {
                 MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            new PresentationLines(au).Show();
-            this.Close();
+
+
+
+            var aa = bl.GetAllLines().ToList();
+
+
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Line line in aa)
+                {
+                    line.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Line line in aa)
+                {
+                    line.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+
+
+
+
+            lineList.ItemsSource = aa;
+            lineList.Items.Refresh();
+
         }
 
         /// <summary>
@@ -264,15 +297,30 @@ namespace Wpf.Mangager.Presentation
                     break;
             }
 
+
+
+
+
             if (au == "PASSENGER")
             {
                 foreach (BO.Line line in a)
                 {
-                    line.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    line.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Line line in a)
+                {
+                    line.Show = BO.status.READY_FOR_DRIVE;
                 }
             }
 
+
+
+
             lineList.ItemsSource = a;
+            lineList.Items.Refresh();
         }
     }
 }

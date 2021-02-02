@@ -9,6 +9,9 @@
         Background="Transparent"
         x:Name="PresentationStops1"
         WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:StatusConverter x:Key="convert"/>
+    </Window.Resources>
     <Grid Name="FirstPage">
         <Grid.Effect>
             <DropShadowEffect BlurRadius="30"
@@ -26,7 +29,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Height="60" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
+        <Button x:Name="AddButton" Grid.Row="0" Grid.Column="0" Height="60" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/ADD.png"/>
             </Button.Background>
@@ -68,7 +71,7 @@
 
                             <TextBlock Grid.Column="5" Width="50"/>
 
-                            <Button Name="management"   Grid.Column="6"     Foreground ="Red"    FontSize="15" Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"   FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
+                            <Button Name="management"   Grid.Column="6"     Foreground ="Red"    FontSize="15" Visibility="{Binding Path=Show,Converter={StaticResource  convert}}"  FontFamily="Arial Black"  BorderThickness="0" Click="Update_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new update.png"/>
                                 </Button.Background>
@@ -78,7 +81,7 @@
 
 
 
-                            <Button    Grid.Column="8"      Foreground ="Red"  VerticalAlignment="Center" Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
+                            <Button    Grid.Column="8"      Foreground ="Red"  VerticalAlignment="Center" Visibility="{Binding Path=Show,Converter={StaticResource  convert}}"  HorizontalAlignment="Center"     FontSize="15"    FontFamily="Arial Black"  BorderThickness="0" Click="Delete_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/new delete.png"/>
                                 </Button.Background>
@@ -87,7 +90,7 @@
 
 
 
-                            <Button Grid.Column="10"    Foreground ="Red"  Width="50" Height="50"   FontSize="15"  Visibility="{Binding NOT_VISIBLE_FOR_PASSENGER}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   FontFamily="Arial Black"   BorderThickness="0"   Click="AddStopToLine_Click">
+                            <Button Grid.Column="10"    Foreground ="Red"  Width="50" Height="50"   FontSize="15"  Visibility="{Binding Path=Show,Converter={StaticResource  convert}}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   FontFamily="Arial Black"   BorderThickness="0"   Click="AddStopToLine_Click">
                                 <Button.Background>
                                     <ImageBrush ImageSource="myImages/222.png"/>
                                 </Button.Background>

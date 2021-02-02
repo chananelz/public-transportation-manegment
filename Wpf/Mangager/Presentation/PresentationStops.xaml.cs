@@ -49,9 +49,17 @@ namespace Wpf.Mangager.Presentation
 
             if (au == "PASSENGER")
             {
+                AddButton.Visibility = Visibility.Collapsed;
                 foreach (BO.Stop stop in a)
                 {
-                    stop.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
+                    stop.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Stop stop in a)
+                {
+                    stop.Show = BO.status.READY_FOR_DRIVE;
                 }
             }
             stopList.ItemsSource = a;
@@ -178,8 +186,23 @@ namespace Wpf.Mangager.Presentation
             {
                 MessageBox.Show(ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            new PresentationStops(au).Show();
-            this.Close();
+
+            var aa = bl.GetAllStops().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Stop stop in aa)
+                {
+                    stop.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Stop stop in aa)
+                {
+                    stop.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            stopList.ItemsSource = aa;
         }
 
         /// <summary>
@@ -234,7 +257,6 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 

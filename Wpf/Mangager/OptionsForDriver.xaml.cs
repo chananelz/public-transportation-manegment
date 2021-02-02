@@ -22,8 +22,7 @@ namespace Wpf.Mangager
     /// </summary>
     public partial class OptionsForDriver : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+      
         public OptionsForDriver()
         {
             InitializeComponent();
@@ -93,7 +92,6 @@ namespace Wpf.Mangager
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
     }
