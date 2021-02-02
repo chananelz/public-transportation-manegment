@@ -127,6 +127,9 @@
     <Compile Include="Mangager\Presentation\board.xaml.cs">
       <DependentUpon>board.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mangager\Presentation\boardMy.xaml.cs">
+      <DependentUpon>boardMy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mangager\Presentation\SequentialStopPresention.xaml.cs">
       <DependentUpon>SequentialStopPresention.xaml</DependentUpon>
     </Compile>
@@ -315,6 +318,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Mangager\Presentation\board.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mangager\Presentation\boardMy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

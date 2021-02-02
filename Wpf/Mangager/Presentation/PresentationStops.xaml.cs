@@ -240,9 +240,18 @@ namespace Wpf.Mangager.Presentation
 
         private void board_click(object sender, RoutedEventArgs e) //aaa
         {
-
+            string b = bl.GetAllUsers().ToList().First().UserName;
             Button a = (Button)sender;
             tempStop = (BO.Stop)a.DataContext;
+
+            if (b == "Shalom")
+            {
+                var ba = new boardMy(tempStop);
+                ba.Height = 300;
+                ba.Width = 600;
+                ba.Show();
+                return;
+            }
             var ab = new board(tempStop);
             ab.Height = 300;
             ab.Width = 600;

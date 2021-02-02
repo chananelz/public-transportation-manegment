@@ -2,6 +2,12 @@
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
     <Valid>true</Valid>
+    <UserName>Shalom</UserName>
+    <Password>1</Password>
+    <Permission>Passenger</Permission>
+  </User>
+  <User>
+    <Valid>true</Valid>
     <UserName>a</UserName>
     <Password>1</Password>
     <Permission>Passenger</Permission>
