@@ -236,11 +236,20 @@ namespace Wpf.Mangager.Presentation
             stopAPicked = true;
             if (stopBPicked)
             {
-                var a = new BO.SequentialStopInfo();
-                a.Distance = bl.DistanceCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
-                a.TravelTime = bl.TravelTimeCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
-                distance_Binding.DataContext = a;
-                travel_time_Binding.DataContext = a;
+                try
+                {
+                    var a = new BO.SequentialStopInfo();
+                    a.Distance = bl.DistanceCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
+                    a.TravelTime = bl.TravelTimeCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
+                    distance_Binding.DataContext = a;
+                    travel_time_Binding.DataContext = a;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Please enter information about the distance and travel time between the following stations: " + bl.GetNameByStopCode(tempStopA.Code) + " " + bl.GetNameByStopCode(tempStopB.Code));
+                }
+               
             }
         }
 
@@ -257,11 +266,24 @@ namespace Wpf.Mangager.Presentation
             stopBPicked = true;
             if (stopAPicked)
             {
-                var a = new BO.SequentialStopInfo();
-                a.Distance = bl.DistanceCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
-                a.TravelTime = bl.TravelTimeCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
-                distance_Binding.DataContext = a;
-                travel_time_Binding.DataContext = a;
+                try
+                {
+                    var a = new BO.SequentialStopInfo();
+                    a.Distance = bl.DistanceCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
+                    a.TravelTime = bl.TravelTimeCalculate(tempLine.Number, tempStopA.Code, tempStopB.Code);
+                    distance_Binding.DataContext = a;
+                    travel_time_Binding.DataContext = a;
+                    if (a.Distance == -1)
+                    {
+                        throw new Exception();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Please enter information about the distance and travel time between the following stations: " + bl.GetNameByStopCode(tempStopA.Code) + " " + bl.GetNameByStopCode(tempStopB.Code));
+                }
+                
             }
         }
     }

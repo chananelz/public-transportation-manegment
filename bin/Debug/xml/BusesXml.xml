@@ -14,7 +14,7 @@
     <LicenseDate>2020-02-02T00:00:00</LicenseDate>
     <KM>123</KM>
     <Fuel>123</Fuel>
-    <Status>TRAVELING</Status>
+    <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
@@ -246,14 +246,6 @@
     <LicenseDate>2020-03-27T00:00:00</LicenseDate>
     <KM>527.3017</KM>
     <Fuel>0</Fuel>
-    <Status>READY_FOR_DRIVE</Status>
-  </Bus>
-  <Bus>
-    <Valid>true</Valid>
-    <LicenseNumber>1212123</LicenseNumber>
-    <LicenseDate>2005-01-02T00:00:00</LicenseDate>
-    <KM>20</KM>
-    <Fuel>44</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
 </ArrayOfBus>
