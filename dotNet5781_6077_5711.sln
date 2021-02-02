@@ -62,6 +62,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		bin\Debug\xml\LineDepartureXml.xml = bin\Debug\xml\LineDepartureXml.xml
 		bin\Debug\xml\LineStationXml.xml = bin\Debug\xml\LineStationXml.xml
 		bin\Debug\xml\LineXml.xml = bin\Debug\xml\LineXml.xml
+		Remarks.docx = Remarks.docx
 		bin\Debug\xml\SequentialStopInfoXml.xml = bin\Debug\xml\SequentialStopInfoXml.xml
 		bin\Debug\xml\StopXml.xml = bin\Debug\xml\StopXml.xml
 		bin\Debug\xml\UserTravelXml.xml = bin\Debug\xml\UserTravelXml.xml

@@ -14,7 +14,7 @@
     <LicenseDate>2020-02-02T00:00:00</LicenseDate>
     <KM>212.588043</KM>
     <Fuel>37.0909271</Fuel>
-    <Status>TRAVELING</Status>
+    <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>

@@ -61,7 +61,7 @@
     <OffStopTime>2020-01-12T06:26:57</OffStopTime>
   </UserTravel>
   <UserTravel>
-    <Valid>true</Valid>
+    <Valid>false</Valid>
     <IdTravel>0</IdTravel>
     <UserName>b</UserName>
     <LineId>0</LineId>
