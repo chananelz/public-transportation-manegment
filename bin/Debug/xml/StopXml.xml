@@ -400,4 +400,11 @@
     <StopName>Yasmin/Kalanit</StopName>
     <Address>Adam Yasmin street</Address>
   </Stop>
+  <Stop>
+    <Valid>false</Valid>
+    <StopCode>0</StopCode>
+    <Latitude>0</Latitude>
+    <Longitude>35</Longitude>
+    <StopName>kbh</StopName>
+  </Stop>
 </ArrayOfStop>

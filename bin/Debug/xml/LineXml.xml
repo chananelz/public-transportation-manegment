@@ -13,16 +13,16 @@
     <Id>11</Id>
     <Number>142</Number>
     <Area>Benjamin North</Area>
-    <FirstStop>579</FirstStop>
-    <LastStop>598</LastStop>
+    <FirstStop>555</FirstStop>
+    <LastStop>557</LastStop>
   </Line>
   <Line>
-    <Valid>true</Valid>
+    <Valid>false</Valid>
     <Id>12</Id>
     <Number>145</Number>
     <Area>Benjamin East</Area>
-    <FirstStop>585</FirstStop>
-    <LastStop>570</LastStop>
+    <FirstStop>555</FirstStop>
+    <LastStop>557</LastStop>
   </Line>
   <Line>
     <Valid>true</Valid>
@@ -80,4 +80,5 @@
     <FirstStop>570</FirstStop>
     <LastStop>578</LastStop>
   </Line>
+ 
 </ArrayOfLine>

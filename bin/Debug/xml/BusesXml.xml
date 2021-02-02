@@ -4,256 +4,272 @@
     <Valid>false</Valid>
     <LicenseNumber>1000001</LicenseNumber>
     <LicenseDate>2020-02-01T00:00:00</LicenseDate>
-    <KM>772.6813</KM>
-    <Fuel>576.5432</Fuel>
+    <KM>560.93335</KM>
+    <Fuel>142.519379</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000002</LicenseNumber>
     <LicenseDate>2020-02-02T00:00:00</LicenseDate>
-    <KM>1150.67993</KM>
-    <Fuel>131.503815</Fuel>
+    <KM>212.588043</KM>
+    <Fuel>37.0909271</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000003</LicenseNumber>
     <LicenseDate>2020-02-03T00:00:00</LicenseDate>
-    <KM>288.90802</KM>
-    <Fuel>1163.558</Fuel>
+    <KM>349.211731</KM>
+    <Fuel>397.2275</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000004</LicenseNumber>
     <LicenseDate>2020-02-04T00:00:00</LicenseDate>
-    <KM>608.4155</KM>
-    <Fuel>872.754761</Fuel>
+    <KM>212.697144</KM>
+    <Fuel>1094.24365</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000005</LicenseNumber>
     <LicenseDate>2020-02-05T00:00:00</LicenseDate>
-    <KM>593.400635</KM>
-    <Fuel>209.857941</Fuel>
+    <KM>902.6496</KM>
+    <Fuel>168.325134</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000006</LicenseNumber>
     <LicenseDate>2020-02-06T00:00:00</LicenseDate>
-    <KM>698.1852</KM>
-    <Fuel>237.178329</Fuel>
+    <KM>611.523132</KM>
+    <Fuel>75.89362</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000007</LicenseNumber>
     <LicenseDate>2020-02-07T00:00:00</LicenseDate>
-    <KM>106.601715</KM>
-    <Fuel>402.143768</Fuel>
+    <KM>373.843872</KM>
+    <Fuel>683.569031</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000008</LicenseNumber>
     <LicenseDate>2020-02-08T00:00:00</LicenseDate>
-    <KM>1026.36279</KM>
-    <Fuel>550.467468</Fuel>
+    <KM>535.581543</KM>
+    <Fuel>1190.96582</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000009</LicenseNumber>
     <LicenseDate>2020-02-09T00:00:00</LicenseDate>
-    <KM>909.801636</KM>
-    <Fuel>37.40959</Fuel>
+    <KM>872.256958</KM>
+    <Fuel>402.482269</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000010</LicenseNumber>
     <LicenseDate>2020-02-10T00:00:00</LicenseDate>
-    <KM>374.812347</KM>
-    <Fuel>334.573822</Fuel>
+    <KM>1160.07324</KM>
+    <Fuel>792.5864</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000011</LicenseNumber>
     <LicenseDate>2020-02-11T00:00:00</LicenseDate>
-    <KM>734.961853</KM>
-    <Fuel>74.55108</Fuel>
+    <KM>956.377869</KM>
+    <Fuel>19.7947121</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000012</LicenseNumber>
     <LicenseDate>2020-02-12T00:00:00</LicenseDate>
-    <KM>650.522644</KM>
-    <Fuel>272.467</Fuel>
+    <KM>802.4419</KM>
+    <Fuel>471.8097</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000013</LicenseNumber>
     <LicenseDate>2020-02-13T00:00:00</LicenseDate>
-    <KM>581.854431</KM>
-    <Fuel>0</Fuel>
+    <KM>987.4944</KM>
+    <Fuel>515.9873</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000014</LicenseNumber>
     <LicenseDate>2020-02-14T00:00:00</LicenseDate>
-    <KM>39.7028</KM>
-    <Fuel>907.099</Fuel>
+    <KM>870.902039</KM>
+    <Fuel>1178.42358</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000015</LicenseNumber>
     <LicenseDate>2020-02-15T00:00:00</LicenseDate>
-    <KM>363.446045</KM>
-    <Fuel>1128.59192</Fuel>
+    <KM>270.40387</KM>
+    <Fuel>809.2769</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000016</LicenseNumber>
     <LicenseDate>2020-02-16T00:00:00</LicenseDate>
-    <KM>1158.62378</KM>
-    <Fuel>169.0522</Fuel>
+    <KM>554.6063</KM>
+    <Fuel>610.765564</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000017</LicenseNumber>
     <LicenseDate>2020-02-17T00:00:00</LicenseDate>
-    <KM>603.781067</KM>
-    <Fuel>906.657043</Fuel>
+    <KM>438.297852</KM>
+    <Fuel>1163.9696</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000018</LicenseNumber>
     <LicenseDate>2020-02-18T00:00:00</LicenseDate>
-    <KM>382.4753</KM>
-    <Fuel>1129.08923</Fuel>
+    <KM>517.840637</KM>
+    <Fuel>204.682022</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000019</LicenseNumber>
     <LicenseDate>2020-02-19T00:00:00</LicenseDate>
-    <KM>720.216</KM>
-    <Fuel>1074.57288</Fuel>
+    <KM>664.091553</KM>
+    <Fuel>1135.72522</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000020</LicenseNumber>
     <LicenseDate>2020-02-20T00:00:00</LicenseDate>
-    <KM>775.5201</KM>
-    <Fuel>786.0594</Fuel>
+    <KM>322.493866</KM>
+    <Fuel>541.1751</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000021</LicenseNumber>
     <LicenseDate>2020-02-21T00:00:00</LicenseDate>
-    <KM>1041.861</KM>
-    <Fuel>346.878174</Fuel>
+    <KM>911.9182</KM>
+    <Fuel>89.75846</Fuel>
     <Status>TRAVELING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000022</LicenseNumber>
     <LicenseDate>2020-04-22T00:00:00</LicenseDate>
-    <KM>556.119568</KM>
-    <Fuel>916.769836</Fuel>
+    <KM>7.01604271</KM>
+    <Fuel>76.53131</Fuel>
     <Status>REFULING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000023</LicenseNumber>
     <LicenseDate>2020-04-23T00:00:00</LicenseDate>
-    <KM>1118.00134</KM>
-    <Fuel>1155.50964</Fuel>
+    <KM>1093.74463</KM>
+    <Fuel>94.84801</Fuel>
     <Status>REFULING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000024</LicenseNumber>
     <LicenseDate>2020-04-24T00:00:00</LicenseDate>
-    <KM>823.3699</KM>
-    <Fuel>1139.99585</Fuel>
+    <KM>460.292084</KM>
+    <Fuel>1175.91589</Fuel>
     <Status>TREATING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000025</LicenseNumber>
     <LicenseDate>2020-04-25T00:00:00</LicenseDate>
-    <KM>12.4711647</KM>
-    <Fuel>923.019531</Fuel>
+    <KM>300.288544</KM>
+    <Fuel>595.0764</Fuel>
     <Status>TREATING</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000026</LicenseNumber>
     <LicenseDate>2020-04-26T00:00:00</LicenseDate>
-    <KM>683.78595</KM>
-    <Fuel>1189.53613</Fuel>
-    <Status>TRAVELING</Status>
+    <KM>508.698181</KM>
+    <Fuel>1161.0636</Fuel>
+    <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000027</LicenseNumber>
     <LicenseDate>2020-04-27T00:00:00</LicenseDate>
-    <KM>776.5421</KM>
-    <Fuel>934.101868</Fuel>
+    <KM>897.6525</KM>
+    <Fuel>1074.34814</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000028</LicenseNumber>
     <LicenseDate>2020-03-24T00:00:00</LicenseDate>
-    <KM>221.135727</KM>
-    <Fuel>694.799133</Fuel>
+    <KM>309.778351</KM>
+    <Fuel>1114.13538</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000029</LicenseNumber>
     <LicenseDate>2020-03-25T00:00:00</LicenseDate>
-    <KM>1057.647</KM>
-    <Fuel>876.755432</Fuel>
+    <KM>600.773438</KM>
+    <Fuel>430.845947</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000030</LicenseNumber>
     <LicenseDate>2020-03-26T00:00:00</LicenseDate>
-    <KM>315.6767</KM>
-    <Fuel>1118.31714</Fuel>
+    <KM>900.3873</KM>
+    <Fuel>898.292358</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
     <Valid>true</Valid>
     <LicenseNumber>1000031</LicenseNumber>
     <LicenseDate>2020-03-27T00:00:00</LicenseDate>
-    <KM>1182.7384</KM>
-    <Fuel>786.5428</Fuel>
+    <KM>527.3017</KM>
+    <Fuel>269.9286</Fuel>
     <Status>READY_FOR_DRIVE</Status>
   </Bus>
   <Bus>
-    <Valid>true</Valid>
-    <LicenseNumber>2000000</LicenseNumber>
-    <LicenseDate>2015-01-01T00:00:00</LicenseDate>
-    <KM>1</KM>
-    <Fuel>1</Fuel>
-    <Status>READY_FOR_DRIVE</Status>
+    <Valid>false</Valid>
+    <LicenseNumber>1234567</LicenseNumber>
+    <LicenseDate>2010-10-22T00:00:00</LicenseDate>
+    <KM>55</KM>
+    <Fuel>44</Fuel>
+    <Status>TREATING</Status>
+  </Bus>
+  <Bus>
+    <Valid>false</Valid>
+    <LicenseNumber>1122334</LicenseNumber>
+    <LicenseDate>2013-02-02T00:00:00</LicenseDate>
+    <KM>55</KM>
+    <Fuel>55</Fuel>
+    <Status>TREATING</Status>
+  </Bus>
+  <Bus>
+    <Valid>false</Valid>
+    <LicenseNumber>7654321</LicenseNumber>
+    <LicenseDate>2011-02-02T00:00:00</LicenseDate>
+    <KM>100</KM>
+    <Fuel>100</Fuel>
+    <Status>REFULING</Status>
   </Bus>
 </ArrayOfBus>

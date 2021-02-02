@@ -1387,9 +1387,6 @@ namespace DS
             #endregion
 
 
-
-
-
         }
         #endregion
 
@@ -3357,8 +3354,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 558,
                 StationCodeS = 557,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 127,
+                TravelTime = new TimeSpan(0, 2, 14)
             });
             #endregion
 
@@ -3368,8 +3365,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 557,
                 StationCodeS = 555,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 301,
+                TravelTime = new TimeSpan(0, 2, 58)
             });
             #endregion
 
@@ -3379,8 +3376,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 585,
                 StationCodeS = 584,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 50,
+                TravelTime = new TimeSpan(0, 0, 45)
             });
             #endregion
 
@@ -3390,8 +3387,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 584,
                 StationCodeS = 586,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 83,
+                TravelTime = new TimeSpan(0, 1, 23)
             });
             #endregion
 
@@ -3401,8 +3398,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 586,
                 StationCodeS = 577,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 2000,
+                TravelTime = new TimeSpan(0, 16, 48)
             });
             #endregion
 
@@ -3412,8 +3409,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 577,
                 StationCodeS = 579,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 231,
+                TravelTime = new TimeSpan(0, 2, 45)
             });
             #endregion
 
@@ -3423,8 +3420,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 579,
                 StationCodeS = 578,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 224,
+                TravelTime = new TimeSpan(0, 2, 27)
             });
             #endregion
 
@@ -3434,8 +3431,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 578,
                 StationCodeS = 583,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 1200,
+                TravelTime = new TimeSpan(0, 5, 23)
             });
             #endregion
 
@@ -3445,8 +3442,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 583,
                 StationCodeS = 582,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 56,
+                TravelTime = new TimeSpan(0, 1, 28)
             });
             #endregion
 
@@ -3456,8 +3453,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 582,
                 StationCodeS = 581,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 76,
+                TravelTime = new TimeSpan(0, 1, 49)
             });
             #endregion
 
@@ -3467,19 +3464,19 @@ namespace DS
                 Valid = true,
                 StationCodeF = 581,
                 StationCodeS = 580,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 112,
+                TravelTime = new TimeSpan(0, 2, 05)
             });
             #endregion
 
-            #region initSequential #45
+            #region initSequential #45 //??
             SequentialStopInfoList.Add(new SequentialStopInfo()
             {
                 Valid = true,
                 StationCodeF = 598,
                 StationCodeS = 578,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 3264,
+                TravelTime = new TimeSpan(0, 20, 26)
             });
             #endregion
 
@@ -3489,8 +3486,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 598,
                 StationCodeS = 590,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 300,
+                TravelTime = new TimeSpan(0, 4 , 55)
             });
             #endregion
 
@@ -3500,8 +3497,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 590,
                 StationCodeS = 591,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 189,
+                TravelTime = new TimeSpan(0, 2, 55)
             });
             #endregion
 
@@ -3511,8 +3508,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 591,
                 StationCodeS = 592,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 160,
+                TravelTime = new TimeSpan(0, 2, 07)
             });
             #endregion
 
@@ -3522,8 +3519,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 592,
                 StationCodeS = 593,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 109,
+                TravelTime = new TimeSpan(0, 2 , 35)
             });
             #endregion
 
@@ -3533,8 +3530,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 593,
                 StationCodeS = 594,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 167,
+                TravelTime = new TimeSpan(0, 1, 57)
             });
             #endregion
 
@@ -3544,8 +3541,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 594,
                 StationCodeS = 583,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 203,
+                TravelTime = new TimeSpan(0, 2, 35)
             });
             #endregion
 
@@ -3555,8 +3552,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 583,
                 StationCodeS = 582,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 89,
+                TravelTime = new TimeSpan(0, 0, 45)
             });
             #endregion
 
@@ -3566,8 +3563,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 582,
                 StationCodeS = 581,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 67,
+                TravelTime = new TimeSpan(0, 0, 56)
             });
             #endregion
 
@@ -3577,8 +3574,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 581,
                 StationCodeS = 580,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 96,
+                TravelTime = new TimeSpan(0, 1, 04)
             });
             #endregion
 
@@ -3588,8 +3585,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 570,
                 StationCodeS = 574,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 650,
+                TravelTime = new TimeSpan(0, 6, 08)
             });
             #endregion
 
@@ -3599,8 +3596,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 569,
                 StationCodeS = 583,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 2300,
+                TravelTime = new TimeSpan(0, 9, 35)
             });
             #endregion
 
@@ -3610,8 +3607,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 598,
                 StationCodeS = 580,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 220,
+                TravelTime = new TimeSpan(0, 3, 45)
             });
             #endregion
 
@@ -3621,8 +3618,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 580,
                 StationCodeS = 588,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 98,
+                TravelTime = new TimeSpan(0, 1, 15)
             });
             #endregion
 
@@ -3632,8 +3629,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 588,
                 StationCodeS = 589,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 96,
+                TravelTime = new TimeSpan(0, 1, 42)
             });
             #endregion
 
@@ -3643,8 +3640,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 589,
                 StationCodeS = 590,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 47,
+                TravelTime = new TimeSpan(0, 0, 56)
             });
             #endregion
 
@@ -3654,8 +3651,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 594,
                 StationCodeS = 595,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 108,
+                TravelTime = new TimeSpan(0, 1, 37)
             });
             #endregion
 
@@ -3665,8 +3662,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 570,
                 StationCodeS = 577,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 268,
+                TravelTime = new TimeSpan(0, 2, 07)
             });
             #endregion
 
@@ -3676,8 +3673,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 570,
                 StationCodeS = 578,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 756,
+                TravelTime = new TimeSpan(0, 3, 05)
             });
             #endregion
 
@@ -3687,8 +3684,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 559,
                 StationCodeS = 558,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 86,
+                TravelTime = new TimeSpan(0, 0, 59)
             });
             #endregion
 
@@ -3698,8 +3695,8 @@ namespace DS
                 Valid = true,
                 StationCodeF = 569,
                 StationCodeS = 577,
-                Distance = 100,
-                TravelTime = new TimeSpan(0, 1, 05)
+                Distance = 496,
+                TravelTime = new TimeSpan(0, 5, 35)
             });
 
 

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Xml.Serialization;
+using System.Xml;
 using DalApi;
 using DO;
 
@@ -13,115 +15,136 @@ namespace DL
 {
     public partial class DLXML : IDal
     {
-
-
-        #region SequentialStopInfo
-
-        /// <summary>
-        /// add new sequentialStopInfo to database
-        /// </summary>
-        /// <param name="sequentialStopInfo"></param>
         public void CreateSequentialStopInfo(SequentialStopInfo sequentialStopInfo)
         {
-
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
+            XElement userRootElem = XMLTools.LoadListFromXMLElement(sequentialStopInfoPath);
             sequentialStopInfo.Valid = true;
+
             try
             {
                 GetSequentialStopInfo(sequentialStopInfo.StationCodeF, sequentialStopInfo.StationCodeS);
             }
+
             catch (Exception ex)
             {
                 if (ex.Message == "no SequentialStopInfo with such license number!!")
-                    SequentialStopInfoList.Add(sequentialStopInfo);
+                {
+                    XElement sequentialStopInfoElem = new XElement("SequentialStopInfo",
+                                 new XElement("Valid", sequentialStopInfo.Valid.ToString()),
+                                 new XElement("StationCodeF", sequentialStopInfo.StationCodeF),
+                                 new XElement("StationCodeS", sequentialStopInfo.StationCodeS),
+                                 new XElement("Distance", sequentialStopInfo.Distance),
+                                 new XElement("AverageTime", ""),
+                                 new XElement("TravelTime", XmlConvert.ToString(sequentialStopInfo.TravelTime)));
+
+                    userRootElem.Add(sequentialStopInfoElem);
+                    XMLTools.SaveListToXMLElement(userRootElem, usersPath);
+                }
                 else if (ex.Message == "SequentialStopInfoList is not valid!!")
                 {
-                    SequentialStopInfoList.Find(seqStopInf => seqStopInf.StationCodeF == sequentialStopInfo.StationCodeF && seqStopInf.StationCodeS == sequentialStopInfo.StationCodeS).Valid = true;
+                    XElement per = (from temSeq in userRootElem.Elements()
+                                    where temSeq.Element("StationCodeF").Value == sequentialStopInfo.StationCodeF.ToString() && temSeq.Element("StationCodeS").Value == sequentialStopInfo.StationCodeS.ToString()
+                                    select temSeq).FirstOrDefault();
+
+                    per.Element("Valid").Value = sequentialStopInfo.Valid.ToString();
+
+                    XMLTools.SaveListToXMLElement(userRootElem, sequentialStopInfoPath);
                 }
-                XMLTools.SaveListToXMLSerializer(SequentialStopInfoList, sequentialStopInfoPath);
                 return;
             }
-            throw new Exception("bus already exists!!!");
+            throw new Exception("sequentialStopInfo already exists!!!");
         }
 
-        /// <summary>
-        /// request a SequentialStopInfo according to a predicate
-        /// </summary>
-        /// <param name="firstId"></param>
-        /// <param name="secondId"></param>
-        /// <returns></returns>
         public SequentialStopInfo RequestSequentialStopInfo(Predicate<SequentialStopInfo> pr)
         {
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
-            SequentialStopInfo ret = SequentialStopInfoList.Find(seqStop => pr(seqStop));
-            if (ret == null)
-                throw new Exception("no seqStop that meets these conditions!");
-            if (ret.Valid == false)
-                throw new Exception("seqStop that meets these conditions is not valid");
-            return ret;
+            XElement userRootElem = XMLTools.LoadListFromXMLElement(sequentialStopInfoPath);
+            var tem = from temSeq in userRootElem.Elements()
+                      let u1 = new SequentialStopInfo()
+                      {
+                          Valid = bool.Parse(temSeq.Element("Valid").Value),
+                          StationCodeF = long.Parse(temSeq.Element("StationCodeF").Value),
+                          StationCodeS = long.Parse(temSeq.Element("StationCodeS").Value),
+                          Distance = double.Parse(temSeq.Element("Distance").Value),
+                          TravelTime = XmlConvert.ToTimeSpan(temSeq.Element("TravelTime").Value.ToString())
+                      }
+                      where pr(u1)
+                      select u1;
+            return tem.FirstOrDefault();
         }
-
-        /// <summary>
-        /// update sequentialStopInfo in database
-        /// </summary>
-        /// <param name="sequentialStopInfo"></param>
 
         public void UpdateSequentialStopInfoDistance(long firstId, long secondId, double distance)
         {
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
-            GetSequentialStopInfo(firstId, secondId);
-            SequentialStopInfoList.Find(seqStopInf => seqStopInf.StationCodeF == firstId && seqStopInf.StationCodeS == secondId).Distance = distance;
-            XMLTools.SaveListToXMLSerializer(SequentialStopInfoList, sequentialStopInfoPath);
+            XElement userRootElem = XMLTools.LoadListFromXMLElement(sequentialStopInfoPath);
 
+            GetSequentialStopInfo(firstId, secondId);
+            XElement mySeq = (from u in userRootElem.Elements()
+                               where u.Element("StationCodeF").Value == firstId.ToString() && u.Element("StationCodeS").Value == secondId.ToString()
+                              select u).FirstOrDefault();
+
+            if (mySeq != null)
+            {
+                mySeq.Element("Distance").Value = distance.ToString();
+                XMLTools.SaveListToXMLElement(userRootElem, sequentialStopInfoPath);
+            }
         }
 
-        /// <summary>
-        /// update sequentialStopInfo in database
-        /// </summary>
-        /// <param name="sequentialStopInfo"></param>
         public void UpdateSequentialStopInfoTravelTime(long firstId, long secondId, TimeSpan travelTime)
         {
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
+            XElement userRootElem = XMLTools.LoadListFromXMLElement(sequentialStopInfoPath);
+
             GetSequentialStopInfo(firstId, secondId);
-            SequentialStopInfoList.Find(seqStopInf => seqStopInf.StationCodeF == firstId && seqStopInf.StationCodeS == secondId).TravelTime = travelTime;
-            XMLTools.SaveListToXMLSerializer(SequentialStopInfoList, sequentialStopInfoPath);
+            XElement mySeq = (from u in userRootElem.Elements()
+                              where u.Element("StationCodeF").Value == firstId.ToString() && u.Element("StationCodeS").Value == secondId.ToString()
+                              select u).FirstOrDefault();
+
+            if (mySeq != null)
+            {
+                mySeq.Element("TravelTime").Value = XmlConvert.ToString(travelTime);
+                XMLTools.SaveListToXMLElement(userRootElem, sequentialStopInfoPath);
+            }
         }
 
-
-        /// <summary>
-        /// sets sequential  stop info valid to false
-        /// </summary>
-        /// <param name="sequentialStopInfo"></param>
         public void DeleteSequentialStopInfo(long firstId, long secondId)
         {
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
+            XElement userRootElem = XMLTools.LoadListFromXMLElement(sequentialStopInfoPath);
+
             GetSequentialStopInfo(firstId, secondId);
-            SequentialStopInfoList.Find(seqStopInf => seqStopInf.StationCodeF == firstId && seqStopInf.StationCodeS == secondId).Valid = false;
-            XMLTools.SaveListToXMLSerializer(SequentialStopInfoList, sequentialStopInfoPath);
+            XElement mySeq = (from u in userRootElem.Elements()
+                              where u.Element("StationCodeF").Value == firstId.ToString() && u.Element("StationCodeS").Value == secondId.ToString()
+                              select u).FirstOrDefault();
+
+            if (mySeq != null)
+            {
+                mySeq.Element("Valid").Value = false.ToString();
+                XMLTools.SaveListToXMLElement(userRootElem, sequentialStopInfoPath);
+            }
         }
 
-        /// <summary>
-        /// gets all stops info
-        /// </summary>
-        /// <param name="pr"></param>
-        /// <returns></returns>
         public IEnumerable<SequentialStopInfo> GetAllSequentialStopInfo()
         {
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
-            var myList = new List<SequentialStopInfo>();
-            foreach (SequentialStopInfo seqStop in SequentialStopInfoList)
-            {
-                if (seqStop.Valid == true)
-                    myList.Add(seqStop);
-            }
-            return myList;
+
+            XElement userRootElem = XMLTools.LoadListFromXMLElement(sequentialStopInfoPath);
+
+            var temList = new List<User>();
+
+            IEnumerable<SequentialStopInfo> temp = (from temSeq in userRootElem.Elements()
+                                                    select new SequentialStopInfo()
+                                                    {
+                                                        Valid = bool.Parse(temSeq.Element("Valid").Value),
+                                                        StationCodeF = long.Parse(temSeq.Element("StationCodeF").Value),
+                                                        StationCodeS = long.Parse(temSeq.Element("StationCodeS").Value),
+                                                        Distance = double.Parse(temSeq.Element("Distance").Value),
+                                                        TravelTime = XmlConvert.ToTimeSpan(temSeq.Element("TravelTime").Value.ToString())
+                                                    });
+            return temp.Where(s => s.Valid == true);
 
         }
 
         public SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode)
         {
-            List<SequentialStopInfo> SequentialStopInfoList = XMLTools.LoadListFromXMLSerializer<SequentialStopInfo>(sequentialStopInfoPath);
-            var t = from seqStop in SequentialStopInfoList
+            var temList = GetAllSequentialStopInfo();
+
+            var t = from seqStop in temList
                     where (seqStop.StationCodeF == fCode && seqStop.StationCodeS == sCode)
                     select seqStop;
             if (t.ToList().Count == 0)
@@ -130,8 +153,6 @@ namespace DL
                 throw new Exception("SequentialStopInfoList is not valid!!");
             return t.ToList().First();
         }
-
-        #endregion
 
     }
 }
