@@ -41,30 +41,12 @@ namespace dotNet5781_03_B_6077_5711
 
 
 
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+      
         public MainWindow()
         {
             InitializeComponent();
-            place = movingBus.Margin.Left;
-            Assignment_3_B.Focus();
-            gameTimer.Tick += gameTimerEvent;
-            gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-            gameTimer.Start();
+          
             
-        }
-
-        /// <summary>
-        /// controll  a moving bus
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void gameTimerEvent(object sender, EventArgs e)
-        {
-            if (movingBus.Margin.Left >= -1480)
-                movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-            else
-                movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
         }
 
         /// <summary>

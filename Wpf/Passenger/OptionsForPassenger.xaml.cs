@@ -23,9 +23,7 @@ namespace Wpf.Passenger
     public partial class OptionsForPassenger : Window
     {
 
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
-
+    
         /// <summary>
         /// Initializes the current window in all existing objects 
         /// </summary>
@@ -96,7 +94,6 @@ namespace Wpf.Passenger
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
     }

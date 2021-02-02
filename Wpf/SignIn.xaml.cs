@@ -29,8 +29,7 @@ namespace Wpf
     }
     public partial class SignIn : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
+       
         BLApi.IBL bl;
         string Status = "";
 
@@ -134,7 +133,6 @@ namespace Wpf
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 

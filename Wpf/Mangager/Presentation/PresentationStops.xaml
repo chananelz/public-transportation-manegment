@@ -29,7 +29,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Height="60" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
+        <Button x:Name="AddButton" Grid.Row="0" Grid.Column="0" Height="60" Grid.ColumnSpan="2" Foreground ="Red" FontSize="30" Content="ADD" Click="Add_Click"  FontFamily="Arial Black">
             <Button.Background>
                 <ImageBrush ImageSource="myImages/ADD.png"/>
             </Button.Background>

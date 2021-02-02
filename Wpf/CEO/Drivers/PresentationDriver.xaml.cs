@@ -25,8 +25,6 @@ namespace Wpf.CEO.Drivers
     {
 
 
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.User tempUser;
 
@@ -41,30 +39,7 @@ namespace Wpf.CEO.Drivers
 
         }
 
-        /// <summary>
-        ///Initializes the moving bus at the bottom of the screen
-        /// </summary>
-        //private void busFunc()
-        //{
-        //    place = movingBus.Margin.Left;
-        //    FirstPage.Focus();
-        //    gameTimer.Tick += gameTimerEvent;
-        //    gameTimer.Interval = TimeSpan.FromMilliseconds(0.5);
-        //    gameTimer.Start();
-        //}
 
-        /// <summary>
-        /// Defines the movement of the moving bus
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void gameTimerEvent(object sender, EventArgs e)
-        //{
-        //    if (movingBus.Margin.Left >= -600)
-        //        movingBus.Margin = new Thickness(movingBus.Margin.Left - 8, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        //    else
-        //        movingBus.Margin = new Thickness(place, movingBus.Margin.Top, movingBus.Margin.Right, movingBus.Margin.Bottom);
-        //}
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -147,7 +122,6 @@ namespace Wpf.CEO.Drivers
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
         /// <summary>

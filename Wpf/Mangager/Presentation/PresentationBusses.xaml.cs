@@ -35,8 +35,6 @@ namespace Wpf.Mangager.Presentation
     /// </summary>
     public partial class PresentationBusses : Window
     {
-        private double place = 0;
-        DispatcherTimer gameTimer = new DispatcherTimer();
         BLApi.IBL bl;
         public BO.Bus tempBus;
         public IEnumerable<BO.Bus> a;
@@ -57,15 +55,9 @@ namespace Wpf.Mangager.Presentation
 
             au = auInput;
 
-            //foreach (BO.Bus bus in a)
-            //{
-            //    if (bus.Status == BO.status.READY_FOR_DRIVE)
-            //        bus.Show = "Visible";
-            //    else bus.Show = "Collapsed";
-            //}
-
             if (au == "PASSENGER")
             {
+                AddButton.Visibility = Visibility.Collapsed;
                 foreach (BO.Bus bus in a)
                 {
                     bus.Show = BO.status.REFULING;
@@ -80,7 +72,7 @@ namespace Wpf.Mangager.Presentation
             }
 
 
-
+            DataContext = this;
             busList.DataContext = a;
 
         }
@@ -183,36 +175,37 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void busList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //switch(busOptions.SelectedItem as string)
-            //{
-            //    case "TRAVELING":
-            //        a = bl.GetAllBussesTraveling().ToList();
-            //        break;
-            //    case "READY_FOR_DRIVE":
-            //        a = bl.GetAllBussesReadyForDrive().ToList();
-            //        break;
-            //    case "TREATING":
-            //        a = bl.GetAllBussesTreating().ToList();
-            //        break;
-            //    case "REFULING":
-            //        a = bl.GetAllBussesFueling().ToList();
-            //        break;
-            //}
-            //foreach (BO.Bus bus in a)
-            //{
-            //    if (bus.Status == BO.status.READY_FOR_DRIVE)
-            //        bus.Show = "Visible";
-            //    else bus.Show = "Collapsed";
-            //}
-            //if (au == "PASSENGER")
-            //{
-            //    foreach (BO.Bus bus in a)
-            //    {
-            //        bus.NOT_VISIBLE_FOR_PASSENGER = "Collapsed";
-            //        bus.Show = "Collapsed";
-            //    }
-            //}
-            //busList.DataContext = a;
+            switch (busOptions.SelectedItem as string)
+            {
+                case "TRAVELING":
+                    a = bl.GetAllBussesTraveling().ToList();
+                    break;
+                case "READY_FOR_DRIVE":
+                    a = bl.GetAllBussesReadyForDrive().ToList();
+                    break;
+                case "TREATING":
+                    a = bl.GetAllBussesTreating().ToList();
+                    break;
+                case "REFULING":
+                    a = bl.GetAllBussesFueling().ToList();
+                    break;
+            }
+
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in a)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in a)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = a;
 
         }
 
@@ -240,7 +233,6 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 
@@ -254,7 +246,22 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.DeleteBus(tempBus.LicenseNumber);
-            busList.DataContext = bl.GetAllBusses().ToList();
+            var aa = bl.GetAllBusses().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = aa;
             busList.Items.Refresh();
         }
 
@@ -268,8 +275,23 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);
-            new PresentationBusses(au).Show();
-            this.Close();
+            var aa = bl.GetAllBusses().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = aa;
+            busList.Items.Refresh();
         }
 
         /// <summary>
@@ -282,8 +304,23 @@ namespace Wpf.Mangager.Presentation
             Button a = (Button)sender;
             tempBus = (BO.Bus)a.DataContext;
             bl.UpdateBusFuel(0, tempBus.LicenseNumber);//not implemented
-            new PresentationBusses(au).Show();
-            this.Close();
+            var aa = bl.GetAllBusses().ToList();
+            if (au == "PASSENGER")
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.REFULING;
+                }
+            }
+            else
+            {
+                foreach (BO.Bus bus in aa)
+                {
+                    bus.Show = BO.status.READY_FOR_DRIVE;
+                }
+            }
+            busList.DataContext = aa;
+            busList.Items.Refresh();
         }
 
         /// <summary>

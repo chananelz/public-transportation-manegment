@@ -24,7 +24,6 @@ namespace Wpf
     {
 
 
-        DispatcherTimer gameTimer = new DispatcherTimer();
         bool input0 = false;
         bool input1 = false;
 
@@ -269,7 +268,6 @@ namespace Wpf
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            gameTimer.Dispatcher.InvokeShutdown();
             this.Close();
         }
 
