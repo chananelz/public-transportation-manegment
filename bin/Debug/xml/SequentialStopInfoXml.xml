@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSequentialStopInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -14,7 +14,7 @@
     <StationCodeS>572</StationCodeS>
     <Distance>87</Distance>
     <AverageTime />
-    <TravelTime >PT1M10S</TravelTime>
+    <TravelTime>PT1M10S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -22,7 +22,7 @@
     <StationCodeS>573</StationCodeS>
     <Distance>55</Distance>
     <AverageTime />
-    <TravelTime >PT1M8S</TravelTime>
+    <TravelTime>PT1M8S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -30,7 +30,7 @@
     <StationCodeS>574</StationCodeS>
     <Distance>86</Distance>
     <AverageTime />
-    <TravelTime >PT1M15S</TravelTime>
+    <TravelTime>PT1M15S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -38,7 +38,7 @@
     <StationCodeS>575</StationCodeS>
     <Distance>162</Distance>
     <AverageTime />
-    <TravelTime >PT1M53S</TravelTime>
+    <TravelTime>PT1M53S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -46,7 +46,7 @@
     <StationCodeS>576</StationCodeS>
     <Distance>142</Distance>
     <AverageTime />
-    <TravelTime >PT1M15S</TravelTime>
+    <TravelTime>PT1M15S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -54,7 +54,7 @@
     <StationCodeS>577</StationCodeS>
     <Distance>93</Distance>
     <AverageTime />
-    <TravelTime >PT1M3S</TravelTime>
+    <TravelTime>PT1M3S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -62,7 +62,7 @@
     <StationCodeS>578</StationCodeS>
     <Distance>152</Distance>
     <AverageTime />
-    <TravelTime >PT1M12S</TravelTime>
+    <TravelTime>PT1M12S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -70,7 +70,7 @@
     <StationCodeS>555</StationCodeS>
     <Distance>979</Distance>
     <AverageTime />
-    <TravelTime >PT7M26S</TravelTime>
+    <TravelTime>PT7M26S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -78,7 +78,7 @@
     <StationCodeS>580</StationCodeS>
     <Distance>2297</Distance>
     <AverageTime />
-    <TravelTime >PT14M46S</TravelTime>
+    <TravelTime>PT14M46S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -86,7 +86,7 @@
     <StationCodeS>581</StationCodeS>
     <Distance>137</Distance>
     <AverageTime />
-    <TravelTime >PT1M16S</TravelTime>
+    <TravelTime>PT1M16S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -94,7 +94,7 @@
     <StationCodeS>582</StationCodeS>
     <Distance>241</Distance>
     <AverageTime />
-    <TravelTime >PT2M18S</TravelTime>
+    <TravelTime>PT2M18S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -102,7 +102,7 @@
     <StationCodeS>583</StationCodeS>
     <Distance>251</Distance>
     <AverageTime />
-    <TravelTime >PT2M33S</TravelTime>
+    <TravelTime>PT2M33S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -110,7 +110,7 @@
     <StationCodeS>584</StationCodeS>
     <Distance>248</Distance>
     <AverageTime />
-    <TravelTime >PT2M21S</TravelTime>
+    <TravelTime>PT2M21S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -118,7 +118,7 @@
     <StationCodeS>585</StationCodeS>
     <Distance>98</Distance>
     <AverageTime />
-    <TravelTime >PT1M12S</TravelTime>
+    <TravelTime>PT1M12S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -126,7 +126,7 @@
     <StationCodeS>586</StationCodeS>
     <Distance>80</Distance>
     <AverageTime />
-    <TravelTime >PT1M8S</TravelTime>
+    <TravelTime>PT1M8S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -134,7 +134,7 @@
     <StationCodeS>587</StationCodeS>
     <Distance>57</Distance>
     <AverageTime />
-    <TravelTime >PT1M4S</TravelTime>
+    <TravelTime>PT1M4S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -142,7 +142,7 @@
     <StationCodeS>598</StationCodeS>
     <Distance>824</Distance>
     <AverageTime />
-    <TravelTime >PT7M17S</TravelTime>
+    <TravelTime>PT7M17S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -150,7 +150,7 @@
     <StationCodeS>578</StationCodeS>
     <Distance>201</Distance>
     <AverageTime />
-    <TravelTime >PT1M57S</TravelTime>
+    <TravelTime>PT1M57S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -158,7 +158,7 @@
     <StationCodeS>577</StationCodeS>
     <Distance>152</Distance>
     <AverageTime />
-    <TravelTime >PT1M17S</TravelTime>
+    <TravelTime>PT1M17S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -166,7 +166,7 @@
     <StationCodeS>576</StationCodeS>
     <Distance>93</Distance>
     <AverageTime />
-    <TravelTime >PT1M17S</TravelTime>
+    <TravelTime>PT1M17S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -174,7 +174,7 @@
     <StationCodeS>574</StationCodeS>
     <Distance>86</Distance>
     <AverageTime />
-    <TravelTime >PT1M26S</TravelTime>
+    <TravelTime>PT1M26S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -182,7 +182,7 @@
     <StationCodeS>573</StationCodeS>
     <Distance>87</Distance>
     <AverageTime />
-    <TravelTime >PT1M16S</TravelTime>
+    <TravelTime>PT1M16S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -190,7 +190,7 @@
     <StationCodeS>572</StationCodeS>
     <Distance>55</Distance>
     <AverageTime />
-    <TravelTime >PT1M8S</TravelTime>
+    <TravelTime>PT1M8S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -198,7 +198,7 @@
     <StationCodeS>571</StationCodeS>
     <Distance>87</Distance>
     <AverageTime />
-    <TravelTime >PT1M16S</TravelTime>
+    <TravelTime>PT1M16S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -206,7 +206,7 @@
     <StationCodeS>569</StationCodeS>
     <Distance>702</Distance>
     <AverageTime />
-    <TravelTime >PT5M46S</TravelTime>
+    <TravelTime>PT5M46S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -214,7 +214,7 @@
     <StationCodeS>570</StationCodeS>
     <Distance>154</Distance>
     <AverageTime />
-    <TravelTime >PT1M23S</TravelTime>
+    <TravelTime>PT1M23S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -222,7 +222,7 @@
     <StationCodeS>564</StationCodeS>
     <Distance>753</Distance>
     <AverageTime />
-    <TravelTime >PT5M42S</TravelTime>
+    <TravelTime>PT5M42S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -230,7 +230,7 @@
     <StationCodeS>563</StationCodeS>
     <Distance>917</Distance>
     <AverageTime />
-    <TravelTime >PT7M15S</TravelTime>
+    <TravelTime>PT7M15S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -238,7 +238,7 @@
     <StationCodeS>562</StationCodeS>
     <Distance>72</Distance>
     <AverageTime />
-    <TravelTime >PT1M4S</TravelTime>
+    <TravelTime>PT1M4S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -246,7 +246,7 @@
     <StationCodeS>561</StationCodeS>
     <Distance>158</Distance>
     <AverageTime />
-    <TravelTime >PT2M6S</TravelTime>
+    <TravelTime>PT2M6S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -254,7 +254,7 @@
     <StationCodeS>560</StationCodeS>
     <Distance>26</Distance>
     <AverageTime />
-    <TravelTime >PT1M1S</TravelTime>
+    <TravelTime>PT1M1S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -262,7 +262,7 @@
     <StationCodeS>559</StationCodeS>
     <Distance>26</Distance>
     <AverageTime />
-    <TravelTime >PT1M1S</TravelTime>
+    <TravelTime>PT1M1S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -270,7 +270,7 @@
     <StationCodeS>557</StationCodeS>
     <Distance>127</Distance>
     <AverageTime />
-    <TravelTime >PT2M14S</TravelTime>
+    <TravelTime>PT2M14S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -278,7 +278,7 @@
     <StationCodeS>555</StationCodeS>
     <Distance>301</Distance>
     <AverageTime />
-    <TravelTime >PT2M58S</TravelTime>
+    <TravelTime>PT2M58S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -286,7 +286,7 @@
     <StationCodeS>584</StationCodeS>
     <Distance>50</Distance>
     <AverageTime />
-    <TravelTime >PT45S</TravelTime>
+    <TravelTime>PT45S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -294,7 +294,7 @@
     <StationCodeS>586</StationCodeS>
     <Distance>83</Distance>
     <AverageTime />
-    <TravelTime >PT1M23S</TravelTime>
+    <TravelTime>PT1M23S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -302,7 +302,7 @@
     <StationCodeS>577</StationCodeS>
     <Distance>2000</Distance>
     <AverageTime />
-    <TravelTime >PT16M48S</TravelTime>
+    <TravelTime>PT16M48S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -310,7 +310,7 @@
     <StationCodeS>579</StationCodeS>
     <Distance>231</Distance>
     <AverageTime />
-    <TravelTime >PT2M45S</TravelTime>
+    <TravelTime>PT2M45S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -318,7 +318,7 @@
     <StationCodeS>578</StationCodeS>
     <Distance>224</Distance>
     <AverageTime />
-    <TravelTime >PT2M27S</TravelTime>
+    <TravelTime>PT2M27S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -326,7 +326,7 @@
     <StationCodeS>583</StationCodeS>
     <Distance>1200</Distance>
     <AverageTime />
-    <TravelTime >PT5M23S</TravelTime>
+    <TravelTime>PT5M23S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -334,7 +334,7 @@
     <StationCodeS>582</StationCodeS>
     <Distance>56</Distance>
     <AverageTime />
-    <TravelTime >PT1M28S</TravelTime>
+    <TravelTime>PT1M28S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -342,7 +342,7 @@
     <StationCodeS>581</StationCodeS>
     <Distance>76</Distance>
     <AverageTime />
-    <TravelTime >PT1M49S</TravelTime>
+    <TravelTime>PT1M49S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -350,7 +350,7 @@
     <StationCodeS>580</StationCodeS>
     <Distance>112</Distance>
     <AverageTime />
-    <TravelTime >PT2M5S</TravelTime>
+    <TravelTime>PT2M5S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -358,7 +358,7 @@
     <StationCodeS>578</StationCodeS>
     <Distance>3264</Distance>
     <AverageTime />
-    <TravelTime >PT20M26S</TravelTime>
+    <TravelTime>PT20M26S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -366,7 +366,7 @@
     <StationCodeS>590</StationCodeS>
     <Distance>300</Distance>
     <AverageTime />
-    <TravelTime >PT4M55S</TravelTime>
+    <TravelTime>PT4M55S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -374,7 +374,7 @@
     <StationCodeS>591</StationCodeS>
     <Distance>189</Distance>
     <AverageTime />
-    <TravelTime >PT2M55S</TravelTime>
+    <TravelTime>PT2M55S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -382,7 +382,7 @@
     <StationCodeS>592</StationCodeS>
     <Distance>160</Distance>
     <AverageTime />
-    <TravelTime >PT2M7S</TravelTime>
+    <TravelTime>PT2M7S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -390,7 +390,7 @@
     <StationCodeS>593</StationCodeS>
     <Distance>109</Distance>
     <AverageTime />
-    <TravelTime >PT2M35S</TravelTime>
+    <TravelTime>PT2M35S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -398,7 +398,7 @@
     <StationCodeS>594</StationCodeS>
     <Distance>167</Distance>
     <AverageTime />
-    <TravelTime >PT1M57S</TravelTime>
+    <TravelTime>PT1M57S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -406,7 +406,7 @@
     <StationCodeS>583</StationCodeS>
     <Distance>203</Distance>
     <AverageTime />
-    <TravelTime >PT2M35S</TravelTime>
+    <TravelTime>PT2M35S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -414,7 +414,7 @@
     <StationCodeS>582</StationCodeS>
     <Distance>89</Distance>
     <AverageTime />
-    <TravelTime >PT45S</TravelTime>
+    <TravelTime>PT45S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -422,7 +422,7 @@
     <StationCodeS>581</StationCodeS>
     <Distance>67</Distance>
     <AverageTime />
-    <TravelTime >PT56S</TravelTime>
+    <TravelTime>PT56S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -430,7 +430,7 @@
     <StationCodeS>580</StationCodeS>
     <Distance>96</Distance>
     <AverageTime />
-    <TravelTime >PT1M4S</TravelTime>
+    <TravelTime>PT1M4S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -438,7 +438,7 @@
     <StationCodeS>574</StationCodeS>
     <Distance>650</Distance>
     <AverageTime />
-    <TravelTime >PT6M8S</TravelTime>
+    <TravelTime>PT6M8S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -446,7 +446,7 @@
     <StationCodeS>583</StationCodeS>
     <Distance>2300</Distance>
     <AverageTime />
-    <TravelTime >PT9M35S</TravelTime>
+    <TravelTime>PT9M35S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -454,7 +454,7 @@
     <StationCodeS>580</StationCodeS>
     <Distance>220</Distance>
     <AverageTime />
-    <TravelTime >PT3M45S</TravelTime>
+    <TravelTime>PT3M45S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -462,7 +462,7 @@
     <StationCodeS>588</StationCodeS>
     <Distance>98</Distance>
     <AverageTime />
-    <TravelTime >PT1M15S</TravelTime>
+    <TravelTime>PT1M15S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -470,7 +470,7 @@
     <StationCodeS>589</StationCodeS>
     <Distance>96</Distance>
     <AverageTime />
-    <TravelTime >PT1M42S</TravelTime>
+    <TravelTime>PT1M42S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -478,7 +478,7 @@
     <StationCodeS>590</StationCodeS>
     <Distance>47</Distance>
     <AverageTime />
-    <TravelTime >PT56S</TravelTime>
+    <TravelTime>PT56S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -486,7 +486,7 @@
     <StationCodeS>595</StationCodeS>
     <Distance>108</Distance>
     <AverageTime />
-    <TravelTime >PT1M37S</TravelTime>
+    <TravelTime>PT1M37S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -494,7 +494,7 @@
     <StationCodeS>577</StationCodeS>
     <Distance>268</Distance>
     <AverageTime />
-    <TravelTime >PT2M7S</TravelTime>
+    <TravelTime>PT2M7S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -502,7 +502,7 @@
     <StationCodeS>578</StationCodeS>
     <Distance>756</Distance>
     <AverageTime />
-    <TravelTime >PT3M5S</TravelTime>
+    <TravelTime>PT3M5S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -510,7 +510,7 @@
     <StationCodeS>558</StationCodeS>
     <Distance>86</Distance>
     <AverageTime />
-    <TravelTime>PT59S</TravelTime> 
+    <TravelTime>PT59S</TravelTime>
   </SequentialStopInfo>
   <SequentialStopInfo>
     <Valid>true</Valid>
@@ -518,6 +518,22 @@
     <StationCodeS>577</StationCodeS>
     <Distance>496</Distance>
     <AverageTime />
-    <TravelTime>PT5M35S</TravelTime> 
+    <TravelTime>PT5M35S</TravelTime>
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>True</Valid>
+    <StationCodeF>570</StationCodeF>
+    <StationCodeS>604</StationCodeS>
+    <Distance>5.7927104337</Distance>
+    <AverageTime></AverageTime>
+    <TravelTime>PT6M45.816S</TravelTime>
+  </SequentialStopInfo>
+  <SequentialStopInfo>
+    <Valid>True</Valid>
+    <StationCodeF>604</StationCodeF>
+    <StationCodeS>571</StationCodeS>
+    <Distance>4784.73134575723</Distance>
+    <AverageTime></AverageTime>
+    <TravelTime>PT1M35.695S</TravelTime>
   </SequentialStopInfo>
 </ArrayOfSequentialStopInfo>

@@ -45,7 +45,7 @@ namespace BLImp
             Stop stopA = GetStop(stationCodeF);
             Stop stopB = GetStop(stationCodeS);
             double distance = GteDistance(stopA.Latitude, stopA.Longitude, stopB.Latitude, stopB.Longitude);
-            SequentialStopInfo SequentialStopInfoBO = new SequentialStopInfo(stationCodeF, stationCodeS, distance, TimeSpan.FromSeconds(distance * 50));
+            SequentialStopInfo SequentialStopInfoBO = new SequentialStopInfo(stationCodeF, stationCodeS, distance, TimeSpan.FromSeconds(distance / 50));  //@@@@ /
             DO.SequentialStopInfo SequentialStopInfoDO = SequentialStopInfoBO.GetPropertiesFrom<DO.SequentialStopInfo, BO.SequentialStopInfo>();
             dal.CreateSequentialStopInfo(SequentialStopInfoDO);
         }
@@ -121,7 +121,8 @@ namespace BLImp
             long sid = 0;
             bool foundFirst = false;
             double sum = -1;
-            foreach (LineStation ls in lineStations)
+            //var my = lineStations.OrderBy(st => st.NumberInLine).ToList();
+            foreach (LineStation ls in lineStations.OrderBy(st => st.NumberInLine))
             {
                 if (!foundFirst && ls.Code == firstCode)
                 {
@@ -146,7 +147,7 @@ namespace BLImp
             long sid = 0;
             bool foundFirst = false;
             TimeSpan sum = new TimeSpan();
-            foreach (LineStation ls in lineStations)
+            foreach (LineStation ls in lineStations.OrderBy(st => st.NumberInLine))
             {
                 if (!foundFirst && ls.Code == firstCode)
                 {

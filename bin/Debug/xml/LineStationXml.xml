@@ -10,55 +10,55 @@
     <Valid>true</Valid>
     <LineId>10</LineId>
     <Code>571</Code>
-    <NumberInLine>2</NumberInLine>
-  </LineStation>
-  <LineStation>
-    <Valid>true</Valid>
-    <LineId>10</LineId>
-    <Code>572</Code>
     <NumberInLine>3</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>573</Code>
+    <Code>572</Code>
     <NumberInLine>4</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>574</Code>
+    <Code>573</Code>
     <NumberInLine>5</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>575</Code>
+    <Code>574</Code>
     <NumberInLine>6</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>576</Code>
+    <Code>575</Code>
     <NumberInLine>7</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>577</Code>
+    <Code>576</Code>
     <NumberInLine>8</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>578</Code>
+    <Code>577</Code>
     <NumberInLine>9</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
     <LineId>10</LineId>
-    <Code>555</Code>
+    <Code>578</Code>
     <NumberInLine>10</NumberInLine>
+  </LineStation>
+  <LineStation>
+    <Valid>true</Valid>
+    <LineId>10</LineId>
+    <Code>555</Code>
+    <NumberInLine>11</NumberInLine>
   </LineStation>
   <LineStation>
     <Valid>true</Valid>
@@ -610,6 +610,12 @@
     <Valid>true</Valid>
     <LineId>20</LineId>
     <Code>567</Code>
+    <NumberInLine>2</NumberInLine>
+  </LineStation>
+  <LineStation>
+    <Valid>true</Valid>
+    <LineId>10</LineId>
+    <Code>604</Code>
     <NumberInLine>2</NumberInLine>
   </LineStation>
 </ArrayOfLineStation>

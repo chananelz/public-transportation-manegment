@@ -210,7 +210,7 @@ namespace Wpf.Mangager.Presentation
         /// <param name="e"></param>
         private void TravelTime_Click(object sender, RoutedEventArgs e)
         {
-            string textRange = distance_Binding.Text;
+            string textRange = travel_time_Binding.Text;
             TimeSpan result = new TimeSpan();
             if (TimeSpan.TryParse(textRange, out result))
             {
