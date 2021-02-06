@@ -43,7 +43,7 @@ namespace DL
                                   ).FirstOrDefault();
             if (myUser == null)
             {
-                throw new DO.DOBadUserIdException("no user with such UserName!!");
+                throw new DO.DOBadUserIdException("", "no user with such UserName!!");
             }
             if (!myUser.Valid)
             {
@@ -73,7 +73,7 @@ namespace DL
                 if (ex.Message == "no user with such UserName!!")
                 {
                     XElement userElem = new XElement("User",
-                                  new XElement("Valid", user.Valid.ToString()),
+                                  new XElement("Valid", user.Valid.ToString().ToLower()),
                                   new XElement("UserName", user.UserName),
                                   new XElement("Password", user.Password),
                                   new XElement("Permission", user.Permission.ToString()));
@@ -107,7 +107,7 @@ namespace DL
         /// </summary>
         /// <param name="pr"></param>
         /// <returns></returns>
-       
+
         public User RequestUser(Predicate<DO.User> pr = null)
         {
             XElement userRootElem = XMLTools.LoadListFromXMLElement(usersPath);

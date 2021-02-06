@@ -71,7 +71,7 @@ namespace BLImp
         }
         public SequentialStopInfo GetSequentialStopInfo(long fCode, long sCode)
         {
-            var a =  dal.GetSequentialStopInfo(fCode, sCode).GetPropertiesFrom<BO.SequentialStopInfo, DO.SequentialStopInfo>();
+            var a = dal.GetSequentialStopInfo(fCode, sCode).GetPropertiesFrom<BO.SequentialStopInfo, DO.SequentialStopInfo>();
             return a;
         }
         /// <summary>
@@ -136,7 +136,14 @@ namespace BLImp
                     fid = ls.Code;
                 }
                 if (ls.Code == secondCode)
+                {
+                    if (fid != ls.Code)
+                    {
+                        sum += GetSequentialStopInfo(fid, ls.Code).Distance;
+                    }
                     break;
+                }
+                    
             }
             return sum;
         }
@@ -160,7 +167,14 @@ namespace BLImp
                     fid = ls.Code;
                 }
                 if (ls.Code == secondCode)
+                {
+                    if (fid != ls.Code)
+                    {
+                        sum += GetSequentialStopInfo(fid, ls.Code).TravelTime;
+                    }
                     break;
+                }
+                   
             }
             return sum;
         }

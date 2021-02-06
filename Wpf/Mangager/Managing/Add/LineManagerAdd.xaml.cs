@@ -27,7 +27,7 @@ namespace Wpf.Mangager.Managing.Add
     {
 
 
-       
+
         bool input0 = false;
         bool input1 = false;
         bool input2 = false;
@@ -129,15 +129,30 @@ namespace Wpf.Mangager.Managing.Add
         /// <param name="e"></param>
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            int i = 0;
             if (e.Cancelled)
             {
                 MessageBox.Show("work cancelled", "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            
+
             try
             {
                 bl.CreateLine(number, area, stopListInput);
+
+                foreach (var item in stopListInput)
+                {
+                    bl.CreateLineStation(bl.GetIdByNumber(number), i++, item.StopCode);
+                }
+                if (stopListInput.Count() > 1)
+                {
+                    for (i = 1; i < stopListInput.Count(); i++)
+                    {
+                        // bl.AddStopInLine(bl.GetIdByNumber(number), stopListInput[i - 1].StopCode, i);
+
+                        bl.CreateSequentialStopInfo(stopListInput[i - 1].StopCode, stopListInput[i].StopCode);
+                    }
+                }
                 MessageBoxResult res = MessageBox.Show("Would you like to add another bus in the opposite direction??", "Verification", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (res == MessageBoxResult.No) ;
 
@@ -148,7 +163,7 @@ namespace Wpf.Mangager.Managing.Add
             }
             catch (BO.BODOBadLineIdException ex)
             {
-                MessageBox.Show(ex.Message  , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 worker.RunWorkerAsync(3);
                 amount = 0;
                 return;
@@ -248,11 +263,11 @@ namespace Wpf.Mangager.Managing.Add
                 }
                 catch (BO.BOBadLineIdException ex)
                 {
-                    MessageBox.Show("Wrong LicenseNumber format : " + ex.Message , "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Wrong LicenseNumber format : " + ex.Message, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                     MyTextBox0.Clear();
                     return;
                 }
-                
+
                 if (amount != 3)
                 {
 
@@ -282,12 +297,12 @@ namespace Wpf.Mangager.Managing.Add
         private void Area_Click(object sender, RoutedEventArgs e)
         {
             string textRange = MyTextBox1.Text;
-           
+
             if (amount != 3)
             {
 
                 area = textRange;
-                
+
                 MessageBox.Show("input submited  " + textRange + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 AreaLabel.Content = area;
@@ -302,7 +317,7 @@ namespace Wpf.Mangager.Managing.Add
             else
             {
                 MessageBox.Show("wrong input!!!!", "input", MessageBoxButton.OK, MessageBoxImage.Information);
-               
+
             }
 
         }
@@ -314,7 +329,7 @@ namespace Wpf.Mangager.Managing.Add
         /// <param name="e"></param>
         private void StopList_Click(object sender, RoutedEventArgs e)
         {
-           
+
             if (amount != 3)
             {
                 if (stopListInput.Count == 0)
@@ -323,7 +338,7 @@ namespace Wpf.Mangager.Managing.Add
                 }
                 else
                 {
-                    MessageBox.Show("input submited  "  + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("input submited  " + "      to exit click X", "input", MessageBoxButton.OK, MessageBoxImage.Information);
                     if (!input2)
                     {
                         input2 = true;
@@ -442,6 +457,6 @@ namespace Wpf.Mangager.Managing.Add
             new StopMangaer(tempStop).Show();
             this.Close();
         }
-     
+
     }
 }
